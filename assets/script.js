@@ -155,10 +155,19 @@
         });
         if (mode === "flow") {
           slidesView.classList.add("mode-flow");
+          /* Forzar visibilidad de todas las slides en modo texto */
+          slides.forEach(function (s) {
+            s.style.opacity    = "1";
+            s.style.transform  = "none";
+            s.style.transition = "none";
+          });
         } else {
           slidesView.classList.remove("mode-flow");
-          /* Asegura que la slide activa sea visible */
+          /* Restaurar estado de slides: solo la activa visible */
           slides.forEach(function (s, i) {
+            s.style.opacity    = "";
+            s.style.transform  = "";
+            s.style.transition = "";
             s.classList.toggle("is-active", i === current);
           });
         }

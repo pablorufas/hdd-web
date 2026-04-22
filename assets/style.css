@@ -1157,6 +1157,7 @@ section.block {
   position: relative;
   opacity: 1 !important;
   transform: none !important;
+  transition: none !important;
   pointer-events: all;
   border-bottom: 1px solid var(--line);
   min-height: 0;
