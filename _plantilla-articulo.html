@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PLANTILLA DE ARTÍCULO — HdD  (FORMATO DIAPOSITIVAS)
+  ============================================================
+  USO INTERNO. No enlazar desde el sitio público.
+
+  INSTRUCCIONES RÁPIDAS:
+  1. Copia este archivo → slug-descriptivo.html
+  2. Reemplaza TODO lo marcado con EDITAR
+  3. Las 4 diapositivas son: Portada · Conceptos · Desarrollo · Análisis
+  4. Añade la tarjeta en noticias.html
+  5. Despliega: netlify deploy --prod (desde la carpeta del proyecto)
+  ============================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- EDITAR: "Titular breve — HdD" -->
+  <title>EDITAR: Título del artículo — HdD</title>
+  <meta name="description" content="EDITAR: Resumen de 120–160 caracteres para Google y redes." />
+  <link rel="canonical" href="https://horadedespertar.org/EDITAR-slug.html" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="Hora de Despertar" />
+  <meta property="og:title"       content="EDITAR: Título del artículo — HdD" />
+  <meta property="og:description" content="EDITAR: Resumen para redes." />
+  <meta property="og:url"         content="https://horadedespertar.org/EDITAR-slug.html" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@hdedespertar" />
+  <meta name="twitter:title"       content="EDITAR: Título del artículo — HdD" />
+  <meta name="twitter:description" content="EDITAR: Resumen para redes." />
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <div class="brand-unit">
+        <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+        <span class="header-clock logo-led" data-live-clock aria-label="Hora actual">--:--</span>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="nav" id="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="manifiesto.html">Manifiesto</a>
+        <a href="noticias.html" class="active">Noticias</a>
+        <a href="educacion.html">Educación</a>
+        <a href="newsletter.html">Semanal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Barra de modo de lectura -->
+    <div class="reading-mode-bar">
+      <div class="wrap bar--reading">
+        <span class="reading-mode-label">Modo de lectura</span>
+        <div class="reading-mode-btns">
+          <button class="mode-btn is-active" data-mode="slides">▣ Diapositivas</button>
+          <button class="mode-btn" data-mode="flow">≡ Texto completo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista de diapositivas -->
+    <div class="slides-view" id="slides-view">
+
+      <!-- Barra de progreso -->
+      <div class="slide-progress-bar" aria-hidden="true">
+        <div class="slide-progress-fill"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════
+           DIAPOSITIVA 1 — PORTADA
+           ═══════════════════════════════════════════════════ -->
+      <section class="slide slide--cover" data-slide="0" aria-label="Portada">
+        <div class="slide-inner">
+          <span class="slide-num">01 — 04</span>
+
+          <!-- EDITAR: "Categoría · Tipo" ej. "Economía · Análisis" -->
+          <span class="slide-label">EDITAR Categoría · Tipo</span>
+
+          <!-- EDITAR: titular completo -->
+          <h1>EDITAR: Titular del artículo</h1>
+
+          <!-- EDITAR: subtítulo / entradilla (1-2 frases) -->
+          <p class="lead">EDITAR: Entradilla. Qué pasó y qué aprenderá el lector. Sin clickbait.</p>
+
+          <div class="slide-meta-row">
+            <!-- EDITAR: fecha, lectura, autor -->
+            <span><strong>Publicado</strong> · DD MMM AAAA</span>
+            <span><strong>Lectura</strong> · X min</span>
+            <span><strong>Autor</strong> · Redacción HdD</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           DIAPOSITIVA 2 — CONCEPTOS BÁSICOS
+           ═══════════════════════════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="1" aria-label="Conceptos básicos">
+        <div class="slide-inner">
+          <span class="slide-num">02 — 04</span>
+          <span class="slide-label">Antes de leer</span>
+          <h2>Conceptos que necesitas</h2>
+
+          <!-- EDITAR: añade tantas cajas didácticas como conceptos clave tenga el artículo -->
+          <!-- Si el artículo no necesita conceptos previos, cambia h2 + añade un párrafo intro -->
+          <div class="didactic-box">
+            <span class="eyebrow">Concepto</span>
+            <h4>EDITAR: Nombre del concepto</h4>
+            <p>EDITAR: Explicación breve y clara en 2–4 frases. Sin jerga innecesaria.</p>
+          </div>
+
+          <div class="didactic-box">
+            <span class="eyebrow">Concepto</span>
+            <h4>EDITAR: Segundo concepto (elimina si no hay)</h4>
+            <p>EDITAR: Explicación.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           DIAPOSITIVA 3 — DESARROLLO DE LA NOTICIA
+           Incluye: hechos · contexto · motivaciones
+           ═══════════════════════════════════════════════════ -->
+      <section class="slide slide--development" data-slide="2" aria-label="Desarrollo">
+        <div class="slide-inner">
+          <span class="slide-num">03 — 04</span>
+          <span class="slide-label">La noticia</span>
+          <h2>EDITAR: Título descriptivo del desarrollo</h2>
+
+          <!-- Hechos -->
+          <div class="slide-section">
+            <h3>Los hechos</h3>
+            <p>EDITAR: Qué ha pasado, dónde, cuándo y quién. Solo datos verificables con fuente.</p>
+          </div>
+
+          <!-- Contexto -->
+          <div class="slide-section">
+            <h3>El contexto</h3>
+            <p>EDITAR: Qué pasaba antes. Por qué importa ahora y no hace 5 años.</p>
+          </div>
+
+          <!-- Motivaciones -->
+          <div class="slide-section">
+            <h3>Las motivaciones posibles</h3>
+            <p>EDITAR: Introducción al abanico de incentivos. Recuerda: no atribuimos intenciones ocultas como hechos — exponemos incentivos observables.</p>
+
+            <!-- EDITAR: un bloque por actor/motivación. Añade o elimina los que necesites -->
+            <p style="margin-top: 24px;">
+              <span class="actor-name">EDITAR: Actor 1</span>
+              EDITAR: Incentivo observable del actor 1. Por qué le beneficia o perjudica esta decisión.
+            </p>
+            <p>
+              <span class="actor-name">EDITAR: Actor 2</span>
+              EDITAR: Incentivo observable del actor 2.
+            </p>
+            <p>
+              <span class="actor-name">EDITAR: Actor 3</span>
+              EDITAR: Incentivo observable del actor 3.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           DIAPOSITIVA 4 — ANÁLISIS
+           Incluye: otros medios · preguntas abiertas · metodología
+           ═══════════════════════════════════════════════════ -->
+      <section class="slide slide--analysis" data-slide="3" aria-label="Análisis">
+        <div class="slide-inner">
+          <span class="slide-num">04 — 04</span>
+          <span class="slide-label">Análisis</span>
+          <h2>EDITAR: Título del análisis</h2>
+
+          <!-- Cómo lo contaron otros -->
+          <div class="slide-section">
+            <h3>Cómo lo han contado otros medios</h3>
+            <p>EDITAR: Un párrafo comparando tratamientos. Describe el marco elegido por cada cobertura, qué destacó y qué omitió. Sin ataques personales: describir, no juzgar.</p>
+
+            <blockquote>EDITAR: Cita o reflexión que condense la idea central del análisis.</blockquote>
+          </div>
+
+          <!-- Lo que queda abierto -->
+          <div class="slide-section">
+            <h3>Lo que queda abierto</h3>
+            <ul>
+              <li>EDITAR: Pregunta 1 que seguirá evolucionando.</li>
+              <li>EDITAR: Pregunta 2, idealmente verificable en una fecha concreta.</li>
+              <li>EDITAR: Pregunta 3 para un artículo posterior si la historia lo merece.</li>
+            </ul>
+          </div>
+
+          <!-- Nota metodológica — obligatoria -->
+          <div class="didactic-box" style="border-left-color: var(--accent); margin-top: 48px;">
+            <span class="eyebrow" style="color: var(--accent);">Nota metodológica</span>
+            <h4>Cómo verificamos este artículo</h4>
+            <p>EDITAR: Fuentes utilizadas (con fecha). Las motivaciones expuestas son incentivos observables o escenarios plausibles, no intenciones confirmadas. Errores o información adicional: <a href="mailto:redaccion@horadedespertar.org" style="color: var(--red);">redaccion@horadedespertar.org</a></p>
+          </div>
+
+          <a href="noticias.html" class="back-link">← Todas las noticias</a>
+        </div>
+      </section>
+
+      <!-- Nav de diapositivas -->
+      <nav class="slide-nav" aria-label="Navegación de diapositivas">
+        <button class="slide-nav__btn slide-nav__btn--prev" aria-label="Diapositiva anterior" disabled>←</button>
+        <div class="slide-dots" role="tablist" aria-label="Diapositivas"></div>
+        <button class="slide-nav__btn slide-nav__btn--next" aria-label="Siguiente diapositiva">→</button>
+        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/4</span>
+      </nav>
+
+    </div><!-- /slides-view -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+          <p class="tagline">Hora de Despertar. Periodismo didáctico para una sociedad que quiere pensar por sí misma.</p>
+        </div>
+        <div>
+          <h5>Secciones</h5>
+          <ul>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="educacion.html">Educación</a></li>
+            <li><a href="newsletter.html">Semanal</a></li>
+            <li><a href="manifiesto.html">Manifiesto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Redacción</h5>
+          <ul>
+            <li><a href="manifiesto.html#metodo">Método</a></li>
+            <li><a href="manifiesto.html#correcciones">Correcciones</a></li>
+            <li><a href="manifiesto.html#contacto">Contacto</a></li>
+            <li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>© 2026 Hora de Despertar</span>
+        <span>Hecho con rigor. Leído con criterio.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
