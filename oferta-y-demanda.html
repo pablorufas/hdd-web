@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La ley que decide el precio de casi todo — HdD</title>
+  <meta name="description" content="Oferta y demanda explicadas de verdad, con ejemplos que ya conoces. La ley que está detrás del precio de casi todo." />
+  <link rel="canonical" href="https://horadedespertar.org/oferta-y-demanda.html" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="Hora de Despertar" />
+  <meta property="og:title"       content="La ley que decide el precio de casi todo — HdD" />
+  <meta property="og:description" content="Oferta y demanda explicadas de verdad, con ejemplos que ya conoces." />
+  <meta property="og:url"         content="https://horadedespertar.org/oferta-y-demanda.html" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@hdedespertar" />
+  <meta name="twitter:title"       content="La ley que decide el precio de casi todo — HdD" />
+  <meta name="twitter:description" content="Oferta y demanda explicadas de verdad, con ejemplos que ya conoces." />
+
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    /* ── Elementos visuales extra para artículos de Educación ── */
+    .edu-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (max-width: 600px) {
+      .edu-split { grid-template-columns: 1fr; }
+    }
+    .edu-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--surface);
+    }
+    .edu-card .edu-card-icon {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .edu-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .edu-card p {
+      font-size: 0.88rem;
+      color: var(--ink-dim);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .edu-card.is-red  { border-left: 3px solid var(--red); }
+    .edu-card.is-gold { border-left: 3px solid var(--accent); }
+
+    .edu-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .edu-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .edu-step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .edu-step-body { flex: 1; }
+    .edu-step-body strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .edu-step-body p {
+      font-size: 0.88rem;
+      color: var(--ink-dim);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .edu-arrow-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 12px;
+    }
+    .edu-arrow-box .arrow-side {
+      text-align: center;
+      flex: 1;
+    }
+    .edu-arrow-box .arrow-side .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-mute);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .edu-arrow-box .arrow-side .value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .edu-arrow-box .arrow-side .value.up   { color: var(--red); }
+    .edu-arrow-box .arrow-side .value.down { color: #22c55e; }
+    .edu-arrow-box .divider {
+      font-size: 1.4rem;
+      color: var(--ink-mute);
+    }
+    .edu-arrow-box .result {
+      text-align: center;
+      flex: 1;
+    }
+    .edu-arrow-box .result .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-mute);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .edu-arrow-box .result .price {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .edu-arrow-box .result .price.up   { color: var(--red); }
+    .edu-arrow-box .result .price.down { color: #22c55e; }
+
+    .edu-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .edu-checklist li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--ink-dim);
+      line-height: 1.5;
+    }
+    .edu-checklist li::before {
+      content: "→";
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .edu-big-quote {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--ink);
+      border-left: 3px solid var(--red);
+      padding-left: 20px;
+      margin: 24px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <div class="brand-unit">
+        <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+        <span class="header-clock logo-led" data-live-clock aria-label="Hora actual">--:--</span>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="nav" id="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="manifiesto.html">Manifiesto</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="educacion.html" class="active">Educación</a>
+        <a href="newsletter.html">Semanal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="reading-mode-bar">
+      <div class="wrap bar--reading">
+        <span class="reading-mode-label">Modo de lectura</span>
+        <div class="reading-mode-btns">
+          <button class="mode-btn is-active" data-mode="slides">▣ Diapositivas</button>
+          <button class="mode-btn" data-mode="flow">≡ Texto completo</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slides-view" id="slides-view">
+
+      <div class="slide-progress-bar" aria-hidden="true">
+        <div class="slide-progress-fill"></div>
+      </div>
+
+      <!-- ═══════════════════════════════
+           SLIDE 1 — PORTADA
+           ═══════════════════════════════ -->
+      <section class="slide slide--cover" data-slide="0" aria-label="Portada">
+        <div class="slide-inner">
+          <span class="slide-num">01 — 06</span>
+          <span class="slide-label">Economía · Educación</span>
+          <h1>La ley que decide el precio de casi todo —y que nadie te explicó bien</h1>
+          <p class="lead">Cada vez que sube la luz, el alquiler o la gasolina, alguien menciona "la oferta y la demanda". Pero, ¿qué significa eso exactamente? En seis diapositivas lo entiendes de verdad —con ejemplos que ya conoces y sin un solo tecnicismo que sobre.</p>
+          <div class="slide-meta-row">
+            <span><strong>Publicado</strong> · 23 ABR 2026</span>
+            <span><strong>Lectura</strong> · 10 min</span>
+            <span><strong>Autor</strong> · Redacción HdD</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 2 — LA DEMANDA
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="1" aria-label="La demanda">
+        <div class="slide-inner">
+          <span class="slide-num">02 — 06</span>
+          <span class="slide-label">Pieza 1 de 2</span>
+          <h2>La demanda: cuánta gente quiere algo</h2>
+
+          <p>La demanda es el deseo de comprar algo a un precio concreto. No es solo "quiero eso" —es "quiero eso <em>a ese precio</em>". Cuando el precio sube mucho, algunos dejan de quererlo. Cuando baja, más gente lo quiere. Así funciona.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">📈</span>
+              <h4>Demanda alta</h4>
+              <p>Agosto. Todos quieren gasolina para las vacaciones. Millones de coches al mismo tiempo, mismas gasolineras. La demanda se dispara.</p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-card-icon">📉</span>
+              <h4>Demanda baja</h4>
+              <p>Enero, llueve, nadie sale. El restaurante de la playa está vacío. Poca gente quiere lo mismo que en verano: la demanda cae.</p>
+            </div>
+          </div>
+
+          <div class="didactic-box" style="margin-top: 20px;">
+            <span class="eyebrow">Para recordar</span>
+            <h4>La demanda no es fija — cambia con el precio, la temporada y las circunstancias</h4>
+            <p>Cuando el precio del aceite de oliva se triplicó en 2023, mucha gente pasó al de girasol. La demanda de oliva bajó. No porque dejara de gustar, sino porque a ese precio ya no valía la pena.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 3 — LA OFERTA
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="2" aria-label="La oferta">
+        <div class="slide-inner">
+          <span class="slide-num">03 — 06</span>
+          <span class="slide-label">Pieza 2 de 2</span>
+          <h2>La oferta: cuánto hay disponible para vender</h2>
+
+          <p>La oferta es todo lo que los vendedores están dispuestos a poner en el mercado a un precio dado. Más precio → más vendedores quieren producir y vender. Menos precio → menos les compensa hacerlo.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-gold">
+              <span class="edu-card-icon">🏗️</span>
+              <h4>Oferta alta</h4>
+              <p>El aceite de girasol se hace en muchos países, las fábricas pueden escalar rápido. Si el precio sube, producen más. La oferta responde con facilidad.</p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-card-icon">🫒</span>
+              <h4>Oferta rígida</h4>
+              <p>Un olivo tarda 10 años en producir bien. Si se pierde la cosecha por sequía, no puedes plantar árboles nuevos y tenerlos listos la semana que viene. La oferta no puede reaccionar rápido.</p>
+            </div>
+          </div>
+
+          <div class="didactic-box" style="margin-top: 20px;">
+            <span class="eyebrow">Clave</span>
+            <h4>Hay ofertas que reaccionan rápido y ofertas que tardan años</h4>
+            <p>Un taxi puede poner más coches en circulación esta noche si sube la demanda. Una refinería de petróleo tarda años en construirse. Esa diferencia de velocidad es crucial para entender por qué algunos precios se disparan de golpe.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 4 — EL PRECIO
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="3" aria-label="Cómo nace el precio">
+        <div class="slide-inner">
+          <span class="slide-num">04 — 06</span>
+          <span class="slide-label">Cuando se encuentran</span>
+          <h2>Donde oferta y demanda se cruzan, nace el precio</h2>
+
+          <p>Imagínate una panadería. Hace 100 barras al día. Si llegan exactamente 100 compradores, todo encaja y el precio se queda donde está. Pero si algo cambia en cualquiera de los dos lados, el precio se mueve.</p>
+
+          <div class="edu-steps">
+            <div class="edu-step">
+              <span class="edu-step-num">1</span>
+              <div class="edu-step-body">
+                <strong>Abren tres oficinas cerca → llegan 200 compradores</strong>
+                <p>La demanda dobla. La panadería sigue haciendo 100 barras. El panadero puede subir el precio y aun así venderlas todas.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">2</span>
+              <div class="edu-step-body">
+                <strong>Abren tres panaderías nuevas en la calle → hay 400 barras</strong>
+                <p>La oferta cuadruplica. Siguen llegando 100 compradores. Ahora los panaderos tienen que bajar el precio para que les compren a ellos y no al vecino.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">3</span>
+              <div class="edu-step-body">
+                <strong>Los dos lados crecen igual → el precio no cambia</strong>
+                <p>Si llegan 200 compradores y hay 200 barras, el equilibrio se mantiene. El precio solo se mueve cuando los dos lados dejan de estar en equilibrio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-arrow-box" style="margin-top: 20px;">
+            <div class="arrow-side">
+              <span class="label">Demanda</span>
+              <span class="value up">↑ Sube</span>
+            </div>
+            <div class="divider">+</div>
+            <div class="arrow-side">
+              <span class="label">Oferta</span>
+              <span class="value">= Igual</span>
+            </div>
+            <div class="divider">→</div>
+            <div class="result">
+              <span class="label">Precio</span>
+              <span class="price up">↑ Sube</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 5 — EN LA VIDA REAL
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="4" aria-label="En la vida real">
+        <div class="slide-inner">
+          <span class="slide-num">05 — 06</span>
+          <span class="slide-label">En la vida real</span>
+          <h2>Tres ejemplos que seguramente ya has vivido</h2>
+
+          <div class="edu-split" style="margin-top: 16px;">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">⛽</span>
+              <h4>¿Por qué sube la gasolina en agosto?</h4>
+              <p>En agosto, la demanda explota: millones de coches en la carretera. Las refinerías no pueden producir mucho más de golpe —la oferta tarda en reaccionar—. Resultado: precio arriba. No es un complot. Es el mecanismo.</p>
+            </div>
+            <div class="edu-card is-gold">
+              <span class="edu-card-icon">🏠</span>
+              <h4>¿Por qué el alquiler en Madrid no para de subir?</h4>
+              <p>Cada año llega más gente a trabajar a las grandes ciudades: la demanda crece. Pero construir pisos tarda años y hay restricciones urbanísticas: la oferta no puede seguirle el ritmo. El precio sube sin freno.</p>
+            </div>
+          </div>
+
+          <div class="edu-card" style="margin-top: 16px;">
+            <span class="edu-card-icon">🎟️</span>
+            <h4>¿Por qué las entradas de un concierto se agotan en segundos y luego aparecen a diez veces el precio en reventa?</h4>
+            <p>El recinto tiene 20.000 plazas: oferta fija. Hay 200.000 personas que quieren ir: demanda enorme. El promotor pone un precio "oficial" que queda muy por debajo de lo que la gente pagaría. Los revendedores capturan esa diferencia. La solución real sería subir el precio inicial —pero eso tiene un coste de imagen que los artistas no quieren pagar.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 6 — PARA QUÉ SIRVE
+           ═══════════════════════════════ -->
+      <section class="slide slide--analysis" data-slide="5" aria-label="Para qué sirve">
+        <div class="slide-inner">
+          <span class="slide-num">06 — 06</span>
+          <span class="slide-label">Para qué te sirve</span>
+          <h2>Dos preguntas que cambian cómo lees las noticias</h2>
+
+          <p>La próxima vez que veas un titular sobre precios —"sube la luz", "se dispara el alquiler", "cae el precio del aceite"— hazte estas dos preguntas antes de creer lo primero que te cuenten:</p>
+
+          <div class="edu-big-quote">
+            ¿Ha cambiado cuánta gente lo quiere?<br>¿Ha cambiado cuánto hay disponible?
+          </div>
+
+          <p style="margin-bottom: 20px;">Con esas dos respuestas entiendes el 80 % de cualquier movimiento de precios. El otro 20 % son especulación, regulación o manipulación —y eso ya es otro artículo.</p>
+
+          <ul class="edu-checklist">
+            <li>Cuando un político dice que "los mercados son los culpables", pregúntate qué pasó en la oferta o en la demanda que él no quiere explicar.</li>
+            <li>Cuando una empresa dice que sube precios "por los costes", en realidad está diciéndote que su oferta se encareció —que también es oferta y demanda, pero de sus propios insumos.</li>
+            <li>Cuando algo baja de precio sin que nadie lo explique, busca si hay más oferta disponible o si la demanda ha caído. Siempre hay una razón.</li>
+          </ul>
+
+          <div class="didactic-box" style="border-left-color: var(--accent); margin-top: 32px;">
+            <span class="eyebrow" style="color: var(--accent);">Nota metodológica</span>
+            <h4>Cómo hemos construido este artículo</h4>
+            <p>Los ejemplos usados son simplificaciones pedagógicas de mecanismos económicos reales. La teoría de oferta y demanda es la base del análisis microeconómico desde Adam Smith (La riqueza de las naciones, 1776). Los matices —elasticidad, bienes Giffen, externalidades, poder de mercado— quedan fuera a propósito: este artículo es el primer peldaño, no el mapa completo. ¿Algo que corregir o añadir? <a href="mailto:redaccion@horadedespertar.org" style="color: var(--red);">redaccion@horadedespertar.org</a></p>
+          </div>
+
+          <a href="educacion.html" class="back-link">← Todos los artículos de Educación</a>
+        </div>
+      </section>
+
+      <nav class="slide-nav" aria-label="Navegación de diapositivas">
+        <button class="slide-nav__btn slide-nav__btn--prev" aria-label="Diapositiva anterior" disabled>←</button>
+        <div class="slide-dots" role="tablist" aria-label="Diapositivas"></div>
+        <button class="slide-nav__btn slide-nav__btn--next" aria-label="Siguiente diapositiva">→</button>
+        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/6</span>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+          <p class="tagline">Hora de Despertar. Periodismo didáctico para una sociedad que quiere pensar por sí misma.</p>
+        </div>
+        <div>
+          <h5>Secciones</h5>
+          <ul>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="educacion.html">Educación</a></li>
+            <li><a href="newsletter.html">Semanal</a></li>
+            <li><a href="manifiesto.html">Manifiesto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Redacción</h5>
+          <ul>
+            <li><a href="manifiesto.html#metodo">Método</a></li>
+            <li><a href="manifiesto.html#correcciones">Correcciones</a></li>
+            <li><a href="manifiesto.html#contacto">Contacto</a></li>
+            <li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>© 2026 Hora de Despertar</span>
+        <span>Hecho con rigor. Leído con criterio.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
