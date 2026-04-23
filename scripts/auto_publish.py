@@ -5,7 +5,7 @@ Busca noticias, selecciona las mejores, escribe artículos con Claude y publica.
 Corre 4 veces al día via GitHub Actions.
 """
 
-import os, re, json, subprocess, textwrap, time, sys
+import os, re, json, subprocess, textwrap, time, sys, traceback
 from datetime import date, datetime
 from pathlib import Path
 import requests
@@ -539,7 +539,7 @@ def actualizar_noticias_html(articulos: list[dict]):
             1,
         )
     else:
-        # Reemplazar empty-state
+        # Reemplazar empty-state (lambda evita que re interprete \n, \1, etc. del HTML)
         bloque_nuevo = (
             '        <div class="index-list">\n\n'
             + nuevas_tarjetas
@@ -547,7 +547,7 @@ def actualizar_noticias_html(articulos: list[dict]):
         )
         contenido = re.sub(
             r'\s*<div class="empty-state">.*?</div>',
-            "\n" + bloque_nuevo,
+            lambda _: "\n" + bloque_nuevo,
             contenido,
             flags=re.DOTALL,
         )
@@ -570,19 +570,19 @@ def actualizar_index_html(articulos: list[dict]):
     bloque_nuevo = '        <div class="index-list">\n\n' + tarjetas + '\n\n        </div>'
 
     if 'class="index-list"' in contenido:
-        # Reemplazar el bloque existente
+        # Reemplazar el bloque existente (lambda evita que re interprete \1, \g, etc. del HTML)
         contenido = re.sub(
             r'<div class="index-list">.*?</div>(?=\s*\n\s*</div>\s*\n\s*</section>)',
-            bloque_nuevo,
+            lambda _: bloque_nuevo,
             contenido,
             flags=re.DOTALL,
             count=1,
         )
     else:
-        # Reemplazar empty-state
+        # Reemplazar empty-state (lambda evita que re interprete \1, \g, etc. del HTML)
         contenido = re.sub(
             r'\s*<div class="empty-state">.*?</div>',
-            "\n" + bloque_nuevo,
+            lambda _: "\n" + bloque_nuevo,
             contenido,
             flags=re.DOTALL,
             count=1,
@@ -703,4 +703,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        traceback.print_exc()
+        sys.exit(1)
