@@ -19,7 +19,7 @@ import anthropic
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 NEWSAPI_KEY   = os.environ.get("NEWSAPI_KEY", "")
 REPO          = Path(os.environ.get("GITHUB_WORKSPACE", "."))
-MAX_ARTICULOS = 6   # Artículos por ejecución (ajusta según presupuesto API)
+MAX_ARTICULOS = 3   # Artículos por ejecución (3 × 4 veces/día = ~12 artículos/día)
 
 FUENTES_RSS = [
     # Nacionales
@@ -127,10 +127,14 @@ HdD publica análisis que:
 - Cubren: política española e internacional, economía, asuntos sociales estructurales
 - NO publican: deportes, farándula, sucesos menores, cotilleo, noticias sin análisis posible
 
+ARTÍCULOS YA PUBLICADOS (no repitas estos temas):
+{publicados}
+
 Noticias disponibles:
 {noticias}
 
 Selecciona entre {min_art} y {max_art} historias con mayor potencial para HdD.
+NO selecciones ninguna noticia cuyo tema ya esté cubierto en la lista de artículos publicados.
 Para cada una dame:
 - num: número de la historia
 - razon: por qué merece un artículo HdD (1 frase)
@@ -143,6 +147,24 @@ Responde SOLO con JSON válido, sin texto antes ni después:
 {{"selected":[{{"num":1,"razon":"...","angulo":"...","categoria":"...","subcategoria":"...","minutos":9}}]}}
 """
 
+def obtener_titulos_publicados() -> list[str]:
+    """Lee los títulos de los artículos ya publicados para evitar repetir temas."""
+    excluir = {"index","noticias","educacion","newsletter","manifiesto",
+               "aviso-legal","privacidad","cookies","articulo-ejemplo"}
+    titulos = []
+    for f in REPO.glob("*.html"):
+        if f.stem in excluir or f.stem.startswith("_"):
+            continue
+        try:
+            texto = f.read_text(encoding="utf-8")
+            m = re.search(r'<h1>(.*?)</h1>', texto, re.DOTALL)
+            if m:
+                titulos.append(BeautifulSoup(m.group(1),"lxml").get_text().strip())
+        except:
+            pass
+    return titulos[-30:]  # Solo los 30 más recientes
+
+
 def seleccionar_noticias(noticias: list[dict], cliente: anthropic.Anthropic) -> list[dict]:
     """Pide a Claude que seleccione las mejores historias para HdD."""
     texto_noticias = "\n\n".join(
@@ -151,9 +173,13 @@ def seleccionar_noticias(noticias: list[dict], cliente: anthropic.Anthropic) -> 
     )
     hoy = datetime.now().strftime("%A, %d de %B de %Y")
 
+    titulos_publicados = obtener_titulos_publicados()
+    texto_publicados = "\n".join(f"- {t}" for t in titulos_publicados) if titulos_publicados else "(ninguno aún)"
+
     prompt = SELECCION_PROMPT.format(
         hoy=hoy,
         noticias=texto_noticias,
+        publicados=texto_publicados,
         min_art=3,
         max_art=MAX_ARTICULOS,
     )
@@ -434,6 +460,20 @@ def escribir_articulo(noticia: dict, cliente: anthropic.Anthropic) -> dict | Non
             max_tokens=6000,
             messages=[{"role":"user","content":prompt}],
         )
+    except anthropic.BadRequestError as e:
+        if "credit balance is too low" in str(e):
+            print("  [Error escritura] Sin créditos. Parando ejecución.")
+            sys.exit(0)
+        print(f"  [Error escritura] BadRequestError: {e}")
+        return None
+    except anthropic.APIStatusError as e:
+        print(f"  [Error escritura] API error {e.status_code}: {e.message}")
+        return None
+    except Exception as e:
+        print(f"  [Error escritura] {e}")
+        return None
+
+    try:
         html = respuesta.content[0].text.strip()
 
         # Extraer o generar slug
@@ -517,7 +557,43 @@ def actualizar_noticias_html(articulos: list[dict]):
 
 
 # ─────────────────────────────────────────────
-# 5. GIT COMMIT + PUSH
+# 5. ACTUALIZACIÓN DE index.html (portada)
+# ─────────────────────────────────────────────
+
+def actualizar_index_html(articulos: list[dict]):
+    """Reemplaza el bloque de artículos en la portada con los más recientes."""
+    ruta = REPO / "index.html"
+    contenido = ruta.read_text(encoding="utf-8")
+
+    # Tomar solo los 3 primeros artículos para la portada
+    tarjetas = "\n\n".join(tarjeta_html(a) for a in articulos[:3])
+    bloque_nuevo = '        <div class="index-list">\n\n' + tarjetas + '\n\n        </div>'
+
+    if 'class="index-list"' in contenido:
+        # Reemplazar el bloque existente
+        contenido = re.sub(
+            r'<div class="index-list">.*?</div>(?=\s*\n\s*</div>\s*\n\s*</section>)',
+            bloque_nuevo,
+            contenido,
+            flags=re.DOTALL,
+            count=1,
+        )
+    else:
+        # Reemplazar empty-state
+        contenido = re.sub(
+            r'\s*<div class="empty-state">.*?</div>',
+            "\n" + bloque_nuevo,
+            contenido,
+            flags=re.DOTALL,
+            count=1,
+        )
+
+    ruta.write_text(contenido, encoding="utf-8")
+    print(f"[index.html] Portada actualizada con {min(len(articulos),3)} tarjetas")
+
+
+# ─────────────────────────────────────────────
+# 6. GIT COMMIT + PUSH
 # ─────────────────────────────────────────────
 
 def git_push(archivos: list[str]):
@@ -610,12 +686,15 @@ def main():
         print("\nNingún artículo generado correctamente.")
         return
 
-    # 4. Actualizar noticias.html
+    # 4. Actualizar noticias.html y index.html
     print(f"\n4. Actualizando noticias.html ({len(articulos_ok)} tarjetas)...")
     actualizar_noticias_html(articulos_ok)
+    print("   Actualizando portada (index.html)...")
+    actualizar_index_html(articulos_ok)
 
     # 5. Commit y push
     print("5. Publicando en GitHub...")
+    archivos_nuevos += ["index.html"]
     git_push(archivos_nuevos)
 
     print(f"\n{'='*50}")
