@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Los casos judiciales del entorno de Sánchez: la guía completa — HdD</title>
+  <meta name="description" content="Begoña Gómez, caso Koldo, Santos Cerdán, Leire Díez, el fiscal general condenado, el CGPJ bloqueado cinco años. Todo lo verificado, ordenado y explicado." />
+  <link rel="canonical" href="https://horadedespertar.org/corrupcion-entorno-sanchez-guia-04-2026.html" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="Hora de Despertar" />
+  <meta property="og:title"       content="Los casos judiciales del entorno de Sánchez: la guía completa — HdD" />
+  <meta property="og:description" content="Begoña Gómez, caso Koldo, Santos Cerdán, Leire Díez, el fiscal general condenado, el CGPJ bloqueado cinco años. Todo lo verificado, ordenado y explicado." />
+  <meta property="og:url"         content="https://horadedespertar.org/corrupcion-entorno-sanchez-guia-04-2026.html" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@hdedespertar" />
+  <meta name="twitter:title"       content="Los casos judiciales del entorno de Sánchez: la guía completa — HdD" />
+  <meta name="twitter:description" content="Begoña Gómez, caso Koldo, Santos Cerdán, Leire Díez. Todo verificado y ordenado." />
+
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    .edu-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (max-width: 600px) { .edu-split { grid-template-columns: 1fr; } }
+    .edu-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--surface);
+    }
+    .edu-card .edu-card-icon {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .edu-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+    .edu-card p  { font-size: 0.88rem; color: var(--ink-dim); margin: 0; line-height: 1.55; }
+    .edu-card.is-red   { border-left: 3px solid var(--red); }
+    .edu-card.is-gold  { border-left: 3px solid var(--accent); }
+    .edu-card.is-green { border-left: 3px solid #22c55e; }
+
+    .edu-steps { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+    .edu-step  { display: flex; gap: 14px; align-items: flex-start; }
+    .edu-step-num {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      font-family: var(--mono); font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .edu-step-body { flex: 1; }
+    .edu-step-body strong { display: block; font-size: 0.92rem; margin-bottom: 4px; color: var(--ink); }
+    .edu-step-body p { font-size: 0.88rem; color: var(--ink-dim); margin: 0; line-height: 1.5; }
+
+    .edu-checklist { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .edu-checklist li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--ink-dim); line-height: 1.5; }
+    .edu-checklist li::before { content: "→"; color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .edu-big-quote {
+      font-size: 1.25rem; font-weight: 600; line-height: 1.45; color: var(--ink);
+      border-left: 3px solid var(--red); padding-left: 20px; margin: 24px 0;
+    }
+
+    .edu-table {
+      width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem;
+    }
+    .edu-table th {
+      background: var(--surface); padding: 10px 14px; text-align: left;
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--ink-mute); border-bottom: 2px solid var(--line);
+    }
+    .edu-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--ink-dim); vertical-align: top; }
+    .edu-table tr:last-child td { border-bottom: none; }
+    .edu-table td:first-child { font-weight: 600; color: var(--ink); }
+    .tag-condenado  { color: var(--red); font-weight: 700; }
+    .tag-juicio     { color: #f97316; font-weight: 700; }
+    .tag-imputado   { color: var(--accent); font-weight: 700; }
+    .tag-archivado  { color: var(--ink-mute); font-weight: 700; }
+
+    .edu-highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+    .edu-highlight-box .eyebrow-small {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--red); font-family: var(--mono); display: block; margin-bottom: 8px;
+    }
+    .edu-highlight-box p { font-size: 0.9rem; color: var(--ink-dim); margin: 0; line-height: 1.6; }
+    .edu-highlight-box strong { color: var(--ink); }
+
+    .caso-header {
+      display: flex; align-items: baseline; gap: 12px;
+      border-bottom: 2px solid var(--line); padding-bottom: 10px; margin-bottom: 16px; margin-top: 32px;
+    }
+    .caso-header:first-of-type { margin-top: 20px; }
+    .caso-tag {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      font-family: var(--mono); font-weight: 700; color: var(--red);
+      background: rgba(var(--red-rgb, 220,38,38), 0.08);
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .caso-header h3 { margin: 0; font-size: 1.05rem; }
+    .caso-status {
+      margin-left: auto; font-size: 0.78rem; font-family: var(--mono);
+      font-weight: 700; white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <div class="brand-unit">
+        <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+        <span class="header-clock logo-led" data-live-clock aria-label="Hora actual">--:--</span>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="nav" id="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="manifiesto.html">Manifiesto</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="educacion.html" class="active">Educación</a>
+        <a href="newsletter.html">Semanal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="reading-mode-bar">
+      <div class="wrap bar--reading">
+        <span class="reading-mode-label">Modo de lectura</span>
+        <div class="reading-mode-btns">
+          <button class="mode-btn is-active" data-mode="slides">▣ Diapositivas</button>
+          <button class="mode-btn" data-mode="flow">≡ Texto completo</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="slides-view" id="slides-view">
+
+      <div class="slide-progress-bar" aria-hidden="true">
+        <div class="slide-progress-fill"></div>
+      </div>
+
+      <!-- ═══════════════════════════════
+           SLIDE 1 — PORTADA
+           ═══════════════════════════════ -->
+      <section class="slide slide--cover" data-slide="0" aria-label="Portada">
+        <div class="slide-inner">
+          <span class="slide-num">01 — 07</span>
+          <span class="slide-label">Política · Educación</span>
+          <h1>Los casos judiciales del entorno de Sánchez: guía completa para entender qué está pasando</h1>
+          <p class="lead">Begoña Gómez procesada por malversación. Ábalos en prisión preventiva. Santos Cerdán imputado por cobrar comisiones. Leire Díez detenida por intentar desacreditar a la UCO. El fiscal general condenado. El CGPJ bloqueado cinco años. No es un titular: es el estado judicial del entorno del gobierno español en abril de 2026. En siete diapositivas entiendes qué está probado, qué está en investigación, qué es declaración de terceros y qué preguntas siguen sin respuesta.</p>
+          <div class="slide-meta-row">
+            <span><strong>Publicado</strong> · 23 ABR 2026</span>
+            <span><strong>Lectura</strong> · 15 min</span>
+            <span><strong>Autor</strong> · Redacción HdD</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 2 — CONCEPTOS
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="1" aria-label="Cómo funciona el sistema judicial">
+        <div class="slide-inner">
+          <span class="slide-num">02 — 07</span>
+          <span class="slide-label">Antes de leer</span>
+          <h2>Cuatro conceptos que necesitas para no perderte</h2>
+
+          <p>Los casos que rodean al gobierno Sánchez generan ruido porque mezclan hechos procesales distintos. Antes de entrar en los casos, entiende estas diferencias: son la clave para saber si algo es grave o no.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">⚖️</span>
+              <h4>Imputado ≠ Condenado</h4>
+              <p>En España, estar <strong>imputado</strong> (o "investigado") significa que hay indicios suficientes para abrir una investigación formal. <strong>No implica culpabilidad</strong>. Ser <strong>procesado</strong> equivale a ser formalmente acusado. Ser <strong>condenado</strong> es la única resolución que establece culpabilidad. Muchos políticos de todos los partidos han sido imputados y finalmente absueltos. La presunción de inocencia aplica hasta la sentencia firme.</p>
+            </div>
+            <div class="edu-card is-gold">
+              <span class="edu-card-icon">🛡️</span>
+              <h4>Aforamiento: qué es y por qué importa</h4>
+              <p>Los aforados (diputados, senadores, miembros del gobierno) solo pueden ser juzgados por el Tribunal Supremo, no por un juzgado ordinario. Esto surgió para proteger a los representantes de represalias políticas mediante jueces locales, pero en la práctica ralentiza los procesos porque el Supremo tiene una carga de trabajo enorme. Cuando un político pierde su escaño, pierde el aforamiento y la causa baja a la Audiencia Nacional o a juzgados ordinarios.</p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-card-icon">🔍</span>
+              <h4>Qué es la UCO</h4>
+              <p>La <strong>Unidad Central Operativa (UCO)</strong> es la policía judicial de la Guardia Civil: los investigadores criminalísticos más especializados del cuerpo. Sus informes periciales son documentos técnicos que un juez puede valorar como prueba. No son sentencias ni acusaciones formales: son análisis de indicios. Los medios con frecuencia presentan un informe UCO como si fuera una condena. No lo es.</p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-card-icon">🏛️</span>
+              <h4>Separación de poderes: la idea y la realidad española</h4>
+              <p>La separación de poderes implica que el ejecutivo (gobierno), el legislativo (parlamento) y el judicial (jueces) funcionan de forma independiente. El problema estructural de España: el <strong>CGPJ</strong> (órgano de gobierno de los jueces) y el <strong>Tribunal Constitucional</strong> son elegidos por los partidos políticos mediante cuotas. Esto crea una tensión permanente entre independencia judicial formal y dependencia política real, independientemente de qué partido gobierne.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 3 — CASOS ECONÓMICOS
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="2" aria-label="Los casos de corrupción económica">
+        <div class="slide-inner">
+          <span class="slide-num">03 — 07</span>
+          <span class="slide-label">Los casos</span>
+          <h2>Caso Koldo, Begoña Gómez y Santos Cerdán: los tres frentes de corrupción económica</h2>
+
+          <div class="caso-header">
+            <span class="caso-tag">Caso Koldo</span>
+            <h3>Ábalos, Koldo García y las mascarillas Covid</h3>
+            <span class="caso-status tag-juicio">▶ JUICIO ORAL</span>
+          </div>
+          <p>Durante la pandemia, el Ministerio de Transportes —titular: José Luis Ábalos— adjudicó 36 millones de euros en contratos de mascarillas a una empresa del entorno del empresario Víctor de Aldama. La UCO identificó comisiones de 9,6 millones que habrían fluido desde Aldama hacia Ábalos, su asesor personal Koldo García y Santos Cerdán, entonces secretario de organización del PSOE. En febrero de 2024, la "Operación Delorme" detuvo a 20 personas. El juicio oral comenzó el 7 de abril de 2026 en el Tribunal Supremo. <strong>Ábalos y Koldo García están en prisión preventiva desde noviembre de 2025.</strong> La Fiscalía pide 24 años para Ábalos y 19,5 para Koldo. Aldama colaboró con la justicia y reconoció los hechos a cambio de rebaja de pena. Francina Armengol, presidenta del Congreso, figura como testigo.</p>
+
+          <div class="caso-header">
+            <span class="caso-tag">Caso Begoña Gómez</span>
+            <h3>La cátedra Complutense y los contratos de Red.es</h3>
+            <span class="caso-status tag-juicio">▶ PROCESADA</span>
+          </div>
+          <p>Begoña Gómez, esposa del presidente Sánchez, codirigía desde 2020 una cátedra en la Universidad Complutense. En 2021 firmó dos cartas de recomendación para la empresa del empresario Juan Carlos Barrabés en licitaciones públicas de Red.es. Barrabés obtuvo contratos por 10,6 millones de euros. El informe de la IGAE (Intervención General del Estado, mayo 2025) detectó "opacidad procedimental" y señaló que las cartas beneficiaron "injusta e ilegalmente" a Barrabés. El juez cerró la instrucción y procesó a Gómez, Barrabés y la asistente Cristina Álvarez por cuatro delitos: tráfico de influencias, corrupción en los negocios, malversación y apropiación indebida. La Fiscalía Europea abrió investigación propia por los fondos europeos implicados. <strong>Pendiente juicio oral.</strong> La acusación popular pide 24 años de cárcel.</p>
+
+          <div class="caso-header">
+            <span class="caso-tag">Caso Santos Cerdán</span>
+            <h3>Comisiones del 2% en adjudicaciones de carreteras</h3>
+            <span class="caso-status tag-imputado">◉ IMPUTADO</span>
+          </div>
+          <p>El informe UCO de junio de 2025 (490 páginas, 8 grabaciones) identificó a Santos Cerdán —que fue el "número tres" del PSOE y negociador con Junts— como presunto gestor de comisiones del 2% sobre adjudicaciones de obra pública, canalizadas a través de la empresa navarra Servinabar. La principal fuente de fondos habría sido Acciona. Cerdán habría tenido el 45% de participaciones en Servinabar. Fue a prisión preventiva cinco meses por "riesgo de destrucción de pruebas". Dimití como diputado en junio de 2025. Investgado ahora en la Audiencia Nacional.</p>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 4 — LEIRE DÍEZ Y LA UCO
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="3" aria-label="El caso Leire Díez">
+        <div class="slide-inner">
+          <span class="slide-num">04 — 07</span>
+          <span class="slide-label">El caso más grave que menos se explica</span>
+          <h2>Leire Díez: la "fontanera" del PSOE y la operación contra la UCO</h2>
+
+          <p>Leire Díez es una militante del PSOE sin cargo público conocido pero con acceso al entorno del partido. A partir de mayo de 2025 su nombre se convirtió en el centro de dos causas judiciales separadas. Es el caso que menos se ha explicado en los medios generalistas y quizás el más revelador sobre cómo funciona la "fontanería" política.</p>
+
+          <div class="edu-steps">
+            <div class="edu-step">
+              <div class="edu-step-num">1</div>
+              <div class="edu-step-body">
+                <strong>La operación de descrédito a la UCO (mayo 2025)</strong>
+                <p>El Confidencial publicó grabaciones de una videollamada de febrero de 2025 entre Díez y el empresario Alejandro Hamlyn. En ellas, Díez solicita "un papelito" —información comprometedora— sobre el teniente coronel Antonio Balas, jefe de la Unidad de Delincuencia Económica de la UCO: exactamente el oficial que dirigía las investigaciones del caso Koldo, del caso Begoña Gómez y del caso García Ortiz. El objetivo era desacreditarle para erosionar la validez de sus informes ante los tribunales. El 3 de junio de 2025, Díez solicitó darse de baja del PSOE. El 31 de julio de 2025, el Juzgado n.º 9 de Madrid la imputó formalmente por tráfico de influencias y cohecho.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <div class="edu-step-num">2</div>
+              <div class="edu-step-body">
+                <strong>La conexión con el caso del hermano (también mayo 2025)</strong>
+                <p>Las mismas grabaciones revelaron que dos activistas del PSOE habían viajado a Badajoz para recopilar información personal sobre la jueza Beatriz Biedma, que instruye el caso de David Sánchez —hermano del presidente— en la Diputación de Badajoz. El objetivo: desacreditar también a esta jueza.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <div class="edu-step-num">3</div>
+              <div class="edu-step-body">
+                <strong>La operación SEPI (diciembre 2025)</strong>
+                <p>La UCO detuvo a Leire Díez y al expresidente de la SEPI (Sociedad Estatal de Participaciones Industriales) Vicente Fernández Guerrero. Se investigan comisiones por más de 700.000 euros en cinco contratos públicos de empresas del sector público dependientes de la SEPI. El detalle más llamativo: Vicente Fernández, tras dejar la presidencia de la SEPI, aparece dado de alta en Servinabar —la misma empresa navarra investigada como canal de comisiones a Santos Cerdán—. La causa la instruye el juez Santiago Pedraz en la Audiencia Nacional.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-highlight-box">
+            <span class="eyebrow-small">Lo que distingue este caso</span>
+            <p>Los casos de corrupción económica (Koldo, Begoña Gómez, Cerdán) son casos de alguien que presuntamente se llevó dinero público. El caso Leire Díez es diferente: es un caso de alguien que presuntamente coordinó operaciones para <strong>neutralizar a los investigadores</strong> que destapaban esos otros casos. Si eso se confirma judicialmente, no es solo corrupción: es obstrucción a la justicia de forma sistemática y organizada.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 5 — SEPARACIÓN DE PODERES
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="4" aria-label="La separación de poderes">
+        <div class="slide-inner">
+          <span class="slide-num">05 — 07</span>
+          <span class="slide-label">Institucional</span>
+          <h2>Cuándo el problema no es un político corrupto sino el sistema que lo permite</h2>
+
+          <p>Más allá de los casos penales individuales, hay una serie de episodios institucionales verificados que afectan a la independencia del poder judicial. Algunos son decisiones del gobierno Sánchez; otros son herencias estructurales del bipartidismo. Distinguir ambas cosas es fundamental.</p>
+
+          <div class="caso-header">
+            <span class="caso-tag">CGPJ</span>
+            <h3>El Consejo General del Poder Judicial bloqueado 5 años</h3>
+            <span class="caso-status tag-archivado">✓ RENOVADO 2024</span>
+          </div>
+          <p>El mandato del CGPJ (órgano de gobierno de los jueces) caducó en <strong>diciembre de 2018</strong>. Estuvo sin renovar más de cinco años. Durante ese tiempo, el CGPJ no podía hacer nombramientos en puestos discrecionales del Tribunal Supremo, lo que generó una merma del 30% en su plantilla. El bloqueo fue responsabilidad compartida de PP y PSOE, que no alcanzaban acuerdo sobre los candidatos. El gobierno Sánchez aprobó en 2021 una reforma que eliminaba los poderes de nombramiento del CGPJ en funciones —medida que creaba un incentivo perverso para prolongar el bloqueo—. Tras mediación de la Comisión Europea, PSOE y PP acordaron la renovación en junio de 2024.</p>
+
+          <div class="caso-header">
+            <span class="caso-tag">Tribunal Constitucional</span>
+            <h3>La reforma del TC y el nombramiento de Campo y Díez Bueso</h3>
+            <span class="caso-status tag-archivado">Hecho consumado</span>
+          </div>
+          <p>En diciembre de 2022, el gobierno nombró al TC a <strong>Juan Carlos Campo</strong> (exministro de Justicia del mismo gobierno Sánchez) y a <strong>Laura Díez Bueso</strong> (ex directora general del Ministerio de Presidencia del mismo gobierno). Los nombramientos fueron legales. La nueva mayoría progresista eligió como presidente del TC a <strong>Cándido Conde-Pumpido</strong>, que había sido Fiscal General del Estado bajo Zapatero. En enero de 2023, el TC —con esa nueva mayoría— suspendió cautelarmente una norma del Senado aprobada por el PP, algo inédito. El debate no es si fue legal: fue legal. El debate es si es conveniente para la credibilidad institucional que el órgano que controla la constitucionalidad de las leyes tenga como presidente a alguien con trayectoria política directamente ligada al partido en el gobierno.</p>
+
+          <div class="caso-header">
+            <span class="caso-tag">Fiscal General</span>
+            <h3>Álvaro García Ortiz: el fiscal general condenado por el Tribunal Supremo</h3>
+            <span class="caso-status tag-condenado">◆ CONDENADO</span>
+          </div>
+          <p>En marzo de 2024 se publicó información reservada del expediente fiscal de Alberto González Amador (pareja de Isabel Díaz Ayuso), incluyendo un correo de su abogado reconociendo los hechos. Era un documento con protección de datos reservados. El Tribunal Supremo abrió causa penal contra el Fiscal General del Estado, Álvaro García Ortiz —primera vez en la democracia española—. En diciembre de 2025, el Supremo le <strong>condenó</strong> por revelación de datos reservados: multa e inhabilitación de dos años para el cargo. García Ortiz <strong>no dimitió</strong>. El gobierno Sánchez <strong>no le destituyó</strong>. Continúa en el cargo.</p>
+
+          <div class="edu-highlight-box">
+            <span class="eyebrow-small">El problema estructural que nadie quiere tocar</span>
+            <p>El CGPJ se elige por cuotas entre PSOE y PP desde la reforma de 1985. El TC se elige por los partidos. El Fiscal General lo nombra el gobierno. Este diseño no lo inventó Sánchez: lleva décadas funcionando así. Pero eso no exime a ningún gobierno de usarlo con contención. <strong>La pregunta relevante no es solo si es legal: es si es conveniente para la separación real de poderes.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 6 — TABLA RESUMEN
+           ═══════════════════════════════ -->
+      <section class="slide slide--analysis" data-slide="5" aria-label="Estado de todos los casos">
+        <div class="slide-inner">
+          <span class="slide-num">06 — 07</span>
+          <span class="slide-label">El mapa completo</span>
+          <h2>Estado procesal de cada caso a 23 de abril de 2026</h2>
+
+          <table class="edu-table">
+            <thead>
+              <tr>
+                <th>Persona</th>
+                <th>Caso</th>
+                <th>Cargo / rol</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>José Luis Ábalos</td>
+                <td>Caso Koldo (mascarillas)</td>
+                <td>Exministro de Transportes</td>
+                <td><span class="tag-juicio">Juicio oral (TS) · Prisión preventiva</span></td>
+              </tr>
+              <tr>
+                <td>Koldo García Izaguirre</td>
+                <td>Caso Koldo</td>
+                <td>Exasesor personal de Ábalos</td>
+                <td><span class="tag-juicio">Juicio oral (TS) · Prisión preventiva</span></td>
+              </tr>
+              <tr>
+                <td>Víctor de Aldama</td>
+                <td>Caso Koldo</td>
+                <td>Empresario, "nexo corruptor"</td>
+                <td><span class="tag-juicio">Juicio oral · Colaborador, libertad provisional</span></td>
+              </tr>
+              <tr>
+                <td>Begoña Gómez</td>
+                <td>Caso Begoña Gómez</td>
+                <td>Esposa del presidente</td>
+                <td><span class="tag-juicio">Procesada · Pendiente juicio oral</span></td>
+              </tr>
+              <tr>
+                <td>Juan Carlos Barrabés</td>
+                <td>Caso Begoña Gómez</td>
+                <td>Empresario, colaborador de la cátedra</td>
+                <td><span class="tag-juicio">Procesado · Pendiente juicio oral</span></td>
+              </tr>
+              <tr>
+                <td>Santos Cerdán</td>
+                <td>Causa derivada caso Koldo</td>
+                <td>Exsecretario de Organización PSOE</td>
+                <td><span class="tag-imputado">Imputado (AN) · Libertad provisional</span></td>
+              </tr>
+              <tr>
+                <td>Leire Díez</td>
+                <td>Caso Leire Díez (A) — descrédito UCO</td>
+                <td>Militante PSOE, "fontanera"</td>
+                <td><span class="tag-imputado">Imputada (Juzgado 9 Madrid) · Libertad</span></td>
+              </tr>
+              <tr>
+                <td>Leire Díez</td>
+                <td>Caso Leire Díez (B) — contratos SEPI</td>
+                <td>Idem</td>
+                <td><span class="tag-imputado">Imputada (AN) · Libertad provisional</span></td>
+              </tr>
+              <tr>
+                <td>Vicente Fernández Guerrero</td>
+                <td>Caso Leire Díez (B) — SEPI</td>
+                <td>Expresidente de la SEPI</td>
+                <td><span class="tag-imputado">Imputado (AN) · Libertad provisional</span></td>
+              </tr>
+              <tr>
+                <td>Álvaro García Ortiz</td>
+                <td>Revelación de secretos (Ayuso)</td>
+                <td>Fiscal General del Estado</td>
+                <td><span class="tag-condenado">Condenado (TS) · Inhabilitado 2 años · Sin dimitir</span></td>
+              </tr>
+              <tr>
+                <td>David Sánchez</td>
+                <td>Caso David Sánchez (Diputación Badajoz)</td>
+                <td>Hermano del presidente</td>
+                <td><span class="tag-imputado">Imputado (Juzgado Badajoz) · Instrucción en curso</span></td>
+              </tr>
+              <tr>
+                <td>Miguel Ángel Gallardo</td>
+                <td>Caso David Sánchez</td>
+                <td>Expresidente Diputación Badajoz / líder PSOE Extremadura</td>
+                <td><span class="tag-imputado">Imputado (Juzgado Badajoz)</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="edu-big-quote" style="margin-top: 32px;">
+            Un condenado, cuatro en juicio oral, seis imputados. Ninguno vinculado directamente a Pedro Sánchez por resolución judicial firme, a fecha de hoy.
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--ink-dim); margin-top: 16px;">Nota: "imputado" significa investigado formal, no culpable. "Procesado" equivale a acusado formal. Solo "condenado" establece culpabilidad. La presunción de inocencia aplica en todos los casos marcados como imputados o procesados.</p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 7 — ANÁLISIS Y CIERRE
+           ═══════════════════════════════ -->
+      <section class="slide slide--analysis" data-slide="6" aria-label="Cómo leer estos casos">
+        <div class="slide-inner">
+          <span class="slide-num">07 — 07</span>
+          <span class="slide-label">Cómo leer esto</span>
+          <h2>Qué está probado, qué está acusado y qué preguntas siguen abiertas</h2>
+
+          <div class="edu-split">
+            <div class="edu-card is-green">
+              <span class="edu-card-icon">✓</span>
+              <h4>Hechos verificados (documentos oficiales)</h4>
+              <p>Ábalos y Koldo en juicio oral con prisión preventiva. Begoña Gómez procesada. Aldama reconoció cobrar 6,6 millones en comisiones. El informe IGAE detectó irregularidades en los contratos de Red.es. El fiscal general fue condenado por el Tribunal Supremo. La cátedra Complutense firmó cartas de recomendación para una empresa que luego obtuvo contratos públicos. Las grabaciones de Koldo existen y fueron valoradas por el Supremo como prueba.</p>
+            </div>
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">⚠️</span>
+              <h4>Pendiente de prueba judicial</h4>
+              <p>Que Pedro Sánchez conocía directamente la trama de comisiones (no hay resolución judicial sobre este punto). Las acusaciones de Aldama contra la ministra Montero (declaraciones de coimputado sin corroboración documental pública). Que el presidente o su gabinete directamente coordinaron la operación de descrédito a la UCO (en investigación).</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 32px;">Preguntas que quedan abiertas</h3>
+          <ul class="edu-checklist">
+            <li>¿Qué sabía exactamente Pedro Sánchez y cuándo? La instrucción no ha llegado a él como investigado, pero varios de sus círculos más cercanos sí están procesados.</li>
+            <li>¿Quién ordenó —si alguien lo ordenó— la operación de descrédito a la UCO? Las grabaciones apuntan a Leire Díez, pero la instrucción evalúa si hubo una cadena de mando superior.</li>
+            <li>¿Por qué el gobierno no destituyó al fiscal general tras su condena por el Tribunal Supremo? La decisión de mantenerle en el cargo no tiene explicación pública oficial más allá del silencio.</li>
+            <li>¿Cuándo se juzga a Begoña Gómez? El juicio oral aún no tiene fecha. La acusación popular pide 24 años; la Fiscalía, significativamente menos.</li>
+            <li>¿Qué hay dentro del sobre que aportó Aldama al juez con documentación sobre "financiación irregular del PSOE"? Su contenido no ha sido publicado.</li>
+          </ul>
+
+          <div class="didactic-box" style="border-left-color: var(--accent); margin-top: 40px;">
+            <span class="eyebrow" style="color: var(--accent);">Nota metodológica</span>
+            <h4>Cómo hemos verificado este artículo</h4>
+            <p>Fuentes primarias: autos judiciales del Tribunal Supremo (caso Koldo, caso García Ortiz), resolución CGPJ, comunicados del Poder Judicial (poderjudicial.es), informe IGAE mayo 2025, BOE (Ley de Amnistía). Fuentes de verificación independiente: Newtral.es, Maldita.es. Fuentes periodísticas: El Confidencial (grabaciones Leire Díez), El Independiente, Infobae España, El Diario. Todas las declaraciones atribuidas a terceros (especialmente las de Aldama sobre otros políticos) se identifican expresamente como declaraciones de parte no corroboradas. Las motivaciones son incentivos observables, no intenciones confirmadas. Errores: <a href="mailto:redaccion@horadedespertar.org" style="color: var(--red);">redaccion@horadedespertar.org</a></p>
+          </div>
+
+          <a href="educacion.html" class="back-link">← Volver a Educación</a>
+        </div>
+      </section>
+
+      <nav class="slide-nav" aria-label="Navegación de diapositivas">
+        <button class="slide-nav__btn slide-nav__btn--prev" aria-label="Diapositiva anterior" disabled>←</button>
+        <div class="slide-dots" role="tablist" aria-label="Diapositivas"></div>
+        <button class="slide-nav__btn slide-nav__btn--next" aria-label="Siguiente diapositiva">→</button>
+        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/7</span>
+      </nav>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+          <p class="tagline">Hora de Despertar. Periodismo didáctico para una sociedad que quiere pensar por sí misma.</p>
+        </div>
+        <div>
+          <h5>Secciones</h5>
+          <ul>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="educacion.html">Educación</a></li>
+            <li><a href="newsletter.html">Semanal</a></li>
+            <li><a href="manifiesto.html">Manifiesto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Redacción</h5>
+          <ul>
+            <li><a href="manifiesto.html#metodo">Método</a></li>
+            <li><a href="manifiesto.html#correcciones">Correcciones</a></li>
+            <li><a href="manifiesto.html#contacto">Contacto</a></li>
+            <li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>© 2026 Hora de Despertar</span>
+        <span>Hecho con rigor. Leído con criterio.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
