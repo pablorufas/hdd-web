@@ -1,0 +1,51 @@
+name: HdD — Publicación automática
+
+on:
+  schedule:
+    # Horarios en UTC (España = UTC+2 en verano, UTC+1 en invierno)
+    # Ajustados para horario de verano (CEST = UTC+2):
+    - cron: '1 5 * * *'    # 07:01 España
+    - cron: '1 13 * * *'   # 15:01 España
+    - cron: '1 17 * * *'   # 19:01 España
+    - cron: '1 20 * * *'   # 22:01 España
+  workflow_dispatch:       # También permite lanzarlo manualmente desde GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install -r scripts/requirements.txt
+
+      - name: Configurar Git
+        run: |
+          git config user.email "bot@horadedespertar.org"
+          git config user.name "HdD Bot"
+
+      - name: Ejecutar publicador automático
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+        run: python scripts/auto_publish.py
+
+      - name: Verificar resultado
+        run: |
+          echo "Artículos generados en esta ejecución:"
+          git log --oneline -5
