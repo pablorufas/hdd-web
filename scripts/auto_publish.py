@@ -160,7 +160,7 @@ def seleccionar_noticias(noticias: list[dict], cliente: anthropic.Anthropic) -> 
 
     try:
         respuesta = cliente.messages.create(
-            model="claude-opus-4-5",
+            model="claude-3-5-haiku-20241022",
             max_tokens=1200,
             messages=[{"role":"user","content":prompt}],
         )
@@ -430,7 +430,7 @@ def escribir_articulo(noticia: dict, cliente: anthropic.Anthropic) -> dict | Non
 
     try:
         respuesta = cliente.messages.create(
-            model="claude-opus-4-5",
+            model="claude-3-5-haiku-20241022",
             max_tokens=6000,
             messages=[{"role":"user","content":prompt}],
         )
