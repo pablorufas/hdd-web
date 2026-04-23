@@ -5,7 +5,7 @@ Busca noticias, selecciona las mejores, escribe artículos con Claude y publica.
 Corre 4 veces al día via GitHub Actions.
 """
 
-import os, re, json, subprocess, textwrap, time
+import os, re, json, subprocess, textwrap, time, sys
 from datetime import date, datetime
 from pathlib import Path
 import requests
@@ -158,11 +158,23 @@ def seleccionar_noticias(noticias: list[dict], cliente: anthropic.Anthropic) -> 
         max_art=MAX_ARTICULOS,
     )
 
-    respuesta = cliente.messages.create(
-        model="claude-opus-4-5",
-        max_tokens=1200,
-        messages=[{"role":"user","content":prompt}],
-    )
+    try:
+        respuesta = cliente.messages.create(
+            model="claude-opus-4-5",
+            max_tokens=1200,
+            messages=[{"role":"user","content":prompt}],
+        )
+    except anthropic.BadRequestError as e:
+        if "credit balance is too low" in str(e):
+            print("[Selección] Sin créditos en la cuenta Anthropic. Añade créditos en console.anthropic.com/settings/billing")
+            sys.exit(0)
+        raise
+    except anthropic.AuthenticationError:
+        print("[Selección] ANTHROPIC_API_KEY inválida o expirada.")
+        sys.exit(1)
+    except anthropic.APIStatusError as e:
+        print(f"[Selección] Error de API Anthropic ({e.status_code}): {e.message}")
+        sys.exit(1)
 
     try:
         data = json.loads(respuesta.content[0].text)
