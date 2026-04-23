@@ -5,8 +5,13 @@ on:
     # Horarios en UTC (España = UTC+2 en verano, UTC+1 en invierno)
     # Ajustados para horario de verano (CEST = UTC+2):
     - cron: '1 5 * * *'    # 07:01 España
+    - cron: '1 7 * * *'    # 09:01 España
+    - cron: '1 9 * * *'    # 11:01 España
+    - cron: '1 11 * * *'   # 13:01 España
     - cron: '1 13 * * *'   # 15:01 España
+    - cron: '1 15 * * *'   # 17:01 España
     - cron: '1 17 * * *'   # 19:01 España
+    - cron: '1 19 * * *'   # 21:01 España
     - cron: '1 20 * * *'   # 22:01 España
   workflow_dispatch:       # También permite lanzarlo manualmente desde GitHub
 
