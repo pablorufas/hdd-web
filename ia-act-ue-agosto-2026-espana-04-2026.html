@@ -186,15 +186,11 @@
         </div>
       </section>
 
-      <nav class="slide-nav" aria-label="Navegación de diapositivas">
+            <nav class="slide-nav" aria-label="Navegación de diapositivas">
         <button class="slide-nav__btn slide-nav__btn--prev" aria-label="Diapositiva anterior" disabled>←</button>
-        <div class="slide-nav__dots" aria-hidden="true">
-          <span class="dot is-active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-        <button class="slide-nav__btn slide-nav__btn--next" aria-label="Diapositiva siguiente">→</button>
+        <div class="slide-dots" role="tablist" aria-label="Diapositivas"></div>
+        <button class="slide-nav__btn slide-nav__btn--next" aria-label="Siguiente diapositiva">→</button>
+        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/4</span>
       </nav>
 
     </div><!-- /slides-view -->
