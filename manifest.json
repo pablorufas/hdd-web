@@ -1,0 +1,39 @@
+{
+  "name": "Hora de Despertar",
+  "short_name": "HdD",
+  "description": "Periodismo didáctico. Explicamos las noticias, su contexto y todas las motivaciones posibles.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "es",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Noticias",
+      "url": "/noticias.html",
+      "description": "Últimos análisis"
+    },
+    {
+      "name": "Semanal",
+      "url": "/newsletter.html",
+      "description": "Tema de la semana"
+    }
+  ],
+  "categories": ["news", "education"]
+}
