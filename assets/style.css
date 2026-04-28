@@ -812,6 +812,8 @@ section.block {
 
 /* --- Nav móvil responsive --- */
 @media (max-width: 820px) {
+  .logo-sm .logo-led { font-size: 1.75rem; }
+  .brand-unit { margin-left: 6px; }
   .nav { display: none; }
   .nav.open {
     display: flex;

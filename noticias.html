@@ -42,13 +42,28 @@
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
   <style>
     .day-sep {
-      height: 2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 14px 0;
       border: none;
-      margin: 10px 0;
-      border-radius: 1px;
     }
-    .day-sep--1 { background: var(--red); }
-    .day-sep--2 { background: var(--accent); }
+    .day-sep::before,
+    .day-sep::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--red);
+      opacity: 0.55;
+    }
+    .day-sep span {
+      font-family: var(--led);
+      font-size: 0.62rem;
+      color: var(--red);
+      text-shadow: 0 0 5px var(--red-glow);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
   </style>
   <!-- OneSignal Push Notifications -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
@@ -167,8 +182,6 @@
             <span style="color: var(--ink-mute); font-size: 0.78rem;">7 min →</span>
           </a>
 
-          <hr class="day-sep day-sep--1" role="separator" />
-
           <a href="violencia-genero-datos-2025-sistema-proteccion-04-2026.html" class="index-item">
             <span class="date">28·04·26</span>
             <div>
@@ -219,7 +232,7 @@
             <span style="color: var(--ink-mute); font-size: 0.78rem;">10 min →</span>
           </a>
 
-          <hr class="day-sep day-sep--2" role="separator" />
+          <div class="day-sep" role="separator"><span>HdD</span></div>
 
           <a href="decreto-alquileres-congreso-28-abril-2026.html" class="index-item">
             <span class="date">27·04·26</span>
@@ -291,8 +304,6 @@
             <span style="color: var(--ink-mute); font-size: 0.78rem;">9 min →</span>
           </a>
 
-          <hr class="day-sep day-sep--2" role="separator" />
-
           <a href="huelga-medicos-estatuto-marco-04-2026.html" class="index-item">
             <span class="date">27·04·26</span>
             <div>
@@ -363,7 +374,7 @@
             <span style="color: var(--ink-mute); font-size: 0.78rem;">9 min →</span>
           </a>
 
-          <hr class="day-sep day-sep--2" role="separator" />
+          <div class="day-sep" role="separator"><span>HdD</span></div>
 
           <a href="otan-espana-iran-pentagono-04-2026.html" class="index-item">
             <span class="date">25·04·26</span>
@@ -415,7 +426,7 @@
             <span style="color: var(--ink-mute); font-size: 0.78rem;">9 min →</span>
           </a>
 
-          <hr class="day-sep day-sep--2" role="separator" />
+          <div class="day-sep" role="separator"><span>HdD</span></div>
 
           <a href="junts-crisis-gobernabilidad-04-2026.html" class="index-item">
             <span class="date">24·04·26</span>
@@ -467,7 +478,7 @@
             <span style="color: var(--ink-mute); font-size: 0.78rem;">10 min →</span>
           </a>
 
-          <hr class="day-sep day-sep--1" role="separator" />
+          <div class="day-sep" role="separator"><span>HdD</span></div>
 
           <a href="caso-abalos-mascarillas-supremo-04-2026.html" class="index-item">
             <span class="date">23·04·26</span>
