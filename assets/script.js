@@ -78,15 +78,17 @@
     var isAnimating   = false;
 
     /* Construir dots */
-    slides.forEach(function (_, i) {
-      var dot = document.createElement("button");
-      dot.className = "slide-dot" + (i === 0 ? " is-active" : "");
-      dot.setAttribute("aria-label", "Ir a diapositiva " + (i + 1));
-      dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
-      dot.addEventListener("click", function () { goTo(i); });
-      dotsWrap.appendChild(dot);
-    });
+    if (dotsWrap) {
+      slides.forEach(function (_, i) {
+        var dot = document.createElement("button");
+        dot.className = "slide-dot" + (i === 0 ? " is-active" : "");
+        dot.setAttribute("aria-label", "Ir a diapositiva " + (i + 1));
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+        dot.addEventListener("click", function () { goTo(i); });
+        dotsWrap.appendChild(dot);
+      });
+    }
 
     function goTo(index) {
       if (index === current || isAnimating) return;
@@ -105,7 +107,7 @@
       if (progressFill) progressFill.style.width = ((current + 1) / total * 100) + "%";
       if (counter)      counter.textContent = (current + 1) + "/" + total;
 
-      dotsWrap.querySelectorAll(".slide-dot").forEach(function (d, i) {
+      if (dotsWrap) dotsWrap.querySelectorAll(".slide-dot").forEach(function (d, i) {
         d.classList.toggle("is-active", i === current);
         d.setAttribute("aria-selected", i === current ? "true" : "false");
       });
