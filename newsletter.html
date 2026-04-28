@@ -40,6 +40,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="HdD" />
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
+  <!-- OneSignal Push Notifications -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      await OneSignal.init({
+        appId: "26a69bec-30c7-4e90-a6b7-24ffab2e5e90",
+      });
+    });
+  </script>
 </head>
 <body>
 
