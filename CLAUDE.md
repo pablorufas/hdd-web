@@ -172,6 +172,39 @@ Conectado en: GitHub → Settings → Pages → Custom domain
 
 ---
 
+## Validación antes de publicar
+
+**Siempre correr antes de `git push`:**
+```bash
+python3 check.py
+```
+
+`check.py` detecta automáticamente:
+- og:image, twitter:image, canonical, meta description ausentes
+- favicon faltante en cualquier página
+- Google Analytics, PWA manifest, OneSignal ausentes
+- JSON-LD NewsArticle o BreadcrumbList ausentes
+- Tokens EDITAR sin reemplazar
+- Nota metodológica ausente
+- `back-link` ausente
+- "Lee también" ausente o colocado DESPUÉS de la nota metodológica (bug conocido)
+- "Lee también" fuera del slides-view (otro bug conocido)
+- Artículo no añadido a noticias.html
+
+Artículos especiales (semanal, guías) con más de 4 slides están en `SPECIAL_ARTICLES` dentro de `check.py`.
+
+---
+
+## Reglas críticas de estructura
+
+- `slide-num` (ej. `01 — 04`) indica posición de slide, **NO es una fecha**
+- La fecha real del artículo está en `slide-meta-row` y en `noticias.html`
+- "Lee también" va DENTRO del slide--analysis, ANTES de la nota metodológica
+- La sección "Lee también" nunca debe quedar fuera de `</div><!-- /slides-view -->`
+- Fechas en "Lee también" se extraen de `noticias.html`, no del HTML del artículo enlazado
+
+---
+
 ## Comandos frecuentes
 
 ```bash
