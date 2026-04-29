@@ -95,7 +95,7 @@ git commit -m "Publicar: Titular del artículo"
 git push origin main
 ```
 
-Netlify detecta el push y despliega automáticamente en ~30 segundos.
+GitHub Pages despliega automáticamente en ~1-3 minutos.
 La URL pública quedará en `https://horadedespertar.org/nombre-del-articulo.html`.
 
 ---
@@ -137,24 +137,27 @@ Clases de slide:
 
 ---
 
-## Sistema de deploy (GitHub + Netlify)
+## Sistema de deploy (GitHub Pages + dominio propio)
 
 El flujo de trabajo es:
 1. Claude edita archivos localmente
 2. `git add + git commit + git push origin main`
-3. Netlify detecta el push y despliega en ~30s automáticamente
+3. GitHub Pages despliega automáticamente en ~1-3 minutos
 
-**Repositorio GitHub**: `https://github.com/[usuario]/hdd-web` (configurar una vez)
-**URL de producción**: `https://horadedespertar.org` (dominio propio)
-**URL de Netlify**: `https://[nombre].netlify.app` (URL de respaldo)
+**Repositorio GitHub**: `https://github.com/pablorufas/hdd-web`
+**URL de producción**: `https://horadedespertar.org` (dominio propio conectado a GitHub Pages)
+
+**SSH push (puerto 443, para redes restringidas)**:
+```bash
+GIT_SSH_COMMAND="ssh -p 443 -o Hostname=ssh.github.com" git push origin main
+```
 
 ---
 
 ## Dominio
 
 Dominio: `horadedespertar.org`
-Registrar en: Porkbun (porkbun.com) o Namecheap (~12€/año)
-Conectar en: Netlify → Site settings → Domain management → Add custom domain
+Conectado en: GitHub → Settings → Pages → Custom domain
 
 ---
 
