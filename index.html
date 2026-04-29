@@ -78,6 +78,29 @@
     <!-- HERO -->
     <section class="hero wrap">
       <div class="hero-frame">
+        <div id="dedicatoria" style="display:none; text-align:center; margin-bottom:18px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
+          </div>
+          <p style="font-size:0.72rem; color:var(--ink-mute); letter-spacing:0.04em; line-height:1.5; margin:0;">Los informativos de hoy van dedicados con mucho cariño a dos grandes personas:<br><strong style="color:var(--ink); font-weight:500;">Oscar Peña y Asier Sobera.</strong></p>
+          <div style="display:flex; align-items:center; gap:10px; margin-top:10px;">
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
+          </div>
+        </div>
+        <script>
+          (function(){
+            var KEY = 'hdd_dedica_shown';
+            var TTL = 24 * 60 * 60 * 1000;
+            var stored = localStorage.getItem(KEY);
+            var now = Date.now();
+            if (!stored) { localStorage.setItem(KEY, now); stored = now; }
+            if (now - Number(stored) < TTL) {
+              document.getElementById('dedicatoria').style.display = 'block';
+            }
+          })();
+        </script>
         <span class="hero-top-label">son las</span>
         <div class="hero-clock-huge">
           <span class="logo-led" data-live-clock aria-label="Hora actual">--:--</span>
