@@ -207,6 +207,51 @@ Conectado en: GitHub → Settings → Pages → Custom domain
 
 ---
 
+## Longitud y profundidad de los artículos
+
+Los artículos de HdD son **largos y explicativos por diseño**. El objetivo es que el lector salga sabiendo más de lo que entró — no solo informado, sino con criterio formado.
+
+### Slide 1 — Portada
+- Titular: directo, sin clickbait, máximo 15 palabras
+- Lead: 2-3 frases que cuenten QUÉ pasó y QUÉ aprenderá el lector
+
+### Slide 2 — Conceptos
+- Mínimo **2 cajas didácticas, ideal 3**
+- Cada caja: define un término técnico como si el lector tiene 16 años y ganas de aprender
+- Estructura de cada caja: (1) qué es, (2) cómo funciona, (3) por qué importa para esta noticia
+- No uses el término que defines para definirlo
+
+### Slide 3 — Desarrollo
+**Los hechos** (mínimo 3 párrafos):
+- Dato + fuente en cada párrafo
+- Cifras exactas, nombres completos, fechas precisas
+- Sin adjetivos vacíos ("importante", "significativo") — los datos hablan solos
+
+**El contexto** (2-4 párrafos):
+- La línea de tiempo que el lector necesita
+- Marco legal, económico o político relevante
+- Por qué ocurre AHORA y no antes
+
+**Las motivaciones posibles** (mínimo 3 actores):
+- Para cada actor: qué gana y qué pierde en cada escenario, 2-3 frases
+- Siempre hay un tercer actor (ciudadanos, mercados, otro Estado, la oposición...)
+- Distingue "tiene incentivo para X" de "quiere X" — nunca atribuyas intenciones
+
+### Slide 4 — Análisis
+**Cómo lo han contado otros medios** (2-3 párrafos):
+- Nombra medios concretos
+- Identifica qué marco narrativo usan y qué omiten
+- Diferencia entre cobertura nacional e internacional si la hay
+
+**Lo que queda abierto** (mínimo 4 puntos):
+- Preguntas concretas y verificables, no retóricas
+- El lector debe poder buscar la respuesta él mismo
+- Al menos uno debe marcar el hilo para un artículo futuro de HdD
+
+**La pregunta**: la más incómoda, sin respuesta fácil, sin moralismo
+
+---
+
 ## Validación antes de publicar
 
 **Siempre correr antes de `git push`:**
