@@ -54,6 +54,54 @@
       });
     });
   </script>
+  <!-- Structured Data: Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hora de Despertar",
+    "alternateName": "HdD",
+    "url": "https://horadedespertar.org/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://horadedespertar.org/assets/icons/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "Periodismo didáctico. Explicamos las noticias, su contexto y todas las motivaciones posibles detrás de cada acción. Para una sociedad que quiere pensar por sí misma.",
+    "foundingDate": "2026",
+    "inLanguage": "es",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "redaccion@horadedespertar.org",
+      "contactType": "editorial"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Hora de Despertar",
+    "alternateName": "HdD",
+    "url": "https://horadedespertar.org/",
+    "description": "Periodismo didáctico. Explicamos las noticias, su contexto y todas las motivaciones posibles detrás de cada acción.",
+    "inLanguage": "es",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hora de Despertar",
+      "url": "https://horadedespertar.org/"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://horadedespertar.org/noticias.html?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
 
