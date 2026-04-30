@@ -8,6 +8,7 @@
   <title>Noticias — HdD</title>
   <meta name="description" content="Análisis de actualidad explicado capa a capa: hechos verificables, contexto, motivaciones plausibles y qué queda abierto." />
   <link rel="canonical" href="https://horadedespertar.org/noticias.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -15,6 +16,9 @@
   <meta property="og:title" content="Noticias — HdD" />
   <meta property="og:description" content="Análisis de actualidad explicado capa a capa: hechos verificables, contexto, motivaciones plausibles y qué queda abierto." />
   <meta property="og:url" content="https://horadedespertar.org/noticias.html" />
+  <meta property="og:image" content="https://horadedespertar.org/assets/icons/icon-512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
@@ -76,6 +80,36 @@
         appId: "26a69bec-30c7-4e90-a6b7-24ffab2e5e90",
       });
     });
+  </script>
+
+  <!-- Structured Data: CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Noticias — Hora de Despertar",
+    "description": "Análisis de actualidad explicado capa a capa: hechos verificables, contexto, motivaciones plausibles y qué queda abierto.",
+    "url": "https://horadedespertar.org/noticias.html",
+    "inLanguage": "es",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hora de Despertar",
+      "url": "https://horadedespertar.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://horadedespertar.org/assets/icons/icon-512.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://horadedespertar.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Noticias", "item": "https://horadedespertar.org/noticias.html" }
+      ]
+    }
+  }
   </script>
 </head>
 <body>
