@@ -45,8 +45,6 @@ for f in ARTICLES:
     # 1. Meta tags obligatorios
     if 'og:image' not in html:
         E.append("Falta og:image")
-    elif '/assets/img/' not in html and 'icon-512.png' in html:
-        W.append("og:image usa icon-512.png — usa una imagen de /assets/img/ por categoría")
     if 'twitter:image' not in html:
         E.append("Falta twitter:image")
     if 'rel="canonical"' not in html:
@@ -84,10 +82,6 @@ for f in ARTICLES:
     # 7. back-link presente
     if 'class="back-link"' not in html:
         W.append("Falta back-link '← Todas las noticias'")
-
-    # 7b. cover-hero (imagen de portada) presente en slide--cover
-    if 'cover-hero' not in html:
-        W.append("Falta figure.cover-hero en slide--cover — añade imagen de portada")
 
     # 8. Lee también presente y ANTES de nota metodológica
     pos_lee  = html.find('Lee también')

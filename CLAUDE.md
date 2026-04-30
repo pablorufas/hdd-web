@@ -52,46 +52,12 @@ Rellena las 4 diapositivas siguiendo la estructura obligatoria:
 **Regla crítica sobre motivaciones**: No atribuir intenciones ocultas como hechos.
 Solo exponer incentivos observables, distinguidos claramente de los hechos confirmados.
 
-### 1b. Imagen de portada (obligatoria)
-
-Cada artículo necesita una imagen de categoría de `assets/img/`. Categorías disponibles:
-
-| Categoría | Archivo | Usar para |
-|-----------|---------|-----------|
-| politica | politica.jpg | política española, partidos, elecciones |
-| economia | economia.jpg | macroeconomía, BCE, finanzas |
-| trabajo | trabajo.jpg | empleo, EREs, empresas |
-| vivienda | vivienda.jpg | alquiler, hipotecas, urbanismo |
-| iran | iran.jpg | Irán, sanciones, Ormuz, petróleo |
-| ucrania | ucrania.jpg | Ucrania, Rusia, Putin, tregua |
-| israel | israel.jpg | Israel, Gaza, Cisjordania, Líbano |
-| defensa | defensa.jpg | OTAN, ejército, armamento |
-| energia | energia.jpg | electricidad, renovables, apagón |
-| social | social.jpg | sanidad, educación, inmigración |
-| trump | trump.jpg | Trump, Casa Blanca, EEUU, aranceles |
-| general | general.jpg | cualquier tema sin categoría clara |
-
-En el artículo HTML, sustituye `{categoria}` por el nombre correcto en:
-- `og:image` y `twitter:image` (en `<head>`)
-- `<figure class="cover-hero">` (dentro de `slide--cover`, antes de `<div class="slide-inner">`)
-
-**Si necesitas una imagen nueva** (tema muy específico no cubierto):
-```bash
-# 1. Busca en unsplash.com, copia el ID de foto de la URL (/photos/XXXX)
-# 2. Descarga con fuerza:
-curl -L "https://unsplash.com/photos/ID/download?force=true" -o assets/img/nueva.jpg
-# 3. Optimiza a max 1200px:
-sips -Z 1200 assets/img/nueva.jpg
-# 4. Añade la nueva categoría a la tabla de arriba
-```
-
 ### 2. Añadir la tarjeta en noticias.html
 
-Busca el `<div class="index-list">` y añade al principio (más reciente primero).
-**La tarjeta SIEMPRE lleva imagen** (`has-image` + `card-thumb`):
+Busca el `<div class="index-list">` y añade al principio (más reciente primero):
 
 ```html
-<a href="nombre-del-articulo.html" class="index-item has-image">
+<a href="nombre-del-articulo.html" class="index-item">
   <span class="date">DD·MM·AA</span>
   <div>
     <span class="cat">Categoría</span>
@@ -99,7 +65,6 @@ Busca el `<div class="index-list">` y añade al principio (más reciente primero
     <p class="summary">Resumen en 1-2 frases.</p>
   </div>
   <span style="color: var(--ink-mute); font-size: 0.78rem;">X min →</span>
-  <img class="card-thumb" src="/assets/img/{categoria}.jpg" alt="" loading="lazy">
 </a>
 ```
 
@@ -269,8 +234,6 @@ python3 check.py
 - `back-link` ausente
 - "Lee también" ausente o colocado DESPUÉS de la nota metodológica (bug conocido)
 - "Lee también" fuera del slides-view (otro bug conocido)
-- `cover-hero` ausente en slide--cover (sin imagen de portada)
-- `og:image` usando icon-512.png en lugar de imagen de categoría
 - Artículo no añadido a noticias.html
 
 Artículos especiales (semanal, guías) con más de 4 slides están en `SPECIAL_ARTICLES` dentro de `check.py`.

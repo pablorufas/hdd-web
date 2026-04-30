@@ -392,29 +392,9 @@ section.block {
   align-items: center;
   transition: all 0.2s ease;
 }
-.index-item.has-image {
-  grid-template-columns: 120px 80px 1fr auto;
-  align-items: center;
-  gap: 20px;
-}
 .index-item:last-child { border-bottom: 1px solid var(--line); }
 .index-item:hover { padding-left: 6px; }
 .index-item:hover h3 { color: var(--red); }
-
-/* Thumbnail en cards con imagen */
-.card-thumb {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 2px;
-  display: block;
-  filter: brightness(0.88);
-  transition: filter 0.2s ease;
-  order: -1;
-  align-self: center;
-  border: 1px solid var(--red);
-}
-.index-item.has-image:hover .card-thumb { filter: brightness(1); }
 
 .index-item .date {
   font-family: var(--led);
@@ -442,13 +422,7 @@ section.block {
 }
 @media (max-width: 720px) {
   .index-item { grid-template-columns: 60px 1fr; gap: 14px; }
-  .index-item.has-image { grid-template-columns: 1fr; gap: 14px; }
   .index-item .summary { grid-column: 2; }
-  .index-item.has-image .summary { grid-column: 1; }
-  .card-thumb { width: 100%; height: 160px; order: -1; border-radius: 2px; }
-  /* Ocultar imagen en portada de artículo — el titular ocupa todo el ancho */
-  .cover-hero { display: none; }
-  .slide--cover { flex-direction: column; }
 }
 
 /* --- Largo formato (manifiesto, artículos) --- */
@@ -1002,41 +976,11 @@ section.block {
   flex-shrink: 0;
 }
 
-/* Slide 1: Portada — layout en fila: texto izquierda, imagen derecha */
-.slide--cover {
-  background: var(--bg);
-  position: relative;
-  overflow: hidden;
-  flex-direction: row;
-  align-items: stretch;
-}
+/* Slide 1: Portada */
+.slide--cover { background: var(--bg); position: relative; overflow: hidden; }
 .slide--cover .slide-label { color: var(--red); }
 .slide--cover .slide-label::before { background: var(--red); }
-
-/* Imagen de portada: columna derecha fija */
-.cover-hero {
-  flex: 0 0 260px;
-  order: 2;
-  pointer-events: none;
-  border-left: 1px solid var(--red);
-  overflow: hidden;
-}
-.cover-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.88;
-  filter: grayscale(8%);
-  display: block;
-}
-.slide--cover .slide-inner {
-  flex: 1;
-  order: 1;
-  position: relative;
-  z-index: 1;
-  overflow-y: auto;
-}
+.slide--cover .slide-inner { position: relative; z-index: 1; }
 .slide--cover h1 {
   font-size: clamp(2rem, 5.5vw, 4rem);
   line-height: 1.04;
