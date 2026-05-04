@@ -102,6 +102,7 @@
       current = index;
       slides[current].classList.add("is-active");
       slides[current].scrollTop = 0;
+      window.scrollTo(0, 0);
 
       /* Actualizar UI */
       if (progressFill) progressFill.style.width = ((current + 1) / total * 100) + "%";

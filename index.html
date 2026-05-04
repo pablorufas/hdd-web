@@ -120,28 +120,29 @@
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
       <nav class="nav" id="main-nav">
         <a href="index.html" class="active">Inicio</a>
-        <a href="manifiesto.html">Manifiesto</a>
         <a href="noticias.html">Noticias</a>
         <a href="educacion.html">Educación</a>
         <a href="newsletter.html">Semanal</a>
+        <a href="manifiesto.html">Manifiesto</a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero wrap">
-      <div class="hero-frame">
-        <div id="dedicatoria" style="display:none; text-align:center; margin-bottom:18px;">
+    <!-- HERO V2 — propuesta de valor clara en <3 segundos -->
+    <section class="hero-v2">
+      <div class="wrap">
+
+        <div id="dedicatoria" style="display:none; margin-bottom:32px;">
           <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
-            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.5;"></div>
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.5;"></div>
           </div>
           <p style="font-size:0.72rem; color:var(--ink-mute); letter-spacing:0.04em; line-height:1.5; margin:0;">Los informativos de hoy van dedicados con mucho cariño a dos grandes personas:<br><strong style="color:var(--ink); font-weight:500;">Oscar Peña y Asier Sobera.</strong></p>
           <div style="display:flex; align-items:center; gap:10px; margin-top:10px;">
-            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
-            <div style="flex:1; height:1px; background:var(--red); opacity:0.6;"></div>
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.5;"></div>
+            <div style="flex:1; height:1px; background:var(--red); opacity:0.5;"></div>
           </div>
         </div>
         <script>
@@ -156,25 +157,158 @@
             }
           })();
         </script>
-        <span class="hero-top-label">son las</span>
-        <div class="hero-clock-huge">
-          <span class="logo-led" data-live-clock aria-label="Hora actual">--:--</span>
-        </div>
-        <h1 class="hero-bottom-label">Es hora de despertar.</h1>
-      </div>
 
-      <div class="hero-headline">
-        <p class="hero-sub">
-          Hora de Despertar es un periódico digital que explica las noticias —su contexto y todas las motivaciones posibles detrás de cada acción— con lenguaje claro y orientado a formar criterio, no a dictarlo.
-        </p>
-        <div class="hero-actions">
-          <a href="noticias.html" class="btn btn-primary">Leer noticias <span class="arrow">→</span></a>
-          <a href="manifiesto.html" class="btn">Nuestro manifiesto</a>
+        <div class="hero-v2-clock-row">
+          <span class="hero-v2-label">son las</span>
+          <span class="logo-led hero-v2-time" data-live-clock aria-label="Hora actual">--:--</span>
+        </div>
+
+        <h1 class="hero-v2-headline">Las noticias explicadas de verdad.</h1>
+
+        <p class="hero-v2-sub">Contexto, motivaciones y preguntas abiertas en cada análisis. Para entender el porqué, no solo el qué. Sin correos, sin suscripción, sin adoctrinamiento.</p>
+
+        <div class="hero-actions" style="justify-content: flex-start;">
+          <a href="noticias.html" class="btn btn-primary">Leer los análisis de hoy <span class="arrow">→</span></a>
+          <a href="manifiesto.html" class="btn">Nuestro método</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STATS STRIP — ritmo editorial -->
+    <div class="stats-strip">
+      <div class="wrap">
+        <div class="stats-inner">
+          <div class="stat-item">
+            <span class="stat-num">3</span>
+            <span class="stat-label">análisis al día</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">4</span>
+            <span class="stat-label">capas por noticia</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">0</span>
+            <span class="stat-label">suscripciones requeridas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTADA — artículo destacado del día -->
+    <section class="block">
+      <div class="wrap">
+        <span class="eyebrow">Ahora mismo</span>
+        <a href="iran-trump-rechaza-14-puntos-guerra-mayo-2026.html" class="portada-card">
+          <div class="portada-card-meta">
+            <span class="cat">Geopolítica · Irán · Guerra</span>
+            <span class="portada-card-date">04·05·26</span>
+          </div>
+          <h2 class="portada-card-titular">Trump rechaza los 14 puntos de Irán y revisa opciones militares: la guerra puede reanudarse</h2>
+          <p class="portada-card-lead">Trump declaró que Irán "no ha pagado suficiente precio". La Casa Blanca revisa opciones militares. Un alto mando iraní dice que la reanudación es "probable". EEUU empieza a guiar barcos por el estrecho de Ormuz. Las negociaciones están al borde del colapso.</p>
+          <span class="portada-card-read">14 min de lectura →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ÚLTIMAS NOTICIAS -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Hoy · 04 de mayo</span>
+            <h2>Más análisis del día.</h2>
+          </div>
+          <a href="noticias.html" class="link-more">Ver todas las noticias →</a>
+        </div>
+
+        <div class="index-list">
+
+          <a href="cumbre-ereven-europa-canada-trump-ucrania-mayo-2026.html" class="index-item">
+            <span class="date">04·05·26</span>
+            <div>
+              <span class="cat">Geopolítica · Europa · OTAN</span>
+              <h3>Europa y Canadá se coordinan en Ereván sin EEUU: la cumbre que diseña la defensa del continente para la próxima década</h3>
+              <p class="summary">VIII Cumbre de la Comunidad Política Europea en Armenia: 48 países, Zelenski y Canadá. Sin Trump, Europa intenta coordinar su respuesta ante la retirada americana y el doble frente Ucrania-Irán.</p>
+            </div>
+            <span style="color: var(--ink-mute); font-size: 0.78rem;">12 min →</span>
+          </a>
+
+          <a href="vivienda-espana-precio-record-supera-burbuja-2007-mayo-2026.html" class="index-item">
+            <span class="date">04·05·26</span>
+            <div>
+              <span class="cat">Economía · Vivienda · España</span>
+              <h3>El precio de la vivienda en España supera el máximo de la burbuja de 2007: 3.014 €/m² y subiendo</h3>
+              <p class="summary">Por primera vez, el precio de la segunda mano supera los máximos históricos de 2007. +14,3% interanual. El decreto de alquileres cayó. El plan de vivienda no produce resultados.</p>
+            </div>
+            <span style="color: var(--ink-mute); font-size: 0.78rem;">12 min →</span>
+          </a>
+
+          <a href="otan-sin-estrategia-europa-autonomia-defensa-mayo-2026.html" class="index-item">
+            <span class="date">04·05·26</span>
+            <div>
+              <span class="cat">Geopolítica · OTAN · Europa</span>
+              <h3>"No hay estrategia": cómo la retirada de Trump está dejando un vacío que nadie en Europa sabe cómo llenar</h3>
+              <p class="summary">Fuentes del gobierno alemán y de la OTAN confirman que no hay ninguna estrategia real detrás de la retirada. Trump dice que irá "mucho más allá" de los 5.000. Europa tiene entre 8 y 12 años para construir lo que necesita.</p>
+            </div>
+            <span style="color: var(--ink-mute); font-size: 0.78rem;">13 min →</span>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- PILARES EDITORIALES -->
+    <!-- EDUCACIÓN — sección de profundidad -->
+    <section class="block">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Educación</span>
+            <h2>Aprende mientras te informas.</h2>
+          </div>
+          <a href="educacion.html" class="link-more">Ver toda la sección →</a>
+        </div>
+
+        <div class="index-list">
+
+          <a href="caso-kitchen-investigacion-completa-semanal-04-2026.html" class="index-item">
+            <span class="date">29·04·26</span>
+            <div>
+              <span class="cat">Política · Justicia</span>
+              <h3>Caso Kitchen: cómo el gobierno de Rajoy usó fondos secretos del Estado para espiar al hombre que sabía demasiado sobre el PP</h3>
+              <p class="summary">Entre 2013 y 2015, el Ministerio del Interior financió con dinero público una operación ilegal para robar documentos al extesorero Luis Bárcenas. El juicio comenzó en abril de 2026.</p>
+            </div>
+            <span style="color: var(--ink-mute); font-size: 0.78rem;">25 min →</span>
+          </a>
+
+          <a href="inflacion-explicada.html" class="index-item">
+            <span class="date">23·04·26</span>
+            <div>
+              <span class="cat">Economía</span>
+              <h3>La inflación explicada de verdad: por qué sube, cuándo interesa que suba y qué trampa esconde el euro</h3>
+              <p class="summary">Por qué el BCE apunta al 2 % y no al 0 %, cómo los gobiernos usan la inflación para licuar deuda, quién gana y quién pierde.</p>
+            </div>
+            <span style="color: var(--ink-mute); font-size: 0.78rem;">12 min →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEMANAL -->
+    <section class="block">
+      <div class="wrap">
+        <div class="weekly-note">
+          <span class="day">CADA LUNES</span>
+          <h2>Un tema explicado para aprender cada semana.</h2>
+          <p>Sin suscripción: basta con entrar el lunes a la <a href="newsletter.html" style="color: var(--ink); border-bottom: 1px solid var(--line-strong);">sección Semanal</a>. La próxima edición, el lunes 11 de mayo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTODO EDITORIAL — para quien quiera profundizar -->
     <section class="block">
       <div class="wrap">
         <div class="section-head">
@@ -182,6 +316,7 @@
             <span class="eyebrow">Método editorial</span>
             <h2>Cuatro compromisos que sostienen cada pieza.</h2>
           </div>
+          <a href="manifiesto.html" class="link-more">Leer el manifiesto →</a>
         </div>
         <div class="pillars">
           <div class="pillar">
@@ -204,64 +339,6 @@
             <h3>Didáctica, no doctrina</h3>
             <p>Cuando usamos un concepto técnico —económico, jurídico, geopolítico— lo explicamos. Leer a HdD tiene que enseñarte algo.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRÓXIMAS PUBLICACIONES -->
-    <section class="block">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Esta semana</span>
-            <h2>Últimos análisis.</h2>
-          </div>
-          <a href="noticias.html" class="link-more">Ver la sección completa →</a>
-        </div>
-
-        <div class="index-list">
-
-          <a href="iran-trump-rechaza-14-puntos-guerra-mayo-2026.html" class="index-item">
-            <span class="date">04·05·26</span>
-            <div>
-              <span class="cat">Geopolítica · Irán · Guerra</span>
-              <h3>Trump rechaza los 14 puntos de Irán y revisa opciones militares: la guerra puede reanudarse</h3>
-              <p class="summary">Trump declaró que Irán "no ha pagado suficiente precio". La Casa Blanca revisa opciones militares. Un alto mando iraní dice que la reanudación es "probable". EEUU empieza a guiar barcos por Ormuz.</p>
-            </div>
-            <span style="color: var(--ink-mute); font-size: 0.78rem;">14 min →</span>
-          </a>
-
-          <a href="cumbre-ereven-europa-canada-trump-ucrania-mayo-2026.html" class="index-item">
-            <span class="date">04·05·26</span>
-            <div>
-              <span class="cat">Geopolítica · Europa · OTAN</span>
-              <h3>Europa y Canadá se coordinan en Ereván sin EEUU: la cumbre que diseña la defensa del continente para la próxima década</h3>
-              <p class="summary">VIII Cumbre de la Comunidad Política Europea en Armenia: 48 países, Zelenski y Canadá. Sin Trump, Europa intenta coordinar su respuesta ante la retirada americana y el doble frente Ucrania-Irán.</p>
-            </div>
-            <span style="color: var(--ink-mute); font-size: 0.78rem;">12 min →</span>
-          </a>
-
-          <a href="vivienda-espana-precio-record-supera-burbuja-2007-mayo-2026.html" class="index-item">
-            <span class="date">04·05·26</span>
-            <div>
-              <span class="cat">Economía · Vivienda · España</span>
-              <h3>El precio de la vivienda en España supera el máximo de la burbuja de 2007: 3.014 €/m² y subiendo</h3>
-              <p class="summary">Por primera vez, el precio de la segunda mano supera los máximos históricos de 2007. +14,3% interanual. El decreto de alquileres cayó. El plan de vivienda no produce resultados. Las hipotecas no se abaratarán.</p>
-            </div>
-            <span style="color: var(--ink-mute); font-size: 0.78rem;">12 min →</span>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- NOTA SEMANAL -->
-    <section class="block">
-      <div class="wrap">
-        <div class="weekly-note">
-          <span class="day">CADA LUNES</span>
-          <h2>Publicaremos un tema explicado para aprender todas las semanas.</h2>
-          <p>Para hacer más fácil entender lo que pasa en nuestro entorno. Sin suscripción: basta con entrar el lunes a la <a href="newsletter.html" style="color: var(--ink); border-bottom: 1px solid var(--line-strong);">sección Semanal</a>.</p>
         </div>
       </div>
     </section>
@@ -309,6 +386,6 @@
     </div>
   </footer>
 
-  <script src="assets/script.js?v=2"></script>
+  <script src="assets/script.js?v=3"></script>
 </body>
 </html>
