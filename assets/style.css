@@ -1194,28 +1194,30 @@ section.block {
 
 /* Hero V2 */
 .hero-v2 {
-  padding: clamp(56px, 11vw, 120px) 0 clamp(48px, 8vw, 88px);
+  padding: clamp(48px, 9vw, 100px) 0 clamp(52px, 9vw, 96px);
   border-bottom: 1px solid var(--line);
 }
 
-.hero-v2-clock-row {
+/* Reloj centrado arriba del todo */
+.hero-v2-clock-top {
   display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: clamp(24px, 3.5vw, 44px);
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: clamp(40px, 6vw, 72px);
 }
 
 .hero-v2-label {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.44em;
   text-transform: uppercase;
   color: var(--ink-mute);
 }
 
 .hero-v2-time {
-  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-size: clamp(3rem, 8vw, 6rem);
   animation: pulse 3.6s ease-in-out infinite;
 }
 
@@ -1237,6 +1239,29 @@ section.block {
   line-height: 1.6;
   max-width: 540px;
   margin: 0 0 clamp(28px, 4vw, 44px);
+}
+
+/* Stats dentro del hero — fuente serif, palabras en rojo */
+.hero-v2-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: clamp(44px, 7vw, 72px);
+}
+
+.hero-v2-stats p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  color: var(--ink-dim);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.hst-red {
+  color: var(--red);
+  font-style: normal;
 }
 
 /* Stats strip */
