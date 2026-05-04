@@ -1258,7 +1258,7 @@ section.block {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: clamp(44px, 7vw, 72px);
+  margin-top: clamp(40px, 6vw, 60px);
 }
 
 .hero-v2-stats p {
@@ -1274,6 +1274,65 @@ section.block {
 .hst-red {
   color: var(--red);
   font-style: normal;
+}
+
+/* Briefing head — cabecera del informativo diario */
+.briefing-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line-strong);
+  margin-bottom: 28px;
+}
+
+.briefing-head-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.briefing-tag {
+  font-family: var(--led);
+  font-size: 0.72rem;
+  color: var(--red);
+  text-shadow: 0 0 5px var(--red-glow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.briefing-date {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.briefing-sessions {
+  display: flex;
+  gap: 10px;
+}
+
+.briefing-session {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding: 4px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+}
+
+.briefing-session--done {
+  color: var(--red);
+  border-color: var(--red);
+  text-shadow: 0 0 4px var(--red-glow);
 }
 
 /* Stats strip */
