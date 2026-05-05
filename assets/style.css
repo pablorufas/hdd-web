@@ -408,6 +408,23 @@ section.block {
 .index-item:hover { padding-left: 6px; }
 .index-item:hover h3 { color: var(--red); }
 
+.date-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0 6px;
+  color: var(--ink-mute);
+  font-family: var(--led);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+.date-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
 .index-item .date {
   font-family: var(--led);
   font-size: 0.85rem;
