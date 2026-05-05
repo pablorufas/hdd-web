@@ -1,7 +1,7 @@
 // HdD — Service Worker
 // Estrategia: cache-first para assets, network-first para artículos
 
-const CACHE_NAME = 'hdd-v1';
+const CACHE_NAME = 'hdd-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -53,9 +53,10 @@ self.addEventListener('fetch', event => {
       }))
     );
   } else {
-    // Network-first (HTML/artículos)
+    // Network-first con cache: 'no-cache' para que el CDN de GitHub Pages
+    // no sirva versiones antiguas — el navegador siempre pide contenido fresco
     event.respondWith(
-      fetch(request)
+      fetch(new Request(request, { cache: 'no-cache' }))
         .then(response => {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
