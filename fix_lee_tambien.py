@@ -15,7 +15,7 @@ import re
 import os
 import glob
 
-BASE = "/Users/pablorufas/Documents/Claude/Scheduled"
+BASE = os.path.dirname(os.path.abspath(__file__))
 
 # ─────────────────────────────────────────────────────────────
 # 1. Indexar categorías y fechas de TODOS los artículos .html

@@ -11,7 +11,7 @@ Uso:
 
 import json, re, sys, os, subprocess
 
-BASEDIR = "/Users/pablorufas/Documents/Claude/Scheduled"
+BASEDIR = os.path.dirname(os.path.abspath(__file__))
 NO_GIT  = "--no-git" in sys.argv
 
 MESES_ES = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",
@@ -403,6 +403,12 @@ def update_sitemap(slug, fecha_iso):
     entry = f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{fecha_iso}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n"
     # Insertar después de la primera URL (homepage)
     xml = re.sub(r'(</url>\n)', r'\1' + entry, xml, count=1)
+    # Actualizar lastmod de la homepage con la fecha del artículo más reciente
+    xml = re.sub(
+        r'(<loc>https://horadedespertar\.org/</loc>\s*<lastmod>)[^<]*(</lastmod>)',
+        rf'\g<1>{fecha_iso}\g<2>',
+        xml
+    )
     with open(path, "w") as f: f.write(xml)
     print("  ✓ URL añadida en sitemap.xml")
 
@@ -445,6 +451,10 @@ def main():
     update_noticias(slug, d["fecha_display"], d["categoria"], d["card_titular"], d["card_summary"], d["tiempo"])
     update_sitemap(slug, d["fecha_iso"])
 
+    # Actualizar portada + separadores de fecha en noticias.html
+    subprocess.run(["python3", os.path.join(BASEDIR, "update_portada.py"), "--no-git"],
+                   cwd=BASEDIR, check=True)
+
     # Validar con check.py
     r = subprocess.run(["python3", "check.py"], capture_output=True, text=True, cwd=BASEDIR)
     lines = [l for l in r.stdout.splitlines() if slug in l or "ERROR" in l]
@@ -456,8 +466,18 @@ def main():
         print("  ✓ check.py: sin errores")
 
     if not NO_GIT:
-        git_push([f"{slug}.html", "noticias.html", "sitemap.xml"],
+        git_push([f"{slug}.html", "noticias.html", "index.html", "sitemap.xml"],
                  f"Publicar: {d['card_titular'][:70]}")
+        # Ping a Google para acelerar indexación
+        try:
+            import urllib.request
+            urllib.request.urlopen(
+                "https://www.google.com/ping?sitemap=https://horadedespertar.org/sitemap.xml",
+                timeout=5
+            )
+            print("  ✓ Ping enviado a Google Search Console")
+        except Exception:
+            pass  # No bloquear el flujo si falla la red
 
 if __name__ == "__main__":
     main()

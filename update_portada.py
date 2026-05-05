@@ -15,9 +15,9 @@ import subprocess
 import sys
 import os
 
-BASEDIR = "/Users/pablorufas/Documents/Claude/Scheduled"
-NOTICIAS = f"{BASEDIR}/noticias.html"
-INDEX    = f"{BASEDIR}/index.html"
+BASEDIR = os.path.dirname(os.path.abspath(__file__))
+NOTICIAS = os.path.join(BASEDIR, "noticias.html")
+INDEX    = os.path.join(BASEDIR, "index.html")
 DRY_RUN  = "--dry-run" in sys.argv
 NO_GIT   = "--no-git" in sys.argv
 
