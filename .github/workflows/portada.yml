@@ -1,0 +1,26 @@
+name: Actualizar portada
+
+on:
+  push:
+    paths:
+      - 'noticias.html'
+
+jobs:
+  portada:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Actualizar portada e index
+        run: python3 update_portada.py --no-git
+
+      - name: Commit si hay cambios
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'index.html noticias.html'
+          message: 'Auto: portada actualizada'
+          default_author: github_actions
