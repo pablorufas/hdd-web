@@ -37,8 +37,8 @@ SCHEMA = {
       "cuerpo": "Definición para alguien de 20 años. (1) qué es, (2) cómo funciona, (3) por qué importa aquí. 3-5 frases según complejidad."
     }
   ],
-  "hechos": "<p>Párrafo con dato exacto + fuente. Cifras, nombres, fechas precisas.</p>",
-  "contexto": "<p>Línea de tiempo y marco que el lector necesita. Por qué ocurre AHORA.</p>",
+  "hechos": "<p>Párrafo 1 con dato exacto + fuente. Cifras, nombres, fechas precisas.</p><p>Párrafo 2 si es necesario. Cada párrafo: una idea o un dato clave.</p>",
+  "contexto": "<p>Párrafo 1: Línea de tiempo que el lector necesita.</p><p>Párrafo 2: Por qué ocurre AHORA. Cambios recientes o históricos relevantes.</p>",
   "motivaciones": [
     {
       "actor": "Nombre del actor",
@@ -46,7 +46,7 @@ SCHEMA = {
     }
   ],
   "_motivaciones_nota": "Poner null si el tema es científico, cultural o sin actores con intereses claros.",
-  "medios": "<p>Cómo lo cubren medios concretos. Qué enfocan y qué omiten.</p>",
+  "medios": "<p>Párrafo sobre cómo lo cubren medios concretos. Qué enfocan, qué omiten.</p>",
   "_medios_nota": "Poner null si no hay cobertura diferenciada reseñable.",
   "preguntas": [
     "¿Pregunta concreta y verificable que el lector puede investigar?",

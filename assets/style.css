@@ -540,8 +540,12 @@ section.block {
 .didactic-box p {
   font-family: var(--sans);
   font-size: 1rem;
+  line-height: 1.7;
   color: var(--ink-dim);
-  margin: 0;
+  margin: 0 0 12px 0;
+}
+.didactic-box p:last-child {
+  margin-bottom: 0;
 }
 
 /* --- Navegación pedagógica por capas --- */
@@ -1105,16 +1109,19 @@ section.block {
 .slide--concepts h2 {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   margin-bottom: 32px;
+  color: var(--ink);
 }
-.slide--concepts .didactic-box { margin: 0 0 18px; }
+.slide--concepts .didactic-box { margin: 0 0 28px; }
+.slide--concepts .didactic-box:last-child { margin-bottom: 0; }
 
 /* Slide 3: Desarrollo */
 .slide--development { background: var(--bg); }
-.slide--development .slide-label { color: var(--ink-mute); }
-.slide--development .slide-label::before { background: var(--line-strong); }
+.slide--development .slide-label { color: var(--accent); }
+.slide--development .slide-label::before { background: var(--accent); }
 .slide--development h2 {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   margin-bottom: 36px;
+  color: var(--ink);
 }
 
 .slide-section {
@@ -1129,32 +1136,39 @@ section.block {
 }
 .slide-section h3 {
   font-family: var(--sans);
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-bottom: 16px;
+  color: var(--red);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
 }
 .slide-section p,
 .slide-section ul {
   font-family: var(--serif);
   font-size: 1.1rem;
-  line-height: 1.72;
+  line-height: 1.8;
   color: var(--ink);
-  margin: 0;
+  margin: 0 0 18px 0;
+}
+.slide-section p:last-child {
+  margin-bottom: 0;
 }
 .slide-section ul { padding-left: 1.2em; }
 .slide-section li { margin-bottom: 0.6em; }
 .slide-section li::marker { color: var(--red); }
 .slide-section .actor-name {
   font-family: var(--sans);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--ink-dim);
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  margin-top: 12px;
 }
 
 /* Slide 4: Análisis */
@@ -1164,6 +1178,10 @@ section.block {
 .slide--analysis h2 {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   margin-bottom: 36px;
+  color: var(--ink);
+}
+.slide--analysis h3 {
+  color: var(--red);
 }
 .slide--analysis blockquote {
   border-left: 2px solid var(--red);
@@ -1177,11 +1195,12 @@ section.block {
 .slide--analysis ul {
   font-family: var(--serif);
   font-size: 1.05rem;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--ink);
   padding-left: 1.2em;
+  margin: 0 0 18px 0;
 }
-.slide--analysis li { margin-bottom: 0.75em; }
+.slide--analysis li { margin-bottom: 1em; }
 .slide--analysis li::marker { color: var(--red); }
 
 /* Nav de diapositivas */
