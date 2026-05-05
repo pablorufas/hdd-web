@@ -437,7 +437,6 @@ section.block {
   transition: color 0.2s ease;
 }
 .index-item .summary {
-  grid-column: 2;
   color: var(--ink-dim);
   font-size: 0.95rem;
   margin-top: 6px;
@@ -451,7 +450,6 @@ section.block {
 }
 @media (max-width: 720px) {
   .index-item { grid-template-columns: 1fr auto; gap: 14px; }
-  .index-item .summary { grid-column: 2; }
 }
 
 /* --- Largo formato (manifiesto, artículos) --- */
