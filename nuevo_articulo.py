@@ -390,7 +390,7 @@ def update_noticias(slug, fecha, cat, titular, summary, tiempo):
     with open(path) as f: html = f.read()
     if f'{slug}.html' in html:
         print(f"  · {slug} ya está en noticias.html"); return
-    card = f'\n          <a href="{slug}.html" class="index-item">\n            <span class="date">{fecha}</span>\n            <div>\n              <span class="cat">{cat}</span>\n              <h3>{titular}</h3>\n              <p class="summary">{summary}</p>\n            </div>\n            <span style="color: var(--ink-mute); font-size: 0.78rem;">{tiempo} min →</span>\n          </a>\n'
+    card = f'\n          <a href="{slug}.html" class="index-item">\n            <div>\n              <span class="cat">{cat}</span>\n              <h3>{titular}</h3>\n              <p class="summary">{summary}</p>\n            </div>\n            <span class="date">{fecha}</span>\n          </a>\n'
     html = html.replace('<div class="index-list">', '<div class="index-list">' + card, 1)
     with open(path, "w") as f: f.write(html)
     print("  ✓ Tarjeta añadida en noticias.html")
