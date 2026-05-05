@@ -251,7 +251,24 @@ def build_html(d):
   <main>
     <a href="noticias.html" class="back-link">← Todas las noticias</a>
 
+    <!-- Barra de modo de lectura -->
+    <div class="reading-mode-bar">
+      <div class="wrap bar--reading">
+        <span class="reading-mode-label">Modo de lectura</span>
+        <div class="reading-mode-btns">
+          <button class="mode-btn is-active" data-mode="slides">▣ Diapositivas</button>
+          <button class="mode-btn" data-mode="flow">≡ Texto completo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista de diapositivas -->
     <div class="slides-view" id="slides-view">
+
+      <!-- Barra de progreso -->
+      <div class="slide-progress-bar" aria-hidden="true">
+        <div class="slide-progress-fill"></div>
+      </div>
 
       <section class="slide slide--cover" data-slide="0" aria-label="Portada">
         <div class="slide-inner">
@@ -333,19 +350,15 @@ def build_html(d):
         </div>
       </section>
 
-    </div><!-- /slides-view -->
+      <!-- Nav de diapositivas -->
+      <nav class="slide-nav" aria-label="Navegación de diapositivas">
+        <button class="slide-nav__btn slide-nav__btn--prev" aria-label="Diapositiva anterior" disabled>←</button>
+        <div class="slide-dots" role="tablist" aria-label="Diapositivas"></div>
+        <button class="slide-nav__btn slide-nav__btn--next" aria-label="Siguiente diapositiva">→</button>
+        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/4</span>
+      </nav>
 
-    <nav class="slide-nav" aria-label="Navegación de diapositivas">
-      <button class="slide-nav__btn" id="btn-prev" aria-label="Diapositiva anterior" disabled>←</button>
-      <div class="slide-dots" id="slide-dots">
-        <button class="slide-dot is-active" data-target="0" aria-label="Ir a diapositiva 1"></button>
-        <button class="slide-dot" data-target="1" aria-label="Ir a diapositiva 2"></button>
-        <button class="slide-dot" data-target="2" aria-label="Ir a diapositiva 3"></button>
-        <button class="slide-dot" data-target="3" aria-label="Ir a diapositiva 4"></button>
-      </div>
-      <span class="slide-counter">01 / 04</span>
-      <button class="slide-nav__btn" id="btn-next" aria-label="Siguiente diapositiva">→</button>
-    </nav>
+    </div><!-- /slides-view -->
 
   </main>
 
