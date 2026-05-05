@@ -34,32 +34,27 @@ def fecha_larga(date_str):
     return f"{d} de {MESES_ES[m]} de {2000 + y}"
 
 def parse_items(html):
-    """Extrae todos los index-items de noticias.html en orden."""
+    """Extrae todos los index-items de noticias.html en orden.
+    Formato actual: <a class="index-item"><div>cat+h3+summary</div><span class="date">DD·MM·AA</span></a>
+    """
     pattern = re.compile(
         r'<a href="([^"]+)"\s+class="index-item">\s*'
-        r'<span class="date">([^<]+)</span>\s*'
         r'<div>\s*<span class="cat">([^<]+)</span>\s*'
         r'<h3>(.*?)</h3>\s*'
         r'<p class="summary">(.*?)</p>\s*'
         r'</div>\s*'
-        r'<span[^>]*>([^<]+)</span>\s*'
+        r'<span class="date">([^<]+)</span>\s*'
         r'</a>',
         re.DOTALL
     )
     items = []
     for m in pattern.finditer(html):
-        read_raw = m.group(6).strip()
-        mins = re.search(r'(\d+)\s*min', read_raw)
-        read_short = f"{mins.group(1)} min →" if mins else read_raw
-        read_long  = f"{mins.group(1)} min de lectura →" if mins else read_raw
         items.append({
-            "href":       m.group(1).strip(),
-            "date":       m.group(2).strip(),
-            "cat":        m.group(3).strip(),
-            "h3":         m.group(4).strip(),
-            "summary":    m.group(5).strip(),
-            "read_short": read_short,
-            "read_long":  read_long,
+            "href":    m.group(1).strip(),
+            "cat":     m.group(2).strip(),
+            "h3":      m.group(3).strip(),
+            "summary": m.group(4).strip(),
+            "date":    m.group(5).strip(),
         })
     return items
 
@@ -85,9 +80,15 @@ def ensure_date_dividers(html, items):
             continue  # Ya existe, no hacer nada
 
         # Buscar el primer index-item con esta fecha e insertar el divider antes
+        # La fecha está ahora al final del item: <span class="date">DD·MM·AA</span></a>
         first_item_re = re.compile(
-            r'(?=<a href="[^"]+"\s+class="index-item">\s*<span class="date">'
-            + re.escape(date) + r'</span>)'
+            r'(?=<a href="[^"]+"\s+class="index-item">)'
+        )
+        # Hacemos lookup por fecha dentro del bloque completo del item
+        first_item_re = re.compile(
+            r'(?=<a href="[^"]+"\s+class="index-item">(?:(?!</a>).)*'
+            r'<span class="date">' + re.escape(date) + r'</span>\s*</a>)',
+            re.DOTALL
         )
         html, n = first_item_re.subn(divider_tag + "\n\n          ", html, count=1)
         if n:
@@ -132,7 +133,6 @@ def build_portada_block(items):
           </div>
           <h2 class="portada-card-titular">{portada['h3']}</h2>
           <p class="portada-card-lead">{portada['summary']}</p>
-          <span class="portada-card-read">{portada['read_long']}</span>
         </a>""")
 
     if rest:
@@ -140,13 +140,12 @@ def build_portada_block(items):
         for item in rest:
             lines.append(f"""
           <a href="{item['href']}" class="index-item">
-            <span class="date">{item['date']}</span>
             <div>
               <span class="cat">{item['cat']}</span>
               <h3>{item['h3']}</h3>
               <p class="summary">{item['summary']}</p>
             </div>
-            <span style="color: var(--ink-mute); font-size: 0.78rem;">{item['read_short']}</span>
+            <span class="date">{item['date']}</span>
           </a>
 """)
         lines.append("        </div>")

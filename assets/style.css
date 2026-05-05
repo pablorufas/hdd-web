@@ -397,7 +397,7 @@ section.block {
 .index-list { display: grid; gap: 0; }
 .index-item {
   display: grid;
-  grid-template-columns: 80px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 28px;
   padding: 24px 0;
   border-top: 1px solid var(--line);
@@ -450,7 +450,7 @@ section.block {
   color: var(--red);
 }
 @media (max-width: 720px) {
-  .index-item { grid-template-columns: 60px 1fr; gap: 14px; }
+  .index-item { grid-template-columns: 1fr auto; gap: 14px; }
   .index-item .summary { grid-column: 2; }
 }
 
@@ -824,6 +824,70 @@ section.block {
 }
 @media (max-width: 520px) {
   .site-footer .top { grid-template-columns: 1fr; }
+}
+
+/* --- Lee también --- */
+.lee-tambien {
+  margin: 48px 0 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.lee-tambien-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+}
+.lee-tambien-link {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  transition: color 0.15s ease;
+}
+.lee-tambien-link:first-of-type { border-top: none; }
+.lee-tambien-link:hover .lee-tambien-titulo { color: var(--red); }
+.lee-tambien-fecha {
+  font-family: var(--led);
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lee-tambien-titulo {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+/* --- La pregunta (open-question) --- */
+.open-question {
+  margin: 36px 0;
+  padding: 24px 28px;
+  border-left: 3px solid var(--red);
+  background: var(--bg-soft);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.open-question .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+}
+.open-question p {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--ink);
+  font-style: italic;
+  margin: 0;
 }
 
 /* --- Breadcrumb / volver --- */
@@ -1455,14 +1519,6 @@ section.block {
   margin: 0 0 clamp(18px, 2.5vw, 28px);
 }
 
-.portada-card-read {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--red);
-}
 
 /* Compact page header — noticias, educacion, newsletter */
 .page-header {

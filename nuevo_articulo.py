@@ -153,15 +153,14 @@ def build_html(d):
     motiv_html = ""
     motivaciones = d.get("motivaciones")
     if motivaciones:
-        actores = "\n".join(
-            f'          <div class="actor-block"><span class="actor-name">{m["actor"]}</span><p>{m["incentivos"]}</p></div>'
-            for m in motivaciones
-        )
+        actores_html = ""
+        for m in motivaciones:
+            actores_html += f'\n              <p>\n                <span class="actor-name">{m["actor"]}</span>\n                {m["incentivos"]}\n              </p>'
         motiv_html = f"""
-          <div class="dev-section">
+
+          <div class="slide-section">
             <h3>Las motivaciones posibles</h3>
-            <p class="motivaciones-disclaimer">Los siguientes incentivos son observables a partir de posiciones públicas. No son intenciones confirmadas.</p>
-{actores}
+            <p>Los incentivos que siguen son observables a partir de posiciones públicas. No son intenciones confirmadas.</p>{actores_html}
           </div>"""
 
     # Medios (opcional)
@@ -169,10 +168,11 @@ def build_html(d):
     medios = d.get("medios")
     if medios:
         medios_html = f"""
-          <div class="dev-section">
+          <div class="slide-section">
             <h3>Cómo lo han contado otros medios</h3>
             {medios}
-          </div>"""
+          </div>
+"""
 
     # Preguntas
     preguntas_html = "\n".join(f"          <li>{p}</li>" for p in d["preguntas"])
@@ -253,46 +253,44 @@ def build_html(d):
 
     <div class="slides-view" id="slides-view">
 
-      <section class="slide slide--cover" data-slide="0">
+      <section class="slide slide--cover" data-slide="0" aria-label="Portada">
         <div class="slide-inner">
           <span class="slide-num">01 — 04</span>
-          <span class="slide-label">La noticia</span>
+          <span class="slide-label">{cat}</span>
           <div class="slide-cover-content">
             <span class="eyebrow">{cat}</span>
             <h1>{titular}</h1>
             <p class="lead">{lead}</p>
             <div class="slide-meta-row">
-              <span class="slide-meta-date">{fecha_d}</span>
-              <span class="slide-meta-sep">·</span>
-              <span class="slide-meta-tiempo">{tiempo} min de lectura</span>
-              <span class="slide-meta-sep">·</span>
-              <span class="slide-meta-autor">Redacción HdD</span>
+              <span><strong>Noticias HdD</strong> · {fecha_d}</span>
+              <span><strong>Autor</strong> · Redacción HdD</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide slide--concepts" data-slide="1">
+      <section class="slide slide--concepts" data-slide="1" aria-label="Conceptos básicos">
         <div class="slide-inner">
           <span class="slide-num">02 — 04</span>
-          <span class="slide-label">Para entenderlo</span>
+          <span class="slide-label">Antes de leer</span>
           <h2>Lo que necesitas saber primero</h2>
           <div class="concepts-grid">{conceptos_html}
           </div>
         </div>
       </section>
 
-      <section class="slide slide--development" data-slide="2">
+      <section class="slide slide--development" data-slide="2" aria-label="Desarrollo">
         <div class="slide-inner">
           <span class="slide-num">03 — 04</span>
-          <span class="slide-label">El análisis</span>
+          <span class="slide-label">La noticia</span>
+          <h2>{d['titular']}</h2>
 
-          <div class="dev-section">
+          <div class="slide-section">
             <h3>Los hechos</h3>
             {d['hechos']}
           </div>
 
-          <div class="dev-section">
+          <div class="slide-section">
             <h3>El contexto</h3>
             {d['contexto']}
           </div>{motiv_html}
@@ -300,14 +298,15 @@ def build_html(d):
         </div>
       </section>
 
-      <section class="slide slide--analysis" data-slide="3">
+      <section class="slide slide--analysis" data-slide="3" aria-label="Análisis">
         <div class="slide-inner">
           <span class="slide-num">04 — 04</span>
-          <span class="slide-label">Perspectiva</span>
+          <span class="slide-label">Análisis</span>
+          <h2>Lo que los datos no dicen solos</h2>
 {medios_html}
-          <div class="dev-section">
+          <div class="slide-section">
             <h3>Lo que queda abierto</h3>
-            <ul class="open-questions">
+            <ul>
 {preguntas_html}
             </ul>
           </div>
@@ -317,31 +316,36 @@ def build_html(d):
             <p>{d['pregunta_principal']}</p>
           </div>
 
+          <!-- LEE TAMBIÉN — NO mover. Debe estar ANTES de la nota metodológica -->
           <div class="lee-tambien">
             <span class="lee-tambien-label">Lee también en HdD</span>{lee_links}
           </div>
 
+          <!-- NOTA METODOLÓGICA — obligatoria, siempre al final -->
           <div class="didactic-box" style="border-left-color: var(--accent); margin-top: 48px;">
             <span class="eyebrow" style="color: var(--accent);">Nota metodológica</span>
             <h4>Cómo verificamos este artículo</h4>
             <p>{d['nota_metodologica']} Errores o información adicional: <a href="mailto:redaccion@horadedespertar.org" style="color:var(--red);">redaccion@horadedespertar.org</a></p>
           </div>
 
+          <a href="noticias.html" class="back-link">← Todas las noticias</a>
+
         </div>
       </section>
 
     </div><!-- /slides-view -->
 
-    <div class="slides-nav" id="slides-nav" role="navigation" aria-label="Navegación entre diapositivas">
-      <button class="snav-btn" id="btn-prev" aria-label="Diapositiva anterior" disabled>←</button>
-      <div class="snav-dots" id="snav-dots">
-        <button class="snav-dot active" data-target="0" aria-label="Ir a diapositiva 1"></button>
-        <button class="snav-dot" data-target="1" aria-label="Ir a diapositiva 2"></button>
-        <button class="snav-dot" data-target="2" aria-label="Ir a diapositiva 3"></button>
-        <button class="snav-dot" data-target="3" aria-label="Ir a diapositiva 4"></button>
+    <nav class="slide-nav" aria-label="Navegación de diapositivas">
+      <button class="slide-nav__btn" id="btn-prev" aria-label="Diapositiva anterior" disabled>←</button>
+      <div class="slide-dots" id="slide-dots">
+        <button class="slide-dot is-active" data-target="0" aria-label="Ir a diapositiva 1"></button>
+        <button class="slide-dot" data-target="1" aria-label="Ir a diapositiva 2"></button>
+        <button class="slide-dot" data-target="2" aria-label="Ir a diapositiva 3"></button>
+        <button class="slide-dot" data-target="3" aria-label="Ir a diapositiva 4"></button>
       </div>
-      <button class="snav-btn" id="btn-next" aria-label="Siguiente diapositiva">→</button>
-    </div>
+      <span class="slide-counter">01 / 04</span>
+      <button class="slide-nav__btn" id="btn-next" aria-label="Siguiente diapositiva">→</button>
+    </nav>
 
   </main>
 
