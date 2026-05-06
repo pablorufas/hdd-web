@@ -5,65 +5,188 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre — HdD</title>
-  <meta name="description" content="Un chatbot responde preguntas. Un agente de IA hace cosas: busca, escribe código, envía correos, opera software y toma decisiones en cadena sin que nadie le dé instrucciones a cada paso. Este es el ca" />
+  <title>Agentes de IA: qué son, cómo funcionan y qué cambia en el trabajo — HdD</title>
+  <meta name="description" content="Un agente de IA no es un chatbot. Percibe, razona, actúa y aprende en bucle. En ocho diapositivas entiendes la diferencia, los casos reales —Claude Computer Use, Devin, Operator— y qué empleos están ya en riesgo." />
   <link rel="canonical" href="https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Hora de Despertar" />
-  <meta property="og:title" content="Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre — HdD" />
-  <meta property="og:description" content="Un chatbot responde preguntas. Un agente de IA hace cosas: busca, escribe código, envía correos, opera software y toma decisiones en cadena sin que nadie le dé instrucciones a cada paso. Este es el ca" />
-  <meta property="og:url" content="https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html" />
-  <meta property="og:image" content="https://horadedespertar.org/assets/icons/icon-512.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@hdedespertar" />
-  <meta name="twitter:title" content="Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre — HdD" />
-  <meta name="twitter:description" content="Un chatbot responde preguntas. Un agente de IA hace cosas: busca, escribe código, envía correos, opera software y toma decisiones en cadena sin que nadie le dé instrucciones a cada paso. Este es el ca" />
-  <meta name="twitter:image" content="https://horadedespertar.org/assets/icons/icon-512.png" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RTLZFW7HGF");</script>
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:site_name"   content="Hora de Despertar" />
+  <meta property="og:title"       content="Agentes de IA: qué son, cómo funcionan y qué cambia en el trabajo — HdD" />
+  <meta property="og:description" content="La diferencia entre un chatbot y un agente, el bucle percibir-razonar-actuar, los ERE de Capgemini e Inetum y los riesgos reales de delegar decisiones a máquinas." />
+  <meta property="og:url"         content="https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html" />
+  <meta property="og:image"       content="https://horadedespertar.org/assets/og/agentes-ia-educacion-2026.jpg" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@hdedespertar" />
+  <meta name="twitter:title"       content="Agentes de IA: qué son, cómo funcionan y qué cambia en el trabajo — HdD" />
+  <meta name="twitter:description" content="Un agente de IA no es un chatbot. En ocho diapositivas entiendes cómo funciona el bucle percibir-razonar-actuar y qué empleos están ya en riesgo." />
+  <meta name="twitter:image"       content="https://horadedespertar.org/assets/og/agentes-ia-educacion-2026.jpg" />
+
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#0a0a0a" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="HdD" />
-  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-  <script>window.OneSignalDeferred=window.OneSignalDeferred||[];OneSignalDeferred.push(async function(O){await O.init({appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"});});</script>
+
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-RTLZFW7HGF");
+  </script>
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"NewsArticle","headline":"Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre","description":"Un chatbot responde preguntas. Un agente de IA hace cosas: busca, escribe código, envía correos, opera software y toma decisiones en cadena sin que nadie le dé instrucciones a cada paso. Este es el ca","datePublished":"2026-05-06","dateModified":"2026-05-06","author":{"@type":"Organization","name":"Redacción HdD"},"publisher":{"@type":"Organization","name":"Hora de Despertar","logo":{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html"}}
+  {"@context":"https://schema.org","@type":"NewsArticle","headline":"Agentes de IA: qué son, cómo funcionan y qué cambia en el trabajo","description":"Un agente de IA no es un chatbot. Percibe, razona, actúa y aprende en bucle. En ocho diapositivas entiendes la diferencia, los casos reales —Claude Computer Use, Devin, Operator— y qué empleos están ya en riesgo.","url":"https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html","datePublished":"2026-05-06","dateModified":"2026-05-06","author":{"@type":"Organization","name":"Redacción HdD","url":"https://horadedespertar.org"},"publisher":{"@type":"Organization","name":"Hora de Despertar","url":"https://horadedespertar.org","logo":{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-192.png"}},"image":{"@type":"ImageObject","url":"https://horadedespertar.org/assets/og/agentes-ia-educacion-2026.jpg","width":1200,"height":630},"inLanguage":"es","isAccessibleForFree":true}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://horadedespertar.org/"},{"@type":"ListItem","position":2,"name":"Noticias","item":"https://horadedespertar.org/noticias.html"},{"@type":"ListItem","position":3,"name":"Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre","item":"https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://horadedespertar.org/"},{"@type":"ListItem","position":2,"name":"Educación","item":"https://horadedespertar.org/educacion.html"},{"@type":"ListItem","position":3,"name":"Agentes de IA: qué son, cómo funcionan y qué cambia en el trabajo","item":"https://horadedespertar.org/agentes-ia-que-son-como-funcionan-educacion-2026.html"}]}
+  </script>
+
+  <style>
+    .edu-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (max-width: 600px) { .edu-split { grid-template-columns: 1fr; } }
+    .edu-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--surface);
+    }
+    .edu-card .edu-card-icon {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .edu-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+    .edu-card p  { font-size: 0.88rem; color: var(--ink-dim); margin: 0; line-height: 1.55; }
+    .edu-card.is-red   { border-left: 3px solid var(--red); }
+    .edu-card.is-gold  { border-left: 3px solid var(--accent); }
+    .edu-card.is-green { border-left: 3px solid #22c55e; }
+    .edu-card.is-blue  { border-left: 3px solid #3b82f6; }
+
+    .edu-steps { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+    .edu-step  { display: flex; gap: 14px; align-items: flex-start; }
+    .edu-step-num {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--red); color: #fff;
+      font-family: var(--mono); font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .edu-step-body { flex: 1; }
+    .edu-step-body strong { display: block; font-size: 0.92rem; margin-bottom: 4px; color: var(--ink); }
+    .edu-step-body p { font-size: 0.88rem; color: var(--ink-dim); margin: 0; line-height: 1.5; }
+
+    .edu-table {
+      width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.88rem;
+    }
+    .edu-table th {
+      background: var(--surface); padding: 10px 14px; text-align: left;
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--ink-mute); border-bottom: 2px solid var(--line);
+    }
+    .edu-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); color: var(--ink-dim); }
+    .edu-table tr:last-child td { border-bottom: none; }
+    .edu-table td:first-child { font-weight: 600; color: var(--ink); }
+    .tag-good    { color: #22c55e; font-weight: 700; }
+    .tag-bad     { color: var(--red); font-weight: 700; }
+    .tag-neutral { color: var(--accent); font-weight: 700; }
+
+    .edu-checklist { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .edu-checklist li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--ink-dim); line-height: 1.5; }
+    .edu-checklist li::before { content: "→"; color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .edu-big-quote {
+      font-size: 1.25rem; font-weight: 600; line-height: 1.45; color: var(--ink);
+      border-left: 3px solid var(--red); padding-left: 20px; margin: 24px 0;
+    }
+
+    .edu-highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+    .edu-highlight-box .eyebrow-small {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--red); font-family: var(--mono); display: block; margin-bottom: 8px;
+    }
+    .edu-highlight-box p { font-size: 0.9rem; color: var(--ink-dim); margin: 0; line-height: 1.6; }
+    .edu-highlight-box strong { color: var(--ink); }
+
+    .edu-cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 700px) { .edu-cards-3 { grid-template-columns: 1fr; } }
+
+    .edu-loop-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 28px 0 20px;
+      flex-wrap: wrap;
+    }
+    .edu-loop-step {
+      text-align: center;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      min-width: 90px;
+    }
+    .edu-loop-step .loop-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+    .edu-loop-step .loop-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); }
+    .edu-loop-arrow {
+      font-size: 1.4rem; color: var(--red); padding: 0 8px; font-weight: 700;
+    }
+  </style>
+
+  <!-- OneSignal Push Notifications -->
+  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+  <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+      await OneSignal.init({
+        appId: "26a69bec-30c7-4e90-a6b7-24ffab2e5e90",
+      });
+    });
   </script>
 </head>
 <body>
+
   <header class="site-header">
     <div class="wrap bar">
       <div class="brand-unit">
         <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
         <span class="header-clock logo-led" data-live-clock aria-label="Hora actual">--:--</span>
-        <span class="header-site-name">Hora de Despertar</span>
       </div>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
       <nav class="nav" id="main-nav">
         <a href="index.html">Inicio</a>
-        <a href="noticias.html">Noticias</a>
-        <a href="educacion.html">Educación</a>
-        <a href="newsletter.html">Semanal</a>
         <a href="manifiesto.html">Manifiesto</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="educacion.html" class="active">Educación</a>
+        <a href="newsletter.html">Semanal</a>
       </nav>
     </div>
   </header>
 
   <main>
+
     <a href="noticias.html" class="back-link">← Todas las noticias</a>
 
-    <!-- Barra de modo de lectura -->
     <div class="reading-mode-bar">
       <div class="wrap bar--reading">
         <span class="reading-mode-label">Modo de lectura</span>
@@ -74,140 +197,494 @@
       </div>
     </div>
 
-    <!-- Vista de diapositivas -->
     <div class="slides-view mode-flow" id="slides-view">
 
-      <!-- Barra de progreso -->
       <div class="slide-progress-bar" aria-hidden="true">
         <div class="slide-progress-fill"></div>
       </div>
 
+      <!-- ═══════════════════════════════
+           SLIDE 1 — PORTADA
+           ═══════════════════════════════ -->
       <section class="slide slide--cover" data-slide="0" aria-label="Portada">
         <div class="slide-inner">
-          <span class="slide-num">01 — 04</span>
+          <span class="slide-num">01 — 08</span>
           <span class="slide-label">Tecnología · Educación</span>
-          <div class="slide-cover-content">
-            <span class="eyebrow">Tecnología · Educación</span>
-            <h1>Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre</h1>
-            <p class="lead">Un chatbot responde preguntas. Un agente de IA hace cosas: busca, escribe código, envía correos, opera software y toma decisiones en cadena sin que nadie le dé instrucciones a cada paso. Este es el cambio que está detrás de los despidos en consultoras tech, de las nuevas herramientas que están llegando a las empresas y del debate sobre qué empleos sobreviven. Explicado desde cero.</p>
-            <div class="slide-meta-row">
-              <span><strong>Noticias HdD</strong> · 06·05·26</span>
-              <span><strong>Autor</strong> · Redacción HdD</span>
+          <h1>Agentes de IA: qué son, cómo piensan, qué hacen solos y qué cambia cuando una máquina puede actuar por ti</h1>
+          <p class="lead">Un chatbot responde. Un agente actúa. Esa diferencia de una sola palabra resume la mayor transformación tecnológica en marcha: sistemas de IA que perciben el entorno, razonan sobre qué hacer, ejecutan acciones en el mundo real y aprenden del resultado, todo ello en bucle y sin esperar a que un humano pulse intro. En ocho diapositivas entiendes qué es un agente de IA, por qué no es lo mismo que ChatGPT, cómo funciona por dentro, qué herramientas usa, cuáles ya están en producción en empresas reales, qué empleos están desapareciendo —Capgemini e Inetum ya lo dicen en voz alta— y qué preguntas no tienen respuesta todavía.</p>
+          <div class="slide-meta-row">
+            <span><strong>Publicado</strong> · 06 MAY 2026</span>
+            <span><strong>Lectura</strong> · 18–20 min</span>
+            <span><strong>Autor</strong> · Redacción HdD</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 2 — MODELO VS AGENTE
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="1" aria-label="Modelo vs agente">
+        <div class="slide-inner">
+          <span class="slide-num">02 — 08</span>
+          <span class="slide-label">La distinción clave</span>
+          <h2>Chatbot vs. agente de IA: por qué no son lo mismo aunque usen el mismo modelo</h2>
+
+          <p>Cuando le preguntas algo a ChatGPT, Claude o Gemini, estás usando un <strong>modelo de lenguaje</strong> (LLM). El modelo recibe texto, procesa y devuelve texto. Su "vida" dura lo que dura esa única consulta: sin memoria persistente, sin capacidad de actuar en el mundo, sin posibilidad de encadenar varias tareas por sí solo. Es un oráculo muy sofisticado, pero solo habla.</p>
+
+          <p>Un <strong>agente de IA</strong> usa ese mismo modelo como cerebro, pero le añade un sistema nervioso: puede observar el estado del entorno, decidir qué herramientas usar, ejecutar acciones —enviar correos, escribir código, navegar por webs, llamar a APIs— y evaluar si el resultado fue el esperado antes de dar el siguiente paso. La diferencia no es de inteligencia: es de <em>autonomía operativa</em>.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">💬</span>
+              <h4>Modelo / Chatbot</h4>
+              <p><strong>Entrada:</strong> texto.<br>
+              <strong>Salida:</strong> texto.<br>
+              <strong>Memoria:</strong> solo la conversación actual.<br>
+              <strong>Capacidad de actuar:</strong> ninguna por sí solo.<br><br>
+              <strong>Analogía:</strong> un asesor muy brillante que solo puede darte consejos de palabra pero no puede hacer nada concreto. Le dices "necesito reservar el vuelo" y te explica cómo hacerlo. Tú lo haces.</p>
+            </div>
+            <div class="edu-card is-green">
+              <span class="edu-card-icon">🤖</span>
+              <h4>Agente de IA</h4>
+              <p><strong>Entrada:</strong> objetivo o tarea.<br>
+              <strong>Salida:</strong> resultado en el mundo real (código ejecutado, correo enviado, formulario rellenado).<br>
+              <strong>Memoria:</strong> contexto persistente + memoria a largo plazo.<br>
+              <strong>Capacidad de actuar:</strong> usa herramientas, llama a APIs, navega webs.<br><br>
+              <strong>Analogía:</strong> un becario muy capaz al que le dices "organiza la reunión" y lo hace de principio a fin.</p>
+            </div>
+          </div>
+
+          <div class="didactic-box" style="margin-top: 20px;">
+            <span class="eyebrow">El ejemplo que lo aclara todo</span>
+            <h4>«Résumeme el informe» vs. «Consígueme el informe y résumemelo»</h4>
+            <p>Si le dices a ChatGPT "résumeme el último informe de McKinsey sobre IA", te dirá que no puede acceder a internet. Si le dices lo mismo a un agente correctamente configurado, buscará el informe en la web, lo descargará, extraerá el texto, lo procesará y te entregará el resumen —posiblemente con citas textuales verificadas—. La tarea es idéntica. La capacidad de ejecución autónoma es radicalmente distinta.</p>
+          </div>
+
+          <div class="edu-highlight-box" style="margin-top: 20px;">
+            <span class="eyebrow-small">Por qué ahora y no antes</span>
+            <p>Los agentes de IA existían conceptualmente desde los años 90 en la investigación académica. Lo que los hace viables hoy es la combinación de tres factores que antes no coincidían: <strong>(1)</strong> modelos de lenguaje suficientemente capaces para razonar sobre situaciones complejas y ambiguas; <strong>(2)</strong> interfaces de herramientas estandarizadas (APIs, function calling) que permiten al modelo "llamar" a sistemas externos de forma segura; y <strong>(3)</strong> coste de inferencia lo bastante bajo como para ejecutar decenas de pasos en un mismo flujo sin que resulte prohibitivo. La ventana entre 2023 y 2026 es cuando todo eso convergió.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 3 — EL BUCLE
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="2" aria-label="El bucle percibir-razonar-actuar">
+        <div class="slide-inner">
+          <span class="slide-num">03 — 08</span>
+          <span class="slide-label">Cómo funciona</span>
+          <h2>El bucle que hace posible la autonomía: percibir, razonar, actuar, evaluar</h2>
+
+          <p>Dentro de un agente de IA no hay magia: hay un bucle que se repite una y otra vez hasta completar la tarea. Ese bucle tiene cuatro fases. Entender cada una es entender por qué los agentes pueden hacer cosas que un chatbot no puede hacer aunque usen el mismo modelo por debajo.</p>
+
+          <div class="edu-loop-diagram" aria-hidden="true">
+            <div class="edu-loop-step">
+              <span class="loop-icon">👁️</span>
+              <span class="loop-label">Percibir</span>
+            </div>
+            <span class="edu-loop-arrow">→</span>
+            <div class="edu-loop-step">
+              <span class="loop-icon">🧠</span>
+              <span class="loop-label">Razonar</span>
+            </div>
+            <span class="edu-loop-arrow">→</span>
+            <div class="edu-loop-step">
+              <span class="loop-icon">⚡</span>
+              <span class="loop-label">Actuar</span>
+            </div>
+            <span class="edu-loop-arrow">→</span>
+            <div class="edu-loop-step">
+              <span class="loop-icon">🔍</span>
+              <span class="loop-label">Evaluar</span>
+            </div>
+            <span class="edu-loop-arrow">↺</span>
+          </div>
+
+          <div class="edu-steps">
+            <div class="edu-step">
+              <span class="edu-step-num">1</span>
+              <div class="edu-step-body">
+                <strong>Percibir — ¿qué está pasando en el entorno?</strong>
+                <p>El agente recibe información sobre su estado actual: la tarea asignada, el historial de pasos anteriores, el resultado de la última acción, cualquier dato nuevo del exterior (respuesta de una API, contenido de una página web, resultado de ejecutar código). Esta "percepción" es lo que diferencia cada iteración del bucle. El agente no empieza de cero en cada paso: sabe exactamente dónde está y qué ha hecho. Piensa en ello como el briefing que recibes al llegar a tu turno de trabajo: no empiezas ignorando lo que pasó antes.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">2</span>
+              <div class="edu-step-body">
+                <strong>Razonar — ¿qué debería hacer ahora?</strong>
+                <p>El LLM analiza la situación y decide: ¿tengo suficiente información para dar el siguiente paso? ¿Qué herramienta necesito usar? ¿He completado la tarea o necesito más pasos? Esta fase puede incluir técnicas como <em>chain-of-thought</em> (razonamiento en cadena, donde el modelo "piensa en voz alta" antes de decidir), descomposición de la tarea en subtareas más pequeñas, o evaluación de si la ruta actual es la correcta o hay que cambiar de enfoque. Es el equivalente de pararte cinco segundos a pensar antes de actuar, en vez de lanzarte a lo primero que se te ocurre.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">3</span>
+              <div class="edu-step-body">
+                <strong>Actuar — ejecutar la herramienta elegida</strong>
+                <p>El agente llama a una herramienta concreta: hace una búsqueda en Google, ejecuta un fragmento de código Python, navega a una URL, rellena un formulario, llama a una API externa, escribe un fichero. La acción tiene efecto en el mundo real, no solo en el contexto de la conversación. Esto es lo que hace que un agente sea cualitativamente diferente: sus acciones tienen consecuencias fuera del chat.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">4</span>
+              <div class="edu-step-body">
+                <strong>Evaluar — ¿ha funcionado? ¿hay que continuar?</strong>
+                <p>El agente recibe el resultado de la acción y lo analiza. ¿La búsqueda devolvió información útil? ¿El código se ejecutó sin errores? ¿La API respondió con los datos esperados? En función de esa evaluación, el bucle vuelve a empezar (nueva iteración) o se detiene porque la tarea está completa. Un agente bien diseñado también sabe cuándo tiene que <em>pedir ayuda al humano</em> porque ha llegado a un punto de ambigüedad que no puede resolver solo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-highlight-box" style="margin-top: 20px;">
+            <span class="eyebrow-small">Cuántas vueltas da el bucle</span>
+            <p>Una tarea sencilla (buscar un dato concreto) puede resolverse en 2-3 iteraciones. Una tarea compleja —analizar un dataset, escribir y depurar código, investigar un tema con múltiples fuentes— puede requerir 20, 50 o incluso 100 iteraciones. El coste computacional (y económico) escala con la complejidad. Por eso los agentes de IA todavía son caros de usar a gran escala y las empresas los despliegan en tareas donde el valor generado justifica el coste.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 4 — LAS HERRAMIENTAS
+           ═══════════════════════════════ -->
+      <section class="slide slide--concepts" data-slide="3" aria-label="Las herramientas de un agente">
+        <div class="slide-inner">
+          <span class="slide-num">04 — 08</span>
+          <span class="slide-label">Qué puede hacer</span>
+          <h2>Las herramientas: lo que convierte a un modelo en un agente capaz de actuar</h2>
+
+          <p>Las herramientas son la clave. Sin ellas, un LLM es un generador de texto extremadamente sofisticado. Con ellas, se convierte en un sistema capaz de buscar, calcular, navegar, escribir, ejecutar y comunicarse con el exterior. Cada herramienta es un "superpoder" que el agente puede invocar cuando lo necesita.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">🔍</span>
+              <h4>Búsqueda web</h4>
+              <p>El agente puede consultar Google, Bing o motores especializados en tiempo real. Esto rompe la limitación de fecha de corte de los LLMs: el agente tiene acceso a información publicada hoy, no solo a lo que había en los datos de entrenamiento. También puede verificar datos, contrastar fuentes y detectar cuando algo ha cambiado desde su última consulta.</p>
+            </div>
+            <div class="edu-card is-blue">
+              <span class="edu-card-icon">💻</span>
+              <h4>Ejecutor de código</h4>
+              <p>El agente puede escribir código en Python (u otros lenguajes), ejecutarlo en un entorno aislado (sandbox) y recibir el resultado. Esto lo hace capaz de hacer cálculos precisos, procesar datos, generar gráficos, transformar ficheros, instalar librerías y depurar sus propios errores de forma autónoma. Es uno de los superpoderes más potentes: convierte al agente en un analista de datos funcional.</p>
+            </div>
+            <div class="edu-card is-gold">
+              <span class="edu-card-icon">🌐</span>
+              <h4>Navegador web</h4>
+              <p>El agente puede controlar un navegador real (Chromium, por ejemplo): visitar URLs, hacer clic, rellenar formularios, extraer texto de páginas, descargar ficheros, hacer login en servicios web. Claude Computer Use de Anthropic y OpenAI Operator usan esta capacidad para realizar tareas completas en la web como lo haría un humano: reservar vuelos, tramitar solicitudes administrativas, completar flujos de compra.</p>
+            </div>
+            <div class="edu-card is-green">
+              <span class="edu-card-icon">🔗</span>
+              <h4>APIs y conectores</h4>
+              <p>El agente puede llamar directamente a APIs externas: leer y escribir en Google Calendar, enviar correos por Gmail, actualizar registros en Salesforce, crear issues en GitHub, consultar bases de datos internas de la empresa. El protocolo MCP (Model Context Protocol) de Anthropic está emergiendo como estándar para conectar agentes con sistemas empresariales de forma segura y auditable.</p>
+            </div>
+          </div>
+
+          <div class="didactic-box" style="margin-top: 20px;">
+            <span class="eyebrow">La analogía que funciona</span>
+            <h4>El agente es como un trabajador con acceso controlado a los sistemas de la empresa</h4>
+            <p>Imagina que contratas a un trabajador muy competente pero le das acceso solo a los sistemas que necesita para su trabajo: puede leer el CRM pero no borrarlo, puede enviar correos desde la cuenta del equipo pero no acceder a finanzas, puede ejecutar scripts en el servidor de test pero no en producción. Así funcionan los agentes bien diseñados: con permisos granulares que limitan el daño que pueden causar si cometen un error o son manipulados (lo que se conoce como <em>prompt injection</em>: un atacante que intenta redirigir las acciones del agente a través de contenido malicioso en una web que el agente visita).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 5 — MEMORIA Y PLANIFICACIÓN
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="4" aria-label="Memoria y planificación">
+        <div class="slide-inner">
+          <span class="slide-num">05 — 08</span>
+          <span class="slide-label">Cómo recuerda</span>
+          <h2>Memoria y planificación: cómo un agente mantiene el hilo en tareas que duran horas o días</h2>
+
+          <p>Uno de los límites más importantes de los LLMs es la <strong>ventana de contexto</strong>: la cantidad de texto que puede "ver" el modelo a la vez. Si esa ventana se llena, el modelo empieza a perder información de los primeros pasos. En un chatbot esto se nota cuando "se olvida" de algo que dijiste al principio. En un agente que trabaja durante horas en una tarea compleja, sería catastrófico. Por eso los agentes sofisticados tienen sistemas de memoria separados del contexto puro del modelo.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">📋</span>
+              <h4>Memoria de trabajo (contexto)</h4>
+              <p>Es la "memoria RAM" del agente: todo lo que está activo en este momento —la tarea actual, los últimos pasos, los datos que acaba de recuperar—. Tiene un límite físico (la ventana de contexto del modelo, que hoy puede ser de 200.000 tokens en los mejores modelos, equivalente a unas 150.000 palabras). Cuando se acerca al límite, el agente debe comprimir o resumir la información menos relevante para liberar espacio.</p>
+            </div>
+            <div class="edu-card is-gold">
+              <span class="edu-card-icon">💾</span>
+              <h4>Memoria a largo plazo (vectorial)</h4>
+              <p>Es la "memoria disco duro": una base de datos que el agente puede consultar y actualizar. Almacena hechos aprendidos de conversaciones anteriores, preferencias del usuario, resultados de tareas pasadas, documentos de referencia. Usa tecnología de <em>embeddings</em> y búsqueda semántica: el agente no busca por palabras exactas sino por significado. Cuando necesita algo de su memoria larga, recupera solo los fragmentos más relevantes para no saturar el contexto.</p>
+            </div>
+          </div>
+
+          <div class="edu-steps" style="margin-top: 20px;">
+            <div class="edu-step">
+              <span class="edu-step-num">1</span>
+              <div class="edu-step-body">
+                <strong>Planificación hacia atrás: del objetivo a los pasos</strong>
+                <p>Un agente bien diseñado no empieza a actuar de inmediato. Primero descompone el objetivo en subtareas concretas, ordenadas y con dependencias claras. Es como escribir un plan de proyecto antes de ejecutarlo. Esta planificación inicial evita muchos errores de dirección: es mucho más costoso darse cuenta a mitad de camino de que el enfoque era equivocado que corregirlo antes de empezar.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">2</span>
+              <div class="edu-step-body">
+                <strong>Re-planificación dinámica: cuando algo sale mal</strong>
+                <p>El mundo real rara vez sigue el plan. Una API puede fallar, una página web puede tener una estructura diferente a la esperada, los datos pueden estar en un formato inesperado. Los agentes robustos detectan estas situaciones (evaluación en el bucle) y ajustan el plan en tiempo real: buscan una ruta alternativa, intentan una herramienta diferente, o escalan al humano si la situación supera su capacidad de resolución autónoma.</p>
+              </div>
+            </div>
+            <div class="edu-step">
+              <span class="edu-step-num">3</span>
+              <div class="edu-step-body">
+                <strong>Agentes múltiples: dividir para conquistar</strong>
+                <p>Las tareas muy complejas se resuelven mejor con varios agentes especializados que colaboran. Un agente "orquestador" divide el trabajo y lo asigna a agentes "ejecutores" especializados en áreas concretas (uno busca información, otro escribe código, otro verifica resultados). Esta arquitectura multiagente es la que permite abordar proyectos de semanas en horas, y es donde compañías como Anthropic, OpenAI y Google están invirtiendo más en 2026.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-big-quote">
+            Un agente con buena memoria y capacidad de re-planificación es más fiable que un agente más "inteligente" que trabaja de forma lineal y se pierde cuando algo no encaja.
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════
+           SLIDE 6 — AGENTES EN LA PRÁCTICA
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="5" aria-label="Agentes en la práctica">
+        <div class="slide-inner">
+          <span class="slide-num">06 — 08</span>
+          <span class="slide-label">Casos reales</span>
+          <h2>Los agentes ya están en producción: de Claude Computer Use a los bots de Salesforce</h2>
+
+          <p>Los agentes de IA ya no son prototipos de laboratorio. Hay productos comerciales disponibles hoy que los utilizan. Algunos son "agentes de propósito general" diseñados para cualquier tarea; otros son agentes especializados integrados en flujos de trabajo empresariales concretos. Aquí los más relevantes en 2026.</p>
+
+          <table class="edu-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Empresa</th>
+                <th>Qué hace</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Claude Computer Use</td>
+                <td>Anthropic</td>
+                <td>Controla el escritorio del ordenador: apps, navegador, terminal. El modelo "ve" la pantalla y ejecuta clics y pulsaciones de teclado.</td>
+                <td class="tag-good">Disponible (API)</td>
+              </tr>
+              <tr>
+                <td>Operator</td>
+                <td>OpenAI</td>
+                <td>Navega la web de forma autónoma para completar tareas: reservar restaurantes, rellenar formularios, comprar entradas, tramitar solicitudes.</td>
+                <td class="tag-good">Disponible (ChatGPT Pro)</td>
+              </tr>
+              <tr>
+                <td>Devin</td>
+                <td>Cognition AI</td>
+                <td>Agente de desarrollo software: escribe código, ejecuta tests, depura errores, crea pull requests en GitHub. Primer "ingeniero de software autónomo".</td>
+                <td class="tag-good">Disponible (empresas)</td>
+              </tr>
+              <tr>
+                <td>GitHub Copilot Workspace</td>
+                <td>Microsoft / GitHub</td>
+                <td>Toma un issue de GitHub, planifica los cambios de código necesarios, implementa las modificaciones y crea el pull request listo para revisión humana.</td>
+                <td class="tag-good">Disponible (beta)</td>
+              </tr>
+              <tr>
+                <td>Agentforce</td>
+                <td>Salesforce</td>
+                <td>Agentes integrados en el CRM que gestionan tickets de soporte, cualifican leads, actualizan registros y envían respuestas a clientes de forma autónoma.</td>
+                <td class="tag-good">Disponible (enterprise)</td>
+              </tr>
+              <tr>
+                <td>Project Mariner</td>
+                <td>Google DeepMind</td>
+                <td>Agente que navega Chrome de forma autónoma, entiende páginas complejas y completa tareas multi-paso en la web.</td>
+                <td class="tag-neutral">Preview limitado</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="edu-split" style="margin-top: 20px;">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">🖥️</span>
+              <h4>Claude Computer Use: el agente que ve tu pantalla</h4>
+              <p>Lanzado por Anthropic en octubre de 2024, Claude Computer Use fue el primero en demostrar que un LLM puede controlar un ordenador completo a partir de capturas de pantalla. El modelo analiza visualmente la pantalla, identifica botones, menús y campos de texto, y genera las acciones necesarias (clics, escritura, desplazamientos). En demos públicas completó tareas como rellenar formularios en webs gubernamentales, instalar software, analizar datos en Excel y gestionar ficheros. La tasa de éxito en tareas complejas todavía es del 38–60% según el benchmark OSWorld, lo que significa que necesita supervisión, pero la mejora trimestral es significativa.</p>
+            </div>
+            <div class="edu-card is-blue">
+              <span class="edu-card-icon">⚙️</span>
+              <h4>Devin: el ingeniero de software que no duerme</h4>
+              <p>Devin, de Cognition AI, fue presentado en marzo de 2024 como el primer "ingeniero de software totalmente autónomo". Puede leer la descripción de un bug en GitHub, analizar el código relevante, proponer la corrección, implementarla, ejecutar los tests, depurar si algo falla y crear el pull request. En el benchmark SWE-bench, que evalúa la resolución de issues reales de GitHub, Devin alcanzó el 13,86% de éxito inicial (frente al 1,96% de los mejores modelos anteriores). Una cifra que suena baja pero en problemas de ingeniería del mundo real es revolucionaria.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="slide slide--concepts" data-slide="1" aria-label="Conceptos básicos">
+      <!-- ═══════════════════════════════
+           SLIDE 7 — QUÉ CAMBIA EN EL TRABAJO
+           ═══════════════════════════════ -->
+      <section class="slide slide--development" data-slide="6" aria-label="El impacto en el trabajo">
         <div class="slide-inner">
-          <span class="slide-num">02 — 04</span>
-          <span class="slide-label">Antes de leer</span>
-          <h2>Lo que necesitas saber primero</h2>
-          <div class="concepts-grid">
-          <div class="didactic-box">
-            <h4>Modelo de IA vs. agente de IA: la diferencia que importa</h4>
-            <p>Un modelo de IA (como GPT-4o o Claude) es un sistema que recibe texto y devuelve texto. Es una caja: metes una pregunta, sale una respuesta. Un agente de IA es ese mismo modelo al que se le han dado herramientas y se le ha dicho que consiga un objetivo. En vez de responder y parar, el agente planifica pasos, ejecuta acciones —buscar en internet, leer un archivo, escribir código, hacer clic en una web— evalúa el resultado y sigue hasta terminar. La diferencia no es de inteligencia: es de autonomía.</p>
+          <span class="slide-num">07 — 08</span>
+          <span class="slide-label">El impacto</span>
+          <h2>Qué cambia en el trabajo cuando los agentes pueden hacer tareas completas, no solo asistir</h2>
+
+          <p>Mientras los chatbots eran <em>herramientas de asistencia</em> —ayudaban a los humanos a trabajar más rápido—, los agentes son <em>sustitutos funcionales</em> para determinadas tareas completas. Esa diferencia tiene consecuencias directas en el empleo. No hipotéticas: ya están pasando en España.</p>
+
+          <div class="edu-highlight-box">
+            <span class="eyebrow-small">ERE explícito por IA — Capgemini, abril 2026</span>
+            <p>La consultora tecnológica Capgemini anunció en abril de 2026 un ERE que afecta a cientos de trabajadores en España, siendo el primero en el sector en el que la empresa reconoció explícitamente que <strong>la IA puede realizar el trabajo que hacían esos empleados</strong>. Los perfiles afectados son principalmente desarrolladores junior, testers de software y analistas de datos de nivel medio. Capgemini señaló que agentes de IA como Devin y GitHub Copilot Workspace les permiten completar ciertos proyectos con un equipo un 40-60% más pequeño.</p>
           </div>
-          <div class="didactic-box">
-            <h4>El bucle de un agente: percibir, razonar, actuar</h4>
-            <p>Todo agente de IA funciona en un bucle de tres fases que se repite hasta alcanzar el objetivo. Primero percibe: lee el entorno (una web, un documento, el resultado de su última acción). Luego razona: decide qué hacer a continuación basándose en el objetivo y en lo que ha percibido. Finalmente actúa: ejecuta una herramienta (una búsqueda, un script, una API). Después vuelve a percibir el resultado de esa acción y repite. Este bucle puede ejecutarse decenas de veces en segundos para completar una tarea compleja.</p>
+
+          <div class="edu-highlight-box" style="border-left-color: var(--accent); margin-top: 16px;">
+            <span class="eyebrow-small" style="color: var(--accent);">Segunda consultora en dos semanas — Inetum, mayo 2026</span>
+            <p>Solo días después, Inetum anunció el despido de 400 trabajadores en España, convirtiéndose en la segunda gran consultora tecnológica en iniciar un ERE con la IA como justificación declarada. La compañía citó la adopción de agentes de IA en procesos de soporte técnico, gestión de incidencias y desarrollo de software como la causa directa de la reducción de plantilla.</p>
           </div>
-          <div class="didactic-box">
-            <h4>Qué son las herramientas de un agente</h4>
-            <p>Las herramientas son las capacidades que el agente puede usar en la fase de acción. Un agente puede tener acceso a: búsqueda web (buscar en Google), ejecutor de código (escribir y correr Python), navegador (abrir páginas, hacer clic, rellenar formularios), gestor de archivos (leer y escribir documentos), APIs externas (enviar un email, crear una tarea en Jira, consultar una base de datos). El agente decide en cada paso qué herramienta usar. Cuantas más herramientas tiene, más cosas puede hacer — y más supervisión necesita.</p>
-          </div>
-          <div class="didactic-box">
-            <h4>Memoria: por qué los agentes no olvidan (o no deberían)</h4>
-            <p>Un chatbot normal olvida todo al acabar la conversación. Los agentes más avanzados tienen memoria persistente: guardan lo que han aprendido en sesiones anteriores, el estado de una tarea en curso o el perfil del usuario con quien trabajan. Hay dos tipos: memoria a corto plazo (el contexto de la tarea actual, que puede ser miles de palabras) y memoria a largo plazo (una base de datos externa donde el agente guarda y recupera información relevante). La memoria es lo que hace que un agente pueda retomar una tarea donde la dejó ayer.</p>
-          </div>
+
+          <table class="edu-table" style="margin-top: 24px;">
+            <thead>
+              <tr>
+                <th>Perfil profesional</th>
+                <th>Tareas más expuestas a agentes</th>
+                <th>Nivel de riesgo a 3 años</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desarrollador junior</td>
+                <td>Código boilerplate, corrección de bugs simples, tests unitarios, documentación</td>
+                <td class="tag-bad">Alto</td>
+              </tr>
+              <tr>
+                <td>Analista de datos</td>
+                <td>Limpieza de datos, generación de informes estándar, visualizaciones rutinarias</td>
+                <td class="tag-bad">Alto</td>
+              </tr>
+              <tr>
+                <td>QA / Tester</td>
+                <td>Tests de regresión, detección de errores, generación de casos de prueba</td>
+                <td class="tag-bad">Muy alto</td>
+              </tr>
+              <tr>
+                <td>Soporte técnico nivel 1</td>
+                <td>Resolución de incidencias estándar, FAQs, escalado de tickets</td>
+                <td class="tag-bad">Muy alto</td>
+              </tr>
+              <tr>
+                <td>Paralegal / Asistente legal</td>
+                <td>Revisión de contratos, búsqueda de jurisprudencia, síntesis de documentos</td>
+                <td class="tag-neutral">Medio-alto</td>
+              </tr>
+              <tr>
+                <td>Desarrollador senior / Arquitecto</td>
+                <td>Diseño de sistemas, decisiones de negocio, supervisión de agentes</td>
+                <td class="tag-good">Bajo (transición de rol)</td>
+              </tr>
+              <tr>
+                <td>Gestor de proyectos</td>
+                <td>Coordinación humana, gestión de stakeholders, toma de decisiones ambiguas</td>
+                <td class="tag-good">Bajo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="edu-split" style="margin-top: 20px;">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">📉</span>
+              <h4>Qué tareas desaparecen o se reducen</h4>
+              <p>Las tareas más en riesgo son las que combinan tres características: son bien definidas (hay una respuesta correcta), repetitivas (el mismo proceso una y otra vez) y basadas en información existente (no requieren juicio sobre situaciones genuinamente nuevas). Un agente puede hacer miles de estas tareas en paralelo, sin cansarse, sin cometer errores de concentración y a un coste marginal casi nulo tras la inversión inicial en configuración.</p>
+            </div>
+            <div class="edu-card is-green">
+              <span class="edu-card-icon">📈</span>
+              <h4>Qué queda en manos humanas</h4>
+              <p>Los roles que se refuerzan son los que requieren: responsabilidad legal o ética sobre decisiones (los agentes pueden equivocarse y alguien tiene que asumir la consecuencia), creatividad genuinamente novedosa (no síntesis de lo existente), relaciones de confianza interpersonal, y supervisión y auditoría de los propios agentes. El perfil más demandado en 2026: quien sabe tanto de su dominio como de cómo diseñar y supervisar agentes de IA.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="slide slide--development" data-slide="2" aria-label="Desarrollo">
+      <!-- ═══════════════════════════════
+           SLIDE 8 — RIESGOS Y LA PREGUNTA
+           ═══════════════════════════════ -->
+      <section class="slide slide--analysis" data-slide="7" aria-label="Riesgos y preguntas abiertas">
         <div class="slide-inner">
-          <span class="slide-num">03 — 04</span>
-          <span class="slide-label">La noticia</span>
-          <h2>Agentes de IA: qué son, cómo funcionan y por qué cambian el trabajo para siempre</h2>
-
-          <div class="slide-section">
-            <h3>Los hechos</h3>
-            <p>En 2025, Anthropic (empresa que desarrolla Claude), OpenAI y Google lanzaron sus primeros sistemas de agentes de uso general: Claude Computer Use, Operator y Project Mariner respectivamente. En enero de 2026, Salesforce anunció que desplegaba agentes autónomos en sus plataformas empresariales, afectando a roles de soporte, análisis de datos y gestión de CRM. La consultora McKinsey estima que el 60-70% de las tareas en sectores como banca, consultoría y servicios legales son automatizables con agentes de IA en los próximos 3-5 años. Los ERE en Capgemini (748 empleos, abril 2026) e Inetum (400 empleos, mayo 2026) son los primeros en España que citan explícitamente la automatización por IA como causa — en ambos casos se trata de tareas de testing, soporte técnico y análisis de datos repetitivo: exactamente lo que los agentes hacen.</p>
-          </div>
-
-          <div class="slide-section">
-            <h3>El contexto</h3>
-            <p>El concepto de agente de IA no es nuevo: los investigadores de IA lo llevan desarrollando desde los años 80 bajo el nombre de 'sistemas multiagente' o 'agentes autónomos'. Lo que es nuevo es que los modelos de lenguaje (LLM) como GPT-4 o Claude han alcanzado un nivel de comprensión del lenguaje y razonamiento lo bastante alto como para usar herramientas de forma fiable. Antes, construir un agente que pudiera navegar una web o interpretar un error de código era un proyecto de investigación de años. Hoy se puede implementar en semanas. El AI Act de la UE, que entra en vigor en agosto de 2026, regula los sistemas de 'alto riesgo' y obliga a transparencia, pero aún no tiene directrices específicas para agentes autónomos. Es el vacío regulatorio del momento.</p>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="slide slide--analysis" data-slide="3" aria-label="Análisis">
-        <div class="slide-inner">
-          <span class="slide-num">04 — 04</span>
+          <span class="slide-num">08 — 08</span>
           <span class="slide-label">Análisis</span>
-          <h2>Lo que los datos no dicen solos</h2>
+          <h2>Los riesgos reales, las preguntas sin respuesta y lo que todavía no sabemos</h2>
 
-          <div class="slide-section">
-            <h3>Cómo lo han contado otros medios</h3>
-            <p>Los medios tecnológicos anglosajones (Wired, MIT Technology Review, The Verge) llevan dos años cubriendo los agentes con un tono entre la admiración y la alarma. Los medios generalistas españoles los han ignorado casi por completo hasta los primeros ERE tech de 2026, cuando empezaron a aparecer como causa de despidos. Este retraso es importante: la sociedad está llegando tarde al debate sobre qué son realmente los agentes y qué riesgos plantean.</p>
+          <p>Los agentes de IA abren capacidades enormes pero también introducen riesgos cualitativamente nuevos. No son los riesgos especulativos de la ciencia ficción: son problemas de ingeniería, legales y sociales que ya están en los tribunales, en los parlamentos y en los manuales de los departamentos de recursos humanos.</p>
+
+          <div class="edu-split">
+            <div class="edu-card is-red">
+              <span class="edu-card-icon">🌀</span>
+              <h4>Alucinaciones con consecuencias reales</h4>
+              <p>Un chatbot que alucina (inventa un dato que no existe) causa un malentendido. Un agente que alucina <em>y actúa</em> puede enviar un correo con información errónea a un cliente, borrar un fichero equivocado, hacer una compra no autorizada o modificar un registro en una base de datos. La diferencia entre alucinación pasiva y activa es enorme. En 2024, un abogado en EE.UU. fue sancionado por presentar al tribunal jurisprudencia inventada por ChatGPT. Con agentes autónomos, ese tipo de errores podría ejecutarse sin intervención humana.</p>
+            </div>
+            <div class="edu-card is-gold">
+              <span class="edu-card-icon">⚖️</span>
+              <h4>Responsabilidad legal: ¿quién responde cuando el agente falla?</h4>
+              <p>Si un agente de IA toma una decisión equivocada que causa un daño, ¿quién es responsable? ¿La empresa que lo desplegó? ¿La empresa que fabricó el modelo? ¿El usuario que dio el objetivo? En la UE, el Reglamento de IA (que entra en vigor el 2 de agosto de 2026) establece categorías de riesgo y obligaciones de auditoría para sistemas de IA de alto riesgo, pero la casuística de los agentes autónomos todavía no está completamente cubierta por la legislación.</p>
+            </div>
           </div>
 
-          <div class="slide-section">
-            <h3>Lo que queda abierto</h3>
-            <ul>
-          <li>¿Puede un agente de IA tomar decisiones equivocadas sin que nadie las detecte a tiempo? ¿Qué supervisión humana es suficiente?</li>
-          <li>¿Quién es responsable legalmente cuando un agente comete un error con consecuencias económicas o personales?</li>
-          <li>¿Cuánto tiempo tardará en haber agentes de IA accesibles para pequeñas empresas y trabajadores autónomos, no solo para multinacionales?</li>
-          <li>Si los agentes automatizan las tareas repetitivas de nivel junior, ¿cómo aprenden las habilidades avanzadas los profesionales que empiezan?</li>
+          <div class="edu-cards-3">
+            <div class="edu-card">
+              <span class="edu-card-icon">🕵️</span>
+              <h4>Prompt injection</h4>
+              <p style="font-size:0.86rem; color:var(--ink-dim); line-height:1.5;">Un atacante puede insertar instrucciones maliciosas en el contenido que el agente procesa (una web, un correo, un documento). Si el agente no tiene mecanismos de defensa, puede ser redirigido para ejecutar acciones no autorizadas. Es el equivalente de poner un Post-it con instrucciones falsas en el escritorio de tu nuevo becario.</p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-card-icon">🔐</span>
+              <h4>Escalada de privilegios</h4>
+              <p style="font-size:0.86rem; color:var(--ink-dim); line-height:1.5;">Si un agente tiene acceso excesivo a los sistemas de la empresa y comete un error —o es manipulado—, el daño puede ser catastrófico. El principio del mínimo privilegio (dar al agente solo los permisos que necesita para su tarea concreta) es esencial pero difícil de implementar en la práctica.</p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-card-icon">👁️‍🗨️</span>
+              <h4>Supervisión y auditabilidad</h4>
+              <p style="font-size:0.86rem; color:var(--ink-dim); line-height:1.5;">¿Cómo sabe la empresa qué ha hecho exactamente el agente durante las ocho horas que trabajó de forma autónoma? Sin registros detallados de cada acción y cada decisión, la auditoría es imposible. Esto es un requisito legal en sectores regulados (banca, sanidad, defensa) y un desafío técnico activo.</p>
+            </div>
+          </div>
+
+          <div class="edu-big-quote">
+            ¿Cuándo un agente de IA es lo bastante fiable para que le confiemos consecuencias irreversibles? ¿Y quién decide que ha llegado a ese umbral?
+          </div>
+
+          <div class="didactic-box" style="margin-top: 20px;">
+            <span class="eyebrow">Preguntas abiertas</span>
+            <h4>Lo que no tiene respuesta todavía</h4>
+            <ul class="edu-checklist" style="margin-top: 12px;">
+              <li>La tasa de éxito de los mejores agentes en tareas complejas sigue siendo del 40-70%. ¿Cuál es el umbral aceptable de autonomía sin supervisión constante?</li>
+              <li>Los ERE de Capgemini e Inetum son los primeros. ¿Habrá una ola generalizada en las consultoras tecnológicas antes de 2027, o el crecimiento del sector absorberá la eficiencia?</li>
+              <li>El Reglamento de IA de la UE clasifica los "sistemas de IA de propósito general" como categoría separada. ¿Los agentes autónomos de alto riesgo tendrán que someterse a certificación previa a su despliegue?</li>
+              <li>¿El coste de supervisar y auditar agentes en sectores regulados superará el ahorro de automatizar? Algunos análisis internos de grandes bancos europeos apuntan a que sí, para ciertos procesos.</li>
+              <li>McKinsey estima que el 70% de las tareas cognitivas rutinarias serán automatizables para 2030. ¿Cómo se redistribuirán los trabajadores desplazados en una economía que todavía no ha definido los nuevos roles?</li>
             </ul>
           </div>
 
-          <div class="open-question">
-            <span class="eyebrow">La pregunta</span>
-            <p>¿Estamos construyendo herramientas que amplían las capacidades humanas o sistemas que sustituyen a humanos sin que hayamos decidido colectivamente si queremos eso?</p>
-          </div>
+          <h3 style="margin-top: 32px; margin-bottom: 12px; font-size: 1rem;">Lee también</h3>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px;">
+            <li style="border-left: 3px solid var(--red); padding-left: 14px;">
+              <a href="ia-despidos-inetum-segunda-ola-espana-mayo-2026.html" style="color: var(--ink); font-weight: 600; font-size: 0.92rem; text-decoration: none;">Inetum despide a 400 en España por la IA: segunda gran consultora en dos semanas</a>
+              <span style="display: block; font-size: 0.78rem; color: var(--ink-mute); margin-top: 3px;">05·05·26</span>
+            </li>
+            <li style="border-left: 3px solid var(--red); padding-left: 14px;">
+              <a href="capgemini-ere-ia-espana-04-2026.html" style="color: var(--ink); font-weight: 600; font-size: 0.92rem; text-decoration: none;">Capgemini despide en España porque la IA hace el trabajo: el primer ERE masivo que lo dice en voz alta</a>
+              <span style="display: block; font-size: 0.78rem; color: var(--ink-mute); margin-top: 3px;">23·04·26</span>
+            </li>
+            <li style="border-left: 3px solid var(--red); padding-left: 14px;">
+              <a href="ia-act-ue-agosto-2026-espana-04-2026.html" style="color: var(--ink); font-weight: 600; font-size: 0.92rem; text-decoration: none;">100 días para el reglamento de IA más exigente del mundo: qué prohíbe, qué obliga y qué pasa en España el 2 de agosto</a>
+              <span style="display: block; font-size: 0.78rem; color: var(--ink-mute); margin-top: 3px;">24·04·26</span>
+            </li>
+          </ul>
 
-          <!-- LEE TAMBIÉN — NO mover. Debe estar ANTES de la nota metodológica -->
-          <div class="lee-tambien">
-            <span class="lee-tambien-label">Lee también en HdD</span>
-            <a href="ia-despidos-inetum-segunda-ola-espana-mayo-2026.html" class="lee-tambien-link">
-              <span class="lee-tambien-fecha">05·05·26</span>
-              <span class="lee-tambien-titulo">Inetum despide a 400 en España por la IA: segunda gran consultora en dos semanas</span>
-            </a>
-            <a href="capgemini-ere-ia-espana-04-2026.html" class="lee-tambien-link">
-              <span class="lee-tambien-fecha">23·04·26</span>
-              <span class="lee-tambien-titulo">Capgemini despide en España porque la IA hace el trabajo: el primer ERE masivo que lo dice en voz alta</span>
-            </a>
-            <a href="ia-act-ue-agosto-2026-espana-04-2026.html" class="lee-tambien-link">
-              <span class="lee-tambien-fecha">24·04·26</span>
-              <span class="lee-tambien-titulo">100 días para el reglamento de IA más exigente del mundo: qué prohíbe, qué obliga y qué pasa en España el 2 de agosto</span>
-            </a>
-          </div>
-
-          <!-- NOTA METODOLÓGICA — obligatoria, siempre al final -->
-          <div class="didactic-box" style="border-left-color: var(--accent); margin-top: 48px;">
+          <div class="didactic-box" style="border-left-color: var(--accent);">
             <span class="eyebrow" style="color: var(--accent);">Nota metodológica</span>
-            <h4>Cómo verificamos este artículo</h4>
-            <p>Fuentes verificadas consultadas el 6 de mayo de 2026: Anthropic (documentación de Claude Computer Use y Model Context Protocol), OpenAI (documentación de Operator), Google DeepMind (artículo de investigación sobre Project Mariner), McKinsey Global Institute (informe 'The Future of Work', 2025), CCOO y UGT (comunicados sobre ERE Capgemini e Inetum), Parlamento Europeo (texto AI Act, artículos sobre sistemas autónomos). Este artículo es un explainer educativo: describe el funcionamiento de los agentes de IA a partir de documentación técnica pública, sin atribuir intenciones a empresas o desarrolladores. Errores o información adicional: <a href="mailto:redaccion@horadedespertar.org" style="color:var(--red);">redaccion@horadedespertar.org</a></p>
+            <h4>Cómo hemos construido este artículo</h4>
+            <p>Los mecanismos técnicos descritos (bucle percibir-razonar-actuar, tipos de memoria, arquitecturas multiagente) están basados en la documentación pública de Anthropic sobre Claude y el Model Context Protocol (mayo 2026), en los papers técnicos de OpenAI sobre Operator y GPT-4o (2024-2025), en el informe "The State of AI Agents" de McKinsey Global Institute (enero 2026) y en el benchmark OSWorld para evaluación de agentes de control de ordenador (Universidad de Michigan, 2024). Los datos sobre Devin/Cognition AI proceden del paper original de SWE-bench (Princeton/Chicago, 2024). Los EREs de Capgemini e Inetum están recogidos en los artículos de noticias enlazados en la sección "Lee también". La tabla de empleos afectados es una síntesis de los informes de OCDE (2024), Goldman Sachs (2023) y el análisis de exposición ocupacional de Anthropic (2025), adaptada al mercado español. Cualquier dato que deba ser corregido o actualizado: <a href="mailto:redaccion@horadedespertar.org" style="color: var(--red);">redaccion@horadedespertar.org</a>. Consulta realizada en mayo de 2026.</p>
           </div>
 
-          <a href="noticias.html" class="back-link">← Todas las noticias</a>
-
+          <a href="educacion.html" class="back-link">← Todos los artículos de Educación</a>
         </div>
       </section>
 
-      <!-- Nav de diapositivas -->
       <nav class="slide-nav" aria-label="Navegación de diapositivas">
         <button class="slide-nav__btn slide-nav__btn--prev" aria-label="Diapositiva anterior" disabled>←</button>
         <div class="slide-dots" role="tablist" aria-label="Diapositivas"></div>
         <button class="slide-nav__btn slide-nav__btn--next" aria-label="Siguiente diapositiva">→</button>
-        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/4</span>
+        <span class="slide-counter" aria-live="polite" aria-atomic="true">1/8</span>
       </nav>
 
     </div><!-- /slides-view -->
-
   </main>
 
   <footer class="site-footer">
@@ -217,9 +694,32 @@
           <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
           <p class="tagline">Hora de Despertar. Periodismo didáctico para una sociedad que quiere pensar por sí misma.</p>
         </div>
-        <div><h5>Secciones</h5><ul><li><a href="noticias.html">Noticias</a></li><li><a href="educacion.html">Educación</a></li><li><a href="newsletter.html">Semanal</a></li><li><a href="manifiesto.html">Manifiesto</a></li></ul></div>
-        <div><h5>Redacción</h5><ul><li><a href="manifiesto.html#metodo">Método</a></li><li><a href="manifiesto.html#correcciones">Correcciones</a></li><li><a href="manifiesto.html#contacto">Contacto</a></li><li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li></ul></div>
-        <div><h5>Legal</h5><ul><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+        <div>
+          <h5>Secciones</h5>
+          <ul>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="educacion.html">Educación</a></li>
+            <li><a href="newsletter.html">Semanal</a></li>
+            <li><a href="manifiesto.html">Manifiesto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Redacción</h5>
+          <ul>
+            <li><a href="manifiesto.html#metodo">Método</a></li>
+            <li><a href="manifiesto.html#correcciones">Correcciones</a></li>
+            <li><a href="manifiesto.html#contacto">Contacto</a></li>
+            <li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="aviso-legal.html">Aviso legal</a></li>
+            <li><a href="privacidad.html">Privacidad</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+          </ul>
+        </div>
       </div>
       <div class="bottom">
         <span>© 2026 Hora de Despertar</span>

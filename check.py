@@ -17,9 +17,12 @@ ARTICLES = [f for f in sorted(glob.glob('*.html'))
 
 # Artículos especiales: más de 4 slides, pueden no estar en noticias.html
 SPECIAL_ARTICLES = [
-    'caso-kitchen-investigacion-completa-semanal-04-2026.html',  # 9 slides (semanal)
-    'corrupcion-entorno-sanchez-guia-04-2026.html',              # 8 slides (guía)
-    'bbva-sabadell-opa-banca-04-2026.html',                      # duplicado antiguo
+    'caso-kitchen-investigacion-completa-semanal-04-2026.html',          # 9 slides
+    'corrupcion-entorno-sanchez-guia-04-2026.html',                      # 8 slides
+    'bbva-sabadell-opa-banca-04-2026.html',                              # duplicado
+    'agentes-ia-que-son-como-funcionan-educacion-2026.html',             # 8 slides
+    'inflacion-explicada.html',                                           # 7 slides
+    'oferta-y-demanda.html',                                             # 6 slides
 ]
 
 ALL_PAGES = [f for f in sorted(glob.glob('*.html')) if not f.startswith('_')
