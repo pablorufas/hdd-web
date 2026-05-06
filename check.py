@@ -23,6 +23,8 @@ SPECIAL_ARTICLES = [
     'agentes-ia-que-son-como-funcionan-educacion-2026.html',             # 8 slides
     'inflacion-explicada.html',                                           # 7 slides
     'oferta-y-demanda.html',                                             # 6 slides
+    'hantavirus-mv-hondius-cepa-andes-tenerife-espana-mayo-2026.html',  # 5 slides
+    'caso-koldo-juicio-supremo-recta-final-sentencia-mayo-2026.html',   # 5 slides
 ]
 
 ALL_PAGES = [f for f in sorted(glob.glob('*.html')) if not f.startswith('_')
