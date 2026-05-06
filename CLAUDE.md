@@ -70,13 +70,32 @@ python3 nuevo_articulo.py --schema           # muestra el formato JSON esperado
 - **Motivaciones**: SOLO incentivos observables a partir de posiciones públicas documentadas. Si no hay fuente para el incentivo, no se escribe. Nunca "X quiere", siempre "X tiene incentivo para X porque...".
 - **Artículos de educación**: requieren analogías cotidianas, ejemplos concretos con números reales, progresión pedagógica (de lo simple a lo complejo), y al menos una tabla o comparativa visual.
 
+### Peso editorial y extensión del artículo
+
+Antes de escribir, asignar un peso del 1 al 5 según el impacto real de la noticia. El peso determina la extensión obligatoria.
+
+| Peso | Criterio | Ejemplos | Extensión / estructura |
+|------|----------|----------|------------------------|
+| **1** | Hecho puntual, impacto local o sectorial limitado, sin consecuencias en cadena | Nombramiento menor, dato estadístico rutinario, declaración sin acción | 4 slides estándar · lead corto · 1 caja de conceptos · nota metodológica mínima |
+| **2** | Hecho relevante con repercusión nacional o sectorial clara, sin cambio estructural | Resultado electoral autonómico, sentencia de instancia, acuerdo empresarial | 4 slides estándar · 2 cajas de conceptos · contexto ampliado · 2-3 fuentes |
+| **3** | Hecho con consecuencias directas sobre políticas, mercados o derechos de la ciudadanía | Cambio legislativo aprobado, ERE masivo, acuerdo internacional bilateral | 4 slides trabajados · 3 cajas de conceptos · motivaciones obligatorias · 4-6 fuentes |
+| **4** | Hecho estructural que altera el escenario político, económico o social durante meses | Caída de gobierno, crisis financiera sectorial, escalada diplomática con riesgo real | 5-6 slides · análisis en profundidad · sección de medios detallada · mínimo 6 fuentes primarias |
+| **5** | Hecho histórico o de impacto sistémico; cambia el escenario durante años | Guerra declarada, colapso económico, fallo constitucional estructural, pandemia | Artículo especial (≥ 7 slides) · investigación completa · múltiples fuentes primarias · pregunta principal desarrollada |
+
+**Reglas de aplicación:**
+- Declarar el peso en el campo `_razonamiento` del JSON antes de redactar.
+- Si hay duda entre dos niveles, elegir el mayor y justificarlo.
+- Un peso 4 o 5 requiere **revisión explícita** de todos los criterios de verificación antes del push.
+- No inflar el peso para justificar más extensión: la extensión sin sustancia es peor que la brevedad.
+
 ### Control de calidad antes de publicar
-1. ¿Cada dato tiene fuente citada en nota metodológica? → Si no: añadir o eliminar el dato.
-2. ¿El titular describe el hecho exactamente como ocurrió? → Si no: reescribir.
-3. ¿Las motivaciones usan el modo "tiene incentivo para" sin atribuir intenciones? → Si no: reescribir.
-4. ¿La nota metodológica lista fuentes específicas (no genéricas) con fecha? → Si no: completar.
-5. ¿Los datos son los más recientes disponibles? → Si no: actualizar o justificar.
-6. `python3 check.py` → 0 errores antes de cualquier push.
+1. ¿Se ha asignado y justificado el peso editorial (1-5)? → Si no: asignarlo antes de escribir.
+2. ¿Cada dato tiene fuente citada en nota metodológica? → Si no: añadir o eliminar el dato.
+3. ¿El titular describe el hecho exactamente como ocurrió? → Si no: reescribir.
+4. ¿Las motivaciones usan el modo "tiene incentivo para" sin atribuir intenciones? → Si no: reescribir.
+5. ¿La nota metodológica lista fuentes específicas (no genéricas) con fecha? → Si no: completar.
+6. ¿Los datos son los más recientes disponibles? → Si no: actualizar o justificar.
+7. `python3 check.py` → 0 errores antes de cualquier push.
 
 ## Automatización
 
