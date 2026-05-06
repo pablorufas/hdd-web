@@ -47,6 +47,37 @@ python3 nuevo_articulo.py --schema           # muestra el formato JSON esperado
 - **back-link**: `<a href="noticias.html" class="back-link">← Todas las noticias</a>` al inicio de `<main>`
 - `articulo-ejemplo.html` nunca se enlaza públicamente
 
+## Estándares de calidad editorial — NO NEGOCIABLES
+
+### Verificación de hechos
+- **Cada dato numérico necesita fuente**. Si no se puede citar fuente verificada con fecha, no se publica el dato. Nunca inventar cifras, aproximar sin avisar ni usar "datos aproximados" sin decirlo.
+- **Primaria > secundaria**: citar el documento original (informe del BCE, comunicado oficial, resolución judicial), no la noticia que lo menciona. Si solo se accede a la secundaria, indicarlo: "según X que cita a Y".
+- **Fecha de consulta obligatoria** en nota metodológica para cada fuente. Si la fuente ha cambiado o desaparecido desde la consulta, indicarlo.
+- **Distinguir entre confirmado, declarado y especulado**. "El gobierno anunció X" ≠ "el gobierno hará X". Usar el modo correcto siempre.
+- **Nunca dar por publicada una fuente sin haberla verificado en ese momento**. No asumir que algo sigue siendo verdad porque lo era hace semanas.
+
+### Rigor en los datos
+- Las cifras deben ser **las más recientes disponibles** en el momento de escribir. Si hay datos de Q1 2026 y se cita Q4 2025, justificarlo.
+- Indicar **siempre el denominador** cuando se usan porcentajes: "el 12% de los hogares" ≠ "el 12%".
+- Citar el **tamaño muestral** cuando se mencionan encuestas o estudios.
+- Las **proyecciones y estimaciones** se etiquetan como tales: "McKinsey estima que...", no "desaparecerá el 60% del empleo".
+- No redondear a conveniencia del relato. Si el dato exacto es 11,8%, no escribir "casi el 12%".
+
+### Estándares de redacción
+- **Titular**: descripción precisa del hecho principal, sin adjetivos valorativos, sin clickbait. Máximo 15 palabras.
+- **Lead**: qué pasó (hecho), quién, cuándo, y qué aprenderá el lector. Sin hipérbole.
+- **Hechos y contexto separados**: los hechos van en "Los hechos" (lo que ocurrió), el análisis va en "Análisis". No mezclar.
+- **Motivaciones**: SOLO incentivos observables a partir de posiciones públicas documentadas. Si no hay fuente para el incentivo, no se escribe. Nunca "X quiere", siempre "X tiene incentivo para X porque...".
+- **Artículos de educación**: requieren analogías cotidianas, ejemplos concretos con números reales, progresión pedagógica (de lo simple a lo complejo), y al menos una tabla o comparativa visual.
+
+### Control de calidad antes de publicar
+1. ¿Cada dato tiene fuente citada en nota metodológica? → Si no: añadir o eliminar el dato.
+2. ¿El titular describe el hecho exactamente como ocurrió? → Si no: reescribir.
+3. ¿Las motivaciones usan el modo "tiene incentivo para" sin atribuir intenciones? → Si no: reescribir.
+4. ¿La nota metodológica lista fuentes específicas (no genéricas) con fecha? → Si no: completar.
+5. ¿Los datos son los más recientes disponibles? → Si no: actualizar o justificar.
+6. `python3 check.py` → 0 errores antes de cualquier push.
+
 ## Automatización
 
 ```bash
