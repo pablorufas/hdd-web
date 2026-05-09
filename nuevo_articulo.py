@@ -412,7 +412,30 @@ def update_sitemap(slug, fecha_iso):
     with open(path, "w") as f: f.write(xml)
     print("  ✓ URL añadida en sitemap.xml")
 
-def git_push(files, message):
+def indexnow_ping(slug):
+    """Notifica a Bing/IndexNow de la nueva URL para indexación rápida."""
+    import urllib.request
+    KEY = "50ef27afd8bb4b26a6c38cc82bef327a"
+    url = f"https://horadedespertar.org/{slug}.html"
+    payload = json.dumps({
+        "host": "horadedespertar.org",
+        "key": KEY,
+        "keyLocation": f"https://horadedespertar.org/{KEY}.txt",
+        "urlList": [url, "https://horadedespertar.org/", "https://horadedespertar.org/noticias.html"]
+    }).encode()
+    try:
+        req = urllib.request.Request(
+            "https://api.indexnow.org/indexnow",
+            data=payload,
+            headers={"Content-Type": "application/json; charset=utf-8"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=5) as r:
+            print(f"  ✓ IndexNow notificado (HTTP {r.status})")
+    except Exception as e:
+        print(f"  △ IndexNow: {e}")
+
+def git_push(files, message, slug=None):
     os.chdir(BASEDIR)
     subprocess.run(["git", "add"] + files, check=True)
     r = subprocess.run(["git", "diff", "--cached", "--name-only"], capture_output=True, text=True)
@@ -421,6 +444,8 @@ def git_push(files, message):
     env = {**os.environ, "GIT_SSH_COMMAND": "ssh -p 443 -o Hostname=ssh.github.com"}
     subprocess.run(["git", "push", "origin", "main"], env=env, check=True)
     print("✓ Publicado en producción.")
+    if slug:
+        indexnow_ping(slug)
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
@@ -467,17 +492,8 @@ def main():
 
     if not NO_GIT:
         git_push([f"{slug}.html", "noticias.html", "index.html", "sitemap.xml"],
-                 f"Publicar: {d['card_titular'][:70]}")
-        # Ping a Google para acelerar indexación
-        try:
-            import urllib.request
-            urllib.request.urlopen(
-                "https://www.google.com/ping?sitemap=https://horadedespertar.org/sitemap.xml",
-                timeout=5
-            )
-            print("  ✓ Ping enviado a Google Search Console")
-        except Exception:
-            pass  # No bloquear el flujo si falla la red
+                 f"Publicar: {d['card_titular'][:70]}",
+                 slug=slug)
 
 if __name__ == "__main__":
     main()
