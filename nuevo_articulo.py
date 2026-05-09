@@ -202,14 +202,14 @@ def build_html(d):
   <meta property="og:title" content="{titular} — HdD" />
   <meta property="og:description" content="{lead_meta}" />
   <meta property="og:url" content="{url}" />
-  <meta property="og:image" content="https://horadedespertar.org/assets/icons/icon-512.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://horadedespertar.org/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@hdedespertar" />
   <meta name="twitter:title" content="{titular} — HdD" />
   <meta name="twitter:description" content="{lead_meta}" />
-  <meta name="twitter:image" content="https://horadedespertar.org/assets/icons/icon-512.png" />
+  <meta name="twitter:image" content="https://horadedespertar.org/assets/og-image.png" />
   <link rel="stylesheet" href="assets/style.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-RTLZFW7HGF");</script>
@@ -223,7 +223,7 @@ def build_html(d):
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>window.OneSignalDeferred=window.OneSignalDeferred||[];OneSignalDeferred.push(async function(O){{await O.init({{appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"}});}});</script>
   <script type="application/ld+json">
-  {{"@context":"https://schema.org","@type":"NewsArticle","headline":"{titular}","description":"{lead_meta}","datePublished":"{fecha_iso}","dateModified":"{fecha_iso}","author":{{"@type":"Organization","name":"Redacción HdD"}},"publisher":{{"@type":"Organization","name":"Hora de Despertar","logo":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-512.png"}}}},"mainEntityOfPage":{{"@type":"WebPage","@id":"{url}"}}}}
+  {{"@context":"https://schema.org","@type":"NewsArticle","headline":"{titular}","description":"{lead_meta}","datePublished":"{fecha_iso}","dateModified":"{fecha_iso}","author":{{"@type":"Organization","name":"Redacción HdD","url":"https://horadedespertar.org"}},"publisher":{{"@type":"Organization","name":"Hora de Despertar","url":"https://horadedespertar.org","logo":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-512.png","width":512,"height":512}}}},"image":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/og-image.png","width":1200,"height":630}},"mainEntityOfPage":{{"@type":"WebPage","@id":"{url}"}},"inLanguage":"es","isAccessibleForFree":true}}
   </script>
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Inicio","item":"https://horadedespertar.org/"}},{{"@type":"ListItem","position":2,"name":"Noticias","item":"https://horadedespertar.org/noticias.html"}},{{"@type":"ListItem","position":3,"name":"{titular}","item":"{url}"}}]}}
