@@ -57,9 +57,9 @@ SCHEMA = {
   "pregunta_principal": "La pregunta más incómoda. Sin respuesta fácil. Sin moralismo.",
   "nota_metodologica": "Fuentes verificadas consultadas el DD de mes de 2026: [lista]. Motivaciones son incentivos observables, no intenciones confirmadas.",
   "lee_tambien": [
-    {"href": "articulo-existente.html", "fecha": "DD·MM·AA", "titulo": "Título exacto del artículo"},
-    {"href": "articulo-existente-2.html", "fecha": "DD·MM·AA", "titulo": "Título exacto"},
-    {"href": "articulo-existente-3.html", "fecha": "DD·MM·AA", "titulo": "Título exacto"}
+    {"href": "articulo-existente", "fecha": "DD·MM·AA", "titulo": "Título exacto del artículo"},
+    {"href": "articulo-existente-2", "fecha": "DD·MM·AA", "titulo": "Título exacto"},
+    {"href": "articulo-existente-3", "fecha": "DD·MM·AA", "titulo": "Título exacto"}
   ],
   "card_titular": "Titular para noticias.html.",
   "card_summary": "Resumen 1-2 frases para noticias.html."
@@ -101,9 +101,10 @@ def validate(d):
     for i, item in enumerate(lt):
         if not item.get("href") or not item.get("fecha") or not item.get("titulo"):
             errors.append(f"lee_tambien[{i}]: falta href, fecha o titulo")
-        # Verificar que el archivo existe
+        # Verificar que el archivo existe (aceptar hrefs con o sin .html)
         href = item.get("href","")
-        if href and not os.path.exists(os.path.join(BASEDIR, href)):
+        href_file = href if href.endswith('.html') else href + '.html'
+        if href_file and not os.path.exists(os.path.join(BASEDIR, href_file)):
             errors.append(f"lee_tambien[{i}]: archivo no existe → {href}")
 
     # Motivaciones: si presente, mínimo 2 actores
@@ -137,7 +138,7 @@ def build_html(d):
     tiempo    = d["tiempo"]
     titular   = d["titular"]
     lead      = d["lead"]
-    url       = f"https://horadedespertar.org/{slug}.html"
+    url       = f"https://horadedespertar.org/{slug}"
     lead_meta = re.sub(r'<[^>]+>', '', lead)[:200]
 
     # Conceptos
@@ -226,30 +227,30 @@ def build_html(d):
   {{"@context":"https://schema.org","@type":"NewsArticle","headline":"{titular}","description":"{lead_meta}","datePublished":"{fecha_iso}","dateModified":"{fecha_iso}","author":{{"@type":"Organization","name":"Redacción HdD","url":"https://horadedespertar.org"}},"publisher":{{"@type":"Organization","name":"Hora de Despertar","url":"https://horadedespertar.org","logo":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-512.png","width":512,"height":512}}}},"image":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/og-image.png","width":1200,"height":630}},"mainEntityOfPage":{{"@type":"WebPage","@id":"{url}"}},"inLanguage":"es","isAccessibleForFree":true}}
   </script>
   <script type="application/ld+json">
-  {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Inicio","item":"https://horadedespertar.org/"}},{{"@type":"ListItem","position":2,"name":"Noticias","item":"https://horadedespertar.org/noticias.html"}},{{"@type":"ListItem","position":3,"name":"{titular}","item":"{url}"}}]}}
+  {{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Inicio","item":"https://horadedespertar.org/"}},{{"@type":"ListItem","position":2,"name":"Noticias","item":"https://horadedespertar.org/noticias"}},{{"@type":"ListItem","position":3,"name":"{titular}","item":"{url}"}}]}}
   </script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap bar">
       <div class="brand-unit">
-        <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+        <a href="/" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
         <span class="header-clock logo-led" data-live-clock aria-label="Hora actual">--:--</span>
         <span class="header-site-name">Hora de Despertar</span>
       </div>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
       <nav class="nav" id="main-nav">
-        <a href="index.html">Inicio</a>
-        <a href="noticias.html">Noticias</a>
-        <a href="educacion.html">Educación</a>
-        <a href="newsletter.html">Semanal</a>
-        <a href="manifiesto.html">Manifiesto</a>
+        <a href="/">Inicio</a>
+        <a href="noticias">Noticias</a>
+        <a href="educacion">Educación</a>
+        <a href="newsletter">Semanal</a>
+        <a href="manifiesto">Manifiesto</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <a href="noticias.html" class="back-link">← Todas las noticias</a>
+    <a href="noticias" class="back-link">← Todas las noticias</a>
 
     <!-- Barra de modo de lectura -->
     <div class="reading-mode-bar">
@@ -345,7 +346,7 @@ def build_html(d):
             <p>{d['nota_metodologica']} Errores o información adicional: <a href="mailto:redaccion@horadedespertar.org" style="color:var(--red);">redaccion@horadedespertar.org</a></p>
           </div>
 
-          <a href="noticias.html" class="back-link">← Todas las noticias</a>
+          <a href="noticias" class="back-link">← Todas las noticias</a>
 
         </div>
       </section>
@@ -366,12 +367,12 @@ def build_html(d):
     <div class="wrap">
       <div class="top">
         <div>
-          <a href="index.html" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
+          <a href="/" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
           <p class="tagline">Hora de Despertar. Periodismo didáctico para una sociedad que quiere pensar por sí misma.</p>
         </div>
-        <div><h5>Secciones</h5><ul><li><a href="noticias.html">Noticias</a></li><li><a href="educacion.html">Educación</a></li><li><a href="newsletter.html">Semanal</a></li><li><a href="manifiesto.html">Manifiesto</a></li></ul></div>
-        <div><h5>Redacción</h5><ul><li><a href="manifiesto.html#metodo">Método</a></li><li><a href="manifiesto.html#correcciones">Correcciones</a></li><li><a href="manifiesto.html#contacto">Contacto</a></li><li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li></ul></div>
-        <div><h5>Legal</h5><ul><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+        <div><h5>Secciones</h5><ul><li><a href="noticias">Noticias</a></li><li><a href="educacion">Educación</a></li><li><a href="newsletter">Semanal</a></li><li><a href="manifiesto">Manifiesto</a></li></ul></div>
+        <div><h5>Redacción</h5><ul><li><a href="manifiesto#metodo">Método</a></li><li><a href="manifiesto#correcciones">Correcciones</a></li><li><a href="manifiesto#contacto">Contacto</a></li><li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li></ul></div>
+        <div><h5>Legal</h5><ul><li><a href="aviso-legal">Aviso legal</a></li><li><a href="privacidad">Privacidad</a></li><li><a href="cookies">Cookies</a></li></ul></div>
       </div>
       <div class="bottom">
         <span>© 2026 Hora de Despertar</span>
@@ -390,7 +391,7 @@ def update_noticias(slug, fecha, cat, titular, summary, tiempo):
     with open(path) as f: html = f.read()
     if f'{slug}.html' in html:
         print(f"  · {slug} ya está en noticias.html"); return
-    card = f'\n          <a href="{slug}.html" class="index-item">\n            <div>\n              <span class="cat">{cat}</span>\n              <h3>{titular}</h3>\n              <p class="summary">{summary}</p>\n            </div>\n            <span class="date">{fecha}</span>\n          </a>\n'
+    card = f'\n          <a href="{slug}" class="index-item">\n            <div>\n              <span class="cat">{cat}</span>\n              <h3>{titular}</h3>\n              <p class="summary">{summary}</p>\n            </div>\n            <span class="date">{fecha}</span>\n          </a>\n'
     html = html.replace('<div class="index-list">', '<div class="index-list">' + card, 1)
     with open(path, "w") as f: f.write(html)
     print("  ✓ Tarjeta añadida en noticias.html")
@@ -398,7 +399,7 @@ def update_noticias(slug, fecha, cat, titular, summary, tiempo):
 def update_sitemap(slug, fecha_iso):
     path = os.path.join(BASEDIR, "sitemap.xml")
     with open(path) as f: xml = f.read()
-    url = f"https://horadedespertar.org/{slug}.html"
+    url = f"https://horadedespertar.org/{slug}"
     if url in xml: return
     entry = f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{fecha_iso}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n"
     # Insertar después de la primera URL (homepage)
@@ -416,12 +417,12 @@ def indexnow_ping(slug):
     """Notifica a Bing/IndexNow de la nueva URL para indexación rápida."""
     import urllib.request
     KEY = "50ef27afd8bb4b26a6c38cc82bef327a"
-    url = f"https://horadedespertar.org/{slug}.html"
+    url = f"https://horadedespertar.org/{slug}"
     payload = json.dumps({
         "host": "horadedespertar.org",
         "key": KEY,
         "keyLocation": f"https://horadedespertar.org/{KEY}.txt",
-        "urlList": [url, "https://horadedespertar.org/", "https://horadedespertar.org/noticias.html"]
+        "urlList": [url, "https://horadedespertar.org/", "https://horadedespertar.org/noticias"]
     }).encode()
     try:
         req = urllib.request.Request(

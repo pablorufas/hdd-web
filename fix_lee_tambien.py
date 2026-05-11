@@ -62,9 +62,9 @@ if os.path.exists(f"{BASE}/noticias.html"):
     with open(f"{BASE}/noticias.html", "r", encoding="utf-8") as fh:
         noticias = fh.read()
 
-    # Patrón: <a href="slug.html" class="index-item">...<span class="date">DD·MM·AA</span>
+    # Patrón: <a href="slug" class="index-item">...<span class="date">DD·MM·AA</span>
     FECHA_RE = re.compile(
-        r'<a href="([^"]+\.html)"\s+class="index-item">'
+        r'<a href="([^"/#][^"]*)"(?:\.html)?\s+class="index-item">'
         r'(?:(?!</a>).)*'
         r'<span class="date">([^<]+)</span>',
         re.DOTALL
@@ -164,7 +164,7 @@ for slug in needs_lee_tambien:
         if titulo_match:
             titulo = next(g for g in titulo_match.groups() if g)
             lee_html += (
-                f'            <a href="{related_slug}.html" class="lee-tambien-link">\n'
+                f'            <a href="{related_slug}" class="lee-tambien-link">\n'
                 f'              <span class="lee-tambien-fecha">{fecha}</span>\n'
                 f'              <span class="lee-tambien-titulo">{titulo}</span>\n'
                 f'            </a>\n'

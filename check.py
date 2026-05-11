@@ -36,10 +36,16 @@ warnings = defaultdict(list)  # {archivo: [avisos]}
 # ── Fecha map desde noticias.html (fuente de verdad) ─────────────────────────
 noticias_html = open('noticias.html').read()
 date_map = {}
+# Paso 1: registrar todos los hrefs presentes en noticias.html (sin fecha requerida)
+for href in re.findall(r'<a href="([^/"#][^"]*)" class="index-item"', noticias_html):
+    href_file = href if href.endswith('.html') else href + '.html'
+    date_map[href_file] = ""
+# Paso 2: sobreescribir con fecha real cuando exista
 for href, date in re.findall(
-        r'href="([^"]+\.html)"[^>]*>\s*<span class="date">([^<]+)</span>',
-        noticias_html):
-    date_map[href] = date
+        r'<a href="([^/"#][^"]*)" class="index-item">(?:(?!<a href=).)*?<span class="date">([^<]+)</span>',
+        noticias_html, re.DOTALL):
+    href_file = href if href.endswith('.html') else href + '.html'
+    date_map[href_file] = date
 
 # ── Checks por artículo ───────────────────────────────────────────────────────
 for f in ARTICLES:
@@ -131,7 +137,7 @@ for f in ARTICLES:
                 W.append(f"slide-num '{pos} — {total}': el total no es 04")
 
 # ── Checks globales ───────────────────────────────────────────────────────────
-# Artículos en noticias.html que no existen como archivo
+# Artículos en noticias.html que no existen como archivo (date_map ya tiene claves con .html)
 for href in date_map:
     if not glob.glob(href):
         warnings['noticias.html'].append(f"Enlace a '{href}' pero el archivo no existe")

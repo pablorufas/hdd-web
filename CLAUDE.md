@@ -88,6 +88,22 @@ Antes de escribir, asignar un peso del 1 al 5 según el impacto real de la notic
 - Un peso 4 o 5 requiere **revisión explícita** de todos los criterios de verificación antes del push.
 - No inflar el peso para justificar más extensión: la extensión sin sustancia es peor que la brevedad.
 
+### Estándar de claridad y accesibilidad — NO NEGOCIABLE
+
+El lector tipo de HdD es una persona de 20-35 años sin formación especializada en política, economía o relaciones internacionales. Cada artículo debe ser comprensible para alguien que llega sin contexto previo.
+
+**Reglas de escritura:**
+- **Jerga cero**: si usas una palabra técnica, la explicas en la misma frase. "El BCE (el banco central que controla el euro en Europa)...". Nunca asumas que el lector sabe qué es el Tribunal Supremo, la OTAN, un ETF o el PIB.
+- **Una idea por párrafo**: máximo 3 frases por párrafo. Si tienes más, parte.
+- **Lo concreto antes que lo abstracto**: "Los precios de los pisos subieron un 14% en un año" antes que "el mercado inmobiliario experimentó una revalorización significativa".
+- **Cifras con contexto**: nunca un número solo. "24 años de prisión (más que la condena media por asesinato en España, que es 15-20 años)" o "93.000 millones de euros (el presupuesto anual de sanidad y educación juntos en España)".
+- **El lead responde en 2 frases**: qué pasó + por qué le importa al lector. Sin contexto histórico en el lead, eso va en el cuerpo.
+- **Analogías cotidianas obligatorias** en artículos de economía y tecnología: una comparación con algo que el lector conoce de su vida diaria.
+- **Prohibido el lenguaje de rueda de prensa**: "en el marco de", "en aras de", "se ha procedido a", "el citado", "en relación con". Reescribir siempre en lenguaje directo.
+- **Titular activo**: sujeto + verbo + consecuencia. "El Supremo condena a Ábalos a 24 años" no "Visto para sentencia el caso de las mascarillas".
+
+**Test de claridad antes de publicar**: lee el lead en voz alta. Si necesitas más de una lectura para entenderlo, reescríbelo.
+
 ### Control de calidad antes de publicar
 1. ¿Se ha asignado y justificado el peso editorial (1-5)? → Si no: asignarlo antes de escribir.
 2. ¿Cada dato tiene fuente citada en nota metodológica? → Si no: añadir o eliminar el dato.
@@ -95,7 +111,8 @@ Antes de escribir, asignar un peso del 1 al 5 según el impacto real de la notic
 4. ¿Las motivaciones usan el modo "tiene incentivo para" sin atribuir intenciones? → Si no: reescribir.
 5. ¿La nota metodológica lista fuentes específicas (no genéricas) con fecha? → Si no: completar.
 6. ¿Los datos son los más recientes disponibles? → Si no: actualizar o justificar.
-7. `python3 check.py` → 0 errores antes de cualquier push.
+7. ¿El artículo pasa el test de claridad? Cada concepto técnico tiene explicación en la misma frase. → Si no: repasar con el estándar de claridad.
+8. `python3 check.py` → 0 errores antes de cualquier push.
 
 ## Automatización
 
