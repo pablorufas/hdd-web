@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; }
+.label { font-size: 11px; color: #22c55e; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
+.option-row {
+  display: flex; gap: 8px; align-items: flex-start; margin-bottom: 10px;
+}
+.opt-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2);
+  display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0;
+}
+.or-body {}
+.or-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.or-text { font-size: 12px; color: #888; line-height: 1.35; }
+.or-text strong { color: #f5f0e8; }
+.divider { width: 48px; height: 2px; background: #1e1e1e; margin: 12px 0; }
+.question-box {
+  background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 10px; padding: 14px 16px;
+}
+.q-label { font-size: 10px; color: #22c55e; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.q-text { font-size: 14px; font-weight: 600; line-height: 1.4; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Economía · España</span>
+  <span class="slide-num">04 — 04</span>
+</div>
+<div class="content">
+  <div class="label">Las opciones de Martorell</div>
+  <div class="option-row">
+    <div class="opt-icon">🌎</div>
+    <div class="or-body">
+      <div class="or-title">Fabricar en México o Canadá</div>
+      <div class="or-text">Los coches hechos en México bajo el USMCA <strong>entran en EEUU sin aranceles</strong>. VW ya tiene planta en Puebla. Pero eso significa menos producción en España.</div>
+    </div>
+  </div>
+  <div class="option-row">
+    <div class="opt-icon">🇪🇺</div>
+    <div class="or-body">
+      <div class="or-title">Apostar por el mercado europeo</div>
+      <div class="or-text">Europa tiene 450 millones de habitantes. Si el <strong>4 de julio hay acuerdo</strong> UE-EEUU, los aranceles podrían bajar. Esperar es un riesgo.</div>
+    </div>
+  </div>
+  <div class="option-row">
+    <div class="opt-icon">📉</div>
+    <div class="or-body">
+      <div class="or-title">Bajar el precio y absorber el golpe</div>
+      <div class="or-text">Vender más barato en EEUU para compensar el arancel. Pero <strong>el margen de los eléctricos ya es muy estrecho</strong>. VW ya perdió dinero en 2025.</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="question-box">
+    <div class="q-label">La pregunta incómoda</div>
+    <div class="q-text">Si los aranceles se quedan y los eléctricos chinos bajan de precio, ¿para quién se va a fabricar en Martorell dentro de cinco años?</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">11·05·26</span>
+</div>
+</body>
+</html>

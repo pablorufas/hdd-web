@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "Faltan 11 días para las elecciones autonómicas en Andalucía (17 de mayo). El PP de Moreno, que gobierna con mayoría absoluta desde 2022, está en zona de riesgo de perderla según todas las encuestas. El PSOE vive su peor momento histórico. Vox crece. El debate de ayer en RTVE tuvo como ejes vivienda y empleo. Es la cita electoral más importante del año en España.",
+    "extension": "Peso 3: elecciones relevantes con consecuencias nacionales, a 11 días. 4 slides con datos verificados de encuestas y contexto.",
+    "conceptos_nivel": "El lector de 20 años sabe que hay elecciones en Andalucía pero probablemente no sigue las encuestas ni conoce el sistema electoral andaluz. Necesita entender qué está en juego y por qué importa más allá de Andalucía."
+  },
+  "slug": "elecciones-andalucia-17-mayo-2026-encuestas-debate",
+  "fecha_display": "06·05·26",
+  "fecha_iso": "2026-05-06",
+  "categoria": "Política · España",
+  "tiempo": "10",
+  "titular": "Andalucía vota el 17 de mayo: el PP en riesgo de perder la mayoría absoluta y el PSOE en mínimos históricos",
+  "lead": "A 11 días de las elecciones al Parlamento de Andalucía, las encuestas sitúan al PP de Juanma Moreno en zona de riesgo de perder la mayoría absoluta que obtuvo en 2022. El PSOE, con María Jesús Montero como candidata, está en sus peores resultados de la historia autonómica. Vox crece. Ayer se celebró el primer debate en RTVE con los cinco candidatos con representación parlamentaria.",
+  "conceptos": [
+    {
+      "titulo": "Por qué las elecciones andaluzas importan más allá de Andalucía",
+      "cuerpo": "Andalucía es la comunidad autónoma más poblada de España, con 8,6 millones de habitantes y 6,5 millones de electores. Lo que pase el 17M tiene consecuencias nacionales: si el PP mantiene la mayoría absoluta, Moreno consolida su posición como alternativa de gobierno a nivel nacional. Si la pierde y necesita a Vox para gobernar, el debate sobre los pactos con la ultraderecha regresa al centro de la política española antes de las generales."
+    },
+    {
+      "titulo": "Mayoría absoluta: qué es y por qué es la clave",
+      "cuerpo": "El Parlamento de Andalucía tiene 109 escaños. La mayoría absoluta se alcanza con 55 escaños. El PP obtuvo 58 en 2022, lo que le permitió gobernar sin depender de ningún otro partido. Las encuestas actuales le dan entre 53 y 56 escaños: por encima de 55 gobierna solo; por debajo necesita apoyos externos. Ese margen de 2-3 escaños es lo que convierte esta campaña en una incertidumbre real."
+    },
+    {
+      "titulo": "Qué es el voto joven en Andalucía y por qué puede decidir",
+      "cuerpo": "Los menores de 35 años representan el 22% del censo andaluz. Históricamente votan menos que los mayores de 55 (una diferencia de casi 20 puntos en participación). En esta campaña, la vivienda y el empleo son los dos temas centrales según las encuestas de issues, y son precisamente los que más afectan a los jóvenes. Si la participación joven sube, favorece al bloque progresista; si se queda en casa, facilita al PP mantener escaños."
+    }
+  ],
+  "hechos": "<p>Las elecciones al Parlamento de Andalucía están convocadas para el <strong>17 de mayo de 2026</strong>. Ayer lunes 5 de mayo se celebró el primer debate televisivo en RTVE con los cinco candidatos: <strong>Juanma Moreno</strong> (PP), <strong>María Jesús Montero</strong> (PSOE), <strong>Manuel Gavira</strong> (Vox), <strong>Antonio Maíllo</strong> (Por Andalucía) y <strong>José Ignacio García</strong> (Adelante Andalucía). Vivienda y empleo concentraron la mayor parte del debate.</p><p>Según las últimas encuestas publicadas (Demócrata/CENTRA, mayo 2026): <strong>PP: 53-56 escaños</strong> (mayoría absoluta = 55), en zona de riesgo real. <strong>PSOE: ~25-27 escaños</strong>, frente a 30 en 2022, en lo que sería su peor resultado histórico. <strong>Vox: 17-19 escaños</strong> (subida desde 14 en 2022). Un segundo debate está previsto en <strong>Canal Sur el 11 de mayo</strong>.</p>",
+  "contexto": "<p>El PP llegó a estas elecciones con viento de cola económico: Andalucía redujo su tasa de paro por debajo del 17% por primera vez en décadas y atrajo inversión extranjera récord en 2025. Pero la campaña la dominan la vivienda (Málaga y Sevilla están entre las ciudades con mayor subida de alquiler del país) y el escándalo de las listas de espera sanitarias, que el PSOE ha utilizado como argumento central.</p><p>El hundimiento del PSOE tiene una lectura nacional: Montero es también ministra de Hacienda del Gobierno de Sánchez, y su imagen está ligada a la gestión del ejecutivo central, que acumula desgaste por el caso Koldo, cuyo juicio oral terminó hoy en el Tribunal Supremo.</p>",
+  "motivaciones": [
+    {
+      "actor": "Juanma Moreno (PP)",
+      "incentivos": "Tiene incentivo para presentar la campaña como un plebiscito sobre su gestión económica y evitar que Vox acapare el debate cultural. Una victoria con mayoría absoluta le proyecta como el candidato natural del PP para las generales. Una victoria con pacto con Vox le resta margen de maniobra nacional."
+    },
+    {
+      "actor": "María Jesús Montero (PSOE)",
+      "incentivos": "Tiene incentivo para convertir las elecciones en un referéndum sobre los recortes sanitarios del PP andaluz y desconectar su imagen de la gestión del Gobierno central. Si el PSOE cae por debajo de 25 escaños, la presión sobre su continuidad como candidata y como ministra será inmediata."
+    },
+    {
+      "actor": "Vox (Gavira)",
+      "incentivos": "Tiene incentivo para marcar perfil propio en temas de identidad y seguridad, diferenciándose del PP, y evitar que la campaña se centre en economía donde tiene menos recorrido. Un resultado de 18+ escaños le daría capacidad de veto sobre cualquier gobierno de Moreno."
+    }
+  ],
+  "medios": "<p>Los medios nacionales tratan las elecciones andaluzas como termómetro nacional: el resultado de Montero afecta directamente al Gobierno de Sánchez. Los medios andaluces ponen más foco en los asuntos locales (sanidad, agua, vivienda en la costa). Los medios internacionales siguen con atención la posible necesidad de un pacto PP-Vox, que convertiría a España en otro caso de la tendencia europea de normalización de la ultraderecha en el gobierno.</p>",
+  "preguntas": [
+    "¿Puede el PSOE recuperar el voto joven si su gestión del Gobierno central está marcada por el caso Koldo y la crisis de la vivienda?",
+    "¿Un pacto PP-Vox en Andalucía cambiaría el discurso del PP a nivel nacional sobre los límites de la coalición con la ultraderecha?",
+    "¿Por qué la participación electoral de los menores de 35 años es 20 puntos inferior a la de los mayores de 55, y qué necesitaría cambiar para que eso se invierta?",
+    "¿Qué pasará con la política de vivienda andaluza si el PP governa sin mayoría absoluta y necesita el apoyo de Vox?"
+  ],
+  "pregunta_principal": "¿Las elecciones andaluzas del 17M son un indicador de hacia dónde va España, o solo una foto de lo que ya ha ocurrido en el resto de Europa?",
+  "nota_metodologica": "Datos de encuestas: Demócrata/CENTRA, encuesta de mayo 2026 (publicada 3-5 de mayo de 2026). Resultados electorales de 2022: Junta Electoral de Andalucía. Datos de participación por edad: CIS, encuesta postelectoral autonómica 2022. Tasa de paro andaluza: EPA Q1 2026 (INE). Descripción del debate del 5 de mayo: cobertura de RTVE, Infobae España, Demócrata. Consulta realizada el 6 de mayo de 2026.",
+  "lee_tambien": [
+    {
+      "href": "caso-koldo-juicio-supremo-recta-final-sentencia-mayo-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "Caso Koldo: la Fiscalía pide 24 años para Ábalos en los informes finales del juicio"
+    },
+    {
+      "href": "empleo-record-22-millones-abril-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "España supera por primera vez los 22 millones de afiliados y el paro cae al mínimo desde 2008"
+    },
+    {
+      "href": "vivienda-alquiler-jovenes-record-hacinamiento-mayo-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "141 personas por cada piso disponible: el alquiler en España bate récords mientras los jóvenes se hacinan"
+    }
+  ],
+  "card_titular": "Andalucía vota el 17 de mayo: el PP en riesgo de perder la mayoría absoluta y el PSOE en mínimos históricos",
+  "card_summary": "A 11 días de las elecciones, las encuestas sitúan al PP en zona de riesgo. Debate ayer en RTVE con los cinco candidatos. Vivienda y empleo, los ejes."
+}

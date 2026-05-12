@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 20px;}
+.q{font-size:26px;font-weight:800;margin-bottom:28px;line-height:1.15;}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.vs-side{border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:18px 16px;}
+.vs-side.red-side{border-color:rgba(200,33,30,.25);background:rgba(200,33,30,.05);}
+.vs-flag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:block;}
+.vs-flag.us{color:#7ab4f5;}
+.vs-flag.ir{color:var(--red);}
+.vs-item{margin-bottom:12px;}
+.vs-item-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;}
+.vs-item-val{font-size:15px;font-weight:700;line-height:1.3;}
+.vs-item-val.good{color:#7ab4f5;}
+.vs-item-val.red{color:var(--red);}
+.note{font-size:13px;color:var(--muted);line-height:1.5;margin-top:20px;padding:14px 16px;background:rgba(255,255,255,.03);border-radius:4px;}
+.note strong{color:var(--ink);}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">2 / 3</span>
+  </div>
+
+  <div class="section-title">Dos versiones. Una batalla.</div>
+  <div class="q">Lo que dice EEUU<br>vs. lo que dice Irán</div>
+
+  <div class="vs-grid">
+    <div class="vs-side">
+      <span class="vs-flag us">🇺🇸 EEUU</span>
+      <div class="vs-item">
+        <div class="vs-item-label">Lanchas destruidas</div>
+        <div class="vs-item-val good">6 (Trump dice 7)</div>
+      </div>
+      <div class="vs-item">
+        <div class="vs-item-label">Daños propios</div>
+        <div class="vs-item-val good">Ninguno</div>
+      </div>
+      <div class="vs-item">
+        <div class="vs-item-label">Misiles iraníes</div>
+        <div class="vs-item-val good">Todos interceptados</div>
+      </div>
+      <div class="vs-item">
+        <div class="vs-item-label">Resultado</div>
+        <div class="vs-item-val good">Cruce completado</div>
+      </div>
+    </div>
+
+    <div class="vs-side red-side">
+      <span class="vs-flag ir">🇮🇷 Irán</span>
+      <div class="vs-item">
+        <div class="vs-item-label">Lanchas destruidas</div>
+        <div class="vs-item-val red">Lo niegan</div>
+      </div>
+      <div class="vs-item">
+        <div class="vs-item-label">Misiles lanzados</div>
+        <div class="vs-item-val red">"Disparos de aviso"</div>
+      </div>
+      <div class="vs-item">
+        <div class="vs-item-label">Destructor alcanzado</div>
+        <div class="vs-item-val red">Afirman 2 impactos</div>
+      </div>
+      <div class="vs-item">
+        <div class="vs-item-label">Cruce</div>
+        <div class="vs-item-val red">"Agresión ilegítima"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note"><strong>Lo que se puede verificar:</strong> imágenes de satélite (Planet Labs) muestran embarcaciones en llamas. Si un misil alcanzó un destructor: <strong>no hay fuente independiente</strong> que lo confirme ni lo descarte.</div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>

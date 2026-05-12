@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 20px;}
+.q{font-size:30px;font-weight:800;margin-bottom:32px;line-height:1.1;}
+.timeline{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:20px;padding-bottom:24px;position:relative;}
+.tl-item:not(:last-child)::after{content:'';position:absolute;left:18px;top:36px;bottom:0;width:1px;background:rgba(255,255,255,.12);}
+.tl-dot{width:36px;height:36px;border-radius:50%;background:rgba(200,33,30,.15);border:1.5px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.tl-dot.done{background:var(--red);}
+.tl-dot span{font-size:13px;font-weight:700;}
+.tl-content{}
+.tl-date{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-bottom:4px;}
+.tl-title{font-size:17px;font-weight:700;line-height:1.2;margin-bottom:4px;}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.4;}
+.cta-big{background:var(--red);border-radius:4px;padding:22px 24px;margin-top:auto;}
+.cta-big .cta-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:6px;}
+.cta-big .cta-text{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:6px;}
+.cta-big .cta-url{font-size:13px;opacity:.75;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">4 / 4</span>
+  </div>
+
+  <div class="section-title">¿Qué pasa ahora?</div>
+  <div class="q">Lo que queda<br>y lo que se espera</div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot done"><span>✓</span></div>
+      <div class="tl-content">
+        <div class="tl-date">28 ABRIL – 5 MAYO</div>
+        <div class="tl-title">14 sesiones de juicio oral</div>
+        <div class="tl-desc">Declaraciones de Aldama, Koldo y Ábalos ante el Tribunal Supremo.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot done"><span>→</span></div>
+      <div class="tl-content">
+        <div class="tl-date">6 MAYO — HOY</div>
+        <div class="tl-title">Informes finales</div>
+        <div class="tl-desc">Fiscalía mantiene 24 años para Ábalos. El juicio quedará visto para sentencia.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"><span>⌛</span></div>
+      <div class="tl-content">
+        <div class="tl-date">OTOÑO 2026 (estimado)</div>
+        <div class="tl-title">La sentencia</div>
+        <div class="tl-desc">El Supremo delibera sin plazo máximo. Puede tardar meses.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-big">
+    <div class="cta-label">Lee el análisis completo</div>
+    <div class="cta-text">Caso Koldo: 5 slides, todo verificado</div>
+    <div class="cta-url">horadedespertar.org</div>
+  </div>
+</div>
+</body></html>

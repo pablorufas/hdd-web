@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carruseles HdD — 12·05·26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────────────────────────
+   HdD · CARRUSELES 12·05·26
+   Formato 1080×1080 px (mostrado al 50% = 540×540)
+───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:   #e10600;
+  --sans:  'Inter', system-ui, sans-serif;
+  --serif: 'Fraunces', Georgia, serif;
+  --slide: 540px;
+}
+
+body {
+  background: #080808;
+  font-family: var(--sans);
+  color: #fff;
+  padding: 48px 32px 80px;
+}
+
+/* ── PAGE HEADER ─────────────────────────────────────────────── */
+.page-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.page-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+.page-header .brand::before,
+.page-header .brand::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--red);
+  opacity: 0.5;
+}
+.page-header h1 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: -0.02em;
+}
+.page-header .date-label {
+  margin-top: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── ARTICLE BLOCK ───────────────────────────────────────────── */
+.article-block {
+  margin-bottom: 80px;
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.article-num {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  text-transform: uppercase;
+}
+.article-cat {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── CAROUSEL TRACK ──────────────────────────────────────────── */
+.carousel-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.carousel-track:active { cursor: grabbing; }
+.carousel-track::-webkit-scrollbar { display: none; }
+
+/* ── DOTS ────────────────────────────────────────────────────── */
+.carousel-dots {
+  display: flex;
+  gap: 5px;
+  margin-top: 12px;
+  padding-left: 2px;
+}
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: all .2s;
+}
+.dot.on {
+  background: var(--red);
+  border-radius: 2.5px;
+  width: 22px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SLIDE — base
+════════════════════════════════════════════════════════════════ */
+.slide {
+  flex: 0 0 var(--slide);
+  height: var(--slide);
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border-radius: 3px;
+}
+
+/* blurred photo background */
+.bg {
+  position: absolute;
+  inset: -40px;
+  filter: blur(22px) saturate(1.5) brightness(0.5);
+}
+
+/* noise grain overlay — makes gradient look photographic */
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* vignette */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 40%, rgba(0,0,0,0.65) 100%);
+  pointer-events: none;
+}
+
+/* content layer */
+.sl-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 38px 32px;
+}
+
+/* ── SLIDE HEADER (logo + counter) ───────────────────────────── */
+.sl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sl-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.sl-logo span.bar {
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: var(--red);
+}
+.sl-counter {
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── SLIDE BODY (flexible) ───────────────────────────────────── */
+.sl-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* ─ COVER slide ─────────────────────────────────────────────── */
+.sl-eyebrow {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 14px;
+}
+.sl-rule {
+  width: 36px;
+  height: 3px;
+  background: var(--red);
+  margin-bottom: 18px;
+  border-radius: 1px;
+}
+.sl-h1 {
+  font-family: var(--serif);
+  font-size: 1.85rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 18px;
+  max-width: 440px;
+}
+.sl-h1 em {
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+}
+.sl-lead {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.72);
+  max-width: 430px;
+}
+.sl-cover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.sl-cover-footer .meta {
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+.sl-cover-footer .swipe {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.08em;
+}
+.sl-cover-footer .swipe::after {
+  content: '→';
+  color: var(--red);
+}
+
+/* ─ CONCEPT / INFO slide ───────────────────────────────────── */
+.sl-section-title {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+.glass-box {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 2px;
+  padding: 18px 22px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.glass-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--red);
+  border-radius: 2px 0 0 2px;
+}
+.glass-box h4 {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 6px;
+}
+.glass-box p {
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.85);
+}
+.glass-box p strong { color: #fff; font-weight: 600; }
+
+/* VS layout for concept slide (two columns) */
+.vs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+  align-content: center;
+}
+.vs-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.vs-card .vs-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.vs-card .vs-val {
+  font-family: var(--serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.9);
+}
+.vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgba(255,255,255,0.2);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+.vs-divider::before, .vs-divider::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  margin: 6px 0;
+}
+
+/* ─ DATA / STATS slide ──────────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+  flex: 1;
+  align-content: center;
+}
+.stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 22px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.stat-card .stat-num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+.stat-card .stat-num sup {
+  font-size: 1.1rem;
+  font-weight: 700;
+  vertical-align: top;
+  margin-top: 6px;
+  display: inline-block;
+  color: var(--red);
+}
+.stat-card .stat-label {
+  font-size: 0.63rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+.stat-card.accent { border-color: rgba(225,6,0,0.35); background: rgba(225,6,0,0.09); }
+.stat-card.accent .stat-num { color: var(--red); }
+
+/* wide stat (full width) */
+.stat-card.wide { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 20px; padding: 18px 24px; }
+.stat-card.wide .stat-num { font-size: 1.9rem; }
+.stat-card.wide .stat-body { display: flex; flex-direction: column; }
+.stat-card.wide .stat-sub { font-size: 0.7rem; color: rgba(255,255,255,0.75); line-height: 1.5; max-width: 300px; }
+
+/* ─ QUESTION slide ──────────────────────────────────────────── */
+.q-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.q-intro {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.q-text {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.95);
+  position: relative;
+  padding-left: 20px;
+  border-left: 3px solid var(--red);
+}
+.q-sub {
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.5);
+  max-width: 400px;
+}
+.q-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.q-footer .pill {
+  background: rgba(225,6,0,0.15);
+  border: 1px solid rgba(225,6,0,0.3);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.q-footer .url {
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.2);
+  text-transform: lowercase;
+}
+
+/* ── TAG line at top of non-cover slides ─────────────────────── */
+.sl-article-tag {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.sl-article-tag strong { color: rgba(255,255,255,0.5); }
+
+/* ════════════════════════════════════════════════════════════════
+   BACKGROUNDS
+════════════════════════════════════════════════════════════════ */
+
+/* 1 · Trump-Irán — guerra, fuego, rojo */
+.bg-trump-1 {
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 90%, #7a1008 0%, transparent 50%),
+    radial-gradient(ellipse 80%  90% at 85% 10%, #4a0510 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #2e0006 0%, transparent 60%),
+    linear-gradient(160deg, #200306 0%, #0e0002 100%);
+}
+.bg-trump-2 {
+  background:
+    radial-gradient(ellipse 100% 80% at 15% 80%, #6b0d0d 0%, transparent 55%),
+    radial-gradient(ellipse 70%  70% at 80% 20%, #3d0808 0%, transparent 50%),
+    linear-gradient(155deg, #1a0404 0%, #0a0002 100%);
+}
+
+/* 2 · Ejército Europeo — cielo nocturno, azul profundo */
+.bg-ejercito-1 {
+  background:
+    radial-gradient(ellipse 100% 80% at 10% 85%, #0a1e5a 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 90% 10%, #0d2352 0%, transparent 50%),
+    radial-gradient(ellipse 50%  50% at 50% 50%, #0b1830 0%, transparent 65%),
+    linear-gradient(165deg, #060f2e 0%, #020819 100%);
+}
+.bg-ejercito-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #081640 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 15%, #0e1e4a 0%, transparent 50%),
+    linear-gradient(160deg, #040d20 0%, #020814 100%);
+}
+
+/* 3 · Hantavirus — biológico, verde oscuro */
+.bg-hanta-1 {
+  background:
+    radial-gradient(ellipse 100% 80% at 15% 80%, #003830 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 88% 12%, #002e22 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 50% 50%, #001a18 0%, transparent 65%),
+    linear-gradient(165deg, #001210 0%, #000a08 100%);
+}
+.bg-hanta-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #002e28 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 15%, #001e1a 0%, transparent 50%),
+    linear-gradient(160deg, #001010 0%, #000808 100%);
+}
+
+/* 4 · Irán terrorismo — peligro, naranja */
+.bg-terror-1 {
+  background:
+    radial-gradient(ellipse 110% 80% at 15% 85%, #5c2000 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 88% 10%, #3d1600 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #1a0800 0%, transparent 65%),
+    linear-gradient(162deg, #180600 0%, #0a0300 100%);
+}
+.bg-terror-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #4a1800 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 12%, #2e0e00 0%, transparent 50%),
+    linear-gradient(158deg, #140500 0%, #080200 100%);
+}
+
+/* 5 · Andalucía — dorado político */
+.bg-anda-1 {
+  background:
+    radial-gradient(ellipse 110% 80% at 15% 85%, #3d2800 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 88% 10%, #2e1c00 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #1a1000 0%, transparent 65%),
+    linear-gradient(162deg, #180e00 0%, #0a0600 100%);
+}
+.bg-anda-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #301e00 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 12%, #201200 0%, transparent 50%),
+    linear-gradient(158deg, #120a00 0%, #080400 100%);
+}
+
+/* Accent overrides per theme */
+.theme-blue  .sl-rule, .theme-blue  .glass-box::before, .theme-blue  .q-text { border-color: #4a7dff; }
+.theme-blue  .sl-logo, .theme-blue  .sl-section-title, .theme-blue  .q-intro { color: #4a7dff; }
+.theme-blue  .sl-logo span.bar, .theme-blue  .sl-rule { background: #4a7dff; }
+.theme-blue  .stat-card.accent { border-color: rgba(74,125,255,.35); background: rgba(74,125,255,.09); }
+.theme-blue  .stat-card.accent .stat-num { color: #4a7dff; }
+.theme-blue  .dot.on { background: #4a7dff; }
+.theme-blue  .q-footer .pill { background: rgba(74,125,255,.15); border-color: rgba(74,125,255,.3); color: #4a7dff; }
+.theme-blue  .sl-counter { color: rgba(255,255,255,.25); }
+.theme-blue  .vs-card .vs-label { color: #4a7dff; }
+.theme-blue  .article-num, .theme-blue .article-cat { color: #4a7dff; }
+
+.theme-teal  .sl-rule, .theme-teal  .glass-box::before, .theme-teal  .q-text { border-color: #00c9a7; }
+.theme-teal  .sl-logo, .theme-teal  .sl-section-title, .theme-teal  .q-intro { color: #00c9a7; }
+.theme-teal  .sl-logo span.bar, .theme-teal  .sl-rule { background: #00c9a7; }
+.theme-teal  .stat-card.accent { border-color: rgba(0,201,167,.35); background: rgba(0,201,167,.09); }
+.theme-teal  .stat-card.accent .stat-num { color: #00c9a7; }
+.theme-teal  .dot.on { background: #00c9a7; }
+.theme-teal  .q-footer .pill { background: rgba(0,201,167,.15); border-color: rgba(0,201,167,.3); color: #00c9a7; }
+.theme-teal  .article-num { color: #00c9a7; }
+
+.theme-amber .sl-rule, .theme-amber .glass-box::before, .theme-amber .q-text { border-color: #f0a500; }
+.theme-amber .sl-logo, .theme-amber .sl-section-title, .theme-amber .q-intro { color: #f0a500; }
+.theme-amber .sl-logo span.bar, .theme-amber .sl-rule { background: #f0a500; }
+.theme-amber .stat-card.accent { border-color: rgba(240,165,0,.35); background: rgba(240,165,0,.09); }
+.theme-amber .stat-card.accent .stat-num { color: #f0a500; }
+.theme-amber .dot.on { background: #f0a500; }
+.theme-amber .q-footer .pill { background: rgba(240,165,0,.15); border-color: rgba(240,165,0,.3); color: #f0a500; }
+.theme-amber .article-num { color: #f0a500; }
+
+.theme-orange .sl-rule, .theme-orange .glass-box::before, .theme-orange .q-text { border-color: #ff6b2b; }
+.theme-orange .sl-logo, .theme-orange .sl-section-title, .theme-orange .q-intro { color: #ff6b2b; }
+.theme-orange .sl-logo span.bar, .theme-orange .sl-rule { background: #ff6b2b; }
+.theme-orange .stat-card.accent { border-color: rgba(255,107,43,.35); background: rgba(255,107,43,.09); }
+.theme-orange .stat-card.accent .stat-num { color: #ff6b2b; }
+.theme-orange .dot.on { background: #ff6b2b; }
+.theme-orange .q-footer .pill { background: rgba(255,107,43,.15); border-color: rgba(255,107,43,.3); color: #ff6b2b; }
+.theme-orange .article-num { color: #ff6b2b; }
+
+/* article-cat always grey */
+.article-cat { color: rgba(255,255,255,0.3) !important; }
+
+/* ── Responsive (wide screens: show 2 articles side by side) ── */
+@media (min-width: 1200px) {
+  .page-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 48px;
+  }
+}
+
+/* ── drag hint ───────────────────────────────────────────────── */
+.drag-hint {
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+  margin-top: 8px;
+  padding-left: 2px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="brand"><span>Hora de Despertar</span></div>
+  <h1>Carruseles del día</h1>
+  <p class="date-label">Lunes 12 de mayo de 2026 · 5 historias</p>
+</div>
+
+<div class="page-grid">
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 1 · TRUMP-IRÁN
+════════════════════════════════════════════════════════════ -->
+<div class="article-block">
+  <div class="article-meta">
+    <span class="article-num">01</span>
+    <span class="article-cat">Internacional · Guerra de Irán</span>
+  </div>
+
+  <div class="carousel-track" id="c1">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-trump-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Internacional · Guerra de Irán</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">Trump llama <em>'basura'</em> a la propuesta iraní y el alto el fuego queda en situación crítica</h1>
+          <p class="sl-lead">El presidente de EEUU calificó de 'basura' la última propuesta de Teherán y declaró que el alto el fuego estaba en 'soporte vital masivo'. Sus asesores estudian reanudar los bombardeos.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">12 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · EL BLOQUEO -->
+    <div class="slide">
+      <div class="bg bg-trump-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Trump-Irán · <strong>El bloqueo estructural</strong></div>
+        <p class="sl-section-title">¿Por qué no hay acuerdo?</p>
+        <div class="vs-grid">
+          <div class="vs-card">
+            <span class="vs-label">EEUU exige primero</span>
+            <p class="vs-val">Que Irán detenga el enriquecimiento de uranio al 60% antes de levantar sanciones</p>
+          </div>
+          <div class="vs-card">
+            <span class="vs-label">Irán exige primero</span>
+            <p class="vs-val">Que EEUU levante sanciones antes de negociar límites al programa nuclear</p>
+          </div>
+        </div>
+        <div class="glass-box" style="margin-top:10px;">
+          <h4>El resultado</h4>
+          <p>Las dos partes piden que la otra haga primero la concesión <strong>más costosa</strong>. El Proyecto Libertad —escolta naval de EEUU en el Estrecho de Ormuz— sigue activo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · CIFRAS -->
+    <div class="slide">
+      <div class="bg bg-trump-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Trump-Irán · <strong>La guerra en cifras</strong></div>
+        <p class="sl-section-title">Contexto en datos</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">38</div>
+            <div class="stat-label">días desde el inicio de los ataques aéreos de EEUU</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">40<sup>%</sup></div>
+            <div class="stat-label">del petróleo mundial pasa por el Estrecho de Ormuz</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">14</div>
+            <div class="stat-label">puntos de la propuesta iraní rechazados por Trump</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">60<sup>%</sup></div>
+            <div class="stat-label">nivel de enriquecimiento de uranio de Irán (límite del acuerdo: 3,67%)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-trump-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Trump-Irán · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">¿Hay alguna combinación de concesiones mutuamente aceptables, o las dos partes están negociando para demostrar que la otra es la que no quiere la paz?</div>
+          <p class="q-sub">Si ninguna de las dos cede, el Proyecto Libertad puede convertirse en el detonante de una escalada directa. El precio del crudo subió un 4% ayer.</p>
+          <div class="q-footer">
+            <span class="pill">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 2 · EJÉRCITO EUROPEO
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-blue">
+  <div class="article-meta">
+    <span class="article-num">02</span>
+    <span class="article-cat">Política · Defensa · Europa</span>
+  </div>
+
+  <div class="carousel-track" id="c2">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-ejercito-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Política · Defensa · Europa</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">España propone un ejército europeo permanente: <em>coalición de voluntarios</em> sin mando único</h1>
+          <p class="sl-lead">El ministro Albares formalizó hoy ante sus socios la propuesta: países dispuestos a integrar capacidades militares de forma coordinada, sin obligatoriedad para nadie.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">12 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · QUÉ ES -->
+    <div class="slide">
+      <div class="bg bg-ejercito-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Ejército Europeo · <strong>¿Qué propone España?</strong></div>
+        <p class="sl-section-title">La propuesta en tres claves</p>
+        <div class="glass-box">
+          <h4>Sin mando único</h4>
+          <p>Cada país mantiene el control de sus fuerzas. No es un ejército federal: se parecería más a la <strong>OTAN que a un ejército nacional.</strong></p>
+        </div>
+        <div class="glass-box">
+          <h4>El obstáculo legal</h4>
+          <p>El Tratado de Lisboa no prevé un ejército común. Crearlo requeriría la <strong>unanimidad de los 27 estados</strong> para reformar el tratado.</p>
+        </div>
+        <div class="glass-box">
+          <h4>¿Por qué ahora?</h4>
+          <p>Trump amenaza con reducir el compromiso de EEUU con la OTAN. Europa busca no depender de Washington para su seguridad.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · CIFRAS -->
+    <div class="slide">
+      <div class="bg bg-ejercito-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Ejército Europeo · <strong>El mapa de fuerzas</strong></div>
+        <p class="sl-section-title">La UE en defensa, hoy</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">27</div>
+            <div class="stat-label">votos unánimes necesarios para reformar el Tratado de Lisboa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">2<sup>%</sup></div>
+            <div class="stat-label">del PIB: objetivo OTAN de gasto en defensa (España aún no lo alcanza)</div>
+          </div>
+          <div class="stat-card wide">
+            <div class="stat-num" style="color:#4a7dff;">6</div>
+            <div class="stat-body">
+              <span class="stat-sub">países que han bloqueado históricamente un ejército europeo: Hungría, Austria, Malta, Irlanda, Chipre y Dinamarca</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">800<sup>k</sup></div>
+            <div class="stat-label">efectivos militares activos en la UE (dispersos en 27 ejércitos nacionales)</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">1</div>
+            <div class="stat-label">país con armas nucleares en la UE (Francia), tras el Brexit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-ejercito-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Ejército Europeo · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">¿Puede Europa defenderse sola si EEUU se retira de la OTAN, o el ejército europeo es un proyecto para los próximos veinte años?</div>
+          <p class="q-sub">Sin unanimidad de los 27 y sin presupuesto común de defensa, la propuesta española depende de que los países que más gastan (Alemania, Francia, Polonia) se sumen voluntariamente.</p>
+          <div class="q-footer">
+            <span class="pill" style="color:#4a7dff;border-color:rgba(74,125,255,.3);background:rgba(74,125,255,.15)">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 3 · HANTAVIRUS
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-teal">
+  <div class="article-meta">
+    <span class="article-num">03</span>
+    <span class="article-cat">Salud · España</span>
+  </div>
+
+  <div class="carousel-track" id="c3">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-hanta-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Salud · España</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">Confirmado el primer español con hantavirus: <em>asintomático</em> en Gómez Ulla</h1>
+          <p class="sl-lead">Un pasajero del crucero MV Hondius aislado en el hospital militar de Madrid ha dado positivo en PCR. El paciente está en buen estado. Esta mañana Sánchez recibió al director de la OMS.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">12 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · QUÉ ES EL HANTAVIRUS -->
+    <div class="slide">
+      <div class="bg bg-hanta-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Hantavirus · <strong>¿Qué es y por qué importa?</strong></div>
+        <p class="sl-section-title">El virus en tres claves</p>
+        <div class="glass-box">
+          <h4>Sin contagio persona a persona</h4>
+          <p>A diferencia del COVID, el hantavirus <strong>no se transmite entre humanos</strong>. Se contagia por contacto con roedores o sus excrementos. No hay riesgo de epidemia.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Alta mortalidad si hay síntomas</h4>
+          <p>La cepa Andes detectada tiene una mortalidad de hasta el <strong>40%</strong> cuando aparece el síndrome pulmonar. Sin síntomas, el pronóstico es bueno.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Sin vacuna ni tratamiento específico</h4>
+          <p>No existe una vacuna aprobada. El tratamiento es de soporte: <strong>los primeros 35 días</strong> son clave para vigilar la evolución.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · ESTADO ACTUAL -->
+    <div class="slide">
+      <div class="bg bg-hanta-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Hantavirus · <strong>El caso en cifras</strong></div>
+        <p class="sl-section-title">Estado del brote: hoy</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">1</div>
+            <div class="stat-label">caso confirmado por PCR en España (Hospital Gómez Ulla)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">14</div>
+            <div class="stat-label">pasajeros españoles en cuarentena y vigilancia activa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">35</div>
+            <div class="stat-label">días de protocolo de vigilancia desde la posible exposición</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">40<sup>%</sup></div>
+            <div class="stat-label">mortalidad de la cepa Andes cuando aparece el síndrome pulmonar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-hanta-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Hantavirus · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">¿Está España preparada para gestionar un caso grave de hantavirus si el paciente positivo desarrolla síntomas en los próximos días?</div>
+          <p class="q-sub">El protocolo existe y se está aplicando. Pero la ausencia de un tratamiento específico convierte la monitorización de los 35 días en la única herramienta real disponible.</p>
+          <div class="q-footer">
+            <span class="pill" style="color:#00c9a7;border-color:rgba(0,201,167,.3);background:rgba(0,201,167,.1)">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 4 · IRÁN TERRORISMO
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-orange">
+  <div class="article-meta">
+    <span class="article-num">04</span>
+    <span class="article-cat">Internacional · Seguridad · Europa</span>
+  </div>
+
+  <div class="carousel-track" id="c4">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-terror-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Internacional · Seguridad · Europa</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">Irán recluta <em>delincuentes juveniles</em> en Telegram para quemar sinagogas en Europa</h1>
+          <p class="sl-lead">El grupo HAYI, vinculado al IRGC, ha ejecutado 17 ataques en el Reino Unido pagando entre 300€ y 2.000€ a menores sin ideología. El modelo: terrorismo de gig economy.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">12 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · EL MODELO -->
+    <div class="slide">
+      <div class="bg bg-terror-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Irán-HAYI · <strong>¿Cómo funciona?</strong></div>
+        <p class="sl-section-title">El terrorismo como app de reparto</p>
+        <div class="glass-box">
+          <h4>Reclutamiento</h4>
+          <p>Canales de Telegram en inglés dirigen a jóvenes con deudas o antecedentes. <strong>No piden motivación ideológica</strong>, solo disponibilidad y discreción.</p>
+        </div>
+        <div class="glass-box">
+          <h4>La misión</h4>
+          <p>El objetivo —sinagoga, escuela judía, centro comunitario— se envía por mensaje. El ejecutor <strong>actúa solo</strong>, sin conocer a los otros ni a los coordinadores.</p>
+        </div>
+        <div class="glass-box">
+          <h4>El pago</h4>
+          <p>Entre <strong>300 y 2.000€</strong> en efectivo o criptomonedas, entregados por un intermediario que tampoco conoce la cadena de mando.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · CIFRAS -->
+    <div class="slide">
+      <div class="bg bg-terror-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Irán-HAYI · <strong>Los ataques en datos</strong></div>
+        <p class="sl-section-title">Marzo – Mayo 2026</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">17</div>
+            <div class="stat-label">ataques confirmados solo en el Reino Unido</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">9</div>
+            <div class="stat-label">países europeos con incidentes vinculados al mismo modus operandi</div>
+          </div>
+          <div class="stat-card wide">
+            <div class="stat-num" style="color:#ff6b2b;">300-2000€</div>
+            <div class="stat-body">
+              <span class="stat-sub">pago por ataque — más barato que un operativo terrorista clásico y sin rastrear ideología</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0</div>
+            <div class="stat-label">detenidos con conexión directa al IRGC demostrada en sede judicial</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">+18</div>
+            <div class="stat-label">años de condena en UK al primer ejecutor identificado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-terror-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Irán-HAYI · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">¿Cómo combates el terrorismo cuando el terrorista es un adolescente sin motivación ideológica que no sabe para quién trabaja?</div>
+          <p class="q-sub">El modelo HAYI hace que las herramientas clásicas antiterroristas —vigilar redes radicales, seguir el dinero, infiltrar células— sean ineficaces porque no hay célula que infiltrar.</p>
+          <div class="q-footer">
+            <span class="pill" style="color:#ff6b2b;border-color:rgba(255,107,43,.3);background:rgba(255,107,43,.1)">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 5 · ANDALUCÍA
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-amber">
+  <div class="article-meta">
+    <span class="article-num">05</span>
+    <span class="article-cat">Política · España · Andalucía</span>
+  </div>
+
+  <div class="carousel-track" id="c5">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-anda-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Política · España · Andalucía</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">Moreno gana el último debate andaluz y roza la <em>mayoría absoluta</em>: cinco días para el 17M</h1>
+          <p class="sl-lead">SocioMétrica le da 54-55 escaños al PP tras el debate de Canal Sur —a uno de la mayoría absoluta—, con el peor resultado histórico del PSOE y Montero en Andalucía.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">12 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · LOS DATOS -->
+    <div class="slide">
+      <div class="bg bg-anda-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Andalucía 17M · <strong>La encuesta post-debate</strong></div>
+        <p class="sl-section-title">SocioMétrica · 11 mayo 2026</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">54-55</div>
+            <div class="stat-label">escaños estimados para el PP de Moreno (mayoría = 55)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">55</div>
+            <div class="stat-label">escaños necesarios para la mayoría absoluta en el Parlamento andaluz</div>
+          </div>
+          <div class="stat-card wide">
+            <div class="stat-num" style="color:#f0a500;">Mínimo histórico</div>
+            <div class="stat-body">
+              <span class="stat-sub">El PSOE con Montero candidata alcanzaría su peor resultado en Andalucía desde 1990. Vox también baja respecto a 2022.</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5</div>
+            <div class="stat-label">días hasta las elecciones del 17 de mayo de 2026</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">2022</div>
+            <div class="stat-label">última vez que el PP gobernó Andalucía con apoyo de Vox (58 escaños PP + 14 Vox)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · ESCENARIOS -->
+    <div class="slide">
+      <div class="bg bg-anda-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Andalucía 17M · <strong>¿Qué puede pasar el 17M?</strong></div>
+        <p class="sl-section-title">Los tres escenarios</p>
+        <div class="glass-box">
+          <h4>Escenario A · PP con mayoría absoluta</h4>
+          <p>Si Moreno logra ≥ 55 escaños, gobernará <strong>sin necesitar a Vox</strong> por primera vez desde 2018. Cambio histórico en la política andaluza.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Escenario B · PP sin mayoría + Vox</h4>
+          <p>Si el PP se queda en 52-54, <strong>necesita de nuevo a Vox</strong> para investir a Moreno. La negociación determina cuánto cede el PP.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Escenario C · Empate técnico</h4>
+          <p>Si la encuesta falla y el PP baja de 50, la <strong>aritmética se complica</strong>. Podría incluso repetirse la elección.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-anda-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Andalucía 17M · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">¿Puede el PP gobernar Andalucía sin Vox por primera vez desde 2018, y qué significa eso para la política nacional?</div>
+          <p class="q-sub">Si Moreno logra la mayoría absoluta, sería el primer gran partido de centroderecha en España que se desvincula de Vox como socio necesario. Un modelo con implicaciones para Feijóo en Madrid.</p>
+          <div class="q-footer">
+            <span class="pill" style="color:#f0a500;border-color:rgba(240,165,0,.3);background:rgba(240,165,0,.1)">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+</div><!-- /page-grid -->
+
+<script>
+// Sync dots with scroll position
+document.querySelectorAll('.carousel-track').forEach(function(track) {
+  var dots = track.nextElementSibling.querySelectorAll('.dot');
+  track.addEventListener('scroll', function() {
+    var idx = Math.round(track.scrollLeft / 540);
+    dots.forEach(function(d, i) { d.classList.toggle('on', i === idx); });
+  });
+  // drag to scroll (desktop)
+  var isDown = false, startX, sl;
+  track.addEventListener('mousedown', function(e) {
+    isDown = true; track.classList.add('active');
+    startX = e.pageX - track.offsetLeft; sl = track.scrollLeft;
+  });
+  document.addEventListener('mouseup', function() { isDown = false; });
+  track.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - track.offsetLeft;
+    track.scrollLeft = sl - (x - startX) * 1.5;
+  });
+});
+</script>
+</body>
+</html>

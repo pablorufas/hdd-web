@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 14px;}
+.q{font-size:24px;font-weight:800;margin-bottom:22px;line-height:1.1;}
+.ere-box{background:rgba(200,33,30,.07);border-left:3px solid var(--red);border-radius:0 4px 4px 0;padding:16px 18px;margin-bottom:14px;}
+.ere-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.ere-company{font-size:22px;font-weight:900;margin-bottom:4px;}
+.ere-detail{font-size:13px;color:var(--muted);line-height:1.4;}
+.ere-detail strong{color:var(--ink);}
+.divider{height:1px;background:rgba(255,255,255,.07);margin:16px 0;}
+.risk-title{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+.risk-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.risk-row:last-child{border-bottom:none;}
+.risk-job{font-size:14px;font-weight:600;}
+.risk-tag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:2px;}
+.risk-tag.high{background:rgba(200,33,30,.15);color:var(--red);}
+.risk-tag.med{background:rgba(200,160,33,.12);color:#c8a021;}
+.risk-tag.low{background:rgba(34,197,94,.1);color:#22c55e;}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">3 / 4</span>
+  </div>
+
+  <div class="section-title">Ya está pasando en España</div>
+  <div class="q">Los primeros EREs que nombran la IA como causa</div>
+
+  <div class="ere-box">
+    <div class="ere-tag">ERE · Abril 2026</div>
+    <div class="ere-company">Capgemini</div>
+    <div class="ere-detail">Primera gran consultora en declarar que <strong>la IA hace el trabajo</strong> de los empleados despedidos. Equipos un 40-60% más pequeños.</div>
+  </div>
+
+  <div class="ere-box">
+    <div class="ere-tag">ERE · Mayo 2026</div>
+    <div class="ere-company">Inetum — 400 despidos</div>
+    <div class="ere-detail">Segunda consultora en dos semanas. Cita agentes de IA en <strong>soporte técnico, incidencias y desarrollo</strong> como causa directa.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="risk-title">Riesgo por perfil · próximos 3 años</div>
+
+  <div class="risk-row">
+    <span class="risk-job">QA / Tester</span>
+    <span class="risk-tag high">Muy alto</span>
+  </div>
+  <div class="risk-row">
+    <span class="risk-job">Desarrollador junior</span>
+    <span class="risk-tag high">Alto</span>
+  </div>
+  <div class="risk-row">
+    <span class="risk-job">Analista de datos</span>
+    <span class="risk-tag high">Alto</span>
+  </div>
+  <div class="risk-row">
+    <span class="risk-job">Paralegal</span>
+    <span class="risk-tag med">Medio</span>
+  </div>
+  <div class="risk-row">
+    <span class="risk-job">Dev senior / Arquitecto</span>
+    <span class="risk-tag low">Bajo</span>
+  </div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>

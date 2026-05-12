@@ -186,6 +186,64 @@
 
 })();
 
+/* ── Retention bar (aparece a los 30s en artículos) ─────────── */
+(function () {
+  var KEY = 'hdd-ret-v1';
+  if (sessionStorage.getItem(KEY)) return;
+  // Solo en páginas de artículo (no portada, no noticias.html)
+  var path = location.pathname;
+  var isArticle = path !== '/' && path !== '/index.html' &&
+    path !== '/noticias.html' && path !== '/educacion.html' &&
+    path !== '/newsletter.html' && path !== '/manifiesto.html' &&
+    path.indexOf('.html') > -1;
+  if (!isArticle) return;
+
+  var shown = false;
+  function showBar() {
+    if (shown) return;
+    shown = true;
+    var bar = document.createElement('div');
+    bar.id = 'retention-bar';
+    bar.innerHTML = '<div class="ret-inner">'
+      + '<span class="ret-icon">🔔</span>'
+      + '<div class="ret-text"><strong>¿Te ha resultado útil?</strong>'
+      + '<span>Activa las notificaciones para no perderte nada</span></div>'
+      + '<button class="ret-btn" id="ret-btn-yes">Activar</button>'
+      + '<button class="ret-close" id="ret-btn-no" aria-label="Cerrar">✕</button>'
+      + '</div>';
+    document.body.appendChild(bar);
+    setTimeout(function () { bar.classList.add('show'); }, 50);
+
+    function dismiss() {
+      bar.classList.remove('show');
+      sessionStorage.setItem(KEY, '1');
+    }
+
+    document.getElementById('ret-btn-no').addEventListener('click', dismiss);
+    document.getElementById('ret-btn-yes').addEventListener('click', function () {
+      dismiss();
+      // Intentar push via OneSignal
+      if (window.OneSignalDeferred) {
+        window.OneSignalDeferred.push(function (O) {
+          O.User.PushSubscription.optIn();
+        });
+      }
+      if (typeof gtag === 'function') {
+        gtag('event', 'retention_bar_accept', { page_path: location.pathname });
+      }
+    });
+  }
+
+  // Mostrar tras 30s o al llegar al 60% del scroll
+  var timer = setTimeout(showBar, 30000);
+  var scrolled = false;
+  window.addEventListener('scroll', function () {
+    if (scrolled) return;
+    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (pct > 0.6) { scrolled = true; showBar(); }
+  }, { passive: true });
+})();
+
 /* ── Service Worker (PWA) ────────────────────────────────────── */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {

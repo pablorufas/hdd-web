@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "EEUU e Irán están en guerra activa desde abril de 2026: intercambio de disparos en el Estrecho de Ormuz, bombardeos americanos e israelíes sobre instalaciones iraníes. Al mismo tiempo negocian un acuerdo de paz de 14 puntos. El 20% del petróleo mundial pasa por ese estrecho. La gasolina en EEUU ha subido un 50%. Es el conflicto geopolítico más importante del mundo en este momento y apenas ha tenido cobertura en HdD.",
+    "extension": "Peso 4. Conflicto activo entre dos potencias con consecuencias económicas globales directas (precio del petróleo, gasolina). Implica también a Israel. No es peso 5 porque hay negociaciones activas y el conflicto parece contenido, sin riesgo de expansión a guerra regional total.",
+    "conceptos_nivel": "El lector ha oído hablar del conflicto pero probablemente no sabe qué es el Estrecho de Ormuz, por qué Irán tiene conflicto con EEUU desde hace décadas, ni qué contiene el acuerdo de 14 puntos."
+  },
+  "slug": "eeuu-iran-guerra-ormuz-acuerdo-nuclear-mayo-2026",
+  "fecha_display": "08·05·26",
+  "fecha_iso": "2026-05-08",
+  "categoria": "Internacional",
+  "tiempo": "5",
+  "titular": "EEUU e Irán negocian el fin de la guerra mientras siguen disparándose en el Estrecho de Ormuz",
+  "lead": "Estados Unidos e Irán llevan semanas en conflicto armado. Los bombardeos americanos e israelíes sobre instalaciones iraníes comenzaron en abril. A pesar de un alto el fuego formal, ambos países siguen intercambiando fuego en el Estrecho de Ormuz, el canal marítimo por donde pasa el 20% del petróleo del mundo. Al mismo tiempo, negocian un acuerdo de paz de 14 puntos. La gasolina en EEUU ha subido un 50% desde el inicio del conflicto.",
+  "conceptos": [
+    {
+      "titulo": "¿Por qué EEUU e Irán llevan décadas enfrentados?",
+      "cuerpo": "En 1979, una revolución derrocó al gobierno iraní apoyado por EEUU e instaló una república islámica que desde entonces considera a EEUU su enemigo principal. EEUU respondió con sanciones económicas —básicamente prohibiéndole a Irán vender su petróleo en los mercados internacionales— que han empobrecido al país. El conflicto escaló en 2026 después de que Irán avanzara en su programa para fabricar armas nucleares, lo que llevó a EEUU e Israel a lanzar bombardeos sobre sus instalaciones."
+    },
+    {
+      "titulo": "¿Qué es el Estrecho de Ormuz y por qué es tan importante?",
+      "cuerpo": "El Estrecho de Ormuz es un canal marítimo de solo 33 kilómetros en el punto más estrecho, entre Irán y la Península Arábiga. Por ahí pasan los barcos petroleros que llevan el petróleo de Arabia Saudí, Emiratos, Kuwait e Iraq hacia Europa, Asia y América. En números: el 20% de todo el petróleo que consume el mundo pasa por ese estrecho. Si se cierra —porque Irán lo bloquea o porque hay guerra ahí— los precios del petróleo y la gasolina en todo el mundo suben."
+    },
+    {
+      "titulo": "¿Qué es el acuerdo de 14 puntos?",
+      "cuerpo": "Es un borrador de paz que Trump le propuso a Irán. En una sola página, recoge 14 condiciones. Las principales: parar la guerra, reabrir el Estrecho de Ormuz, levantar las sanciones económicas contra Irán, liberar los fondos iraníes congelados en bancos occidentales, y que Irán abandone su programa de armas nucleares entregando el uranio enriquecido a EEUU. Irán lo está estudiando pero dice que es «una lista de deseos americanos, no un acuerdo real»."
+    }
+  ],
+  "hechos": "<p>El Mando Central de las Fuerzas Armadas de EEUU confirmó esta semana haber <strong>disparado contra un petrolero iraní</strong> en el golfo de Omán que intentaba evadir el bloqueo naval americano en el Estrecho de Ormuz. La embarcación quedó inmovilizada. EEUU reiteró que el bloqueo sigue en vigor.</p><p>A pesar de que EEUU e Irán acordaron un <strong>alto el fuego en abril de 2026</strong>, los intercambios de fuego continúan. Trump declaró públicamente que si Irán no firma el acuerdo, recibirá «un golpe mucho más fuerte y más violento».</p><p>Al mismo tiempo, los mediadores pakistaníes confirman que las partes están «más cerca que nunca» de un acuerdo. Trump <strong>suspendió la Operación Proyecto Libertad</strong> —el programa naval americano para escoltar barcos mercantes por el Estrecho— como gesto diplomático, aunque mantiene el bloqueo activo.</p><p>El impacto económico es inmediato: la <strong>gasolina en EEUU ha subido un 50%</strong> desde el inicio del conflicto. La demanda global de petróleo está cayendo al ritmo más rápido visto fuera de la pandemia, porque las empresas y los consumidores están reduciendo el consumo ante los precios altos.</p><p>Trump ha fijado el <strong>14 y 15 de mayo</strong> para nuevas conversaciones diplomáticas.</p>",
+  "contexto": "<p>La «Guerra de los Doce Días», como se la conoce informalmente, comenzó con bombardeos americanos e israelíes sobre instalaciones nucleares iraníes en respuesta al avance del programa atómico de Teherán. Irán respondió cerrando parcialmente el Estrecho de Ormuz y atacando barcos en la zona.</p><p>El conflicto tiene un componente nuclear central: el punto más delicado del borrador de acuerdo es que Irán entregue su uranio enriquecido a EEUU. El uranio enriquecido al 90% sirve para fabricar una bomba nuclear. Irán tiene reservas de uranio enriquecido al 60%, un paso antes del nivel necesario para un arma. Teherán considera ese material como su garantía de seguridad: si lo entrega y el acuerdo falla, queda desarmado.</p><p>La cumbre entre Trump y el presidente chino Xi Jinping, prevista para la semana que viene, podría ser clave: China es el mayor comprador de petróleo iraní y tiene peso real para presionar a Teherán hacia el acuerdo.</p>",
+  "motivaciones": [
+    {
+      "actor": "Trump",
+      "incentivos": "Tiene incentivo para cerrar un acuerdo antes de que el precio de la gasolina en EEUU dañe demasiado a los consumidores americanos, ya que la economía doméstica es su principal activo político. Al mismo tiempo, tiene incentivo para no parecer débil cediendo demasiado, lo que le haría perder apoyo en su base."
+    },
+    {
+      "actor": "Gobierno iraní",
+      "incentivos": "Tiene incentivo para negociar porque las sanciones económicas y los bombardeos están devastando su economía. Pero tiene incentivo para no entregar el uranio enriquecido porque ese material es su única carta fuerte en la negociación: una vez entregado, pierde poder de presión."
+    },
+    {
+      "actor": "China",
+      "incentivos": "Tiene incentivo para que el conflicto termine porque importa grandes cantidades de petróleo iraní y la inestabilidad en Ormuz encarece toda su cadena de suministro energético. Sin embargo, también tiene incentivo para que EEUU no salga demasiado reforzado de la negociación."
+    }
+  ],
+  "medios": "<p>CNN en español y El Diario cubrieron el conflicto en directo durante la semana. El Español detalló el borrador de 14 puntos. El Correo Gallego siguió la diplomacia paralela. Los medios españoles generalistas dieron cobertura irregular, con más atención a las subidas de precio del combustible que al conflicto en sí. En redes sociales, la guerra en Ormuz recibió mucha menos atención que conflictos anteriores, posiblemente por la saturación informativa.</p>",
+  "preguntas": [
+    "Si Irán entrega el uranio enriquecido, ¿qué garantía tiene de que EEUU cumplirá su parte del acuerdo y levantará las sanciones?",
+    "¿Puede Trump conseguir que el Congreso ratifique un acuerdo con Irán, dado que cualquier tratado formal necesita mayoría en el Senado?",
+    "¿Qué papel juega Israel? Un acuerdo entre EEUU e Irán podría entrar en conflicto con los objetivos de seguridad israelíes.",
+    "¿Cuánto puede aguantar la economía europea si el Estrecho de Ormuz sigue parcialmente cerrado durante meses?"
+  ],
+  "pregunta_principal": "¿Puede Trump cerrar un acuerdo con Irán que sea real y duradero, o estamos ante otro proceso de negociación que acaba sin resultado mientras la guerra continúa?",
+  "nota_metodologica": "Fuentes consultadas el 08/05/2026: El Español, 06 y 07/05/2026 (acuerdo 14 puntos y disparos en Ormuz); CNN en español, cobertura en directo de la guerra 05-07/05/2026; El Diario, 07/05/2026; El Correo Gallego, 03/05/2026. El dato del 50% de subida de la gasolina en EEUU procede de CNN en español (07/05/2026). El dato del 20% del petróleo mundial que pasa por Ormuz es una cifra consolidada de la Agencia Internacional de Energía (AIE), verificada en múltiples fuentes. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "india-pakistan-aniversario-operacion-sindoor-tension-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Un año de la Operación Sindoor: Pakistán advierte que responderá con fuerza a cualquier ataque de India"
+    },
+    {
+      "href": "elecciones-uk-resultados-reform-arrasa-mayo-2026.html",
+      "fecha": "08·05·26",
+      "titulo": "Reform UK arrasa en las elecciones locales y amenaza con hundir el liderazgo de Starmer"
+    },
+    {
+      "href": "tribunal-eeuu-bloquea-aranceles-trump-ilegales-mayo-2026.html",
+      "fecha": "08·05·26",
+      "titulo": "Un tribunal de EEUU declara ilegales los aranceles del 10% de Trump"
+    }
+  ],
+  "card_titular": "EEUU e Irán negocian el fin de la guerra mientras siguen disparándose en el Estrecho de Ormuz",
+  "card_summary": "Conflicto activo en el canal por donde pasa el 20% del petróleo mundial. La gasolina en EEUU sube un 50%. Un acuerdo de 14 puntos está sobre la mesa."
+}

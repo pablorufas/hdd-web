@@ -1,0 +1,68 @@
+{
+  "_razonamiento": {
+    "tema": "España supera los 22,1 millones de afiliados a la Seguridad Social por primera vez en la historia, con el paro en mínimos de 2008. Dato publicado hoy por el Ministerio, directamente relevante para millones de trabajadores y quienes buscan empleo.",
+    "extension": "Peso 3: dato macroeconómico con impacto directo y claro en la vida de los ciudadanos. 4 slides estándar, 3-4 fuentes primarias.",
+    "conceptos_nivel": "El lector de 20 años sabe que hay mucho paro, especialmente juvenil. No sabe qué son las cifras de afiliación ni cómo se relacionan con el paro registrado. Necesita entender qué mide cada indicador y qué matices tiene el dato positivo."
+  },
+  "slug": "empleo-record-22-millones-abril-2026",
+  "fecha_display": "06·05·26",
+  "fecha_iso": "2026-05-06",
+  "categoria": "Economía · España",
+  "tiempo": "10",
+  "titular": "España supera por primera vez los 22 millones de afiliados y el paro cae al mínimo desde 2008",
+  "lead": "El mercado laboral español cerró abril con 22.105.831 afiliados a la Seguridad Social, un récord absoluto, y el paro registrado cayó a 2.357.044 personas, la cifra más baja desde junio de 2008. El dato llega con matices: el paro juvenil sigue por encima del 25% y el alquiler se ha disparado al mismo tiempo que los sueldos.",
+  "conceptos": [
+    {
+      "titulo": "Afiliación a la Seguridad Social: qué mide y qué no",
+      "cuerpo": "Un afiliado es una persona con contrato vigente y cotizando al sistema en un momento dado. No mide bienestar: alguien con contrato de 12 horas semanales cuenta igual que un ingeniero a jornada completa. El récord de 22 millones dice que nunca había habido tantas personas con trabajo reconocido, pero no dice nada sobre la calidad o la remuneración de esos empleos."
+    },
+    {
+      "titulo": "Paro registrado vs. tasa de paro de la EPA",
+      "cuerpo": "El paro registrado (2,35 millones) es el número de personas inscritas en las oficinas de empleo. La EPA (Encuesta de Población Activa) mide el desempleo con criterios de la OIT y habitualmente arroja cifras mayores porque incluye a quienes buscan trabajo pero no están inscritos. El récord de hoy es del paro registrado: la EPA del primer trimestre 2026 marcó una tasa del 10,6%."
+    },
+    {
+      "titulo": "La paradoja española: más empleo y menos acceso a la vivienda",
+      "cuerpo": "El mismo día que se bate el récord de afiliados, el alquiler en España está en máximos históricos (15€/m² de media) y el euríbor cierra abril al 2,747%. Más gente tiene trabajo, pero una parte creciente no puede permitirse vivir sola en la ciudad donde trabaja. El empleo creció; el acceso al mercado inmobiliario, no."
+    }
+  ],
+  "hechos": "<p><strong>22.105.831 afiliados a la Seguridad Social en abril de 2026</strong>, según datos publicados el 5 de mayo por el Ministerio de Inclusión, Seguridad Social y Migraciones. Es la primera vez que se supera la barrera de los 22 millones en la serie original. El incremento mensual fue de 223.685 personas (+1,02% respecto a marzo) y el interanual de 517.192 (+2,4%).</p><p>El paro registrado bajó en 62.668 personas en abril (-2,59%) hasta 2.357.044, cifra no vista desde junio de 2008. Las mujeres afiliadas alcanzaron su propio máximo histórico: <strong>10.489.362</strong>. Desde la reforma laboral de 2021, hay 4.866.333 contratos indefinidos más y 1.847.426 temporales menos.</p>",
+  "contexto": "<p>España lleva tres años siendo la gran economía avanzada que más crece en la UE. El FMI proyecta un crecimiento del 2,7% para 2026, frente al 1,2% de media de la eurozona. El mercado laboral refleja esa expansión, pero los economistas advierten de señales de desaceleración: la afiliación creció en abril principalmente por el sector servicios y el turismo, actividades estacionales.</p><p>El contraste más llamativo de este ciclo económico es la brecha entre empleo y vivienda: España crea empleo a ritmo récord mientras el precio del alquiler sube un 14,72% interanual y 141 personas compiten por cada piso disponible. El debate sobre si el modelo de crecimiento beneficia por igual a todas las generaciones está en el centro de la campaña electoral en Andalucía, que vota el 17 de mayo.</p>",
+  "motivaciones": [
+    {
+      "actor": "Gobierno de España",
+      "incentivos": "Tiene incentivo para publicitar el dato récord de empleo a 11 días de las elecciones autonómicas en Andalucía, la comunidad más poblada, donde el PSOE busca revertir su caída en las encuestas. El dato de afiliación es real y verificable, pero el énfasis en el récord oculta indicadores menos favorables como el paro juvenil (25,4%) o la precariedad en el sector servicios."
+    },
+    {
+      "actor": "Oposición (PP y Vox)",
+      "incentivos": "Tiene incentivo para señalar que el récord de empleo coincide con máximos históricos en el precio de la vivienda y el euríbor, trasladando el marco de \"más trabajo pero menos poder adquisitivo\". Este encuadre conecta mejor con el votante joven que no percibe mejora en su nivel de vida pese al dato positivo."
+    }
+  ],
+  "medios": "<p>Los medios afines al gobierno (El País, La Vanguardia) destacaron el récord de afiliados como la noticia central. Los medios de oposición (El Mundo, ABC) pusieron el foco en el paro juvenil, que no bajó al mismo ritmo, y en el coste de la vida. Los medios económicos especializados señalaron la desaceleración de la tendencia: el incremento mensual de abril fue el más bajo desde enero, lo que podría indicar que el ciclo alcista del empleo está madurando.</p>",
+  "preguntas": [
+    "¿Por qué el paro juvenil (25,4%) no cae al mismo ritmo que el paro general cuando el empleo bate récords?",
+    "¿Cuántos de los 22,1 millones de afiliados tienen contratos a tiempo parcial no deseado?",
+    "¿Puede una economía sostener el crecimiento del empleo si el coste de la vivienda consume cada vez más renta disponible de los trabajadores?",
+    "¿Qué pasará con la afiliación si el euríbor sigue subiendo y contrae el consumo interno en el segundo semestre?"
+  ],
+  "pregunta_principal": "¿Un récord de empleo que coincide con máximos históricos de precio de la vivienda y el alquiler es una buena noticia para los que acaban de entrar al mercado laboral?",
+  "nota_metodologica": "Datos de afiliación y paro registrado de abril 2026: Ministerio de Inclusión, Seguridad Social y Migraciones, nota de prensa del 5 de mayo de 2026 (lamoncloa.gob.es). Dato de paro juvenil del primer trimestre 2026: EPA (INE). Datos del alquiler: idealista, informe Q1 2026. Euríbor: Banco de España, dato mensual confirmado mayo 2026. Previsión de crecimiento: FMI, World Economic Outlook, abril 2026. Consulta realizada el 6 de mayo de 2026.",
+  "lee_tambien": [
+    {
+      "href": "caso-koldo-juicio-supremo-recta-final-sentencia-mayo-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "Caso Koldo: la Fiscalía pide 24 años para Ábalos en los informes finales del juicio"
+    },
+    {
+      "href": "almaraz-nuclear-parlamento-europeo-prorroga-2040-mayo-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "El Parlamento Europeo recomienda prorrogar Almaraz hasta 2040"
+    },
+    {
+      "href": "agentes-ia-que-son-como-funcionan-educacion-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "Agentes de IA: qué son, cómo piensan, qué hacen solos y qué cambia cuando una máquina puede actuar por ti"
+    }
+  ],
+  "card_titular": "España supera por primera vez los 22 millones de afiliados y el paro cae al mínimo desde 2008",
+  "card_summary": "Récord histórico en el mercado laboral español en abril. Con matices: el paro juvenil sigue por encima del 25% y el alquiler se dispara al mismo tiempo."
+}

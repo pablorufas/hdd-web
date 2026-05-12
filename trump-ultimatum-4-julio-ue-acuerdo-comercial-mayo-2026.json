@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "Trump llamó a Von der Leyen y le fijó el 4 de julio —el Día de la Independencia americana— como fecha límite para que la UE ratifique el acuerdo Turnberry. Si no lo hace, sube los aranceles a todos los productos europeos. El simbolismo de la fecha es intencionado. Diferente del artículo del 7 de mayo (que cubría el bloqueo interno europeo): hoy hay una llamada presidencial, una fecha concreta y una amenaza directa.",
+    "extension": "Peso 3. Nuevo desarrollo del conflicto comercial. La fecha concreta y la llamada directa entre líderes son hechos nuevos y distintos al bloqueo interno europeo de ayer.",
+    "conceptos_nivel": "El lector necesita entender qué es el acuerdo Turnberry (ya explicado en artículo anterior, pero se resume aquí para quien llega nuevo), qué significa el 4 de julio como fecha y cuáles son las consecuencias reales de no llegar a un acuerdo."
+  },
+  "slug": "trump-ultimatum-4-julio-ue-acuerdo-comercial-mayo-2026",
+  "fecha_display": "08·05·26",
+  "fecha_iso": "2026-05-08",
+  "categoria": "Economía",
+  "tiempo": "4",
+  "titular": "Trump fija el 4 de julio como ultimátum a la UE: firma el acuerdo comercial antes del Día de la Independencia americana o suben los aranceles",
+  "lead": "Donald Trump llamó a la presidenta de la Comisión Europea, Ursula von der Leyen, y le fijó el 4 de julio de 2026 —el Día de la Independencia de EEUU— como plazo para que la Unión Europea ratifique el acuerdo comercial firmado el verano pasado. Si la UE no lo hace antes de esa fecha, Trump subirá los aranceles a los productos europeos. La UE lleva días sin poder aprobar el acuerdo internamente por desacuerdos entre sus propios países.",
+  "conceptos": [
+    {
+      "titulo": "El acuerdo Turnberry en 60 segundos",
+      "cuerpo": "El verano pasado, Trump y Von der Leyen se reunieron en el club de golf de Trump en Turnberry (Escocia) y llegaron a un acuerdo: EEUU cobraría solo un 15% de arancel a los productos europeos —en vez del 25% que aplica por defecto— y la UE eliminaría los aranceles sobre los productos industriales americanos. El problema es que ese acuerdo hay que convertirlo en ley, y el Parlamento Europeo y los 27 países de la UE todavía no se han puesto de acuerdo en los detalles."
+    },
+    {
+      "titulo": "¿Por qué el 4 de julio? ¿Es solo una fecha?",
+      "cuerpo": "El 4 de julio es el Día de la Independencia de EEUU, la fecha más simbólica del calendario americano. Trump elige esa fecha deliberadamente: le dice a Europa que tiene hasta el día que EEUU celebra su soberanía para aceptar sus condiciones. Es también una fecha comunicativamente eficaz para Trump, porque si Europa no cumple, puede decirle a sus votantes que Europa no respeta a EEUU ni en su día más patriótico."
+    },
+    {
+      "titulo": "¿Qué pasa si la UE no firma a tiempo?",
+      "cuerpo": "Si la UE no ratifica el acuerdo antes del 4 de julio, Trump ha amenazado con subir los aranceles a los productos europeos más allá del 25%. Eso encarece todo lo que Europa vende en EEUU: coches, vino, queso, medicamentos, ropa. Las empresas europeas o venden más barato —perdiendo margen— o sube el precio al consumidor americano y venden menos. Para España, el sector del automóvil (SEAT, Volkswagen en Martorell) y el agroalimentario serían los más afectados."
+    }
+  ],
+  "hechos": "<p>El presidente Donald Trump llamó a la presidenta de la Comisión Europea, Ursula von der Leyen, y le comunicó que <strong>el 4 de julio de 2026</strong> es la fecha límite para que la UE implemente el acuerdo Turnberry. Si no se hace, Trump subirá los aranceles a «niveles mucho más altos».</p><p>La llamada se produjo el 7 de mayo, un día después de que las instituciones europeas fallaran en llegar a un consenso interno para ratificar el acuerdo. El bloqueo se debe a que países como España, Francia y el Parlamento Europeo quieren incluir <strong>cláusulas de salvaguarda</strong> —mecanismos para poder pausar el acuerdo si EEUU incumple—, y Alemania y otros se oponen porque quieren certeza jurídica para su industria.</p><p>El presidente de la Comisión de Comercio del Parlamento Europeo, Bernd Lange, afirmó que los legisladores «aún tienen camino por recorrer» pero que trabajan para llegar a un acuerdo. Las instituciones prevén una nueva reunión en los próximos días.</p><p>El 1 de mayo, una semana antes, Trump ya había anunciado que subiría al 25% los aranceles específicamente sobre <strong>automóviles y camiones europeos</strong>. El ultimátum del 4 de julio va más allá y afecta a todos los productos.</p>",
+  "contexto": "<p>El acuerdo Turnberry lleva meses atascado en Bruselas. El problema de fondo es que Europa no se fía de Trump: ha incumplido acuerdos previos y ha cambiado de posición varias veces. Por eso varios países quieren que el acuerdo incluya mecanismos de protección para el caso de que EEUU vuelva a incumplir. Alemania, cuya industria automotriz exporta masivamente a EEUU, no quiere esas cláusulas porque generan incertidumbre y dificultan planificar inversiones a largo plazo.</p><p>Es una trampa clásica de las negociaciones internacionales: los que tienen más que perder a corto plazo (Alemania, por sus coches) prefieren un acuerdo imperfecto pero rápido, y los que tienen menos que perder a corto plazo (España, Francia) prefieren un acuerdo mejor aunque tarde más.</p><p>El plazo del 4 de julio añade presión extra sobre Europa en un momento en que también lidia con la guerra en Ormuz, los resultados del laborismo en UK y la crisis del hantavirus. Las distancias de la UE están comprimidas.</p>",
+  "motivaciones": [
+    {
+      "actor": "Trump",
+      "incentivos": "Tiene incentivo para fijar una fecha concreta y simbólica porque elimina la ambigüedad que favorece las negociaciones largas, y porque si Europa incumple el 4 de julio, tiene una narrativa política perfecta para su base electoral: 'Europa nos faltó al respeto en nuestro día más importante'."
+    },
+    {
+      "actor": "Alemania",
+      "incentivos": "Tiene incentivo para aceptar el acuerdo sin salvaguardas lo antes posible porque cada día sin acuerdo es un día en que sus coches pagan aranceles del 25% en EEUU, dañando a Volkswagen, BMW y Mercedes cuando ya están bajo presión por la transición eléctrica."
+    },
+    {
+      "actor": "España y Francia",
+      "incentivos": "Tienen incentivo para no ceder en las salvaguardas porque sin ellas firman un acuerdo que Trump puede romper sin consecuencias, lo que les dejaría sin herramientas de respuesta y políticamente expuestos ante sus opiniones públicas."
+    }
+  ],
+  "medios": "<p>Deia, El Español y Euronews cubrieron el ultimátum del 4 de julio. Varios medios regionales españoles recogieron la noticia con foco en el impacto sobre la industria automotriz. La fecha simbólica generó comentarios irónicos en redes sociales europeas. La prensa económica especializada señaló que el plazo real es más corto de lo que parece: el Parlamento Europeo tiene un periodo de receso en verano, así que el tiempo útil para ratificar es en realidad de apenas seis semanas.</p>",
+  "preguntas": [
+    "¿Puede el Parlamento Europeo ratificar un acuerdo tan complejo en seis semanas hábiles, que es lo que queda antes del receso de verano?",
+    "¿Va a ceder Alemania en las salvaguardas para cerrar el acuerdo antes del plazo, o prefiere arriesgarse y esperar a que Trump baje la presión?",
+    "Si la UE no llega al plazo, ¿subirá Trump los aranceles realmente o es una amenaza táctica para acelerar la negociación?",
+    "¿Qué pasa con el sector agroalimentario español —vino, aceite, queso— si los aranceles sobre todos los productos europeos suben por encima del 25%?"
+  ],
+  "pregunta_principal": "¿Puede la UE negociar como bloque cuando Alemania y España tienen intereses económicos opuestos en el mismo acuerdo?",
+  "nota_metodologica": "Fuentes consultadas el 08/05/2026: Deia, 07/05/2026; El Español, 07/05/2026; Salamancahoy / EFE, 07/05/2026; Euronews, 07/05/2026; Diario.mx, 07/05/2026. La llamada entre Trump y Von der Leyen del 7 de mayo está recogida en múltiples medios citando fuentes de la Comisión Europea. La declaración de Bernd Lange procede de Deia (07/05/2026). El dato del 25% de arancel sobre coches como situación previa al acuerdo es verificable en la normativa arancelaria americana. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "trump-ue-aranceles-25-coches-bloqueo-acuerdo-turnberry-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Trump amenaza con aranceles del 25% a los coches europeos mientras la UE no logra aprobar el acuerdo Turnberry"
+    },
+    {
+      "href": "tribunal-eeuu-bloquea-aranceles-trump-ilegales-mayo-2026.html",
+      "fecha": "08·05·26",
+      "titulo": "Un tribunal de EEUU declara ilegales los aranceles del 10% de Trump"
+    },
+    {
+      "href": "generacion-z-inversiones-etf-cripto-ladrillo-espana-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "La Gen Z abandona el ladrillo porque no puede comprarlo"
+    }
+  ],
+  "card_titular": "Trump fija el 4 de julio como ultimátum a la UE para ratificar el acuerdo comercial",
+  "card_summary": "Si Europa no firma antes del Día de la Independencia americano, Trump sube los aranceles a todos los productos europeos. La UE lleva días sin llegar a un acuerdo interno."
+}

@@ -13,7 +13,7 @@ import json, re, sys, os, subprocess
 
 BASEDIR     = os.path.dirname(os.path.abspath(__file__))
 NO_GIT      = "--no-git" in sys.argv
-CSS_VERSION = "5"          # bump aquí al cambiar style.css
+CSS_VERSION = "6"          # bump aquí al cambiar style.css
 
 MESES_ES = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",
             7:"julio",8:"agosto",9:"septiembre",10:"octubre",11:"noviembre",12:"diciembre"}
@@ -139,7 +139,7 @@ def build_html(d):
     tiempo    = d["tiempo"]
     titular   = d["titular"]
     lead      = d["lead"]
-    url       = f"https://horadedespertar.org/{slug}"
+    url       = f"https://horadedespertar.org/{slug}.html"
     lead_meta = re.sub(r'<[^>]+>', '', lead)[:200]
 
     # Conceptos

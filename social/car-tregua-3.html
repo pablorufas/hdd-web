@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; }
+.label { font-size: 11px; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; }
+.step-row {
+  display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;
+}
+.step-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #38bdf8; flex-shrink: 0;
+}
+.step-body {}
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.step-text { font-size: 12px; color: #888; line-height: 1.4; }
+.step-text strong { color: #f5f0e8; }
+.divider { width: 48px; height: 2px; background: #1e1e1e; margin: 14px 0; }
+.blocker-box {
+  background: #111; border-radius: 10px; border: 1px solid #1e1e1e;
+  padding: 13px 16px;
+}
+.bb-label { font-size: 10px; color: #ef4444; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.bb-text { font-size: 12px; color: #888; line-height: 1.45; }
+.bb-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Internacional · Guerra</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="content">
+  <div class="label">Qué viene ahora</div>
+  <div class="step-row">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">Witkoff y Kushner vuelan a Moscú</div>
+      <div class="step-text">El enviado de Trump y el yerno de Trump viajan <strong>esta semana</strong> para continuar negociando con Putin las condiciones de un alto el fuego permanente</div>
+    </div>
+  </div>
+  <div class="step-row">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">Umerov negoció en Miami</div>
+      <div class="step-text">El negociador ucraniano se reunió <strong>con Witkoff en Miami</strong> para coordinar la agenda humanitaria y los próximos pasos</div>
+    </div>
+  </div>
+  <div class="step-row">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">La guerra continúa mientras tanto</div>
+      <div class="step-text">Rusia sigue avanzando lentamente en el este de Ucrania. <strong>Sin congelación real del frente</strong>, negociar paz es un blanco en movimiento</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="blocker-box">
+    <div class="bb-label">🚧 Los tres bloqueantes</div>
+    <div class="bb-text"><strong>Fronteras</strong> (Rusia exige que se reconozca lo que ocupa) · <strong>Seguridad</strong> (Ucrania quiere garantías tipo OTAN) · <strong>Reparaciones de guerra</strong></div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">11·05·26</span>
+</div>
+</body>
+</html>

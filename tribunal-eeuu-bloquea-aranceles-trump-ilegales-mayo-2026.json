@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "El Tribunal de Comercio Internacional de EEUU declaró ilegales los aranceles globales del 10% de Trump, impuestos en febrero de 2026 a casi todas las importaciones. Si la sentencia se mantiene, el gobierno tendría que devolver 166.000 millones de dólares. Es un golpe judicial sin precedentes a la política económica del presidente en ejercicio.",
+    "extension": "Peso 3. La sentencia es un hecho con consecuencias económicas directas y masivas. No es peso 4 porque Trump apelará y el efecto real tardará meses en concretarse.",
+    "conceptos_nivel": "El lector sabe que Trump pone aranceles pero no sabe qué es un arancel exactamente, qué es el Tribunal de Comercio Internacional ni por qué una ley de 1974 está en el centro del debate."
+  },
+  "slug": "tribunal-eeuu-bloquea-aranceles-trump-ilegales-mayo-2026",
+  "fecha_display": "08·05·26",
+  "fecha_iso": "2026-05-08",
+  "categoria": "Economía",
+  "tiempo": "4",
+  "titular": "Un tribunal de EEUU declara ilegales los aranceles del 10% de Trump y le obliga a devolver 166.000 millones de dólares",
+  "lead": "El Tribunal de Comercio Internacional de Estados Unidos —un tribunal federal especializado en comercio— declaró el 7 de mayo que los aranceles globales del 10% que Trump impuso en febrero de 2026 son ilegales. El tribunal dice que Trump usó mal una ley de 1974 que no le daba permiso para hacer eso. Si la sentencia se confirma, el gobierno americano tendría que devolver 166.000 millones de dólares en aranceles ya cobrados. Trump apelará.",
+  "conceptos": [
+    {
+      "titulo": "¿Qué es un arancel? ¿Y por qué importa este?",
+      "cuerpo": "Un arancel es un impuesto que un país cobra sobre los productos que compra en el extranjero. Si EEUU pone un arancel del 10% a los coches fabricados en Alemania, quien importa ese coche tiene que pagar un 10% extra. Ese coste acaba subiéndole el precio al consumidor americano. Trump impuso en febrero de 2026 un arancel del 10% a casi todo lo que EEUU compra en el mundo —no solo a un país, sino a todos—. Eso afecta a productos españoles, europeos, chinos, mexicanos y de casi cualquier país."
+    },
+    {
+      "titulo": "¿Por qué el tribunal dice que es ilegal?",
+      "cuerpo": "En EEUU, solo el Congreso (el equivalente al Parlamento) puede crear impuestos nuevos. El presidente puede usar ciertos poderes de emergencia, pero con límites. Trump se basó en la Sección 122 de la Ley de Comercio de 1974 —una ley que lleva 50 años sin usarse— para justificar su arancel. El tribunal dice que esa sección solo permite aranceles temporales y en situaciones muy concretas de crisis económica, y que Trump no cumplía esas condiciones. En resumen: Trump hizo algo que, según el tribunal, la ley no le permite hacer."
+    },
+    {
+      "titulo": "¿Qué son 166.000 millones de dólares?",
+      "cuerpo": "Es el dinero que el gobierno americano ya cobró en concepto de esos aranceles desde febrero. Para hacerse una idea: el presupuesto anual de toda la sanidad pública española es de unos 80.000 millones de euros. EEUU tendría que devolver el doble de eso a las empresas importadoras que pagaron los aranceles. Trump va a recurrir la sentencia al Tribunal Supremo, así que este dinero no se devuelve de inmediato."
+    }
+  ],
+  "hechos": "<p>El <strong>Tribunal de Comercio Internacional de Estados Unidos</strong> —un tribunal federal especializado en disputas comerciales, con sede en Nueva York— dictó sentencia el 7 de mayo de 2026 declarando ilegales los aranceles globales del 10% impuestos por Trump en febrero de 2026.</p><p>El tribunal determinó que Trump invocó «de forma incorrecta» la <strong>Sección 122 de la Ley de Comercio de 1974</strong>. Esa sección permite al presidente imponer aranceles temporales solo en circunstancias muy específicas relacionadas con desequilibrios graves en la balanza de pagos (que es básicamente cuando un país gasta mucho más de lo que ingresa en comercio internacional) o inestabilidad del sistema financiero global. El tribunal concluyó que ninguna de esas circunstancias se daba en febrero de 2026.</p><p>Si la sentencia se mantiene, el gobierno americano tendría que <strong>devolver 166.000 millones de dólares</strong> en aranceles ya recaudados a las empresas importadoras que los pagaron.</p><p>La administración Trump <strong>recurrirá la sentencia</strong>. El proceso puede llegar hasta el Tribunal Supremo de EEUU, lo que significa que la resolución definitiva puede tardar meses o años.</p><p>Nota: este fallo se refiere al arancel global del 10% impuesto en febrero de 2026. Es <strong>distinto</strong> de los aranceles específicos sobre coches europeos (25%) o sobre productos chinos (145%), que tienen otras bases legales.</p>",
+  "contexto": "<p>Desde que Trump volvió a la presidencia en enero de 2025, ha usado los aranceles como su principal herramienta de política económica y de negociación internacional. La lógica de Trump es que si EEUU cobra más impuestos a los productos extranjeros, los fabricantes americanos compiten mejor en su propio mercado y las empresas extranjeras tienen que negociar con Washington.</p><p>El problema legal es que en EEUU el Congreso controla los impuestos, no el presidente. Los presidentes anteriores usaban poderes de emergencia muy concretos para imponer aranceles, normalmente en situaciones de seguridad nacional o de una amenaza específica de un país. Trump intentó usar una ley más vieja y más amplia para aplicar un arancel universal, y eso es lo que el tribunal ha rechazado.</p><p>Este no es el primer bloqueo judicial que recibe Trump en materia de aranceles. Un paquete anterior de aranceles también fue anulado por el Tribunal Supremo, lo que obligó a la administración a buscar nuevas bases legales.</p>",
+  "motivaciones": [
+    {
+      "actor": "Administración Trump",
+      "incentivos": "Tiene incentivo para apelar hasta el Tribunal Supremo porque rendirse significaría devolver 166.000 millones de dólares y perder la principal herramienta de presión comercial. Además, la actual mayoría conservadora del Tribunal Supremo ha sido favorable a ampliar los poderes del ejecutivo en otras materias."
+    },
+    {
+      "actor": "Empresas importadoras americanas",
+      "incentivos": "Tienen incentivo para apoyar la sentencia porque ellas fueron quienes pagaron los aranceles, que les encarecieron las materias primas y los productos que venden. Una devolución de esos pagos mejoraría directamente sus cuentas."
+    },
+    {
+      "actor": "Gobiernos europeos y asiáticos",
+      "incentivos": "Tienen incentivo para seguir de cerca este proceso porque si el arancel del 10% desaparece legalmente, sus exportaciones a EEUU vuelven a ser más baratas, aliviando la presión sobre sus industrias. Pero si Trump gana la apelación, la amenaza arancelaria permanece."
+    }
+  ],
+  "medios": "<p>La sentencia fue portada en medios económicos de todo el mundo. The Wall Street Journal y Financial Times la destacaron como la mayor victoria judicial contra la política arancelaria de Trump. En España, El País y Expansión cubrieron el impacto potencial sobre las exportaciones españolas. Los medios afines a Trump enmarcaron la sentencia como un ataque judicial a la soberanía del ejecutivo.</p>",
+  "preguntas": [
+    "¿Tiene el Tribunal Supremo de EEUU, con mayoría conservadora nombrada por Trump, motivos para revocar esta sentencia cuando llegue la apelación?",
+    "¿Qué pasa con las empresas importadoras que pagaron los aranceles y ahora esperan una devolución que puede no llegar si Trump gana la apelación?",
+    "¿Busca Trump una base legal diferente para reimplantar el arancel del 10% mientras dura el proceso judicial?",
+    "¿Cómo afecta esta sentencia a las negociaciones comerciales que Trump tiene abiertas simultáneamente con la UE, China y otros países?"
+  ],
+  "pregunta_principal": "Si el Tribunal Supremo americano confirma que Trump no puede imponer aranceles universales por decreto, ¿tiene Trump una alternativa legal para mantener su política comercial, o necesita al Congreso?",
+  "nota_metodologica": "Fuentes consultadas el 08/05/2026: Código QRO / EFE, 07/05/2026; La Prensa Panamá / EFE, 07/05/2026; La Nación (Argentina), 07/05/2026; Prensa Libre, 07/05/2026; Diario Financiero (Chile), 07/05/2026. La cifra de 166.000 millones de dólares en aranceles recaudados es estimación citada en La Nación (Argentina), atribuida a fuentes de la administración americana. La Sección 122 de la Ley de Comercio de 1974 es pública y verificable. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "trump-ue-aranceles-25-coches-bloqueo-acuerdo-turnberry-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Trump amenaza con aranceles del 25% a los coches europeos mientras la UE no logra aprobar el acuerdo Turnberry"
+    },
+    {
+      "href": "elecciones-uk-resultados-reform-arrasa-mayo-2026.html",
+      "fecha": "08·05·26",
+      "titulo": "Reform UK arrasa en las elecciones locales y amenaza con hundir el liderazgo de Starmer"
+    },
+    {
+      "href": "generacion-z-inversiones-etf-cripto-ladrillo-espana-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "La Gen Z abandona el ladrillo porque no puede comprarlo"
+    }
+  ],
+  "card_titular": "Un tribunal de EEUU declara ilegales los aranceles del 10% de Trump: 166.000 millones de dólares en juego",
+  "card_summary": "El Tribunal de Comercio Internacional dice que Trump usó mal una ley de 1974. Si la sentencia se confirma, EEUU tendría que devolver todo lo recaudado."
+}

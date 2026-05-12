@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "El alquiler en España alcanza máximos históricos (15€/m²), 141 personas compiten por cada piso disponible, los jóvenes dedican más del 40% del salario a una habitación compartida y el hacinamiento ha crecido un 22% desde 2019. El euríbor al 2,747% bloquea también la compra. Es el problema material más urgente para la generación de 20-35 años.",
+    "extension": "Peso 4: afecta directa y estructuralmente a millones de jóvenes. 5 slides con datos verificados, análisis en profundidad, fuentes primarias múltiples.",
+    "conceptos_nivel": "El lector de 20 años vive el problema en primera persona pero no conoce los indicadores ni las causas estructurales. Necesita datos precisos, contexto europeo comparado y qué factores concretos han producido esta situación."
+  },
+  "slug": "vivienda-alquiler-jovenes-record-hacinamiento-mayo-2026",
+  "fecha_display": "06·05·26",
+  "fecha_iso": "2026-05-06",
+  "categoria": "Economía · España",
+  "tiempo": "14",
+  "titular": "141 personas por cada piso disponible: el alquiler en España bate récords mientras los jóvenes se hacinan",
+  "lead": "El precio del alquiler en España alcanza los 15 euros por metro cuadrado de media, máximo histórico. En 28 capitales el precio nunca había sido tan alto. Los jóvenes dedican más del 40% de su salario neto a alquilar una habitación compartida. El número de personas por piso ha subido un 22% desde 2019 en las grandes ciudades. Al mismo tiempo, el euríbor cierra abril al 2,747% y comprar tampoco es una opción: la vivienda subió un 16,4% en el primer trimestre.",
+  "conceptos": [
+    {
+      "titulo": "Por qué sube el alquiler si el Gobierno tiene ley de vivienda",
+      "cuerpo": "La Ley de Vivienda de 2023 introdujo índices de contención del alquiler en zonas tensionadas, pero su aplicación es competencia de cada comunidad autónoma. A mayo de 2026, solo Cataluña la ha activado plenamente. El resto del territorio —incluidas Madrid, Valencia o Andalucía— no ha declarado zonas tensionadas. Resultado: la contención legal existe en el papel pero no en la práctica para la mayor parte del país."
+    },
+    {
+      "titulo": "Euríbor: qué es y por qué vuelve a complicar las hipotecas",
+      "cuerpo": "El euríbor es el tipo de interés al que los bancos europeos se prestan dinero entre sí, y es la referencia para la mayoría de las hipotecas variables en España. Cuando sube, la cuota mensual de quienes tienen hipoteca variable sube también en la revisión anual o semestral. En abril de 2026 cerró al 2,747%, el nivel más alto desde septiembre de 2024 y 0,6 puntos por encima del año anterior. Para una hipoteca de 150.000€ a 30 años, eso supone unos 600€ más al año al revisar."
+    },
+    {
+      "titulo": "Hacinamiento: cuando compartir piso ya no alcanza",
+      "cuerpo": "El hacinamiento se produce cuando el número de personas por habitación supera un umbral definido por Eurostat (más de una persona por habitación de media en el hogar). España ya tenía la tasa de hacinamiento juvenil más alta de Europa occidental antes de 2020; desde entonces ha empeorado. En zonas como Barcelona o Madrid, el espacio medio por persona en pisos compartidos ronda los 10 metros cuadrados. La tasa de hacinamiento española entre jóvenes es casi el triple que en Francia o Alemania."
+    }
+  ],
+  "hechos": "<p>El precio medio del alquiler en España alcanzó <strong>15€/m²</strong> en el primer trimestre de 2026, un incremento del 7,1% interanual, según el informe de idealista. El precio medio mensual es de <strong>1.205€</strong>. En Madrid capital, el alquiler llega a 21,3€/m² (+10,3%), el más alto del país. <strong>28 capitales de provincia</strong> marcaron sus máximos históricos de alquiler en el trimestre, incluyendo Palma, Málaga, Sevilla y Bilbao.</p><p>En paralelo, el precio de compra de vivienda subió un <strong>16,4% en el primer trimestre de 2026</strong>, la mayor subida en 20 años (INE). El euríbor cerró abril al <strong>2,747%</strong> (Banco de España), máximos desde septiembre de 2024.</p><p>Según datos publicados hoy por Que.es, el hacinamiento en pisos de alquiler compartido ha aumentado un <strong>22% desde 2019</strong> en las grandes capitales. El precio medio de una habitación en Barcelona es de <strong>646€/mes</strong> (55,19% del salario neto de referencia); en Madrid, <strong>622€</strong> (53,15%). Hay <strong>141 personas por cada piso disponible</strong> en el mercado de alquiler nacional.</p>",
+  "contexto": "<p>El mismo día en que el Ministerio de Trabajo anuncia un récord de 22,1 millones de afiliados, los indicadores del mercado inmobiliario describen un escenario opuesto para quienes acaban de entrar al mercado laboral. La paradoja tiene una explicación estructural: el empleo crece en sectores de servicios con salarios medios que no han subido al mismo ritmo que la vivienda.</p><p>La oferta de alquiler cayó un 34% entre 2021 y 2026 en las grandes capitales, según Fotocasa. Las causas son múltiples: propietarios que sacan pisos del mercado residencial hacia el alquiler turístico, inseguridad jurídica percibida por arrendadores tras la Ley de Vivienda, falta de construcción nueva (España construye la mitad de viviendas por habitante que Alemania o Francia), y la llegada masiva de trabajadores extranjeros cualificados y nómadas digitales a las principales ciudades.</p><p>En el contexto europeo, España tiene el problema de accesibilidad a la vivienda más agudo de la UE para el segmento de 18-34 años, según el informe Housing in Europe 2025 de Eurostat.</p>",
+  "motivaciones": [
+    {
+      "actor": "Propietarios de vivienda",
+      "incentivos": "Tienen incentivo para mantener los pisos en el mercado de alquiler a corto plazo (turístico o de temporada) porque el rendimiento puede ser un 40-60% superior al alquiler residencial de larga duración, y las plataformas digitales han reducido los costes de gestión. La regulación del alquiler turístico es competencia municipal y su aplicación es desigual."
+    },
+    {
+      "actor": "Promotores inmobiliarios",
+      "incentivos": "Tienen incentivo para construir en el segmento alto (donde el margen es mayor) antes que en vivienda asequible, salvo que existan suelos calificados a precio reducido o incentivos fiscales específicos. La escasez de suelo urbano en las grandes ciudades encarece el coste de construcción y desincentiva la vivienda pública de precio tasado."
+    },
+    {
+      "actor": "Comunidades Autónomas (PP)",
+      "incentivos": "Tienen incentivo para no activar zonas tensionadas porque consideran que la contención del precio del alquiler reduce la oferta disponible a largo plazo (argumento de los economistas liberales) y porque sus bases electorales incluyen a propietarios e inversores inmobiliarios. Madrid, gobernada por el PP, ha sido explícita en su rechazo a la ley estatal de vivienda."
+    }
+  ],
+  "medios": "<p>Los medios económicos y los generalistas de izquierda ponen el foco en el hacinamiento y la inaccesibilidad como crisis estructural. Los medios afines al PP y Ciudadanos enfocan la subida del alquiler como consecuencia de la inseguridad jurídica generada por la Ley de Vivienda. La cobertura internacional (The Economist, Financial Times) señala a España como caso paradigmático del conflicto entre turismo de masas y vivienda residencial en capitales mediterráneas.</p>",
+  "preguntas": [
+    "¿Puede una Ley de Vivienda funcionar si solo la aplica una de las 17 comunidades autónomas?",
+    "¿En qué punto el coste del alquiler empieza a afectar la productividad de las empresas porque sus empleados no pueden vivir cerca del trabajo?",
+    "¿Qué pasará con el hacinamiento si el crecimiento del empleo continúa atrayendo más trabajadores a las ciudades sin aumentar la oferta de vivienda?",
+    "¿El modelo turístico de las grandes ciudades españolas es compatible con que sus residentes puedan permitirse vivir en ellas?"
+  ],
+  "pregunta_principal": "¿Puede España seguir creciendo económicamente si la generación que sostiene ese crecimiento no puede permitirse vivir de forma digna en las ciudades donde trabaja?",
+  "nota_metodologica": "Precio del alquiler: idealista, informe Q1 2026 (publicado abril 2026). Precio de compra +16,4%: INE, Índice de Precios de Vivienda Q1 2026. Euríbor 2,747%: Banco de España, dato oficial mensual abril 2026, confirmado el 4 de mayo de 2026. Hacinamiento +22% y 141 personas por piso: que.es (6 mayo 2026), con datos de Fotocasa y Eurostat Housing in Europe 2025. Precio de habitaciones en Madrid y Barcelona: informe Lodgerin/Habitaclia Q1 2026. Comparativa europea: Eurostat Housing Statistics 2025. Consulta realizada el 6 de mayo de 2026.",
+  "lee_tambien": [
+    {
+      "href": "empleo-record-22-millones-abril-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "España supera por primera vez los 22 millones de afiliados y el paro cae al mínimo desde 2008"
+    },
+    {
+      "href": "agentes-ia-que-son-como-funcionan-educacion-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "Agentes de IA: qué son, cómo piensan, qué hacen solos y qué cambia cuando una máquina puede actuar por ti"
+    },
+    {
+      "href": "caso-koldo-juicio-supremo-recta-final-sentencia-mayo-2026.html",
+      "fecha": "06·05·26",
+      "titulo": "Caso Koldo: la Fiscalía pide 24 años para Ábalos en los informes finales del juicio"
+    }
+  ],
+  "card_titular": "141 personas por cada piso disponible: el alquiler en España bate récords mientras los jóvenes se hacinan",
+  "card_summary": "15€/m² de media, 28 capitales en máximos históricos, jóvenes dedican más del 40% del sueldo a una habitación. Los datos de hoy dibujan la peor crisis de acceso a la vivienda en décadas."
+}

@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "Trump amenaza con subir aranceles a coches europeos al 25% y la UE no logra aprobar el acuerdo Turnberry por falta de consenso interno. Impacto directo en industria automovilística europea y en el empleo. Es una escalada dentro de la guerra comercial transatlántica.",
+    "extension": "Peso 3. El bloqueo es interno a la UE y hay margen para resolverlo en días. La amenaza de Trump es una escalada verbal dentro de un patrón ya conocido. No es peso 4 porque no hay ruptura definitiva del acuerdo.",
+    "conceptos_nivel": "El lector sabe que Trump pone aranceles pero probablemente no conoce qué es el acuerdo Turnberry ni qué es el instrumento anticoerción europeo."
+  },
+  "slug": "trump-ue-aranceles-25-coches-bloqueo-acuerdo-turnberry-mayo-2026",
+  "fecha_display": "07·05·26",
+  "fecha_iso": "2026-05-07",
+  "categoria": "Economía",
+  "tiempo": "4",
+  "titular": "La UE no logra aprobar el acuerdo comercial con EEUU mientras Trump amenaza con subir aranceles a los coches europeos al 25%",
+  "lead": "Las instituciones europeas no alcanzaron consenso el 7 de mayo para ratificar el acuerdo Turnberry con Estados Unidos, que fijaba un arancel del 15% para los productos europeos. Trump amenaza con elevar los aranceles sobre vehículos europeos al 25%, acusando a Bruselas de retrasar la implementación del pacto negociado el verano pasado.",
+  "conceptos": [
+    {
+      "titulo": "El acuerdo Turnberry",
+      "cuerpo": "Pacto comercial negociado el verano de 2025 entre Trump y la presidenta de la Comisión Europea, Ursula von der Leyen, en el club de golf escocés de Trump en Turnberry. Establece un arancel del 15% para la mayoría de productos europeos importados en EEUU —incluyendo automóviles— a cambio de que la UE elimine aranceles sobre bienes industriales estadounidenses. Sin el acuerdo vigente, los aranceles sobre coches europeos están en el 25%."
+    },
+    {
+      "titulo": "Por qué la UE no logra aprobarlo",
+      "cuerpo": "El bloqueo es interno: el Parlamento Europeo, España, Francia, Finlandia y Luxemburgo quieren incluir cláusulas de salvaguarda para poder pausar el acuerdo si EEUU amenaza con nuevos aranceles. Alemania y otros se oponen. El debate no es sobre los términos con EEUU, sino sobre cuánto margen se reserva la UE para reaccionar si Trump incumple."
+    },
+    {
+      "titulo": "El instrumento anticoerción",
+      "cuerpo": "Si fracasan las negociaciones, la UE podría activar su instrumento anticoerción (Reglamento UE 2023/2675), que permite imponer represalias por valor de hasta 93.000 millones de euros contra EEUU. Sería el mayor choque comercial transatlántico desde la Segunda Guerra Mundial. La Comisión Europea ha dicho que mantiene todas las opciones sobre la mesa."
+    }
+  ],
+  "hechos": "<p>El <strong>7 de mayo de 2026</strong>, la reunión de las instituciones europeas convocada para aprobar el acuerdo comercial con EEUU terminó sin consenso tras una sesión nocturna. El desacuerdo se centró en las <strong>cláusulas de salvaguarda</strong>.</p><p>Apoyaron incluirlas: el Parlamento Europeo, España, Francia, Finlandia y Luxemburgo. Se opusieron: una coalición liderada por Alemania. Las instituciones prevén reconvocarse en los próximos días.</p><p>Donald Trump publicó en sus redes que la UE no está cumpliendo plenamente el acuerdo comercial y amenazó con elevar los aranceles sobre automóviles y camiones europeos al <strong>25%</strong>, frente al 15% pactado en Turnberry. El comisario de Comercio europeo, Maros Sefcovic, se reunió el martes en París con el representante comercial de EEUU, Jamieson Greer, sin resultado.</p><p>La Comisión Europea respondió que mantiene todas las opciones sobre la mesa, incluyendo la activación del <strong>instrumento anticoerción</strong>, que permitiría represalias de hasta 93.000 millones de euros.</p>",
+  "contexto": "<p>La industria automovilística europea exportó a EEUU vehículos por valor de más de 50.000 millones de euros en 2025 (estimación Eurostat). Un arancel del 25% impactaría directamente en los márgenes de Volkswagen, BMW, Stellantis y SEAT, en un sector que ya arrastra presión por la transición al vehículo eléctrico.</p><p>Trump ha utilizado los aranceles como herramienta de presión negociadora de forma sistemática desde su regreso a la presidencia. El patrón es conocido: amenaza arancelaria → negociación bilateral → reducción condicionada. El acuerdo Turnberry fue él mismo resultado de ese proceso.</p><p>España tiene exposición directa: el sector de automoción representa aproximadamente el 10% del PIB industrial español. SEAT-Volkswagen tiene plantas en Martorell y Pamplona. El gobierno español es uno de los que apoyan incluir salvaguardas, situándolo en la línea dura frente a Alemania dentro del debate europeo.</p>",
+  "motivaciones": [
+    {
+      "actor": "Trump",
+      "incentivos": "Tiene incentivo para presionar con aranceles más altos porque el retraso en la ratificación europea le permite mostrar dureza ante su base electoral sin haber roto formalmente el acuerdo, y porque la amenaza arancelaria ha demostrado ser eficaz para obtener concesiones en negociaciones previas."
+    },
+    {
+      "actor": "Alemania",
+      "incentivos": "Tiene incentivo para oponerse a las salvaguardas porque su industria automovilística —la más expuesta al mercado americano dentro de la UE— necesita certeza jurídica sobre el acuerdo para planificar inversiones, y las cláusulas de pausa generan incertidumbre que Berlín no está dispuesta a asumir."
+    },
+    {
+      "actor": "España y Francia",
+      "incentivos": "Tienen incentivo para exigir salvaguardas porque sin ellas la UE queda sin capacidad de reacción si Trump vuelve a incumplir, lo que los dejaría políticamente expuestos ante sus opiniones públicas en un momento de alta sensibilidad sobre soberanía económica."
+    }
+  ],
+  "medios": "<p>Noticias de Álava y Moncloa.com recogieron el bloqueo europeo del 7 de mayo. Telemundo Atlanta cubrió la amenaza del 25% a principios de semana. La Jornada y El Diario pusieron foco en el impacto sobre el comercio mundial. La cobertura fue técnica y escasa en medios generalistas españoles a diferencia de la atención que recibe en medios económicos especializados europeos.</p>",
+  "preguntas": [
+    "¿Puede la UE mantener la unidad interna frente a Trump si Alemania bloquea sistemáticamente los mecanismos de defensa comercial para proteger a su industria?",
+    "¿Activará la Comisión el instrumento anticoerción si Trump sube los aranceles, o se trata solo de una amenaza negociadora?",
+    "¿Qué pasa con el sector de automoción español si el acuerdo Turnberry no se ratifica antes del verano?",
+    "¿Tiene la UE capacidad real para imponer 93.000 millones en represalias sin dañar más a sus propias economías?"
+  ],
+  "pregunta_principal": "¿Puede Europa negociar de igual a igual con Trump cuando sus propios Estados miembros no logran ponerse de acuerdo en cómo defenderse?",
+  "nota_metodologica": "Fuentes consultadas el 07/05/2026: Noticias de Álava, 07/05/2026; Moncloa.com, 03/05/2026; Telemundo Atlanta, 02/05/2026; La Jornada, 05/05/2026; El Diario, 2026. Los datos sobre exportaciones automovilísticas europeas a EEUU son estimaciones de 2025 (Eurostat, pendiente actualización 2026). El valor del instrumento anticoerción (93.000 millones de euros) está basado en el Reglamento UE 2023/2675. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "hantavirus-crucero-mv-hondius-canarias-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Hantavirus en el MV Hondius: tres muertos y el crucero llega a Canarias"
+    },
+    {
+      "href": "generacion-z-inversiones-etf-cripto-ladrillo-espana-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "La Gen Z abandona el ladrillo porque no puede comprarlo"
+    },
+    {
+      "href": "caso-mascarillas-abalos-koldo-supremo-visto-sentencia-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Caso Mascarillas visto para sentencia: 24 años pedidos para Ábalos"
+    }
+  ],
+  "card_titular": "Trump amenaza con aranceles del 25% a los coches europeos mientras la UE no logra aprobar el acuerdo Turnberry",
+  "card_summary": "El bloqueo interno europeo sobre las cláusulas de salvaguarda deja a Bruselas sin respuesta ante la presión arancelaria de Washington."
+}

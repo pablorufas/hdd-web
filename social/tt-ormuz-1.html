@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;position:relative;overflow:hidden;}
+.bg-text{position:absolute;right:-20px;bottom:60px;font-size:240px;font-weight:900;color:rgba(200,33,30,.06);line-height:1;pointer-events:none;user-select:none;}
+.top{display:flex;align-items:center;justify-content:space-between;position:relative;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.badge{display:inline-block;background:rgba(200,33,30,.15);border:1px solid rgba(200,33,30,.3);color:var(--red);font-size:11px;font-weight:700;letter-spacing:.1em;padding:6px 14px;border-radius:2px;text-transform:uppercase;margin-top:40px;position:relative;}
+.date-tag{font-size:15px;font-weight:600;color:var(--muted);margin:20px 0 8px;position:relative;}
+.big-line{font-size:46px;font-weight:900;line-height:1.0;letter-spacing:-.02em;position:relative;}
+.big-line .red{color:var(--red);}
+.divider{height:1px;background:rgba(255,255,255,.09);margin:28px 0;position:relative;}
+.context{font-size:16px;line-height:1.55;color:var(--muted);position:relative;}
+.context strong{color:var(--ink);}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:28px;position:relative;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="bg-text">⚔</div>
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">1 / 3</span>
+  </div>
+
+  <div class="badge">Internacional · Conflicto</div>
+
+  <div class="date-tag">5 de mayo de 2026</div>
+  <div class="big-line">Primera<br>batalla real<br>en el <span class="red">Estrecho<br>de Ormuz</span></div>
+
+  <div class="divider"></div>
+
+  <div class="context">
+    <strong>6 lanchas iraníes destruidas.</strong> Misiles disparados contra destructores de EEUU. Trump amenaza con "borrar Irán de la faz de la Tierra".<br><br>
+    El <strong>primer intercambio de fuego directo</strong> desde que el bloqueo comenzó el 28 de febrero.
+  </div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>

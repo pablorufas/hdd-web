@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 24px;}
+.q{font-size:28px;font-weight:800;margin-bottom:28px;line-height:1.1;}
+.person{border:1px solid rgba(255,255,255,.09);border-radius:4px;padding:18px 20px;margin-bottom:14px;display:flex;align-items:flex-start;gap:16px;}
+.person-num{font-size:32px;font-weight:900;color:var(--red);line-height:1;min-width:80px;}
+.person-num .label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-top:2px;}
+.person-info{}
+.person-name{font-size:19px;font-weight:800;margin-bottom:4px;}
+.person-role{font-size:13px;color:var(--muted);margin-bottom:6px;}
+.person-charge{font-size:14px;line-height:1.4;}
+.person-charge strong{color:var(--red);}
+.note{font-size:13px;color:var(--muted);margin-top:16px;line-height:1.45;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">2 / 4</span>
+  </div>
+
+  <div class="section-title">¿Quién es quién?</div>
+  <div class="q">Tres acusados,<br>tres roles distintos</div>
+
+  <div class="person">
+    <div class="person-num">24<span class="label">años</span></div>
+    <div class="person-info">
+      <div class="person-name">José Luis Ábalos</div>
+      <div class="person-role">Ex ministro de Transportes (2018–2021)</div>
+      <div class="person-charge">Lo niega todo. Califica el proceso de <strong>"claramente mediático".</strong></div>
+    </div>
+  </div>
+
+  <div class="person">
+    <div class="person-num">19<span class="label">½ años</span></div>
+    <div class="person-info">
+      <div class="person-name">Koldo García</div>
+      <div class="person-role">Ex asesor personal de Ábalos</div>
+      <div class="person-charge">Se presenta como ejecutor sin decisión. Existe un <strong>audio comprometedor.</strong></div>
+    </div>
+  </div>
+
+  <div class="person">
+    <div class="person-num">7<span class="label">años</span></div>
+    <div class="person-info">
+      <div class="person-name">Víctor de Aldama</div>
+      <div class="person-role">Comisionista, "testigo colaborador"</div>
+      <div class="person-charge"><strong>Acepta el relato acusatorio.</strong> Aspira a reducir su pena.</div>
+    </div>
+  </div>
+
+  <div class="note">Peticiones de la Fiscalía Anticorrupción. Todas las cifras son solicitudes, no condenas.</div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>

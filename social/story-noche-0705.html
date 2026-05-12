@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 960px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, #0d0d1a 0%, #0a0a0a 40%, #1a0a0a 100%);
+  z-index: 0;
+}
+.bg-glow {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  top: -80px; left: 50%; transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(200,33,30,0.12) 0%, transparent 70%);
+  z-index: 0;
+}
+.bg-glow2 {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  bottom: 100px; right: -60px;
+  background: radial-gradient(circle, rgba(96,165,250,0.07) 0%, transparent 70%);
+  z-index: 0;
+}
+.content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; padding: 52px 28px 36px; }
+
+/* Header */
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+.brand-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(200,33,30,0.12); border: 1px solid rgba(200,33,30,0.3);
+  border-radius: 20px; padding: 6px 14px;
+}
+.brand-dot { width: 7px; height: 7px; border-radius: 50%; background: #c8211e; }
+.brand-name { font-size: 11px; color: #c8211e; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; }
+.date-text { font-size: 11px; color: #444; letter-spacing: 0.08em; }
+
+/* Hero */
+.hero { margin-bottom: 32px; }
+.informativo-label {
+  font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 8px;
+}
+.noche-title {
+  font-size: 52px; font-weight: 800; line-height: 1.05; letter-spacing: -0.04em;
+  margin-bottom: 4px;
+}
+.noche-title .accent { color: #c8211e; }
+.noche-sub { font-size: 14px; color: #555; margin-top: 8px; }
+
+/* Divider */
+.divider { width: 100%; height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 24px; }
+
+/* News items */
+.news-label { font-size: 10px; color: #444; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 14px; }
+.news-list { display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.news-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(18,18,18,0.7); backdrop-filter: blur(8px);
+  border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);
+  padding: 11px 14px;
+}
+.ni-icon { font-size: 16px; flex-shrink: 0; padding-top: 1px; }
+.ni-body {}
+.ni-cat { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 2px; }
+.ni-title { font-size: 12px; color: #d4d0c8; line-height: 1.35; font-weight: 600; }
+
+/* CTA */
+.cta {
+  margin-top: 20px;
+  background: rgba(200,33,30,0.1); border: 1px solid rgba(200,33,30,0.25);
+  border-radius: 12px; padding: 14px 20px; text-align: center;
+}
+.cta-top { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+.cta-main { font-size: 13px; font-weight: 700; color: #c8211e; }
+.cta-sub { font-size: 11px; color: #444; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
+<div class="content">
+
+  <div class="header">
+    <div class="brand-pill">
+      <div class="brand-dot"></div>
+      <span class="brand-name">horadedespertar.org</span>
+    </div>
+    <span class="date-text">07·05·26</span>
+  </div>
+
+  <div class="hero">
+    <div class="informativo-label">Informativo</div>
+    <div class="noche-title">La<br><span class="accent">noche</span></div>
+    <div class="noche-sub">5 noticias · 5 carruseles</div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="news-label">Lo que pasó hoy</div>
+
+  <div class="news-list">
+    <div class="news-item">
+      <div class="ni-icon">🦠</div>
+      <div class="ni-body">
+        <div class="ni-cat" style="color:#ef4444">Salud</div>
+        <div class="ni-title">Hantavirus en el crucero MV Hondius: 3 muertos, llega a Canarias el sábado</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="ni-icon">⚖️</div>
+      <div class="ni-body">
+        <div class="ni-cat" style="color:#f59e0b">Política</div>
+        <div class="ni-title">Caso Mascarillas visto para sentencia: 24 años pedidos para Ábalos</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="ni-icon">🚗</div>
+      <div class="ni-body">
+        <div class="ni-cat" style="color:#60a5fa">Economía</div>
+        <div class="ni-title">Trump amenaza con aranceles del 25% a los coches europeos. La UE bloqueada</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="ni-icon">☢️</div>
+      <div class="ni-body">
+        <div class="ni-cat" style="color:#f97316">Internacional</div>
+        <div class="ni-title">1 año de la Operación Sindoor: Pakistán avisa que volverá a responder</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="ni-icon">🗳️</div>
+      <div class="ni-body">
+        <div class="ni-cat" style="color:#818cf8">Reino Unido</div>
+        <div class="ni-title">Urnas cerradas: Reform de Farage lidera. Resultados el viernes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-top">Desliza para leer</div>
+    <div class="cta-main">Los 5 carruseles en el feed →</div>
+    <div class="cta-sub">horadedespertar.org · Artículos completos</div>
+  </div>
+
+</div>
+</body>
+</html>

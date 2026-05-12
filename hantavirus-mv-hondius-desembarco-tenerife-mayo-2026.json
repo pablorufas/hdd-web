@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "Hoy sábado 8 de mayo el MV Hondius llega a Tenerife y comienza el desembarco real de los pasajeros. Es el día clave del seguimiento: deja de ser un protocolo previsto para convertirse en una operación en curso con cámaras, pasajeros reales y posibles complicaciones. Además surge un elemento nuevo: la Audiencia Nacional recibe una petición para paralizar el desembarco.",
+    "extension": "Peso 3. El desembarco es el hecho más concreto hasta ahora. El artículo anterior cubría el protocolo previsto; este cubre la operación en tiempo real con datos nuevos.",
+    "conceptos_nivel": "El lector ya sabe lo básico del hantavirus por el artículo anterior. Este artículo puede ser más directo y centrarse en lo nuevo: qué pasa hoy, qué riesgos quedan y la petición judicial."
+  },
+  "slug": "hantavirus-mv-hondius-desembarco-tenerife-mayo-2026",
+  "fecha_display": "08·05·26",
+  "fecha_iso": "2026-05-08",
+  "categoria": "Salud",
+  "tiempo": "4",
+  "titular": "El crucero con hantavirus llega a Tenerife: empieza el desembarco mientras un juez estudia si paralizarlo",
+  "lead": "El MV Hondius, el crucero con un brote activo de hantavirus que ha causado tres muertos, llegó este sábado a aguas de Tenerife. El desembarco de los pasajeros comenzará hoy domingo al mediodía. Al mismo tiempo, alguien pidió a la Audiencia Nacional —el tribunal que lleva los casos más graves de España— que paralice la operación. El mayor riesgo ya no es el barco: es que la coordinación con los otros países de los pasajeros aún no está cerrada.",
+  "conceptos": [
+    {
+      "titulo": "¿Por qué el desembarco es más complejo de lo que parece?",
+      "cuerpo": "En el barco hay pasajeros de más de 35 países distintos. España tiene un protocolo claro para los 14 españoles: van al Hospital Gómez Ulla en Madrid, cuarentena de 45 días. Pero los otros cientos de pasajeros necesitan que sus propios países hayan preparado protocolos equivalentes. Si un país no está listo para recibir a sus ciudadanos con las medidas de aislamiento adecuadas, esas personas no pueden simplemente bajarse del barco y tomar un vuelo de vuelta a casa."
+    },
+    {
+      "titulo": "¿Qué es la Audiencia Nacional y por qué interviene aquí?",
+      "cuerpo": "La Audiencia Nacional es un tribunal de Madrid que lleva los casos más importantes y de mayor alcance en España: terrorismo, grandes fraudes, crímenes contra el Estado. En este caso, alguien —el artículo no especifica quién— pidió a ese tribunal que ordenase parar el desembarco. Los argumentos podrían ser de seguridad sanitaria o competencia territorial. Si el tribunal acepta la petición, el desembarco se suspende hasta que haya una decisión judicial."
+    },
+    {
+      "titulo": "¿Puede contagiarse la gente de Tenerife?",
+      "cuerpo": "Los epidemiólogos consultados por varios medios dicen que no. El desembarco se hará en barcas auxiliares, sin que los pasajeros pisen el puerto ni tengan contacto con la población local. El hantavirus cepa Andes no se transmite por el aire como el COVID: requiere contacto directo con una persona infectada o con sus fluidos. Con las medidas previstas, el riesgo para Canarias es considerado muy bajo por la OMS."
+    }
+  ],
+  "hechos": "<p>El <strong>MV Hondius llegó a aguas de Tenerife</strong> la mañana del 8 de mayo de 2026. No atracará en el puerto de Granadilla. El desembarco está previsto para el <strong>domingo 10 de mayo al mediodía</strong>, con los pasajeros siendo evacuados en embarcaciones auxiliares.</p><p>El principal obstáculo que queda no es el barco sino la coordinación internacional: el operativo español está preparado, pero <strong>falta confirmar los protocolos de recepción</strong> de los países de destino de los pasajeros de otras nacionalidades. Sin esa confirmación, el desembarco no puede completarse de forma segura.</p><p>Una tercera parte solicitó a la <strong>Audiencia Nacional</strong> que paralice el desembarco en Tenerife. El tribunal estudia la petición. Si la admite, la operación quedaría suspendida hasta resolución judicial.</p><p>El presidente del Gobierno, Pedro Sánchez, llamó al presidente de Canarias, Fernando Clavijo, para rebajar la tensión política y garantizarle que la evacuación será segura. Las tensiones entre los dos gobiernos habían sido públicas durante los días previos.</p><p>Situación sanitaria actualizada: <strong>3 muertos, 5 casos confirmados</strong> de hantavirus cepa Andes según la OMS. Los 14 españoles serán trasladados al Hospital Gómez Ulla (Madrid) para cuarentena de 45 días.</p>",
+  "contexto": "<p>El MV Hondius detectó los primeros casos de hantavirus cuando navegaba frente a Cabo Verde. Tres pasajeros en estado grave fueron evacuados en helicóptero el 5 de mayo. España se ofreció como punto de desembarco por ser el territorio europeo más cercano con capacidad logística para gestionar una operación de esta complejidad.</p><p>La cepa Andes es la única variante del hantavirus que se transmite entre personas. Todos los brotes anteriores habían ocurrido en Sudamérica. Este es el primer caso en Europa. La OMS ha descartado que sea una amenaza pandémica —no se transmite por el aire, requiere contacto directo— pero la gestión del desembarco de cientos de personas de decenas de países sigue siendo un reto logístico sin precedentes.</p><p>La crisis ha evidenciado que España no tiene un protocolo nacional específico para este tipo de situación. El Ministerio de Sanidad ha tenido que improvisar el marco legal para imponer cuarentenas obligatorias.</p>",
+  "motivaciones": [
+    {
+      "actor": "Gobierno central (Sánchez / Mónica García)",
+      "incentivos": "Tiene incentivo para que el desembarco salga bien esta semana porque la gestión de la crisis está bajo escrutinio público a diez días de las elecciones andaluzas del 17M. Un fallo operativo visible tendría coste político inmediato."
+    },
+    {
+      "actor": "Gobierno de Canarias (Clavijo)",
+      "incentivos": "Tiene incentivo para exigir garantías públicas del gobierno central porque el turismo es el 35% del PIB canario y necesita transmitir a tour operadores y turistas que Tenerife es segura. La tensión con Madrid le sirve también para diferenciarse políticamente."
+    },
+    {
+      "actor": "Quien presentó el recurso ante la Audiencia Nacional",
+      "incentivos": "Sin identificar en las fuentes disponibles. Podría ser un particular o una organización que considera insuficientes las garantías sanitarias o que cuestiona la competencia territorial del gobierno central para tomar esta decisión sin consultar a Canarias."
+    }
+  ],
+  "medios": "<p>Infobae España, El Español y RTVC hicieron seguimiento en directo durante todo el día. Euronews publicó el tracker en tiempo real de la posición del barco. Público recogió la opinión de epidemiólogos que descartaron riesgo de expansión. OkDiario y medios de derecha pusieron el foco en la «improvisación» del Ministerio de Sanidad y en el papel de Mónica García.</p>",
+  "preguntas": [
+    "Si la Audiencia Nacional paraliza el desembarco, ¿qué pasa con los pasajeros que llevan días a bordo esperando volver a casa?",
+    "¿Qué protocolo tiene España ahora mismo para un brote similar en el futuro, o seguimos sin ley de pandemias?",
+    "¿Cómo gestionarán los países que no tienen unidades de aislamiento de alto nivel la llegada de sus ciudadanos desde el barco?",
+    "¿Quién pidió a la Audiencia Nacional que paralizara el desembarco y con qué argumento jurídico?"
+  ],
+  "pregunta_principal": "¿Va a servir esta crisis para que España apruebe por fin una ley que regule cómo actuar ante patógenos de alta peligrosidad, o en seis meses habremos olvidado el hantavirus como olvidamos el COVID?",
+  "nota_metodologica": "Fuentes consultadas el 08/05/2026: Infobae España, cobertura en directo del 07 y 08/05/2026; El Español, 07/05/2026; El Correo Gallego, 07/05/2026; Público, 08/05/2026; Euronews, tracker de posición del barco 08/05/2026; Sanidad.gob.es, nota de prensa del Ministerio. El desembarco estaba previsto para el domingo 10 de mayo; si se ha producido antes o después, la fecha puede variar. Los datos de casos (5 confirmados, 3 muertos) son los de la OMS del 7 de mayo. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "hantavirus-crucero-mv-hondius-canarias-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Hantavirus en el MV Hondius: tres muertos y el crucero llega a Canarias este fin de semana"
+    },
+    {
+      "href": "huelga-educacion-infantil-0-3-anos-espana-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Huelga en las escuelas infantiles: 60.000 educadoras paran en toda España"
+    },
+    {
+      "href": "caso-mascarillas-abalos-koldo-supremo-visto-sentencia-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Caso Mascarillas visto para sentencia: 24 años pedidos para Ábalos en el Supremo"
+    }
+  ],
+  "card_titular": "El crucero con hantavirus llega a Tenerife: empieza el desembarco mientras un juez estudia si paralizarlo",
+  "card_summary": "El MV Hondius ancla en aguas canarias. La operación de evacuación arranca el domingo. La Audiencia Nacional estudia una petición para suspenderla."
+}

@@ -7,3 +7,6 @@ ehthumbs.db
 Thumbs.db
 *.log
 .claude/
+.ga4_token.json
+audit_result.json
+client_secrets.json

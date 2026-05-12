@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "El desembarco del MV Hondius ha empezado hoy 9 de mayo, antes de lo previsto (el barco llegó a las 3-5 AM en vez del mediodía del domingo). Novedades relevantes vs artículo del 8 de mayo: (1) ha subido a 6 casos confirmados y 8 sospechosos, (2) hay un segundo caso sospechoso en Cataluña, contacto de una fallecida neerlandesa que compartió vuelo, (3) el Director General de la OMS Tedros está físicamente en Tenerife coordinando, (4) el desembarco ha empezado hoy, los españoles son los primeros con mascarilla FFP2. Son hechos nuevos y concretos que justifican un tercer artículo sobre este tema.",
+    "extension": "Peso 3. Seguimiento de crisis activa con datos nuevos relevantes: casos adicionales, segundo foco en Cataluña y desembarco real en curso. La presencia del DG de la OMS es un hecho notable.",
+    "conceptos_nivel": "El lector ya tiene el contexto básico del hantavirus por los dos artículos anteriores. Este puede ir más al grano: qué pasa hoy, qué es nuevo y qué significa el caso de Cataluña."
+  },
+  "slug": "hantavirus-mv-hondius-desembarco-en-curso-nuevos-casos-mayo-2026",
+  "fecha_display": "09·05·26",
+  "fecha_iso": "2026-05-09",
+  "categoria": "Salud",
+  "tiempo": "4",
+  "titular": "El desembarco del MV Hondius comienza antes de lo previsto y aparece un segundo foco de hantavirus en Cataluña",
+  "lead": "El crucero MV Hondius llegó a Tenerife de madrugada, antes de lo esperado, y el desembarco de los pasajeros ha comenzado este sábado. Los españoles son los primeros en bajar, con mascarilla FFP2. Al mismo tiempo, la OMS eleva los casos confirmados a seis y detecta un segundo foco en Cataluña: una persona que compartió vuelo con una pasajera neerlandesa fallecida. El Director General de la OMS, Tedros Adhanom, está físicamente en Tenerife coordinando la operación.",
+  "conceptos": [
+    {
+      "titulo": "¿Por qué importa el caso de Cataluña?",
+      "cuerpo": "El hantavirus cepa Andes se transmite por contacto directo con una persona infectada o con sus fluidos —no por el aire—. Si alguien que compartió un vuelo con una pasajera fallecida ha dado positivo (o es caso sospechoso), significa que el contagio pudo ocurrir en el avión, no en el barco. Eso amplía el círculo de personas en riesgo: ya no son solo los pasajeros del MV Hondius, sino también los viajeros de ese vuelo. Es exactamente el tipo de escenario que los epidemiólogos querían evitar."
+    },
+    {
+      "titulo": "¿Qué significa que el DG de la OMS esté en Tenerife?",
+      "cuerpo": "Tedros Adhanom Ghebreyesus es el máximo responsable de la Organización Mundial de la Salud, el equivalente a ser el director general de sanidad de todo el planeta. Que venga personalmente a Tenerife para coordinar el desembarco de un barco con seis casos confirmados indica dos cosas: primera, que la OMS toma muy en serio el riesgo de que la cepa Andes se extienda fuera de América del Sur; y segunda, que España lo ha convertido en una operación de salud pública global, no solo nacional."
+    },
+    {
+      "titulo": "¿Qué es una mascarilla FFP2 y por qué la usan los pasajeros?",
+      "cuerpo": "Una mascarilla FFP2 filtra al menos el 94% de las partículas en el aire, incluyendo virus. La usamos durante el COVID para evitar contagios. Para el hantavirus cepa Andes, que no se transmite por el aire sino por contacto directo, la mascarilla es sobre todo una medida preventiva adicional y de comunicación: señal visible de que el operativo es serio y controlado. Si el virus hubiera empezado a circular entre pasajeros sin síntomas, la mascarilla podría reducir también ese riesgo residual."
+    }
+  ],
+  "hechos": "<p>El <strong>MV Hondius llegó a aguas de Tenerife de madrugada</strong>, entre las 3 y las 5 de la mañana del 9 de mayo, antes de lo previsto. El desembarco ha comenzado esta mañana. <strong>Los 14 ciudadanos españoles son los primeros en desembarcar</strong>, con mascarilla FFP2 y en barcas auxiliares que no tocan el puerto.</p><p>La OMS ha elevado el número de casos confirmados a <strong>6 positivos confirmados de hantavirus cepa Andes</strong> y ha informado de <strong>8 casos sospechosos en total</strong>, incluyendo uno en fase de confirmación. El número de muertos se mantiene en 3.</p><p>El Ministerio de Sanidad notificó la detección de <strong>un segundo caso sospechoso en Cataluña</strong>: una persona que compartió vuelo con una pasajera neerlandesa fallecida. Las autoridades catalanas han iniciado el rastreo de los demás viajeros de ese vuelo.</p><p>El <strong>Director General de la OMS, Tedros Adhanom Ghebreyesus</strong>, se desplazó a Tenerife para coordinar la operación, junto a la ministra de Sanidad Mónica García y el ministro de Interior Fernando Grande-Marlaska. Es la primera vez que un director general de la OMS se desplaza a una operación de respuesta en territorio español.</p>",
+  "contexto": "<p>España lleva días gestionando una operación sin precedentes: evacuar cientos de pasajeros de decenas de países distintos, garantizando que cada uno llega a su país con protocolos de aislamiento equivalentes. La coordinación internacional es el cuello de botella: algunos países tardaron días en confirmar sus protocolos de recepción.</p><p>El caso de Cataluña introduce una complicación nueva: si el virus ha salido del barco antes del desembarco controlado —a través de una pasajera que ya había vuelto a casa—, el rastreo se complica enormemente. En el COVID, ese tipo de salto de cadena de contagio fue el que convirtió brotes locales en epidemias.</p><p>La Audiencia Nacional, que el 8 de mayo estudiaba una petición para paralizar el desembarco, no ha emitido ninguna resolución de bloqueo. El desembarco ha comenzado sin impedimento judicial.</p>",
+  "motivaciones": [
+    {
+      "actor": "Ministerio de Sanidad (Mónica García)",
+      "incentivos": "Tiene incentivo para completar el desembarco antes de las elecciones andaluzas del 17 de mayo, con operativo sin incidentes visibles. El caso de Cataluña complica ese objetivo: si se confirma transmisión fuera del barco, el relato cambia de 'crisis controlada' a 'brote en territorio nacional'."
+    },
+    {
+      "actor": "OMS / Tedros",
+      "incentivos": "Tiene incentivo para usar este caso como demostración de capacidad de respuesta internacional coordinada, especialmente después de las críticas que recibió la OMS durante el COVID por su lentitud. La presencia física de Tedros es también un mensaje a los estados miembros: la OMS es capaz de actuar en el terreno."
+    },
+    {
+      "actor": "Autoridades de Cataluña",
+      "incentivos": "Tienen incentivo para ser transparentes en el rastreo del vuelo porque ocultar casos o demorar el rastreo aumentaría el riesgo real y el coste político si luego aparecen más casos. Pero también tienen incentivo para no alarmar en exceso: el turismo catalán también se ve afectado por el miedo al virus."
+    }
+  ],
+  "medios": "<p>Infobae España, El Español y Telecinco hicieron cobertura en directo del desembarco. RTVC (Canarias) siguió minuto a minuto la llegada del barco. La noticia del caso sospechoso en Cataluña la adelantó El Español antes que los medios públicos. Euronews actualizó el tracker de posición del barco y publicó el cronograma del operativo. La presencia de Tedros fue destacada por todos los medios como señal de la gravedad percibida por la comunidad internacional.</p>",
+  "preguntas": [
+    "Si el caso de Cataluña confirma contagio en un vuelo antes del desembarco, ¿qué pasajeros de ese vuelo están en riesgo y cómo los localiza el sistema de salud?",
+    "¿Ha habido más pasajeros que ya volvieron a sus países antes de que el barco llegara a Tenerife, y que podrían estar incubando el virus sin saberlo?",
+    "¿Tiene España el marco legal para imponer cuarentena a los contactos del vuelo catalán, o sigue sin ley de pandemias?",
+    "¿Por qué Tedros viajó a Tenerife y no coordinó a distancia? ¿Qué dice eso sobre el nivel de riesgo que la OMS asigna internamente a este brote?"
+  ],
+  "pregunta_principal": "¿Estamos ante un brote contenido dentro del barco o el virus ya está circulando fuera, en vuelos y destinos que aún no lo saben?",
+  "nota_metodologica": "Fuentes consultadas el 09/05/2026: Infobae España, cobertura en directo 09/05/2026; Telecinco, 09/05/2026 (desembarco con FFP2); El Español, 08 y 09/05/2026 (caso Cataluña, segunda contacto); RTVC, cobertura 09/05/2026; Sanidad.gob.es, nota de prensa 09/05/2026. El dato de llegada entre las 3 y las 5 AM procede del tracker de Euronews. El número de casos confirmados (6) y sospechosos (8) corresponde a la actualización de la OMS del 09/05/2026 según Infobae España. La presencia de Tedros en Tenerife está recogida en Infobae España y El Español. La Audiencia Nacional no emitió resolución de bloqueo según fuentes citadas en la cobertura en directo de RTVC. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "hantavirus-mv-hondius-desembarco-tenerife-mayo-2026.html",
+      "fecha": "08·05·26",
+      "titulo": "El crucero con hantavirus llega a Tenerife: empieza el desembarco mientras un juez estudia si paralizarlo"
+    },
+    {
+      "href": "hantavirus-crucero-mv-hondius-canarias-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Hantavirus en el MV Hondius: tres muertos y el crucero llega a Canarias este fin de semana"
+    },
+    {
+      "href": "peter-magyar-primer-ministro-hungria-post-orban-mayo-2026.html",
+      "fecha": "09·05·26",
+      "titulo": "Hungría estrena gobierno: Magyar jura como primer ministro y pone fin a 16 años de Orbán"
+    }
+  ],
+  "card_titular": "El desembarco del MV Hondius comienza hoy y aparece un segundo foco de hantavirus en Cataluña",
+  "card_summary": "El barco llegó antes de lo previsto. Los casos suben a 6 confirmados. Una persona en Cataluña que compartió vuelo con una fallecida es caso sospechoso."
+}

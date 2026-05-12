@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 14px;}
+.q{font-size:26px;font-weight:800;margin-bottom:24px;line-height:1.1;}
+.loop-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;}
+.loop-step{text-align:center;flex:1;}
+.loop-icon{font-size:26px;display:block;margin-bottom:6px;}
+.loop-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);}
+.loop-arrow{font-size:18px;color:var(--red);font-weight:900;flex-shrink:0;padding:0 4px;margin-bottom:18px;}
+.step-list{display:flex;flex-direction:column;gap:16px;}
+.step-item{display:flex;gap:14px;align-items:flex-start;}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-body{}
+.step-title{font-size:15px;font-weight:700;margin-bottom:3px;}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.4;}
+.step-desc strong{color:var(--ink);}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">2 / 4</span>
+  </div>
+
+  <div class="section-title">Cómo funciona por dentro</div>
+  <div class="q">El bucle que hace posible la autonomía</div>
+
+  <div class="loop-row">
+    <div class="loop-step">
+      <span class="loop-icon">👁️</span>
+      <span class="loop-name">Percibir</span>
+    </div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step">
+      <span class="loop-icon">🧠</span>
+      <span class="loop-name">Razonar</span>
+    </div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step">
+      <span class="loop-icon">⚡</span>
+      <span class="loop-name">Actuar</span>
+    </div>
+    <span class="loop-arrow">→</span>
+    <div class="loop-step">
+      <span class="loop-icon">🔍</span>
+      <span class="loop-name">Evaluar</span>
+    </div>
+  </div>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Percibir</div>
+        <div class="step-desc">Lee el entorno: tarea, historial, resultado del último paso. <strong>Sabe exactamente dónde está.</strong></div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Razonar</div>
+        <div class="step-desc">Decide qué herramienta usar. Puede descomponer el objetivo en subtareas. <strong>Piensa antes de actuar.</strong></div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Actuar</div>
+        <div class="step-desc">Busca en Google, ejecuta código, rellena formularios, llama APIs. <strong>Efectos reales en el mundo.</strong></div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Evaluar</div>
+        <div class="step-desc">¿Funcionó? Si no, ajusta y repite. El bucle puede darse <strong>50 o 100 veces</strong> en una tarea compleja.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>

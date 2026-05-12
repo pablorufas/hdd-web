@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1571079153394-ba9abceca651?w=1080&q=80&fit=crop&auto=format');
+  background-size: cover; background-position: center 40%;
+  filter: blur(7px) brightness(0.18);
+  transform: scale(1.08); z-index: 0;
+}
+.top-bar, .title, .content, .bottom-bar { position: relative; z-index: 1; }
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #aaa; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #666; }
+.title { font-size: 18px; font-weight: 700; padding: 12px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.gold { color: #d4af37; }
+.glass {
+  background: rgba(20,20,20,0.72); backdrop-filter: blur(10px);
+  border-radius: 10px; border: 1px solid rgba(212,175,55,0.1);
+}
+.stop-card { border-radius: 10px; padding: 13px 16px; display: flex; gap: 12px; align-items: flex-start; }
+.stop-city { font-size: 14px; font-weight: 700; color: #d4af37; min-width: 80px; }
+.stop-dates { font-size: 11px; color: #888; margin-bottom: 3px; }
+.stop-text { font-size: 12px; color: #aaa; line-height: 1.4; }
+.canarias-box {
+  background: rgba(10,20,30,0.75); border: 1px solid rgba(96,165,250,0.2);
+  backdrop-filter: blur(8px); border-radius: 10px; padding: 13px 14px;
+}
+.cb-label { font-size: 10px; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+.cb-text { font-size: 13px; color: #aaa; line-height: 1.45; }
+.cb-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(10,10,10,0.5);
+}
+.brand { font-size: 11px; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="top-bar">
+  <span class="eyebrow">El itinerario</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">El recorrido de León XIV por España</div>
+<div class="content">
+  <div class="stop-card glass">
+    <div class="stop-city">Madrid</div>
+    <div>
+      <div class="stop-dates">6 — 9 de junio · 3 días</div>
+      <div class="stop-text">Catedral de la Almudena, visita al Rey Felipe VI en el Palacio Real y encuentro con jóvenes.</div>
+    </div>
+  </div>
+  <div class="stop-card glass">
+    <div class="stop-city">Barcelona</div>
+    <div>
+      <div class="stop-dates">9 — 11 de junio · 2 días</div>
+      <div class="stop-text">Misa multitudinaria prevista. Visita a la Sagrada Família, actualmente en obras de finalización.</div>
+    </div>
+  </div>
+  <div class="stop-card glass">
+    <div class="stop-city">Canarias</div>
+    <div>
+      <div class="stop-dates">11 — 12 de junio · Las Palmas + Tenerife</div>
+      <div class="stop-text">Encuentros con migrantes y comunidades receptoras.</div>
+    </div>
+  </div>
+  <div class="canarias-box">
+    <div class="cb-label">Por qué Canarias es la parada más política</div>
+    <div class="cb-text">En 2025, <strong>más de 46.000 personas</strong> llegaron a las costas canarias desde África. La Iglesia ha criticado la política de externalización de fronteras de la UE.</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#666;">07·05·26</span>
+</div>
+</body>
+</html>

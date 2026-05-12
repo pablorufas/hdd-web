@@ -1,0 +1,72 @@
+{
+  "_razonamiento": {
+    "tema": "Brote de hantavirus cepa Andes en un crucero con destino a Canarias: 3 muertos, 5 casos confirmados por la OMS, 14 españoles en cuarentena de 45 días. Primera activación del Mecanismo Europeo de Protección Civil por hantavirus en Europa. Máxima urgencia informativa.",
+    "extension": "Peso 4. El hecho implica a ciudadanos españoles directamente, activa instituciones europeas, genera tensión política gobierno-Canarias y tiene potencial de alarma sanitaria. No es peso 5 porque la OMS descarta pandemia y el número de afectados es limitado.",
+    "conceptos_nivel": "El lector sabe que existe el hantavirus pero probablemente no conoce la diferencia entre cepas ni por qué la cepa Andes es especialmente relevante. Tampoco conoce el Mecanismo Europeo de Protección Civil ni el Hospital Gómez Ulla."
+  },
+  "slug": "hantavirus-crucero-mv-hondius-canarias-mayo-2026",
+  "fecha_display": "07·05·26",
+  "fecha_iso": "2026-05-07",
+  "categoria": "Salud",
+  "tiempo": "5",
+  "titular": "Un brote de hantavirus con tres muertos llega a Canarias este fin de semana a bordo del crucero MV Hondius",
+  "lead": "El buque MV Hondius, con cinco casos confirmados de hantavirus cepa Andes a bordo, arribará a aguas de Tenerife este sábado. Tres personas han fallecido. España activa el Mecanismo Europeo de Protección Civil y prepara cuarentenas de 45 días para los 14 nacionales españoles, que serán trasladados al Hospital Gómez Ulla de Madrid.",
+  "conceptos": [
+    {
+      "titulo": "¿Qué es el hantavirus cepa Andes?",
+      "cuerpo": "El hantavirus es una familia de virus transmitidos principalmente por roedores. La mayoría de cepas no se contagian entre personas. La excepción es la cepa Andes, identificada en 1997 en la Patagonia, que sí tiene transmisión documentada de humano a humano. Provoca el Síndrome Cardiopulmonar por Hantavirus (SCPH): fiebre alta, dificultad respiratoria grave y, en los casos más severos, fallo cardíaco. La tasa de mortalidad puede alcanzar el 40%."
+    },
+    {
+      "titulo": "El Mecanismo Europeo de Protección Civil",
+      "cuerpo": "Sistema de coordinación que activa la UE ante emergencias que superan la capacidad de un solo Estado miembro. España lo ha solicitado para gestionar el protocolo de repatriación y cuarentena de los pasajeros de más de 35 nacionalidades a bordo del MV Hondius. Es la primera vez que se activa en Europa por un brote de hantavirus."
+    },
+    {
+      "titulo": "¿Por qué el Hospital Gómez Ulla?",
+      "cuerpo": "Los 14 españoles serán trasladados al Hospital Central de la Defensa Gómez Ulla (Madrid), que alberga la Unidad de Alto Aislamiento (UAAN), uno de los tres centros en España con infraestructura certificada para patógenos de alta peligrosidad. La cuarentena durará 45 días. Tenerife también tiene preparada su Unidad de Alto Aislamiento (UATAN) en el Hospital Universitario Nuestra Señora de La Candelaria."
+    }
+  ],
+  "hechos": "<p>El <strong>MV Hondius</strong>, buque de expedición de la empresa holandesa Oceanwide Expeditions, zarpó de Argentina con destino al Atlántico Norte. El primer caso de hantavirus fue detectado cuando el barco navegaba frente a las costas de Cabo Verde.</p><p>El 5 de mayo se evacuaron en helicóptero <strong>tres pasajeros en estado grave</strong>. Hospitales neerlandeses confirmaron el contagio de hantavirus en al menos dos de los evacuados. El barco continuó su ruta hacia Canarias, acordada con las autoridades españolas como punto de desembarco más cercano con capacidad logística.</p><p>Según datos de la OMS del 7 de mayo de 2026, hay <strong>cinco casos confirmados de laboratorio</strong> de hantavirus cepa Andes —la única con transmisión documentada entre personas— y <strong>tres fallecidos</strong>. La OMS afirma que es posible que se notifiquen más casos durante el rastreo de contactos.</p><p>El barco <strong>no atracará en ningún puerto</strong>: los pasajeros serán evacuados en embarcaciones auxiliares. Los 14 ciudadanos españoles serán trasladados directamente al aeropuerto y de ahí al Hospital Gómez Ulla, donde cumplirán cuarentena de <strong>45 días</strong> en la Unidad de Alto Aislamiento.</p>",
+  "contexto": "<p>La cepa Andes es la única de la familia hantavirus con transmisión persona a persona documentada científicamente según el ECDC. Todos los brotes previos habían estado confinados a Sudamérica. Su aparición en un crucero de lujo con pasajeros de decenas de países supone un reto logístico sanitario sin precedentes en Europa.</p><p>España no contaba con un protocolo específico para este escenario. El Ministerio de Sanidad está ultimando el marco legal para imponer cuarentenas obligatorias a quienes se nieguen a aislarse. La ministra Mónica García afirmó el 7 de mayo que España dispone de herramientas legales para hacerlas cumplir.</p><p>El Gobierno de Canarias y el Ejecutivo central mantuvieron <strong>tensiones visibles</strong> sobre la gestión: Canarias cuestionó que el barco hubiera sido autorizado a recalar en sus aguas, mientras el gobierno central argumentó que era la opción más segura logística y sanitariamente.</p><p>La OMS descartó el riesgo de pandemia y afirmó que el virus no es el próximo COVID. Subraya que el riesgo para la población de Canarias es bajo dado que el desembarco se producirá sin contacto directo con la población local.</p>",
+  "motivaciones": [
+    {
+      "actor": "Ministerio de Sanidad",
+      "incentivos": "Tiene incentivo para gestionar el desembarco de forma ordenada y con alta visibilidad porque España asumió ante la OMS la responsabilidad de repatriar a sus ciudadanos, y un fallo de gestión tendría coste político directo con las elecciones andaluzas del 17M a diez días vista."
+    },
+    {
+      "actor": "Gobierno de Canarias",
+      "incentivos": "Tiene incentivo para marcar distancia con la gestión del gobierno central porque el turismo representa aproximadamente el 35% del PIB canario y una crisis sanitaria mal comunicada puede generar cancelaciones desproporcionadas respecto al riesgo real."
+    },
+    {
+      "actor": "OMS",
+      "incentivos": "Tiene incentivo para comunicar riesgo bajo de forma activa porque un exceso de alarma podría generar pánico desproporcionado y dificultar la cooperación internacional para gestionar el desembarco ordenado de los pasajeros."
+    }
+  ],
+  "medios": "<p>El País y El Mundo abrieron portada digital con el brote. Euronews destacó la activación del mecanismo europeo. Voz Pópuli y El Español enfocaron la tensión Gobierno-Canarias. Los medios canarios (RTVC, Canarias7) hicieron cobertura minuto a minuto. En redes circularon bulos sobre transmisión aérea del virus, que la OMS desmintió explícitamente. Washington Post y medios neerlandeses siguieron el caso por la presencia de ciudadanos de decenas de países a bordo.</p>",
+  "preguntas": [
+    "¿Tiene España capacidad legal suficiente para imponer cuarentenas obligatorias sin una ley de pandemias vigente?",
+    "¿Por qué la OMS no activó antes el protocolo de alto riesgo si la cepa Andes tiene transmisión persona a persona documentada desde 1997?",
+    "¿Qué protocolo de cuarentena se aplicará a los cientos de pasajeros de otras nacionalidades sin acuerdo establecido en sus países de origen?",
+    "¿Qué pasa si durante el traslado en embarcaciones auxiliares algún pasajero se niega a cumplir la cuarentena?"
+  ],
+  "pregunta_principal": "¿Está preparado el sistema sanitario español para gestionar un brote de patógeno de alta peligrosidad en un entorno logístico complejo, o estamos construyendo el protocolo sobre la marcha?",
+  "nota_metodologica": "Fuentes consultadas el 07/05/2026: OMS, declaraciones oficiales recogidas por Infobae España y Euronews España; Ministerio de Sanidad, declaraciones de Mónica García recogidas por Público y El Español; RTVC (Radiotelevisión Canaria), cobertura en directo; Canarias7, cobertura en directo; European Centre for Disease Prevention and Control (ECDC), ficha técnica de hantavirus (cepa Andes). El número de casos (5 confirmados de laboratorio, 3 muertos) corresponde a los datos de la OMS de la mañana del 7 de mayo y puede haber variado. Motivaciones son incentivos observables, no intenciones confirmadas.",
+  "lee_tambien": [
+    {
+      "href": "huelga-educacion-infantil-0-3-anos-espana-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "Huelga en las escuelas infantiles: 60.000 educadoras paran en toda España"
+    },
+    {
+      "href": "generacion-z-inversiones-etf-cripto-ladrillo-espana-mayo-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "La Gen Z abandona el ladrillo porque no puede comprarlo"
+    },
+    {
+      "href": "papa-leon-xiv-visita-espana-junio-2026.html",
+      "fecha": "07·05·26",
+      "titulo": "León XIV visita España del 6 al 12 de junio"
+    }
+  ],
+  "card_titular": "Hantavirus en el MV Hondius: tres muertos y el crucero llega este fin de semana a Canarias",
+  "card_summary": "Cinco casos confirmados de la cepa Andes —la única transmisible entre humanos— y cuarentenas de 45 días para los 14 españoles a bordo."
+}

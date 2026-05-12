@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 20px;}
+.q{font-size:28px;font-weight:800;margin-bottom:28px;line-height:1.1;}
+.bomb{background:rgba(200,33,30,.07);border-left:3px solid var(--red);border-radius:0 4px 4px 0;padding:18px 20px;margin-bottom:16px;}
+.bomb-label{font-size:11px;color:var(--red);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:8px;}
+.bomb-val{font-size:28px;font-weight:900;margin-bottom:4px;}
+.bomb-val .unit{font-size:16px;font-weight:600;color:var(--muted);}
+.bomb-desc{font-size:14px;color:var(--muted);line-height:1.4;}
+.divider{height:1px;background:rgba(255,255,255,.07);margin:12px 0;}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">3 / 4</span>
+  </div>
+
+  <div class="section-title">Lo que dijo Aldama</div>
+  <div class="q">Las tres acusaciones<br>más graves en sala</div>
+
+  <div class="bomb">
+    <div class="bomb-label">Sobornos declarados</div>
+    <div class="bomb-val">4.000.000 <span class="unit">€</span></div>
+    <div class="bomb-desc">Aldama afirmó haber entregado entre 3,5 y 4 millones de euros a Ábalos y Koldo en efectivo a lo largo de varios años.</div>
+  </div>
+
+  <div class="bomb">
+    <div class="bomb-label">El audio del 9 de abril de 2019</div>
+    <div class="bomb-val">Koldo + Ábalos</div>
+    <div class="bomb-desc">Aldama presentó al Supremo una grabación en la que ambos habrían pactado el reparto de comisiones por la venta del cuartel de la SEPI.</div>
+  </div>
+
+  <div class="bomb">
+    <div class="bomb-label">La acusación más explosiva</div>
+    <div class="bomb-val">Sánchez, "escalafón 1"</div>
+    <div class="bomb-desc">Aldama señaló al presidente como el número uno de la organización. La Fiscalía lo descartó expresamente en sus informes finales.</div>
+  </div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>

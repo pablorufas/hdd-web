@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1750872310330-80191a871b36?w=1080&q=80&fit=crop&auto=format');
+  background-size: cover; background-position: center;
+  filter: blur(7px) brightness(0.16);
+  transform: scale(1.08); z-index: 0;
+}
+.top-bar, .title, .content, .bottom-bar { position: relative; z-index: 1; }
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #aaa; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #666; }
+.title { font-size: 16px; font-weight: 700; padding: 10px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 7px; }
+.party-bar { border-radius: 10px; padding: 10px 14px; backdrop-filter: blur(8px); }
+.pb-indigo { background: rgba(20,20,40,0.82); border: 1px solid rgba(129,140,248,0.3); }
+.pb-red { background: rgba(30,10,10,0.8); border: 1px solid rgba(248,113,113,0.2); }
+.pb-muted { background: rgba(20,20,20,0.72); border: 1px solid rgba(255,255,255,0.07); }
+.pb-green { background: rgba(10,25,10,0.8); border: 1px solid rgba(34,197,94,0.15); }
+.pb-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.pb-name { font-size: 13px; font-weight: 700; }
+.pb-pct { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.pb-bar-track { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
+.pb-bar-fill { height: 100%; border-radius: 2px; }
+.pb-note { font-size: 11px; color: #555; margin-top: 4px; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(10,10,10,0.5);
+}
+.brand { font-size: 11px; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="top-bar">
+  <span class="eyebrow">Las encuestas</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">Intención de voto (YouGov)</div>
+<div class="content">
+  <div class="party-bar pb-indigo">
+    <div class="pb-header">
+      <div class="pb-name" style="color:#818cf8">🔷 Reform UK — Farage</div>
+      <div class="pb-pct" style="color:#818cf8">25%</div>
+    </div>
+    <div class="pb-bar-track"><div class="pb-bar-fill" style="width:25%;background:#818cf8"></div></div>
+    <div class="pb-note">Invirtió +5M£ en campaña. Lidera por primera vez.</div>
+  </div>
+  <div class="party-bar pb-red">
+    <div class="pb-header">
+      <div class="pb-name" style="color:#f87171">🔴 Laboristas — Starmer</div>
+      <div class="pb-pct" style="color:#f87171">18%</div>
+    </div>
+    <div class="pb-bar-track"><div class="pb-bar-fill" style="width:18%;background:#f87171"></div></div>
+    <div class="pb-note">Ganó en 2024 con mayoría aplastante. Colapso en 18 meses.</div>
+  </div>
+  <div class="party-bar pb-muted">
+    <div class="pb-header">
+      <div class="pb-name" style="color:#aaa">⚪ Conservadores</div>
+      <div class="pb-pct" style="color:#aaa">17%</div>
+    </div>
+    <div class="pb-bar-track"><div class="pb-bar-fill" style="width:17%;background:#666"></div></div>
+  </div>
+  <div class="party-bar pb-green">
+    <div class="pb-header">
+      <div class="pb-name" style="color:#22c55e">🟢 Verdes — Polanski</div>
+      <div class="pb-pct" style="color:#22c55e">15%</div>
+    </div>
+    <div class="pb-bar-track"><div class="pb-bar-fill" style="width:15%;background:#22c55e"></div></div>
+    <div class="pb-note">Pisando los talones al laborismo en Londres.</div>
+  </div>
+  <div class="party-bar pb-muted">
+    <div class="pb-header">
+      <div class="pb-name" style="color:#888">🔵 Lib Dems</div>
+      <div class="pb-pct" style="color:#888">14%</div>
+    </div>
+    <div class="pb-bar-track"><div class="pb-bar-fill" style="width:14%;background:#444"></div></div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#666;">07·05·26</span>
+</div>
+</body>
+</html>

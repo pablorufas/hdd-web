@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=1080&q=80&fit=crop&auto=format');
+  background-size: cover; background-position: center;
+  filter: blur(7px) brightness(0.15);
+  transform: scale(1.08); z-index: 0;
+}
+.top-bar, .title, .content, .bottom-bar { position: relative; z-index: 1; }
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #aaa; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #666; }
+.title { font-size: 16px; font-weight: 700; padding: 10px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.stat-row {
+  border-radius: 10px; padding: 13px 16px;
+  display: flex; align-items: center; gap: 14px;
+}
+.sr-reform { background: rgba(30,20,60,0.85); border: 1px solid rgba(129,140,248,0.3); backdrop-filter: blur(8px); }
+.sr-labour { background: rgba(40,10,10,0.8); border: 1px solid rgba(239,68,68,0.25); backdrop-filter: blur(8px); }
+.sr-tory { background: rgba(10,25,40,0.8); border: 1px solid rgba(96,165,250,0.2); backdrop-filter: blur(8px); }
+.sr-green { background: rgba(10,30,10,0.8); border: 1px solid rgba(34,197,94,0.2); backdrop-filter: blur(8px); }
+.sr-num { font-size: 36px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; min-width: 80px; }
+.sr-body {}
+.sr-name { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+.sr-sub { font-size: 11px; color: #888; line-height: 1.35; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(10,10,10,0.5);
+}
+.brand { font-size: 11px; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="top-bar">
+  <span class="eyebrow">El marcador</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">Resultados parciales (39 de 136 municipios)</div>
+<div class="content">
+  <div class="stat-row sr-reform">
+    <div class="sr-num" style="color:#818cf8">+325</div>
+    <div class="sr-body">
+      <div class="sr-name">Reform UK — Farage</div>
+      <div class="sr-sub">Hartlepool: 12 de 12 escaños. Wigan: 6 de los 7 primeros distritos. ~28% del voto.</div>
+    </div>
+  </div>
+  <div class="stat-row sr-labour">
+    <div class="sr-num" style="color:#ef4444">−246</div>
+    <div class="sr-body">
+      <div class="sr-name">Laborismo — Starmer</div>
+      <div class="sr-sub">Pierde el control de 7 ayuntamientos. El voto laborista cae 21 puntos vs 2022. Varios diputados piden dimisión.</div>
+    </div>
+  </div>
+  <div class="stat-row sr-tory">
+    <div class="sr-num" style="color:#60a5fa">−119</div>
+    <div class="sr-body">
+      <div class="sr-name">Conservadores</div>
+      <div class="sr-sub">También pierden, pero menos. Siguen controlando 3 municipios.</div>
+    </div>
+  </div>
+  <div class="stat-row sr-green">
+    <div class="sr-num" style="color:#22c55e">+26</div>
+    <div class="sr-body">
+      <div class="sr-name">Verdes</div>
+      <div class="sr-sub">Único partido tradicional que crece. Beneficiario parcial del colapso laborista.</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#666;">08·05·26</span>
+</div>
+</body>
+</html>

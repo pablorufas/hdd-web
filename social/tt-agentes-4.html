@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;--green:#22c55e;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:32px 0 18px;}
+.q{font-size:26px;font-weight:800;margin-bottom:22px;line-height:1.1;}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px;}
+.tool-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:14px 12px;}
+.tool-icon{font-size:20px;margin-bottom:6px;display:block;}
+.tool-name{font-size:13px;font-weight:700;margin-bottom:3px;}
+.tool-desc{font-size:12px;color:var(--muted);line-height:1.35;}
+.quote{font-size:17px;font-weight:700;line-height:1.4;border-left:3px solid var(--red);padding-left:16px;margin-bottom:22px;color:var(--ink);}
+.cta-big{background:var(--red);border-radius:4px;padding:22px 24px;margin-top:auto;}
+.cta-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:6px;}
+.cta-text{font-size:16px;font-weight:800;line-height:1.2;margin-bottom:6px;}
+.cta-path{font-size:13px;opacity:.8;line-height:1.5;}
+.cta-path strong{opacity:1;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">4 / 4</span>
+  </div>
+
+  <div class="section-title">Productos que ya existen hoy</div>
+  <div class="q">No es ficción. Están en producción.</div>
+
+  <div class="tools-grid">
+    <div class="tool-box">
+      <span class="tool-icon">🖥️</span>
+      <div class="tool-name">Claude Computer Use</div>
+      <div class="tool-desc">Controla tu ordenador: clics, formularios, apps. Ve la pantalla y actúa.</div>
+    </div>
+    <div class="tool-box">
+      <span class="tool-icon">🌐</span>
+      <div class="tool-name">OpenAI Operator</div>
+      <div class="tool-desc">Navega la web de forma autónoma: reservas, trámites, compras.</div>
+    </div>
+    <div class="tool-box">
+      <span class="tool-icon">⚙️</span>
+      <div class="tool-name">Devin</div>
+      <div class="tool-desc">Escribe código, depura errores, crea pull requests. Solo.</div>
+    </div>
+    <div class="tool-box">
+      <span class="tool-icon">🔗</span>
+      <div class="tool-name">Agentforce</div>
+      <div class="tool-desc">Gestiona tickets de clientes y actualiza el CRM sin intervención.</div>
+    </div>
+  </div>
+
+  <div class="quote">El perfil más demandado en 2026: quien sabe de su dominio y también sabe diseñar y supervisar agentes.</div>
+
+  <div class="cta-big">
+    <div class="cta-label">Guía completa · 8 slides · Educación</div>
+    <div class="cta-text">Agentes de IA: todo lo que necesitas entender</div>
+    <div class="cta-path">horadedespertar.org → <strong>Educación</strong> → Agentes de IA</div>
+  </div>
+</div>
+</body></html>

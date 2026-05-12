@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 18px; font-weight: 700; padding: 12px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.reason {
+  background: #141414; border-radius: 10px; padding: 14px 16px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.r-num {
+  font-size: 26px; font-weight: 800; color: #c8211e; line-height: 1;
+  min-width: 26px;
+}
+.r-title { font-size: 14px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+.r-text { font-size: 12px; color: #888; line-height: 1.4; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Por qué sube</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="title">¿Por qué sube si hay Ley de Vivienda?</div>
+<div class="content">
+  <div class="reason">
+    <div class="r-num">1</div>
+    <div>
+      <div class="r-title">La ley existe, pero casi nadie la aplica</div>
+      <div class="r-text">Solo Cataluña ha activado las zonas tensionadas. Madrid, Andalucía, Valencia... no. La contención del precio está en el papel, no en la práctica.</div>
+    </div>
+  </div>
+  <div class="reason">
+    <div class="r-num">2</div>
+    <div>
+      <div class="r-title">El alquiler turístico paga un 40-60% más</div>
+      <div class="r-text">Los propietarios sacan pisos del mercado residencial hacia Airbnb y similares. Las plataformas lo facilitan y la regulación municipal es desigual.</div>
+    </div>
+  </div>
+  <div class="reason">
+    <div class="r-num">3</div>
+    <div>
+      <div class="r-title">España construye la mitad que sus vecinos</div>
+      <div class="r-text">Se construyen la mitad de viviendas por habitante que en Alemania o Francia. La oferta lleva años sin crecer al ritmo de la demanda.</div>
+    </div>
+  </div>
+  <div class="reason">
+    <div class="r-num">4</div>
+    <div>
+      <div class="r-title">Comprar tampoco es opción: euríbor al 2,747%</div>
+      <div class="r-text">Para una hipoteca de 150.000€ a 30 años, la subida del euríbor supone unos 600€ más al año. El precio de compra subió un 16,4% en Q1 2026.</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

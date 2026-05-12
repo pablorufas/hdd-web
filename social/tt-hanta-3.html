@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/>
+<style>
+:root{--bg:#0a0a0a;--ink:#f5f0e8;--red:#c8211e;--muted:#888;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:540px;height:960px;overflow:hidden;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;color:var(--ink);}
+.card{width:540px;height:960px;display:flex;flex-direction:column;padding:40px 44px;}
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:20px;font-weight:800;color:var(--red);}
+.slide-ind{font-size:13px;color:var(--muted);letter-spacing:.1em;}
+.section-title{font-size:13px;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin:36px 0 20px;}
+.question{font-size:30px;font-weight:800;line-height:1.12;margin-bottom:36px;}
+.row{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.07);}
+.row:last-of-type{border-bottom:none;}
+.num{font-size:38px;font-weight:900;color:var(--red);line-height:1;min-width:52px;}
+.row-content{}
+.row-title{font-size:17px;font-weight:700;margin-bottom:4px;}
+.row-desc{font-size:14px;color:var(--muted);line-height:1.4;}
+.cta-box{background:rgba(200,33,30,.1);border:1px solid rgba(200,33,30,.2);border-radius:4px;padding:18px 20px;margin-top:8px;}
+.cta-box p{font-size:14px;line-height:1.5;color:var(--ink);}
+.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:20px;}
+.url{font-size:13px;color:var(--muted);}
+.swipe{font-size:14px;font-weight:600;}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <span class="brand">HdD</span>
+    <span class="slide-ind">3 / 4</span>
+  </div>
+
+  <div class="section-title">Lo que pasa hoy</div>
+  <div class="question">El MV Hondius llega<br>a Tenerife con <span style="color:var(--red);">14 españoles</span></div>
+
+  <div class="row">
+    <div class="num">14</div>
+    <div class="row-content">
+      <div class="row-title">Ciudadanos españoles a bordo</div>
+      <div class="row-desc">Avión militar los traslada al Hospital Gómez Ulla (Defensa) en Madrid para cuarentena y evaluación.</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="num">3</div>
+    <div class="row-content">
+      <div class="row-title">Enfermos ya evacuados</div>
+      <div class="row-desc">Trasladados a Países Bajos en aviones medicalizados. Una ciudadana británica, en UCI de Sudáfrica.</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="num" style="font-size:28px;padding-top:6px;">🚢</div>
+    <div class="row-content">
+      <div class="row-title">El barco, en Granadilla de Abona</div>
+      <div class="row-desc">Puerto secundario de Tenerife. Sin contacto con la población local. Cabo Verde rechazó el desembarco días antes.</div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <p>La Ministra Mónica García y Marlaska explicaron hoy el protocolo en rueda de prensa conjunta.</p>
+  </div>
+
+  <div class="bottom">
+    <span class="url">horadedespertar.org</span>
+    <span class="swipe">Desliza →</span>
+  </div>
+</div>
+</body></html>
