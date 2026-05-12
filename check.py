@@ -25,6 +25,10 @@ SPECIAL_ARTICLES = [
     'oferta-y-demanda.html',                                             # 6 slides
     'hantavirus-mv-hondius-cepa-andes-tenerife-espana-mayo-2026.html',  # 5 slides
     'caso-koldo-juicio-supremo-recta-final-sentencia-mayo-2026.html',   # 5 slides
+    'trump-iran-tregua-derrumbe-propuesta-basura-mayo-2026.html',       # 5 slides
+    'espana-ejercito-europeo-coalicion-voluntarios-albares-mayo-2026.html',  # 5 slides
+    'iran-hayi-terrorismo-gig-economy-europa-sinagogas-mayo-2026.html',  # 5 slides
+    'hantavirus-espanol-positivo-confirmado-gomez-ulla-sanchez-oms-mayo-2026.html',  # 5 slides
 ]
 
 ALL_PAGES = [f for f in sorted(glob.glob('*.html')) if not f.startswith('_')
