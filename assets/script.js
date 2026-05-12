@@ -536,7 +536,7 @@ if ('serviceWorker' in navigator) {
   });
 })();
 
-/* ── Email signup form ───────────────────────────────────── */
+/* ── Email signup form (FormSubmit AJAX) ─────────────────── */
 (function () {
   var form    = document.getElementById('email-signup-form');
   var success = document.getElementById('email-success');
@@ -545,42 +545,34 @@ if ('serviceWorker' in navigator) {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var email = document.getElementById('email-input').value.trim();
+    var emailInput = document.getElementById('email-input');
+    var email = emailInput.value.trim();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      document.getElementById('email-input').focus();
+      emailInput.focus();
       return;
     }
 
     var btn = form.querySelector('.email-signup__btn');
     btn.disabled = true;
     btn.textContent = 'Enviando…';
+    if (error) error.setAttribute('hidden', '');
 
-    // Envío al endpoint configurado en el form action
-    // Mientras el action sea "#", muestra el mensaje de éxito directamente
-    if (form.action === location.href.split('#')[0] || form.action === '#' || form.action === window.location.href) {
-      // Sin endpoint real todavía — mostrar mensaje de éxito provisional
-      form.querySelector('.email-signup__row').style.display = 'none';
-      if (success) success.removeAttribute('hidden');
-      if (typeof gtag === 'function') {
-        gtag('event', 'email_signup', { method: 'newsletter_form' });
-      }
-      return;
-    }
-
+    // FormSubmit AJAX: devuelve JSON {"success":"true"}
     fetch(form.action, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ EMAIL: email }).toString(),
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString(),
     })
-    .then(function (r) {
-      if (r.ok) {
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (data.success === 'true' || data.success === true) {
         form.querySelector('.email-signup__row').style.display = 'none';
         if (success) success.removeAttribute('hidden');
         if (typeof gtag === 'function') {
           gtag('event', 'email_signup', { method: 'newsletter_form' });
         }
       } else {
-        throw new Error('status ' + r.status);
+        throw new Error('rejected');
       }
     })
     .catch(function () {

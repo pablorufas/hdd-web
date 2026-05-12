@@ -175,9 +175,13 @@
             <p>Sin publicidad. Sin algoritmos. El análisis de la semana en tu correo el lunes por la mañana. Te puedes dar de baja cuando quieras.</p>
           </div>
 
-          <!-- TODO: cuando tengas cuenta Brevo, sustituye este form por el embed de tu lista -->
-          <!-- Pasos: brevo.com → Contacts → Forms → Create a form → copia el action URL -->
-          <form class="email-signup__form" id="email-signup-form" action="#" method="POST" novalidate>
+          <form class="email-signup__form" id="email-signup-form" action="https://formsubmit.co/ajax/pablorufas14@gmail.com" method="POST" novalidate>
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nuevo suscriptor HdD" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
             <div class="email-signup__row">
               <input
                 type="email"
