@@ -157,7 +157,7 @@ def build_html(d):
     if motivaciones:
         actores_html = ""
         for m in motivaciones:
-            actores_html += f'\n              <p>\n                <span class="actor-name">{m["actor"]}</span>\n                {m["incentivos"]}\n              </p>'
+            actores_html += f'\n              <div class="actor-block">\n                <span class="actor-name">{m["actor"]}</span>\n                {m["incentivos"]}\n              </div>'
         motiv_html = f"""
 
           <div class="slide-section">

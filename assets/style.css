@@ -1137,12 +1137,23 @@ section.block {
 .slide-section li::marker { color: var(--red); }
 .slide-section .actor-name {
   font-family: var(--sans);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--ink-dim);
-  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   display: block;
   margin-bottom: 6px;
+}
+.slide-section .actor-block {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.slide-section .actor-block:first-of-type {
+  margin-top: 16px;
+  padding-top: 0;
+  border-top: none;
 }
 
 /* Slide 4: Análisis */
