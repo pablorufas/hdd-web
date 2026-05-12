@@ -27,8 +27,7 @@
   <meta name="twitter:description" content="El mercado laboral español cerró abril con 22.105.831 afiliados a la Seguridad Social, un récord absoluto, y el paro registrado cayó a 2.357.044 personas, la cifra más baja desde junio de 2008. El dat" />
   <meta name="twitter:image" content="https://horadedespertar.org/assets/og-image.png" />
   <link rel="stylesheet" href="assets/style.css?v=4" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RTLZFW7HGF");</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}</script>
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#0a0a0a" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -36,8 +35,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="HdD" />
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-  <script>window.OneSignalDeferred=window.OneSignalDeferred||[];OneSignalDeferred.push(async function(O){await O.init({appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"});});</script>
+  <script>
+    window.OneSignalDeferred=window.OneSignalDeferred||[];
+    window.addEventListener("load",function(){
+      var g=document.createElement("script");g.async=true;
+      g.src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF";
+      document.head.appendChild(g);
+      gtag("js",new Date());gtag("config","G-RTLZFW7HGF");
+      var o=document.createElement("script");o.defer=true;
+      o.src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
+      document.head.appendChild(o);
+      OneSignalDeferred.push(async function(O){await O.init({appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"});});
+    });
+  </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"NewsArticle","image":{"@type":"ImageObject","url":"https://horadedespertar.org/assets/og-image.png","width":1200,"height":630},"headline":"España supera por primera vez los 22 millones de afiliados y el paro cae al mínimo desde 2008","description":"El mercado laboral español cerró abril con 22.105.831 afiliados a la Seguridad Social, un récord absoluto, y el paro registrado cayó a 2.357.044 personas, la cifra más baja desde junio de 2008. El dat","datePublished":"2026-05-06","dateModified":"2026-05-06","author":{"@type":"Organization","name":"Redacción HdD"},"publisher":{"@type":"Organization","name":"Hora de Despertar","logo":{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-512.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://horadedespertar.org/empleo-record-22-millones-abril-2026"}}
   </script>

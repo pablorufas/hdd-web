@@ -28,13 +28,7 @@
   <meta name="twitter:description" content="El Estado usó fondos públicos secretos para espiar al tesorero del PP. Todo lo que necesitas saber." />
   <link rel="stylesheet" href="assets/style.css?v=4" />
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-RTLZFW7HGF");
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}</script>
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#0a0a0a" />
@@ -43,13 +37,17 @@
   <meta name="apple-mobile-web-app-title" content="HdD" />
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
   <!-- OneSignal Push Notifications -->
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function(OneSignal) {
-      await OneSignal.init({
-        appId: "26a69bec-30c7-4e90-a6b7-24ffab2e5e90",
-      });
+    window.OneSignalDeferred=window.OneSignalDeferred||[];
+    window.addEventListener("load",function(){
+      var g=document.createElement("script");g.async=true;
+      g.src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF";
+      document.head.appendChild(g);
+      gtag("js",new Date());gtag("config","G-RTLZFW7HGF");
+      var o=document.createElement("script");o.defer=true;
+      o.src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
+      document.head.appendChild(o);
+      OneSignalDeferred.push(async function(O){await O.init({appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"});});
     });
   </script>
   <!-- JSON-LD Structured Data -->

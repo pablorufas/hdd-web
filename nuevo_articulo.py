@@ -217,8 +217,7 @@ def build_html(d):
   <meta name="twitter:description" content="{lead_meta}" />
   <meta name="twitter:image" content="https://horadedespertar.org/assets/og-image.png" />
   <link rel="stylesheet" href="assets/style.css?v={CSS_VERSION}" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-RTLZFW7HGF");</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}</script>
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#ffffff" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -226,8 +225,19 @@ def build_html(d):
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="HdD" />
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png" />
-  <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-  <script>window.OneSignalDeferred=window.OneSignalDeferred||[];OneSignalDeferred.push(async function(O){{await O.init({{appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"}});}});</script>
+  <script>
+    window.OneSignalDeferred=window.OneSignalDeferred||[];
+    window.addEventListener("load",function(){{
+      var g=document.createElement("script");g.async=true;
+      g.src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF";
+      document.head.appendChild(g);
+      gtag("js",new Date());gtag("config","G-RTLZFW7HGF");
+      var o=document.createElement("script");o.defer=true;
+      o.src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
+      document.head.appendChild(o);
+      OneSignalDeferred.push(async function(O){{await O.init({{appId:"26a69bec-30c7-4e90-a6b7-24ffab2e5e90"}});}});
+    }});
+  </script>
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"NewsArticle","headline":"{titular}","description":"{lead_meta}","datePublished":"{fecha_iso}","dateModified":"{fecha_iso}","author":{{"@type":"Organization","name":"Redacción HdD","url":"https://horadedespertar.org"}},"publisher":{{"@type":"Organization","name":"Hora de Despertar","url":"https://horadedespertar.org","logo":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/icons/icon-512.png","width":512,"height":512}}}},"image":{{"@type":"ImageObject","url":"https://horadedespertar.org/assets/og-image.png","width":1200,"height":630}},"mainEntityOfPage":{{"@type":"WebPage","@id":"{url}"}},"inLanguage":"es","isAccessibleForFree":true}}
   </script>
