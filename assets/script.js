@@ -193,6 +193,22 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+/* ── Tracking: sesiones desde la app instalada ───────────────── */
+(function () {
+  var isStandalone = navigator.standalone
+    || window.matchMedia('(display-mode: standalone)').matches;
+  if (!isStandalone) return;
+  // GA4 puede tardar en cargar — esperamos al evento load
+  window.addEventListener('load', function () {
+    if (typeof gtag === 'function') {
+      gtag('event', 'pwa_session', {
+        display_mode: 'standalone',
+        page_path: location.pathname
+      });
+    }
+  });
+})();
+
 /* ── App Install Banner ──────────────────────────────────────── */
 (function () {
   var KEY = 'hdd-aib-v2';
@@ -405,8 +421,12 @@ if ('serviceWorker' in navigator) {
     var btn = document.getElementById('aib-btn');
     btn.addEventListener('click', function () {
       if (cfg.canInstall && deferredPrompt) {
+        // Evento: usuario pulsa "Instalar" → se abre el diálogo nativo
+        if (typeof gtag === 'function') gtag('event', 'pwa_install_prompt', { browser: cfg.browser });
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then(function (r) {
+          // Evento: resultado del diálogo (accepted / dismissed)
+          if (typeof gtag === 'function') gtag('event', 'pwa_install_choice', { outcome: r.outcome, browser: cfg.browser });
           if (r.outcome === 'accepted') dismiss();
           deferredPrompt = null;
         });
@@ -415,7 +435,11 @@ if ('serviceWorker' in navigator) {
       }
     });
 
-    window.addEventListener('appinstalled', dismiss);
+    // Evento: instalación completada (Chrome/Edge lo disparan al terminar)
+    window.addEventListener('appinstalled', function () {
+      if (typeof gtag === 'function') gtag('event', 'pwa_installed', { browser: cfg.browser });
+      dismiss();
+    });
 
     // Cerrar con Escape
     document.addEventListener('keydown', function (e) {
