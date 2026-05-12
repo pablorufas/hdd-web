@@ -192,3 +192,240 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(function() {});
   });
 }
+
+/* ── App Install Banner ──────────────────────────────────────── */
+(function () {
+  var KEY = 'hdd-aib-v2';
+
+  // Ya instalada como app o ya descartada → salir
+  if (navigator.standalone) return;
+  if (window.matchMedia('(display-mode: standalone)').matches) return;
+  if (sessionStorage.getItem(KEY)) return;
+
+  var ua  = navigator.userAgent;
+  var dpr = window.devicePixelRatio || 1;
+
+  // Detección de plataforma y navegador
+  var isIOS     = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  var isAndroid = /Android/.test(ua);
+  var isMobile  = isIOS || isAndroid || /Mobi/.test(ua);
+
+  var isSamsungBrowser = /SamsungBrowser/.test(ua);
+  var isEdge           = /Edg\//.test(ua);
+  var isFirefox        = /Firefox/.test(ua) && !/Seamonkey/.test(ua);
+  var isOpera          = /OPR\/|Opera/.test(ua);
+  var isChrome         = /Chrome\//.test(ua) && !isEdge && !isOpera && !isSamsungBrowser;
+  var isSafari         = /^((?!chrome|android).)*safari/i.test(ua) && !isChrome;
+  var isIOSSafari      = isIOS && isSafari;
+  var isIOSChrome      = isIOS && isChrome;
+  var isIOSFirefox     = isIOS && isFirefox;
+
+  var deferredPrompt = null;
+
+  // Capturar evento instalación nativa (Chrome/Edge/Android)
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+
+  // Resolver qué instrucciones mostrar
+  function getConfig() {
+    // iOS Safari — única forma de instalar en iOS
+    if (isIOSSafari) {
+      return {
+        browser: 'Safari',
+        browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke-width="1"/><path d="M16.24 7.76l-2.83 2.83M10.59 13.41l-2.83 2.83M16.24 16.24l-2.83-2.83M10.59 10.59L7.76 7.76"/></svg>',
+        steps: [
+          { n:1, html: 'Pulsa el botón <strong>Compartir</strong> <span class="tag">⎙</span> en la barra inferior de Safari' },
+          { n:2, html: 'Desplázate y toca <span class="tag">Añadir a pantalla de inicio</span>' },
+          { n:3, html: 'Pulsa <span class="tag">Añadir</span> — aparecerá el icono de HdD en tu pantalla' }
+        ],
+        btnText: 'Entendido',
+        btnClass: '',
+        canInstall: false
+      };
+    }
+
+    // iOS Chrome/Firefox — solo pueden abrir en Safari
+    if (isIOSChrome || isIOSFirefox) {
+      var bName = isIOSChrome ? 'Chrome' : 'Firefox';
+      return {
+        browser: bName + ' (iOS)',
+        browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>',
+        steps: [
+          { n:1, html: 'Toca <span class="tag">⋯</span> o <span class="tag">↗ Abrir en Safari</span>' },
+          { n:2, html: 'En Safari: pulsa <span class="tag">⎙ Compartir</span> → <span class="tag">Añadir a pantalla de inicio</span>' }
+        ],
+        btnText: 'Entendido',
+        btnClass: '',
+        canInstall: false
+      };
+    }
+
+    // Android / Desktop con beforeinstallprompt disponible o probable
+    if (isChrome) {
+      return {
+        browser: isMobile ? 'Chrome para Android' : 'Chrome',
+        browserIcon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="#EA4335"/><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" fill="none" stroke="#EA4335" stroke-width="8"/></svg>',
+        steps: isMobile ? [
+          { n:1, html: 'Pulsa <strong>Instalar</strong> aquí abajo' },
+          { n:2, html: 'Confirma en el diálogo de Chrome' },
+          { n:3, html: 'El icono de HdD aparece en tu pantalla de inicio' }
+        ] : [
+          { n:1, html: 'Pulsa <strong>Instalar</strong> aquí abajo o el icono <span class="tag">⊕</span> en la barra de dirección' },
+          { n:2, html: 'Confirma en el diálogo de Chrome' },
+          { n:3, html: 'HdD se abre como una app sin barra del navegador' }
+        ],
+        btnText: 'Instalar app',
+        btnClass: 'red',
+        canInstall: true
+      };
+    }
+
+    if (isEdge) {
+      return {
+        browser: 'Microsoft Edge',
+        browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12C3 7 7 3 12 3c6 0 9 4 9 8 0 3-2 5-5 5H8c-2 0-3-1-3-3 0-3 3-5 7-5 2 0 3 1 3 2"/></svg>',
+        steps: [
+          { n:1, html: 'Pulsa <strong>Instalar</strong> o el icono <span class="tag">⊕</span> en la barra de dirección' },
+          { n:2, html: 'Selecciona <span class="tag">Instalar</span> en el diálogo' }
+        ],
+        btnText: 'Instalar app',
+        btnClass: 'red',
+        canInstall: true
+      };
+    }
+
+    if (isSamsungBrowser) {
+      return {
+        browser: 'Samsung Internet',
+        browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="17" r="1"/></svg>',
+        steps: [
+          { n:1, html: 'Pulsa <span class="tag">⋮ Menú</span> (tres puntos)' },
+          { n:2, html: 'Elige <span class="tag">Añadir página a</span> → <span class="tag">Pantalla de inicio</span>' }
+        ],
+        btnText: 'Entendido',
+        btnClass: '',
+        canInstall: false
+      };
+    }
+
+    if (isFirefox) {
+      if (isMobile) {
+        return {
+          browser: 'Firefox',
+          browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3C8 3 5 7 5 12"/></svg>',
+          steps: [
+            { n:1, html: 'Pulsa <span class="tag">⋮ Menú</span> → <span class="tag">Instalar</span>' },
+            { n:2, html: 'Si no aparece, prueba abrir la web en Chrome para Android' }
+          ],
+          btnText: 'Entendido',
+          btnClass: '',
+          canInstall: false
+        };
+      }
+      return null; // Firefox escritorio no soporta PWA install
+    }
+
+    // Safari escritorio (macOS Ventura+ sí soporta)
+    if (isSafari && !isMobile) {
+      return {
+        browser: 'Safari',
+        browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12" stroke-width="1"/></svg>',
+        steps: [
+          { n:1, html: 'Pulsa <span class="tag">Archivo</span> en la barra de menú' },
+          { n:2, html: 'Elige <span class="tag">Añadir al Dock</span>' }
+        ],
+        btnText: 'Entendido',
+        btnClass: '',
+        canInstall: false
+      };
+    }
+
+    // Fallback genérico
+    return {
+      browser: 'tu navegador',
+      browserIcon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+      steps: [
+        { n:1, html: 'Busca en el menú de tu navegador la opción <span class="tag">Instalar app</span> o <span class="tag">Añadir a pantalla de inicio</span>' }
+      ],
+      btnText: 'Entendido',
+      btnClass: '',
+      canInstall: false
+    };
+  }
+
+  var cfg = getConfig();
+  if (!cfg) return; // navegador incompatible
+
+  function buildBanner() {
+    var stepsHTML = cfg.steps.map(function (s) {
+      return '<div class="aib-step">'
+        + '<span class="aib-step-dot">' + s.n + '</span>'
+        + '<span class="aib-step-text">' + s.html + '</span>'
+        + '</div>';
+    }).join('');
+
+    var el = document.createElement('div');
+    el.id = 'aib';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-label', 'Instalar HdD como app');
+    el.innerHTML = ''
+      + '<div class="aib-backdrop" id="aib-backdrop"></div>'
+      + '<div class="aib-card">'
+      +   '<div class="aib-top">'
+      +     '<div class="aib-appicon"><span class="hdd-letters">HdD</span></div>'
+      +     '<div class="aib-info">'
+      +       '<h3>Instala HdD como app</h3>'
+      +       '<p>Sin App Store &middot; sin publicidad &middot; gratis</p>'
+      +     '</div>'
+      +     '<button class="aib-close" id="aib-close" aria-label="Cerrar">&times;</button>'
+      +   '</div>'
+      +   '<div class="aib-divider"></div>'
+      +   '<div class="aib-browser-badge">' + cfg.browserIcon + 'Instrucciones para ' + cfg.browser + '</div>'
+      +   '<div class="aib-steps-title">Cómo hacerlo en 30 segundos</div>'
+      +   '<div class="aib-steps">' + stepsHTML + '</div>'
+      +   '<button class="aib-btn ' + cfg.btnClass + '" id="aib-btn">' + cfg.btnText + '</button>'
+      +   '<p class="aib-btn-note"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm-1-7h2v2h-2v-2zm0-8h2v6h-2V7z"/></svg>La app es la misma web, sin barra del navegador</p>'
+      + '</div>';
+
+    document.body.appendChild(el);
+
+    // Mostrar con pequeño delay
+    setTimeout(function () { el.classList.add('show'); }, 1200);
+
+    function dismiss() {
+      el.classList.remove('show');
+      sessionStorage.setItem(KEY, '1');
+    }
+
+    document.getElementById('aib-close').addEventListener('click', dismiss);
+    document.getElementById('aib-backdrop').addEventListener('click', dismiss);
+
+    var btn = document.getElementById('aib-btn');
+    btn.addEventListener('click', function () {
+      if (cfg.canInstall && deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function (r) {
+          if (r.outcome === 'accepted') dismiss();
+          deferredPrompt = null;
+        });
+      } else {
+        dismiss();
+      }
+    });
+
+    window.addEventListener('appinstalled', dismiss);
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && el.classList.contains('show')) dismiss();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', buildBanner);
+  } else {
+    buildBanner();
+  }
+})();
