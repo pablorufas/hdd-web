@@ -186,17 +186,23 @@
 
 })();
 
-/* ── Retention bar (aparece a los 30s en artículos) ─────────── */
+/* ── Retention bar (artículos: 30s orgánico, 10s social) ─────── */
 (function () {
   var KEY = 'hdd-ret-v1';
   if (sessionStorage.getItem(KEY)) return;
-  // Solo en páginas de artículo (no portada, no noticias.html)
   var path = location.pathname;
   var isArticle = path !== '/' && path !== '/index.html' &&
     path !== '/noticias.html' && path !== '/educacion.html' &&
     path !== '/newsletter.html' && path !== '/manifiesto.html' &&
     path.indexOf('.html') > -1;
   if (!isArticle) return;
+
+  // Detectar tráfico social para ajustar timing y mensaje
+  var ref = document.referrer || '';
+  var isSocial = /instagram|facebook|fb\.com|twitter|t\.co|tiktok/.test(ref)
+    || /utm_source=(ig|fb|instagram|facebook)/i.test(location.search);
+  var delay = isSocial ? 10000 : 30000;
+  var scrollTrigger = isSocial ? 0.4 : 0.6;
 
   var shown = false;
   function showBar() {
@@ -206,13 +212,19 @@
     bar.id = 'retention-bar';
     bar.innerHTML = '<div class="ret-inner">'
       + '<span class="ret-icon">🔔</span>'
-      + '<div class="ret-text"><strong>¿Te ha resultado útil?</strong>'
-      + '<span>Activa las notificaciones para no perderte nada</span></div>'
+      + '<div class="ret-text">'
+      + '<strong>' + (isSocial ? '¿Quieres más análisis así?' : '¿Te ha resultado útil?') + '</strong>'
+      + '<span>' + (isSocial ? 'Activa las notificaciones y recibe dos informativos al día' : 'Activa las notificaciones para no perderte nada') + '</span>'
+      + '</div>'
       + '<button class="ret-btn" id="ret-btn-yes">Activar</button>'
       + '<button class="ret-close" id="ret-btn-no" aria-label="Cerrar">✕</button>'
       + '</div>';
     document.body.appendChild(bar);
     setTimeout(function () { bar.classList.add('show'); }, 50);
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'retention_bar_shown', { source: isSocial ? 'social' : 'organic', page_path: path });
+    }
 
     function dismiss() {
       bar.classList.remove('show');
@@ -222,25 +234,20 @@
     document.getElementById('ret-btn-no').addEventListener('click', dismiss);
     document.getElementById('ret-btn-yes').addEventListener('click', function () {
       dismiss();
-      // Intentar push via OneSignal
       if (window.OneSignalDeferred) {
-        window.OneSignalDeferred.push(function (O) {
-          O.User.PushSubscription.optIn();
-        });
+        window.OneSignalDeferred.push(function (O) { O.User.PushSubscription.optIn(); });
       }
       if (typeof gtag === 'function') {
-        gtag('event', 'retention_bar_accept', { page_path: location.pathname });
+        gtag('event', 'retention_bar_accept', { source: isSocial ? 'social' : 'organic', page_path: path });
       }
     });
   }
 
-  // Mostrar tras 30s o al llegar al 60% del scroll
-  var timer = setTimeout(showBar, 30000);
-  var scrolled = false;
+  setTimeout(showBar, delay);
   window.addEventListener('scroll', function () {
-    if (scrolled) return;
-    var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (pct > 0.6) { scrolled = true; showBar(); }
+    if (shown) return;
+    var pct = window.scrollY / Math.max(1, document.body.scrollHeight - window.innerHeight);
+    if (pct > scrollTrigger) showBar();
   }, { passive: true });
 })();
 
