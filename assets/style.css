@@ -12,8 +12,7 @@
   font-display: optional;
 }
 
-/* --- Google Fonts: Fraunces (serif editorial) + Inter (sans moderno) --- */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap");
+/* --- Google Fonts: cargadas vía <link> en HTML para carga paralela (no bloqueante) --- */
 
 /* --- Tokens --- */
 :root {
@@ -1798,4 +1797,108 @@ section.block {
 @media (max-width: 480px) {
   .ret-inner { flex-wrap: wrap; gap: 10px; }
   .ret-btn { width: 100%; text-align: center; padding: 11px; }
+}
+
+/* ── Cargar más noticias ─────────────────────────────────── */
+.load-more-wrap {
+  display: flex;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 48px) 0;
+}
+.load-more-btn {
+  background: transparent;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-mute);
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 500;
+  padding: 12px 28px;
+  transition: border-color .15s, color .15s;
+}
+.load-more-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.load-more-count {
+  opacity: .65;
+  font-weight: 400;
+}
+
+/* ── Email signup ────────────────────────────────────────── */
+.email-signup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  padding: clamp(40px, 6vw, 72px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+@media (max-width: 720px) {
+  .email-signup { grid-template-columns: 1fr; }
+}
+.email-signup__copy h2 { margin-bottom: 0.6em; }
+.email-signup__copy p {
+  color: var(--ink-mute);
+  font-size: .92rem;
+  margin: 0;
+}
+.email-signup__row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+  .email-signup__row { flex-direction: column; }
+}
+.email-signup__input {
+  flex: 1;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-family: var(--sans);
+  font-size: .9rem;
+  color: var(--ink);
+  background: var(--bg);
+  transition: border-color .15s;
+  min-width: 0;
+}
+.email-signup__input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+.email-signup__input::placeholder { color: var(--ink-mute); }
+.email-signup__btn {
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  padding: 13px 22px;
+  font-family: var(--sans);
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s;
+  flex-shrink: 0;
+}
+.email-signup__btn:hover { background: var(--red); }
+.email-signup__legal {
+  font-size: .74rem;
+  color: var(--ink-mute);
+  margin: 0;
+}
+.email-signup__legal a { border-bottom: 1px solid var(--line-strong); }
+.email-signup__success {
+  color: #1a7a3a;
+  font-size: .88rem;
+  font-weight: 500;
+  margin: 8px 0 0;
+}
+.email-signup__error {
+  color: var(--red);
+  font-size: .88rem;
+  margin: 8px 0 0;
 }

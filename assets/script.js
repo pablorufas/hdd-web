@@ -518,3 +518,75 @@ if ('serviceWorker' in navigator) {
     buildBanner();
   }
 })();
+/* ── Cargar más noticias ─────────────────────────────────── */
+(function () {
+  var btn  = document.getElementById('load-more-btn');
+  var more = document.getElementById('index-more');
+  var wrap = document.getElementById('load-more-wrap');
+  if (!btn || !more) return;
+
+  btn.addEventListener('click', function () {
+    more.removeAttribute('hidden');
+    wrap.style.display = 'none';
+    // Scroll suave al primer ítem nuevo
+    var first = more.querySelector('.index-item');
+    if (first) {
+      setTimeout(function () { first.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+    }
+  });
+})();
+
+/* ── Email signup form ───────────────────────────────────── */
+(function () {
+  var form    = document.getElementById('email-signup-form');
+  var success = document.getElementById('email-success');
+  var error   = document.getElementById('email-error');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email-input').value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById('email-input').focus();
+      return;
+    }
+
+    var btn = form.querySelector('.email-signup__btn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    // Envío al endpoint configurado en el form action
+    // Mientras el action sea "#", muestra el mensaje de éxito directamente
+    if (form.action === location.href.split('#')[0] || form.action === '#' || form.action === window.location.href) {
+      // Sin endpoint real todavía — mostrar mensaje de éxito provisional
+      form.querySelector('.email-signup__row').style.display = 'none';
+      if (success) success.removeAttribute('hidden');
+      if (typeof gtag === 'function') {
+        gtag('event', 'email_signup', { method: 'newsletter_form' });
+      }
+      return;
+    }
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ EMAIL: email }).toString(),
+    })
+    .then(function (r) {
+      if (r.ok) {
+        form.querySelector('.email-signup__row').style.display = 'none';
+        if (success) success.removeAttribute('hidden');
+        if (typeof gtag === 'function') {
+          gtag('event', 'email_signup', { method: 'newsletter_form' });
+        }
+      } else {
+        throw new Error('status ' + r.status);
+      }
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Suscribirme';
+      if (error) error.removeAttribute('hidden');
+    });
+  });
+})();

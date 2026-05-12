@@ -1,7 +1,7 @@
 // HdD — Service Worker
 // Estrategia: cache-first para assets, network-first para artículos
 
-const CACHE_NAME = 'hdd-v2';
+const CACHE_NAME = 'hdd-v6';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -9,8 +9,8 @@ const STATIC_ASSETS = [
   '/educacion.html',
   '/newsletter.html',
   '/manifiesto.html',
-  '/assets/style.css',
-  '/assets/script.js',
+  '/assets/style.css?v=6',
+  '/assets/script.js?v=6',
   '/assets/icons/icon-192.png',
   '/assets/icons/icon-512.png'
 ];

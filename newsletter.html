@@ -6,6 +6,7 @@
   <link rel="preload" href="assets/script.js?v=6" as="script" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -164,13 +165,47 @@
       </div>
     </section>
 
+    <!-- Suscripción por email -->
+    <section class="block">
+      <div class="wrap">
+        <div class="email-signup">
+          <div class="email-signup__copy">
+            <span class="eyebrow">Recíbelo en tu correo</span>
+            <h2>Cada lunes, directo a tu bandeja.</h2>
+            <p>Sin publicidad. Sin algoritmos. El análisis de la semana en tu correo el lunes por la mañana. Te puedes dar de baja cuando quieras.</p>
+          </div>
+
+          <!-- TODO: cuando tengas cuenta Brevo, sustituye este form por el embed de tu lista -->
+          <!-- Pasos: brevo.com → Contacts → Forms → Create a form → copia el action URL -->
+          <form class="email-signup__form" id="email-signup-form" action="#" method="POST" novalidate>
+            <div class="email-signup__row">
+              <input
+                type="email"
+                name="EMAIL"
+                id="email-input"
+                class="email-signup__input"
+                placeholder="tucorreo@ejemplo.com"
+                required
+                autocomplete="email"
+                inputmode="email"
+              />
+              <button type="submit" class="email-signup__btn">Suscribirme</button>
+            </div>
+            <p class="email-signup__legal">Sin spam. Sin vender datos. <a href="privacidad.html">Política de privacidad</a>.</p>
+            <p class="email-signup__success" id="email-success" hidden>✅ ¡Apuntado! Te llega el próximo lunes.</p>
+            <p class="email-signup__error" id="email-error" hidden>Algo ha fallado. Prueba de nuevo o escríbenos a <a href="mailto:hola@horadedespertar.org">hola@horadedespertar.org</a>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- Nota de cierre -->
     <section class="block">
       <div class="wrap">
         <div class="weekly-note">
           <span class="day">CADA LUNES</span>
           <h2>Un tema nuevo para entender mejor lo que pasa.</h2>
-          <p>No necesitas suscribirte a ningún correo: entra cada lunes y lo tendrás publicado aquí. La próxima edición, el lunes 4 de mayo.</p>
+          <p>Entra cada lunes o suscríbete arriba y te lo enviamos directamente. La próxima edición, el lunes 18 de mayo.</p>
         </div>
       </div>
     </section>
