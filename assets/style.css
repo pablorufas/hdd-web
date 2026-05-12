@@ -126,21 +126,12 @@ p { margin: 0 0 1em; }
   font-family: var(--led);
   font-weight: 700;
   color: var(--red);
-  text-shadow:
-    0 0 6px var(--red-glow),
-    0 0 8px rgba(225, 6, 0, 0.15);
   letter-spacing: 0.02em;
   position: relative;
   display: inline-block;
 }
 .logo-led::before {
-  content: "88~88";
-  position: absolute;
-  inset: 0;
-  color: rgba(225, 6, 0, 0.15);
-  text-shadow: none;
-  pointer-events: none;
-  letter-spacing: 0.02em;
+  content: none;
 }
 .logo-sm .logo-led { font-size: 1.85rem; }
 .logo-md .logo-led { font-size: 2.2rem; }
@@ -176,7 +167,7 @@ p { margin: 0 0 1em; }
   font-size: 1rem;
   color: var(--red);
   letter-spacing: 0.04em;
-  text-shadow: 0 0 4px var(--red-glow);
+
   padding-left: 14px;
   border-left: 1px solid var(--line-strong);
   line-height: 1;
@@ -655,7 +646,7 @@ section.block {
   color: var(--red);
   font-size: 1.1rem;
   letter-spacing: 0.12em;
-  text-shadow: 0 0 6px var(--red-glow);
+
   margin-bottom: 18px;
   display: block;
 }
@@ -758,7 +749,7 @@ section.block {
   color: var(--red);
   display: block;
   margin-bottom: 20px;
-  text-shadow: 0 0 8px var(--red-glow);
+
 }
 .edu-card h3 { font-size: 1.3rem; }
 .edu-card p { font-size: 0.95rem; color: var(--ink-dim); margin-bottom: 20px; }
@@ -1376,7 +1367,7 @@ section.block {
   font-family: var(--led);
   font-size: 0.72rem;
   color: var(--red);
-  text-shadow: 0 0 5px var(--red-glow);
+
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1410,7 +1401,7 @@ section.block {
 .briefing-session--done {
   color: var(--red);
   border-color: var(--red);
-  text-shadow: 0 0 4px var(--red-glow);
+
 }
 
 /* Stats strip */
@@ -1436,7 +1427,7 @@ section.block {
   font-family: var(--led);
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   color: var(--red);
-  text-shadow: 0 0 6px var(--red-glow);
+
   letter-spacing: 0.04em;
   line-height: 1;
 }
