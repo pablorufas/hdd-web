@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; }
+.label { font-size: 11px; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; }
+.expect-row { display: flex; gap: 8px; margin-bottom: 10px; align-items: flex-start; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; margin-top: 5px; flex-shrink: 0; }
+.dot.gray { background: #333; }
+.er-text { font-size: 14px; line-height: 1.45; }
+.er-text strong { color: #f59e0b; }
+.er-text.dim { color: #666; }
+.divider { width: 48px; height: 2px; background: #1e1e1e; margin: 16px 0; }
+.key-box {
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 10px; padding: 14px 16px;
+}
+.kb-label { font-size: 10px; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.kb-text { font-size: 13px; color: #aaa; line-height: 1.5; }
+.kb-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Internacional · Economía</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="content">
+  <div class="label">Qué es realista esperar de Pekín</div>
+  <div class="expect-row">
+    <div class="dot"></div>
+    <div class="er-text"><strong>Probable:</strong> Prórroga de la tregua comercial firmada en Busan (oct. 2025)</div>
+  </div>
+  <div class="expect-row">
+    <div class="dot"></div>
+    <div class="er-text"><strong>Probable:</strong> China promete comprar más soja y maíz americano</div>
+  </div>
+  <div class="expect-row">
+    <div class="dot"></div>
+    <div class="er-text"><strong>Posible:</strong> Acuerdo parcial sobre minerales críticos y tierras raras</div>
+  </div>
+  <div class="expect-row">
+    <div class="dot gray"></div>
+    <div class="er-text dim">Improbable: China corta el suministro tecnológico a Irán</div>
+  </div>
+  <div class="expect-row">
+    <div class="dot gray"></div>
+    <div class="er-text dim">Improbable: Acuerdo grande sobre Taiwán</div>
+  </div>
+  <div class="divider"></div>
+  <div class="key-box">
+    <div class="kb-label">La tregua de Busan fue</div>
+    <div class="kb-text">Aranceles bajados, <strong>compras chinas de productos agrícolas</strong> e industria americana, y alivio en restricciones sobre tierras raras (los metales que necesita Europa para baterías y chips).</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">11·05·26</span>
+</div>
+</body>
+</html>

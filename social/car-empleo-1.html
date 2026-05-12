@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; letter-spacing: 0.06em; }
+.content {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; padding: 0 28px 0;
+}
+.big-stat {
+  font-size: 96px; font-weight: 800; line-height: 1;
+  color: #f5f0e8; letter-spacing: -0.04em;
+}
+.stat-unit {
+  font-size: 18px; font-weight: 600; color: #888;
+  margin-top: 4px; letter-spacing: 0.02em;
+}
+.divider {
+  width: 48px; height: 3px; background: #c8211e;
+  margin: 20px 0;
+}
+.headline {
+  font-size: 26px; font-weight: 700; line-height: 1.25;
+  color: #f5f0e8; max-width: 420px;
+}
+.subhead {
+  font-size: 14px; color: #aaa; margin-top: 10px; line-height: 1.5;
+}
+.bottom-bar {
+  padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+.date-tag { font-size: 11px; color: #555; }
+.accent { color: #c8211e; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Economía · España</span>
+  <span class="slide-num">01 — 04</span>
+</div>
+<div class="content">
+  <div class="big-stat">22<span class="accent">M</span></div>
+  <div class="stat-unit">afiliados a la Seguridad Social</div>
+  <div class="divider"></div>
+  <div class="headline">El récord histórico de empleo que no alcanza para pagar el alquiler</div>
+  <div class="subhead">Primera vez que España supera los 22 millones. El paro, en mínimos de 2008. Los matices, importantes.</div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span class="date-tag">06·05·26</span>
+</div>
+</body>
+</html>

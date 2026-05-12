@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.content { flex: 1; padding: 16px 24px 0; display: flex; flex-direction: column; gap: 10px; }
+.block-title {
+  font-size: 11px; color: #a855f7; text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+.block-row {
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.block-icon {
+  width: 28px; height: 28px; border-radius: 8px; background: rgba(168,85,247,0.1);
+  border: 1px solid rgba(168,85,247,0.25); display: flex; align-items: center;
+  justify-content: center; font-size: 13px; flex-shrink: 0;
+}
+.block-text { font-size: 13px; color: #aaa; line-height: 1.45; }
+.block-text strong { color: #f5f0e8; }
+.divider { width: 48px; height: 2px; background: #1e1e1e; }
+.question-box {
+  background: #111; border-radius: 10px; border: 1px solid rgba(168,85,247,0.2);
+  padding: 14px 16px; margin-top: 4px;
+}
+.q-label { font-size: 10px; color: #a855f7; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; }
+.q-text { font-size: 14px; font-weight: 600; line-height: 1.4; color: #f5f0e8; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Política · Andalucía</span>
+  <span class="slide-num">04 — 04</span>
+</div>
+<div class="content">
+  <div class="block-title">Los 3 bloques del debate de esta noche</div>
+  <div class="block-row">
+    <div class="block-icon">💼</div>
+    <div class="block-text"><strong>Economía y empleo</strong> — paro juvenil, turismo masivo, salarios</div>
+  </div>
+  <div class="block-row">
+    <div class="block-icon">🏥</div>
+    <div class="block-text"><strong>Sanidad, vivienda, educación</strong> — listas de espera, alquiler en Málaga y Sevilla, segregación escolar</div>
+  </div>
+  <div class="block-row">
+    <div class="block-icon">🏛️</div>
+    <div class="block-text"><strong>Gobernanza y financiación</strong> — cuánto dinero le debe Madrid a Andalucía, corrupción, transparencia</div>
+  </div>
+  <div class="divider"></div>
+  <div class="question-box">
+    <div class="q-label">La pregunta incómoda</div>
+    <div class="q-text">Si el PP pierde la mayoría pero gana con diferencia, ¿tiene Montero legitimidad para gobernar con menos votos?</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">11·05·26</span>
+</div>
+</body>
+</html>

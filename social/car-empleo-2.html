@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 18px; font-weight: 700; padding: 12px 24px 0; line-height: 1.2; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.stat-card {
+  background: #141414; border-radius: 8px; padding: 13px 16px;
+}
+.stat-card.green { border-left: 3px solid #22c55e; }
+.stat-card.yellow { border-left: 3px solid #eab308; }
+.stat-num { font-size: 30px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; display: inline; }
+.stat-label { font-size: 13px; color: #aaa; display: inline; margin-left: 8px; }
+.stat-sub { font-size: 11px; color: #555; margin-top: 3px; }
+.note-box {
+  background: #1a0f0f; border: 1px solid #3a1a1a; border-radius: 8px;
+  padding: 11px 14px;
+}
+.note-label { font-size: 10px; color: #c8211e; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+.note-text { font-size: 13px; color: #f5f0e8; font-weight: 600; line-height: 1.35; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Los datos de hoy</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">Dos cifras históricas, una paradoja</div>
+<div class="content">
+  <div class="stat-card green">
+    <div class="stat-num">22.105.831</div>
+    <div class="stat-label">afiliados a la Seguridad Social</div>
+    <div class="stat-sub">Máximo absoluto — nunca antes</div>
+  </div>
+  <div class="stat-card green">
+    <div class="stat-num">2.357.044</div>
+    <div class="stat-label">personas en paro registrado</div>
+    <div class="stat-sub">Mínimo desde junio de 2008</div>
+  </div>
+  <div class="stat-card yellow">
+    <div class="stat-num">25,4%</div>
+    <div class="stat-label">tasa de paro juvenil</div>
+    <div class="stat-sub">No bajó al mismo ritmo — EPA Q1 2026</div>
+  </div>
+  <div class="stat-card" style="border-left:3px solid #60a5fa">
+    <div class="stat-num" style="font-size:26px">+517.192</div>
+    <div class="stat-label">afiliados más que hace un año</div>
+    <div class="stat-sub">+2,4% interanual</div>
+  </div>
+  <div class="note-box">
+    <div class="note-label">Ojo con el dato</div>
+    <div class="note-text">Un afiliado con 12h/semana cuenta igual que uno a jornada completa</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

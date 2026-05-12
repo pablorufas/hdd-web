@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1700726783633-23c0c6383b00?w=1080&q=80&fit=crop&auto=format');
+  background-size: cover; background-position: center;
+  filter: blur(7px) brightness(0.15);
+  transform: scale(1.08); z-index: 0;
+}
+.top-bar, .title, .content, .bottom-bar { position: relative; z-index: 1; }
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #aaa; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #666; }
+.title { font-size: 16px; font-weight: 700; padding: 10px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.glass {
+  background: rgba(20,20,20,0.75); backdrop-filter: blur(10px);
+  border-radius: 10px; border: 1px solid rgba(255,255,255,0.07);
+}
+.impact-hero {
+  background: rgba(10,20,35,0.8); border: 1px solid rgba(96,165,250,0.2);
+  backdrop-filter: blur(8px); border-radius: 10px; padding: 13px 16px;
+}
+.ih-label { font-size: 10px; color: #60a5fa; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.ih-big { font-size: 42px; font-weight: 800; color: #60a5fa; letter-spacing: -0.03em; line-height: 1; }
+.ih-sub { font-size: 12px; color: #888; margin-top: 3px; }
+.sector-box { border-radius: 10px; padding: 11px 14px; }
+.sb-label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
+.brand-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.brand-row:last-child { border-bottom: none; }
+.brand-name { font-size: 12px; color: #f5f0e8; font-weight: 600; }
+.brand-country { font-size: 11px; color: #555; }
+.warning-box {
+  background: rgba(30,15,5,0.75); border: 1px solid rgba(245,158,11,0.2);
+  backdrop-filter: blur(8px); border-radius: 10px; padding: 11px 14px;
+  display: flex; gap: 10px; align-items: center;
+}
+.wb-icon { font-size: 18px; flex-shrink: 0; }
+.wb-text { font-size: 12px; color: #aaa; line-height: 1.4; }
+.wb-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(10,10,10,0.5);
+}
+.brand { font-size: 11px; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="top-bar">
+  <span class="eyebrow">Impacto real</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="title">Qué está en juego</div>
+<div class="content">
+  <div class="impact-hero">
+    <div class="ih-label">💥 La carta de la UE</div>
+    <div class="ih-big">93.000M €</div>
+    <div class="ih-sub">en represalias posibles vía instrumento anticoerción (Reg. UE 2023/2675)</div>
+  </div>
+  <div class="sector-box glass">
+    <div class="sb-label">Fabricantes europeos directamente expuestos</div>
+    <div class="brand-row">
+      <div class="brand-name">Volkswagen / SEAT</div>
+      <div class="brand-country">🇩🇪🇪🇸 Martorell · Pamplona</div>
+    </div>
+    <div class="brand-row">
+      <div class="brand-name">BMW · Mercedes</div>
+      <div class="brand-country">🇩🇪 Alemania</div>
+    </div>
+    <div class="brand-row">
+      <div class="brand-name">Stellantis (Peugeot, Fiat...)</div>
+      <div class="brand-country">🇫🇷🇮🇹 Francia · Italia</div>
+    </div>
+  </div>
+  <div class="warning-box">
+    <div class="wb-icon">🏭</div>
+    <div class="wb-text">El sector del automóvil representa <strong>~10% del PIB industrial español</strong>. Un arancel del 25% sobre exportaciones a EEUU afecta directamente al empleo en Cataluña y Navarra.</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#666;">07·05·26</span>
+</div>
+</body>
+</html>

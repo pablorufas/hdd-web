@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 18px; font-weight: 700; padding: 12px 24px 0; line-height: 1.2; }
+.subtitle { font-size: 12px; color: #888; padding: 3px 24px 0; }
+.content { flex: 1; display: flex; padding: 10px 24px 0; gap: 10px; }
+.col { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.col-header {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 7px 10px; border-radius: 6px; text-align: center;
+}
+.col-header.up { background: #0d2e1a; color: #22c55e; }
+.col-header.way-up { background: #2a0a0a; color: #c8211e; }
+.item { background: #141414; border-radius: 8px; padding: 11px 12px; }
+.item-val { font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+.item-val.green { color: #22c55e; }
+.item-val.red { color: #c8211e; }
+.item-label { font-size: 11px; color: #aaa; margin-top: 2px; line-height: 1.3; }
+.item-change { font-size: 10px; color: #555; margin-top: 1px; }
+.conclusion {
+  margin: 8px 24px 0; background: #111; border-radius: 8px;
+  padding: 11px 14px; border-left: 3px solid #c8211e;
+}
+.conclusion-text { font-size: 13px; color: #f5f0e8; line-height: 1.4; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">La paradoja</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="title">Más trabajo, menos poder adquisitivo</div>
+<div class="subtitle">Dos indicadores que suben a la vez en dirección contraria</div>
+<div class="content">
+  <div class="col">
+    <div class="col-header up">Empleo ↑</div>
+    <div class="item">
+      <div class="item-val green">+517k</div>
+      <div class="item-label">nuevos afiliados en un año</div>
+    </div>
+    <div class="item">
+      <div class="item-val green">2,7%</div>
+      <div class="item-label">crecimiento del PIB</div>
+      <div class="item-change">Proyección FMI 2026</div>
+    </div>
+    <div class="item">
+      <div class="item-val green">+4,8M</div>
+      <div class="item-label">contratos indefinidos desde 2021</div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="col-header way-up">Vivienda ↑↑</div>
+    <div class="item">
+      <div class="item-val red">15€/m²</div>
+      <div class="item-label">alquiler medio nacional</div>
+      <div class="item-change">Máximo histórico</div>
+    </div>
+    <div class="item">
+      <div class="item-val red">+16,4%</div>
+      <div class="item-label">precio de compra</div>
+      <div class="item-change">Mayor subida en 20 años</div>
+    </div>
+    <div class="item">
+      <div class="item-val red">2,747%</div>
+      <div class="item-label">euríbor abril</div>
+      <div class="item-change">Máx. desde sept. 2024</div>
+    </div>
+  </div>
+</div>
+<div class="conclusion">
+  <div class="conclusion-text">El empleo crece en servicios con salarios que no suben al mismo ritmo que la vivienda</div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

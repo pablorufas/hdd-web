@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1080&q=80&fit=crop&auto=format');
+  background-size: cover; background-position: center;
+  filter: blur(7px) brightness(0.1); transform: scale(1.08); z-index: 0;
+}
+.top-bar, .title, .content, .bottom-bar { position: relative; z-index: 1; }
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #aaa; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #666; }
+.title { font-size: 14px; font-weight: 700; padding: 10px 24px 0; color: #aaa; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.day-card {
+  background: rgba(20,20,20,0.8); backdrop-filter: blur(10px);
+  border-radius: 10px; border-left: 3px solid #ef4444;
+  padding: 11px 14px; display: flex; gap: 10px; align-items: flex-start;
+}
+.day-card.future { border-left-color: #333; }
+.dc-day { font-size: 11px; font-weight: 700; color: #ef4444; text-transform: uppercase; letter-spacing: 0.08em; width: 40px; flex-shrink: 0; margin-top: 2px; }
+.dc-day.gray { color: #555; }
+.dc-body {}
+.dc-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.dc-text { font-size: 11px; color: #888; line-height: 1.35; }
+.dc-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06); background: rgba(10,10,10,0.5);
+}
+.brand { font-size: 11px; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="top-bar">
+  <span class="eyebrow">Política · Justicia</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">El calendario de la semana más importante del juicio</div>
+<div class="content">
+  <div class="day-card">
+    <div class="dc-day">Hoy</div>
+    <div class="dc-body">
+      <div class="dc-title">Últimos testigos</div>
+      <div class="dc-text">Francisco Menéndez, el empresario que <strong>presentó la denuncia</strong> que destapó el caso Tándem</div>
+    </div>
+  </div>
+  <div class="day-card">
+    <div class="dc-day">Mar–Mié</div>
+    <div class="dc-body">
+      <div class="dc-title">Fase pericial</div>
+      <div class="dc-text">Agentes de <strong>Ciberdelincuencia</strong>, Centro Criptológico Nacional y técnicos de Hacienda analizan los fondos reservados</div>
+    </div>
+  </div>
+  <div class="day-card">
+    <div class="dc-day">Jue</div>
+    <div class="dc-body">
+      <div class="dc-title">🔴 Empiezan los audios de Villarejo</div>
+      <div class="dc-text">Grabaciones con el <strong>ex número 2 del Interior</strong> + 7 declaraciones de García Castaño. Pueden durar 3 días</div>
+    </div>
+  </div>
+  <div class="day-card future">
+    <div class="dc-day gray">19 may</div>
+    <div class="dc-body">
+      <div class="dc-title" style="color:#888;">Interrogatorio a los 10 acusados</div>
+      <div class="dc-text">Penas pedidas: entre <strong>5 y 19 años</strong> de prisión</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#666;">11·05·26</span>
+</div>
+</body>
+</html>

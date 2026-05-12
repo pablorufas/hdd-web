@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 19px; font-weight: 700; padding: 16px 24px 0; line-height: 1.2; }
+.content { flex: 1; padding: 12px 24px 0; display: flex; flex-direction: column; gap: 10px; }
+.side {
+  flex: 1; border-radius: 10px; padding: 16px 18px;
+  display: flex; flex-direction: column;
+}
+.side.israel { background: #1a0808; border: 1px solid #3a1010; }
+.side.onu { background: #0a1a0d; border: 1px solid #1a3a20; }
+.side-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.side-label.i { color: #f87171; }
+.side-label.o { color: #4ade80; }
+.side-text { font-size: 14px; color: #aaa; line-height: 1.5; }
+.side-text strong { color: #f5f0e8; }
+.precedent {
+  background: #141414; border-radius: 10px; padding: 14px 16px;
+  border-left: 3px solid #eab308;
+}
+.prec-label { font-size: 11px; color: #eab308; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.prec-text { font-size: 14px; color: #aaa; line-height: 1.5; }
+.prec-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">La cuestión legal</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="title">¿Puede Israel hacer esto en aguas internacionales?</div>
+<div class="content">
+  <div class="side israel">
+    <div class="side-label i">🇮🇱 Israel dice:</div>
+    <div class="side-text">El <strong>bloqueo naval de Gaza</strong> le da autoridad para inspeccionar cualquier embarcación que intente acceder a la franja, incluso fuera de sus aguas territoriales.</div>
+  </div>
+  <div class="side onu">
+    <div class="side-label o">🇺🇳 La ONU dice:</div>
+    <div class="side-text">El bloqueo en <strong>aguas internacionales viola la libertad de navegación</strong> garantizada por la Convención del Mar (UNCLOS). Los barcos que no izaban bandera israelí no podían ser abordados.</div>
+  </div>
+  <div class="precedent">
+    <div class="prec-label">Precedente: Mavi Marmara · 2010</div>
+    <div class="prec-text">Israel abordó otra flotilla en aguas internacionales. <strong>10 activistas turcos muertos</strong>. La ONU lo calificó de ilegal. Ruptura diplomática turco-israelí hasta 2016.</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column; position: relative;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1080&q=80&fit=crop&auto=format');
+  background-size: cover; background-position: center;
+  filter: blur(7px) brightness(0.12); transform: scale(1.08); z-index: 0;
+}
+.top-bar, .title, .content, .bottom-bar { position: relative; z-index: 1; }
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #aaa; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #666; }
+.title { font-size: 15px; font-weight: 700; padding: 10px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 10px; }
+.agenda-item {
+  background: rgba(20,20,20,0.8); backdrop-filter: blur(10px);
+  border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);
+  padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start;
+}
+.ai-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.ai-body {}
+.ai-label { font-size: 10px; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+.ai-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.ai-text { font-size: 12px; color: #888; line-height: 1.4; }
+.ai-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06); background: rgba(10,10,10,0.5);
+}
+.brand { font-size: 11px; color: #666; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="top-bar">
+  <span class="eyebrow">Internacional · Economía</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">Los 3 temas de la agenda de Pekín</div>
+<div class="content">
+  <div class="agenda-item">
+    <div class="ai-icon">💰</div>
+    <div class="ai-body">
+      <div class="ai-label">Bloque 1 · Aranceles</div>
+      <div class="ai-title">200.000M$ de déficit</div>
+      <div class="ai-text">EEUU compra a China <strong>200.000M más de lo que China le compra</strong>. Trump quiere reequilibrarlo. Ahora los aranceles a China están al 60%; antes llegaron al 145%.</div>
+    </div>
+  </div>
+  <div class="agenda-item">
+    <div class="ai-icon">⚔️</div>
+    <div class="ai-body">
+      <div class="ai-label">Bloque 2 · Irán</div>
+      <div class="ai-title">China financia la guerra</div>
+      <div class="ai-text">China compra el <strong>80% del petróleo iraní</strong> y vende a Irán piezas para drones. EEUU lleva bombardeando instalaciones iraníes desde febrero. Trump quiere que Xi pare ese flujo.</div>
+    </div>
+  </div>
+  <div class="agenda-item">
+    <div class="ai-icon">🏝️</div>
+    <div class="ai-body">
+      <div class="ai-label">Bloque 3 · Taiwán</div>
+      <div class="ai-title">La línea roja permanente</div>
+      <div class="ai-text">China considera Taiwán su territorio. EEUU la defiende. En marzo, China hizo maniobras militares a <strong>12 millas de la costa</strong> de Taiwán.</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#666;">11·05·26</span>
+</div>
+</body>
+</html>

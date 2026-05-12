@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 19px; font-weight: 700; padding: 16px 24px 0; }
+.content { flex: 1; padding: 14px 24px 0; display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  display: flex; gap: 16px; padding-bottom: 14px; position: relative;
+}
+.timeline-item:not(:last-child)::after {
+  content: ''; position: absolute; left: 11px; top: 26px; bottom: 0;
+  width: 1px; background: #2a2a2a;
+}
+.t-dot {
+  width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; margin-top: 2px;
+}
+.t-dot.red { background: #c8211e; color: #fff; }
+.t-dot.orange { background: #ea580c; color: #fff; }
+.t-dot.blue { background: #3b82f6; color: #fff; }
+.t-body {}
+.t-date { font-size: 11px; color: #666; margin-bottom: 3px; }
+.t-text { font-size: 14px; color: #f5f0e8; line-height: 1.4; font-weight: 500; }
+.t-sub { font-size: 12px; color: #888; margin-top: 2px; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e; margin-top: auto;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Los hechos</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">Lo que ocurrió, en orden</div>
+<div class="content">
+  <div class="timeline-item">
+    <div class="t-dot red">1</div>
+    <div class="t-body">
+      <div class="t-date">29 de abril</div>
+      <div class="t-text">Fuerzas militares israelíes interceptan la flotilla Global Sumud</div>
+      <div class="t-sub">A 100 km al oeste de Creta · aguas internacionales · 50+ barcos</div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="t-dot red">2</div>
+    <div class="t-body">
+      <div class="t-date">29-30 de abril</div>
+      <div class="t-text">170 activistas obligados a abandonar los barcos a punta de fusil</div>
+      <div class="t-sub">La mayoría deportada sin cargos</div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="t-dot orange">3</div>
+    <div class="t-body">
+      <div class="t-date">5 de mayo</div>
+      <div class="t-text">Tribunal israelí prorroga la detención 6 días más</div>
+      <div class="t-sub">Sin presentar cargos · 2 detenidos: Saif Abukeshek 🇪🇸 y Thiago Ávila 🇧🇷</div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="t-dot blue">4</div>
+    <div class="t-body">
+      <div class="t-date">6 de mayo · hoy</div>
+      <div class="t-text">La ONU exige la liberación "inmediata e incondicional"</div>
+      <div class="t-sub">Alto Comisionado para los Derechos Humanos</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

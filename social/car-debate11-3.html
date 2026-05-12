@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar { display: flex; justify-content: space-between; padding: 18px 24px 0; }
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; }
+.label { font-size: 11px; color: #a855f7; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
+.seats-row {
+  display: flex; align-items: flex-end; gap: 6px; margin-bottom: 6px;
+}
+.seats-num { font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: #f5f0e8; }
+.seats-total { font-size: 18px; color: #555; font-weight: 600; align-self: flex-end; margin-bottom: 12px; }
+.threshold {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.3);
+  border-radius: 8px; padding: 10px 14px; margin-bottom: 20px;
+}
+.threshold-num { font-size: 28px; font-weight: 800; color: #a855f7; }
+.threshold-text { font-size: 12px; color: #888; line-height: 1.4; }
+.threshold-text strong { color: #f5f0e8; }
+.divider { width: 48px; height: 3px; background: #a855f7; margin-bottom: 16px; }
+.scenario { margin-bottom: 10px; }
+.sc-head { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.sc-head.good { color: #a855f7; }
+.sc-head.bad { color: #ef4444; }
+.sc-text { font-size: 12px; color: #888; line-height: 1.4; }
+.sc-text strong { color: #f5f0e8; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Política · Andalucía</span>
+  <span class="slide-num">03 — 04</span>
+</div>
+<div class="content">
+  <div class="label">La aritmética del Parlamento andaluz</div>
+  <div class="seats-row">
+    <div class="seats-num">109</div>
+    <div class="seats-total">escaños totales</div>
+  </div>
+  <div class="threshold">
+    <div class="threshold-num">55</div>
+    <div class="threshold-text"><strong>Mayoría absoluta.</strong> El PP está proyectado entre 53 y 57 escaños. La diferencia es si puede gobernar solo o necesita a Vox.</div>
+  </div>
+  <div class="divider"></div>
+  <div class="scenario">
+    <div class="sc-head good">✓ Si PP ≥ 55</div>
+    <div class="sc-text">Moreno gobierna <strong>4 años sin depender de Vox</strong>. Segundo mandato en solitario.</div>
+  </div>
+  <div class="scenario">
+    <div class="sc-head bad">✗ Si PP ≤ 54</div>
+    <div class="sc-text">Necesita a Vox para investirse. O <strong>Montero intenta una coalición</strong> con Por Andalucía y Adelante. Pueden repetirse elecciones.</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">11·05·26</span>
+</div>
+</body>
+</html>

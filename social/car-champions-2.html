@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 18px; font-weight: 700; padding: 12px 24px 0; }
+.content { flex: 1; padding: 10px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.global-box {
+  background: #141414; border-radius: 10px; padding: 14px 16px;
+  display: flex; justify-content: center; align-items: center; gap: 20px;
+}
+.g-team { font-size: 14px; font-weight: 700; text-align: center; }
+.g-score { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+.g-score.psg { color: #60a5fa; }
+.g-score.bay { color: #fbbf24; }
+.g-label { font-size: 10px; color: #555; text-align: center; margin-top: 1px; }
+.scenario {
+  border-radius: 8px; padding: 13px 16px;
+  display: flex; gap: 12px; align-items: center;
+}
+.sc-win { background: #0a2010; border: 1px solid #1a4020; }
+.sc-ext { background: #1a1a00; border: 1px solid #3a3a00; }
+.sc-lose { background: #200a0a; border: 1px solid #401a1a; }
+.sc-icon { font-size: 22px; flex-shrink: 0; }
+.sc-team { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+.sc-team.psg { color: #60a5fa; }
+.sc-team.bay { color: #fbbf24; }
+.sc-condition { font-size: 14px; font-weight: 700; line-height: 1.2; margin-bottom: 2px; }
+.sc-result { font-size: 12px; color: #888; }
+.bottom-bar {
+  padding: 12px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Las matemáticas de la noche</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">¿Qué necesita cada equipo?</div>
+<div class="content">
+  <div class="global-box">
+    <div>
+      <div class="g-team">PSG</div>
+      <div class="g-score psg">5</div>
+      <div class="g-label">Ida · París</div>
+    </div>
+    <div style="font-size:13px;color:#444">—</div>
+    <div>
+      <div class="g-team">Bayern</div>
+      <div class="g-score bay">4</div>
+      <div class="g-label">Ida · París</div>
+    </div>
+    <div style="width:1px;background:#222;height:40px;align-self:center;margin:0 4px"></div>
+    <div style="text-align:center">
+      <div style="font-size:11px;color:#555;margin-bottom:4px">Bayern necesita</div>
+      <div style="font-size:18px;font-weight:800;color:#fbbf24">+2 goles</div>
+      <div style="font-size:10px;color:#555">para pasar directo</div>
+    </div>
+  </div>
+  <div class="scenario sc-win">
+    <div class="sc-icon">✅</div>
+    <div>
+      <div class="sc-team bay">Bayern</div>
+      <div class="sc-condition">Ganar por 2+ goles</div>
+      <div class="sc-result">Ej. 2-0, 3-1 → Bayern a la final</div>
+    </div>
+  </div>
+  <div class="scenario sc-ext">
+    <div class="sc-icon">⏱️</div>
+    <div>
+      <div class="sc-team bay">Bayern</div>
+      <div class="sc-condition">Ganar por exactamente 1 gol</div>
+      <div class="sc-result">Global 5-5 → prórroga y penaltis</div>
+    </div>
+  </div>
+  <div class="scenario sc-lose">
+    <div class="sc-icon">🏆</div>
+    <div>
+      <div class="sc-team psg">PSG</div>
+      <div class="sc-condition">Empate o victoria del PSG</div>
+      <div class="sc-result">PSG a la final directamente</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

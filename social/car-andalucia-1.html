@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.content { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 28px; }
+.countdown-box {
+  background: #c8211e; border-radius: 12px; padding: 16px 20px;
+  display: inline-flex; align-items: baseline; gap: 10px;
+  margin-bottom: 20px; align-self: flex-start;
+}
+.countdown-num { font-size: 48px; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.04em; }
+.countdown-label { font-size: 16px; color: rgba(255,255,255,0.85); font-weight: 600; }
+.date-big { font-size: 36px; font-weight: 800; color: #f5f0e8; letter-spacing: -0.02em; margin-bottom: 4px; }
+.date-sub { font-size: 15px; color: #888; margin-bottom: 20px; }
+.divider { width: 48px; height: 3px; background: #c8211e; margin-bottom: 18px; }
+.headline { font-size: 26px; font-weight: 700; line-height: 1.3; color: #f5f0e8; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.pill {
+  font-size: 12px; padding: 5px 12px; border-radius: 20px;
+  background: #141414; color: #aaa;
+}
+.pill.hot { background: #1a0808; color: #c8211e; }
+.bottom-bar {
+  padding: 16px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Política · España</span>
+  <span class="slide-num">01 — 04</span>
+</div>
+<div class="content">
+  <div class="countdown-box">
+    <div class="countdown-num">11</div>
+    <div class="countdown-label">días</div>
+  </div>
+  <div class="date-big">17 de mayo</div>
+  <div class="date-sub">Elecciones al Parlamento de Andalucía</div>
+  <div class="divider"></div>
+  <div class="headline">El PP en riesgo de perder la mayoría absoluta. El PSOE en mínimos históricos.</div>
+  <div class="pills">
+    <div class="pill hot">PP: 53-56 escaños (mayoría = 55)</div>
+    <div class="pill">Vox sube</div>
+    <div class="pill">6,5M electores</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>

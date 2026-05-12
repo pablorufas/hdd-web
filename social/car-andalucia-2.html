@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 540px; height: 720px; overflow: hidden;
+  background: #0a0a0a; color: #f5f0e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex; flex-direction: column;
+}
+.top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px 0;
+}
+.eyebrow { font-size: 11px; letter-spacing: 0.12em; color: #888; text-transform: uppercase; }
+.slide-num { font-size: 11px; color: #555; }
+.title { font-size: 19px; font-weight: 700; padding: 16px 24px 0; }
+.subtitle { font-size: 13px; color: #888; padding: 4px 24px 0; }
+.content { flex: 1; padding: 14px 24px 0; display: flex; flex-direction: column; gap: 8px; }
+.party-row {
+  background: #141414; border-radius: 10px; padding: 14px 16px;
+  display: flex; align-items: center; gap: 14px;
+}
+.party-name { font-size: 14px; font-weight: 700; min-width: 80px; }
+.party-name.pp { color: #60a5fa; }
+.party-name.psoe { color: #f87171; }
+.party-name.vox { color: #4ade80; }
+.bar-container { flex: 1; }
+.bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.bar-label { font-size: 11px; color: #666; min-width: 36px; }
+.bar { height: 10px; border-radius: 3px; }
+.bar.y22 { background: #333; }
+.bar.y26pp { background: #60a5fa; }
+.bar.y26psoe { background: #f87171; }
+.bar.y26vox { background: #4ade80; }
+.bar-val { font-size: 13px; font-weight: 700; min-width: 40px; text-align: right; }
+.threshold {
+  background: #1a1a00; border: 1px solid #3a3a00; border-radius: 8px;
+  padding: 12px 14px; display: flex; align-items: center; gap: 10px;
+}
+.th-num { font-size: 26px; font-weight: 800; color: #eab308; }
+.th-text { font-size: 13px; color: #aaa; line-height: 1.4; }
+.bottom-bar {
+  padding: 14px 24px; display: flex; justify-content: space-between;
+  border-top: 1px solid #1e1e1e;
+}
+.brand { font-size: 11px; color: #555; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <span class="eyebrow">Las encuestas — mayo 2026</span>
+  <span class="slide-num">02 — 04</span>
+</div>
+<div class="title">El mapa de escaños</div>
+<div class="subtitle">Parlamento de Andalucía — 109 escaños totales</div>
+<div class="content">
+  <div class="party-row">
+    <div class="party-name pp">PP</div>
+    <div class="bar-container">
+      <div class="bar-row">
+        <div class="bar-label" style="color:#555">2022</div>
+        <div class="bar y22" style="width:148px"></div>
+        <div class="bar-val" style="color:#888">58</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label" style="color:#60a5fa">2026</div>
+        <div class="bar y26pp" style="width:128px"></div>
+        <div class="bar-val" style="color:#60a5fa">53-56</div>
+      </div>
+    </div>
+  </div>
+  <div class="party-row">
+    <div class="party-name psoe">PSOE</div>
+    <div class="bar-container">
+      <div class="bar-row">
+        <div class="bar-label" style="color:#555">2022</div>
+        <div class="bar y22" style="width:76px"></div>
+        <div class="bar-val" style="color:#888">30</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label" style="color:#f87171">2026</div>
+        <div class="bar y26psoe" style="width:60px"></div>
+        <div class="bar-val" style="color:#f87171">25-27</div>
+      </div>
+    </div>
+  </div>
+  <div class="party-row">
+    <div class="party-name vox">Vox</div>
+    <div class="bar-container">
+      <div class="bar-row">
+        <div class="bar-label" style="color:#555">2022</div>
+        <div class="bar y22" style="width:35px"></div>
+        <div class="bar-val" style="color:#888">14</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label" style="color:#4ade80">2026</div>
+        <div class="bar y26vox" style="width:44px"></div>
+        <div class="bar-val" style="color:#4ade80">17-19</div>
+      </div>
+    </div>
+  </div>
+  <div class="threshold">
+    <div class="th-num">55</div>
+    <div class="th-text">escaños necesarios para mayoría absoluta — el PP está en el límite justo</div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <span class="brand">horadedespertar.org</span>
+  <span style="font-size:11px;color:#555;">06·05·26</span>
+</div>
+</body>
+</html>
