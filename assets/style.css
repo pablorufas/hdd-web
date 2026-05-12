@@ -397,18 +397,23 @@ section.block {
 .date-divider {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px 0 6px;
-  color: var(--ink-mute);
+  justify-content: space-between;
+  margin: 52px 0 0;
+  padding: 13px 0 11px;
+  border-top: 3px solid var(--red);
+  border-bottom: 1px solid var(--line);
   font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
 }
 .date-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--line);
+  content: '· HdD ·';
+  color: var(--red);
+  letter-spacing: 0.14em;
+  font-weight: 700;
 }
 
 .index-item .date {
