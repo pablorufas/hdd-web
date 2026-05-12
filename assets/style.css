@@ -126,23 +126,8 @@ p { margin: 0 0 1em; }
   font-family: var(--led);
   font-weight: 700;
   color: var(--red);
-  text-shadow: 0 0 6px rgba(225, 6, 0, 0.18);
   letter-spacing: 0.02em;
-  position: relative;
   display: inline-block;
-}
-.logo-led::before {
-  content: "888";
-  position: absolute;
-  inset: 0;
-  color: rgba(225, 6, 0, 0.12);
-  text-shadow: none;
-  pointer-events: none;
-  letter-spacing: 0.02em;
-}
-/* El reloj tiene 5 caracteres tipo "16:04" */
-.header-clock::before {
-  content: "88~88";
 }
 .logo-sm .logo-led { font-size: 1.85rem; }
 .logo-md .logo-led { font-size: 2.2rem; }
@@ -178,7 +163,6 @@ p { margin: 0 0 1em; }
   font-size: 1rem;
   color: var(--red);
   letter-spacing: 0.04em;
-
   padding-left: 14px;
   border-left: 1px solid var(--line-strong);
   line-height: 1;
@@ -616,7 +600,7 @@ section.block {
 .empty-state .icon {
   font-family: var(--led);
   font-size: clamp(2.4rem, 5vw, 3.6rem);
-  color: rgba(225, 6, 0, 0.25);
+  color: rgba(225, 6, 0, 0.50);
   letter-spacing: 0.08em;
   display: block;
   margin-bottom: 16px;
@@ -1044,7 +1028,7 @@ section.block {
 .slide-num {
   font-family: var(--led);
   font-size: 0.65rem;
-  color: rgba(225, 6, 0, 0.45);
+  color: rgba(225, 6, 0, 0.60);
   letter-spacing: 0.14em;
   display: block;
   margin-bottom: 24px;
