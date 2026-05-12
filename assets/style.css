@@ -123,7 +123,7 @@ p { margin: 0 0 1em; }
   text-decoration: none;
 }
 .logo-led {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-weight: 700;
   color: var(--red);
   letter-spacing: 0.02em;
@@ -400,7 +400,7 @@ section.block {
   gap: 14px;
   padding: 18px 0 6px;
   color: var(--ink-mute);
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.72rem;
   letter-spacing: 0.1em;
 }
@@ -412,7 +412,7 @@ section.block {
 }
 
 .index-item .date {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.85rem;
   color: var(--ink-mute);
   letter-spacing: 0.05em;
@@ -598,7 +598,7 @@ section.block {
   background: rgba(0, 0, 0, 0.04);
 }
 .empty-state .icon {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: clamp(2.4rem, 5vw, 3.6rem);
   color: rgba(225, 6, 0, 0.50);
   letter-spacing: 0.08em;
@@ -637,7 +637,7 @@ section.block {
   opacity: 0.6;
 }
 .weekly-note .day {
-  font-family: var(--led);
+  font-family: var(--sans);
   color: var(--red);
   font-size: 1.1rem;
   letter-spacing: 0.12em;
@@ -714,7 +714,7 @@ section.block {
   gap: 40px;
 }
 .pillar .num {
-  font-family: var(--led);
+  font-family: var(--sans);
   color: var(--red);
   font-size: 1.2rem;
   letter-spacing: 0.1em;
@@ -739,7 +739,7 @@ section.block {
 }
 .edu-card:hover { border-color: var(--red); transform: translateY(-3px); }
 .edu-card .num {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 2rem;
   color: var(--red);
   display: block;
@@ -837,7 +837,7 @@ section.block {
 .lee-tambien-link:first-of-type { border-top: none; }
 .lee-tambien-link:hover .lee-tambien-titulo { color: var(--red); }
 .lee-tambien-fecha {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.75rem;
   color: var(--ink-mute);
   letter-spacing: 0.05em;
@@ -1026,7 +1026,7 @@ section.block {
 
 /* Número de diapositiva */
 .slide-num {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.65rem;
   color: rgba(225, 6, 0, 0.60);
   letter-spacing: 0.14em;
@@ -1220,7 +1220,7 @@ section.block {
   width: 20px;
 }
 .slide-counter {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.72rem;
   color: var(--ink-mute);
   letter-spacing: 0.1em;
@@ -1359,7 +1359,7 @@ section.block {
 }
 
 .briefing-tag {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.72rem;
   color: var(--red);
 
@@ -1419,7 +1419,7 @@ section.block {
 }
 
 .stat-num {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   color: var(--red);
 
@@ -1477,7 +1477,7 @@ section.block {
 }
 
 .portada-card-date {
-  font-family: var(--led);
+  font-family: var(--sans);
   font-size: 0.78rem;
   color: var(--ink-mute);
   letter-spacing: 0.08em;
