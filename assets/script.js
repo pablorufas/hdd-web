@@ -211,12 +211,12 @@
     var bar = document.createElement('div');
     bar.id = 'retention-bar';
     bar.innerHTML = '<div class="ret-inner">'
-      + '<span class="ret-icon">🔔</span>'
+      + '<span class="ret-icon">✉️</span>'
       + '<div class="ret-text">'
       + '<strong>' + (isSocial ? '¿Quieres más análisis así?' : '¿Te ha resultado útil?') + '</strong>'
-      + '<span>' + (isSocial ? 'Activa las notificaciones y recibe dos informativos al día' : 'Activa las notificaciones para no perderte nada') + '</span>'
+      + '<span>' + (isSocial ? 'Recibe dos informativos al día en tu correo' : 'Suscríbete y recíbelo cada lunes en tu correo') + '</span>'
       + '</div>'
-      + '<button class="ret-btn" id="ret-btn-yes">Activar</button>'
+      + '<a class="ret-btn" id="ret-btn-yes" href="/newsletter.html">Suscribirme</a>'
       + '<button class="ret-close" id="ret-btn-no" aria-label="Cerrar">✕</button>'
       + '</div>';
     document.body.appendChild(bar);
@@ -233,13 +233,11 @@
 
     document.getElementById('ret-btn-no').addEventListener('click', dismiss);
     document.getElementById('ret-btn-yes').addEventListener('click', function () {
-      dismiss();
-      if (window.OneSignalDeferred) {
-        window.OneSignalDeferred.push(function (O) { O.User.PushSubscription.optIn(); });
-      }
+      sessionStorage.setItem(KEY, '1');
       if (typeof gtag === 'function') {
         gtag('event', 'retention_bar_accept', { source: isSocial ? 'social' : 'organic', page_path: path });
       }
+      // La navegación a newsletter.html la gestiona el href del enlace
     });
   }
 
