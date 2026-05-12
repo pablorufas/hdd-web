@@ -11,8 +11,9 @@ Uso:
 
 import json, re, sys, os, subprocess
 
-BASEDIR = os.path.dirname(os.path.abspath(__file__))
-NO_GIT  = "--no-git" in sys.argv
+BASEDIR     = os.path.dirname(os.path.abspath(__file__))
+NO_GIT      = "--no-git" in sys.argv
+CSS_VERSION = "4"          # bump aquí al cambiar style.css
 
 MESES_ES = {1:"enero",2:"febrero",3:"marzo",4:"abril",5:"mayo",6:"junio",
             7:"julio",8:"agosto",9:"septiembre",10:"octubre",11:"noviembre",12:"diciembre"}
@@ -211,11 +212,11 @@ def build_html(d):
   <meta name="twitter:title" content="{titular} — HdD" />
   <meta name="twitter:description" content="{lead_meta}" />
   <meta name="twitter:image" content="https://horadedespertar.org/assets/og-image.png" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css?v={CSS_VERSION}" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTLZFW7HGF"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","G-RTLZFW7HGF");</script>
   <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -370,9 +371,9 @@ def build_html(d):
           <a href="/" class="logo logo-sm" aria-label="Hora de Despertar — Inicio"><span class="logo-led">HdD</span></a>
           <p class="tagline">Hora de Despertar. Periodismo didáctico para una sociedad que quiere pensar por sí misma.</p>
         </div>
-        <div><h5>Secciones</h5><ul><li><a href="noticias">Noticias</a></li><li><a href="educacion">Educación</a></li><li><a href="newsletter">Semanal</a></li><li><a href="manifiesto">Manifiesto</a></li></ul></div>
-        <div><h5>Redacción</h5><ul><li><a href="manifiesto#metodo">Método</a></li><li><a href="manifiesto#correcciones">Correcciones</a></li><li><a href="manifiesto#contacto">Contacto</a></li><li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li></ul></div>
-        <div><h5>Legal</h5><ul><li><a href="aviso-legal">Aviso legal</a></li><li><a href="privacidad">Privacidad</a></li><li><a href="cookies">Cookies</a></li></ul></div>
+        <div><p class="footer-nav-label">Secciones</p><ul><li><a href="noticias">Noticias</a></li><li><a href="educacion">Educación</a></li><li><a href="newsletter">Semanal</a></li><li><a href="manifiesto">Manifiesto</a></li></ul></div>
+        <div><p class="footer-nav-label">Redacción</p><ul><li><a href="manifiesto#metodo">Método</a></li><li><a href="manifiesto#correcciones">Correcciones</a></li><li><a href="manifiesto#contacto">Contacto</a></li><li><a href="https://instagram.com/hdedespertar" target="_blank" rel="noopener noreferrer">@hdedespertar</a></li></ul></div>
+        <div><p class="footer-nav-label">Legal</p><ul><li><a href="aviso-legal">Aviso legal</a></li><li><a href="privacidad">Privacidad</a></li><li><a href="cookies">Cookies</a></li></ul></div>
       </div>
       <div class="bottom">
         <span>© 2026 Hora de Despertar</span>
