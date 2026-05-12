@@ -17,17 +17,17 @@
 
 /* --- Tokens --- */
 :root {
-  --bg:           #0a0a0a;
-  --bg-soft:      #121212;
-  --bg-elev:      #1a1a1a;
-  --ink:          #f3ece2;
-  --ink-dim:      #a39a8c;
-  --ink-mute:     #6b6458;
-  --line:         rgba(243, 236, 226, 0.08);
-  --line-strong:  rgba(243, 236, 226, 0.18);
+  --bg:           #ffffff;
+  --bg-soft:      #f4f4f4;
+  --bg-elev:      #e8e8e8;
+  --ink:          #111111;
+  --ink-dim:      #3f3f3f;
+  --ink-mute:     #5a5550;
+  --line:         rgba(0, 0, 0, 0.10);
+  --line-strong:  rgba(0, 0, 0, 0.20);
   --red:          #e10600;
-  --red-glow:     rgba(225, 6, 0, 0.55);
-  --accent:       #f5c36b;
+  --red-glow:     rgba(225, 6, 0, 0.25);
+  --accent:       #8a6200;
   --max:          1240px;
   --gutter:       clamp(20px, 4vw, 48px);
   --radius:       2px;
@@ -128,7 +128,7 @@ p { margin: 0 0 1em; }
   color: var(--red);
   text-shadow:
     0 0 6px var(--red-glow),
-    0 0 14px rgba(225, 6, 0, 0.35);
+    0 0 8px rgba(225, 6, 0, 0.15);
   letter-spacing: 0.02em;
   position: relative;
   display: inline-block;
@@ -137,7 +137,7 @@ p { margin: 0 0 1em; }
   content: "88~88";
   position: absolute;
   inset: 0;
-  color: rgba(225, 6, 0, 0.08);
+  color: rgba(225, 6, 0, 0.15);
   text-shadow: none;
   pointer-events: none;
   letter-spacing: 0.02em;
@@ -152,7 +152,7 @@ p { margin: 0 0 1em; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.82);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid var(--line);
@@ -584,7 +584,7 @@ section.block {
   transition: background 0.15s ease, color 0.15s ease;
 }
 .layer-nav__jump:hover {
-  background: rgba(245, 195, 107, 0.07);
+  background: rgba(138, 98, 0, 0.07);
   color: var(--ink);
 }
 .layer-nav__arrow {
@@ -609,7 +609,7 @@ section.block {
   border-radius: var(--radius);
   padding: clamp(40px, 6vw, 72px);
   text-align: center;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(0, 0, 0, 0.04);
 }
 .empty-state .icon {
   font-family: var(--led);
@@ -932,7 +932,7 @@ section.block {
   position: sticky;
   top: 61px;
   z-index: 80;
-  background: rgba(10, 10, 10, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -1042,7 +1042,7 @@ section.block {
 .slide-num {
   font-family: var(--led);
   font-size: 0.65rem;
-  color: rgba(225, 6, 0, 0.22);
+  color: rgba(225, 6, 0, 0.45);
   letter-spacing: 0.14em;
   display: block;
   margin-bottom: 24px;
@@ -1191,7 +1191,7 @@ section.block {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(18, 18, 18, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--line-strong);
