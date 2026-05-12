@@ -10,3 +10,4 @@ Thumbs.db
 .ga4_token.json
 audit_result.json
 client_secrets.json
+.onesignal_key

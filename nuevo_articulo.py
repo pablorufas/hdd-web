@@ -9,7 +9,7 @@ Uso:
   python3 nuevo_articulo.py --schema               # muestra esquema JSON completo
 """
 
-import json, re, sys, os, subprocess
+import json, re, sys, os, subprocess, urllib.request
 
 BASEDIR     = os.path.dirname(os.path.abspath(__file__))
 NO_GIT      = "--no-git" in sys.argv
@@ -451,6 +451,41 @@ def indexnow_ping(slug):
     except Exception as e:
         print(f"  △ IndexNow: {e}")
 
+def send_push_notification(slug, titular, summary):
+    """Envía notificación push via OneSignal a todos los suscriptores."""
+    key_file = os.path.join(BASEDIR, ".onesignal_key")
+    if not os.path.exists(key_file):
+        print("  ⚠  .onesignal_key no encontrado — notificación omitida")
+        return
+    api_key = open(key_file).read().strip()
+    url_art  = f"https://horadedespertar.org/{slug}.html"
+    payload  = json.dumps({
+        "app_id":            "26a69bec-30c7-4e90-a6b7-24ffab2e5e90",
+        "included_segments": ["All"],
+        "headings":          {"es": titular, "en": titular},
+        "contents":          {"es": summary[:100] + ("…" if len(summary) > 100 else ""), "en": summary[:100]},
+        "url":               url_art,
+        "web_buttons": [{"id": "leer", "text": "Leer ahora", "url": url_art}],
+        "ttl": 86400,
+    }).encode()
+    req = urllib.request.Request(
+        "https://api.onesignal.com/notifications",
+        data=payload,
+        headers={
+            "Content-Type":  "application/json",
+            "Authorization": f"Bearer {api_key}",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as r:
+            resp = json.loads(r.read())
+            recipients = resp.get("recipients", "?")
+            print(f"  ✓ Push enviado → {recipients} suscriptores")
+    except Exception as e:
+        print(f"  ⚠  Push falló: {e}")
+
+
 def git_push(files, message, slug=None):
     os.chdir(BASEDIR)
     subprocess.run(["git", "add"] + files, check=True)
@@ -510,6 +545,7 @@ def main():
         git_push([f"{slug}.html", "noticias.html", "index.html", "sitemap.xml"],
                  f"Publicar: {d['card_titular'][:70]}",
                  slug=slug)
+        send_push_notification(slug, d["card_titular"], d["card_summary"])
 
 if __name__ == "__main__":
     main()
