@@ -211,12 +211,12 @@
     var bar = document.createElement('div');
     bar.id = 'retention-bar';
     bar.innerHTML = '<div class="ret-inner">'
-      + '<span class="ret-icon">✉️</span>'
+      + '<span class="ret-icon">🔔</span>'
       + '<div class="ret-text">'
       + '<strong>' + (isSocial ? '¿Quieres más análisis así?' : '¿Te ha resultado útil?') + '</strong>'
-      + '<span>' + (isSocial ? 'Recibe dos informativos al día en tu correo' : 'Suscríbete y recíbelo cada lunes en tu correo') + '</span>'
+      + '<span>' + (isSocial ? 'Activa las notificaciones y recibe los análisis al momento' : 'Activa las notificaciones para no perderte nada') + '</span>'
       + '</div>'
-      + '<a class="ret-btn" id="ret-btn-yes" href="/newsletter.html">Suscribirme</a>'
+      + '<button class="ret-btn" id="ret-btn-yes">Activar</button>'
       + '<button class="ret-close" id="ret-btn-no" aria-label="Cerrar">✕</button>'
       + '</div>';
     document.body.appendChild(bar);
@@ -233,11 +233,13 @@
 
     document.getElementById('ret-btn-no').addEventListener('click', dismiss);
     document.getElementById('ret-btn-yes').addEventListener('click', function () {
-      sessionStorage.setItem(KEY, '1');
+      dismiss();
       if (typeof gtag === 'function') {
         gtag('event', 'retention_bar_accept', { source: isSocial ? 'social' : 'organic', page_path: path });
       }
-      // La navegación a newsletter.html la gestiona el href del enlace
+      if (window.OneSignalDeferred) {
+        window.OneSignalDeferred.push(function (O) { O.Slidedown.promptPush(); });
+      }
     });
   }
 
