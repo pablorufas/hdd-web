@@ -14,7 +14,7 @@ ARTICLES = [f for f in sorted(glob.glob('*.html'))
             ['index.html','noticias.html','educacion.html','newsletter.html',
              'manifiesto.html','aviso-legal.html','privacidad.html','cookies.html',
              'articulo-ejemplo.html','inflacion-explicada.html','oferta-y-demanda.html',
-             'carruseles-12-05-26.html']]
+             'carruseles-12-05-26.html','carruseles-12-05-26-noche.html']]
 
 # Artículos especiales: más de 4 slides, pueden no estar en noticias.html
 SPECIAL_ARTICLES = [
@@ -31,11 +31,13 @@ SPECIAL_ARTICLES = [
     'iran-hayi-terrorismo-gig-economy-europa-sinagogas-mayo-2026.html',  # 5 slides
     'hantavirus-espanol-positivo-confirmado-gomez-ulla-sanchez-oms-mayo-2026.html',  # 5 slides
     'carruseles-12-05-26.html',                                               # internal tool
+    'carruseles-12-05-26-noche.html',                                         # internal tool
 ]
 
 SKIP_ENTIRELY = [
     'articulo-ejemplo.html',
-    'carruseles-12-05-26.html',   # herramienta interna, no es artículo
+    'carruseles-12-05-26.html',        # herramienta interna, no es artículo
+    'carruseles-12-05-26-noche.html',  # herramienta interna, no es artículo
 ]
 ALL_PAGES = [f for f in sorted(glob.glob('*.html')) if not f.startswith('_')
              and f not in SKIP_ENTIRELY]
