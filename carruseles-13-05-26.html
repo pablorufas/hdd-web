@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carruseles HdD — 13·05·26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────────────────────────
+   HdD · CARRUSELES 13·05·26
+   Formato 1080×1080 px (mostrado al 50% = 540×540)
+───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:   #e10600;
+  --sans:  'Inter', system-ui, sans-serif;
+  --serif: 'Fraunces', Georgia, serif;
+  --slide: 540px;
+}
+
+body {
+  background: #080808;
+  font-family: var(--sans);
+  color: #fff;
+  padding: 48px 32px 80px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.page-header .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+.page-header .brand::before,
+.page-header .brand::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--red);
+  opacity: 0.5;
+}
+.page-header h1 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: -0.02em;
+}
+.page-header .date-label {
+  margin-top: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.article-block { margin-bottom: 80px; }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.article-num { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.2em; color: var(--red); text-transform: uppercase; }
+.article-cat { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+.carousel-track {
+  display: flex; gap: 10px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none; cursor: grab;
+}
+.carousel-track:active { cursor: grabbing; }
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-dots { display: flex; gap: 5px; margin-top: 12px; padding-left: 2px; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: all .2s; }
+.dot.on { background: var(--red); border-radius: 2.5px; width: 22px; }
+
+.slide {
+  flex: 0 0 var(--slide); height: var(--slide);
+  position: relative; overflow: hidden;
+  scroll-snap-align: start; border-radius: 3px;
+}
+.bg { position: absolute; inset: -40px; filter: blur(22px) saturate(1.5) brightness(0.5); }
+.grain {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px; opacity: 0.06; mix-blend-mode: overlay; pointer-events: none;
+}
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 40%, rgba(0,0,0,0.65) 100%);
+  pointer-events: none;
+}
+.sl-content { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; padding: 34px 38px 32px; }
+
+.sl-head { display: flex; justify-content: space-between; align-items: center; }
+.sl-logo { display: flex; align-items: center; gap: 7px; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); }
+.sl-logo span.bar { display: block; width: 14px; height: 2px; background: var(--red); }
+.sl-counter { font-size: 0.55rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.3); }
+
+.sl-body { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; }
+.sl-eyebrow { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+.sl-rule { width: 36px; height: 3px; background: var(--red); margin-bottom: 18px; border-radius: 1px; }
+.sl-h1 { font-family: var(--serif); font-size: 1.85rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 18px; max-width: 440px; }
+.sl-h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
+.sl-lead { font-size: 0.78rem; line-height: 1.65; color: rgba(255,255,255,0.72); max-width: 430px; }
+.sl-cover-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+.sl-cover-footer .meta { font-size: 0.58rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-transform: uppercase; }
+.sl-cover-footer .swipe { font-size: 0.58rem; color: rgba(255,255,255,0.3); display: flex; align-items: center; gap: 6px; letter-spacing: 0.08em; }
+.sl-cover-footer .swipe::after { content: '→'; color: var(--red); }
+
+.sl-section-title { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+.glass-box { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.09); border-radius: 2px; padding: 18px 22px; margin-bottom: 10px; position: relative; }
+.glass-box::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--red); border-radius: 2px 0 0 2px; }
+.glass-box h4 { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+.glass-box p { font-size: 0.75rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+.glass-box p strong { color: #fff; font-weight: 600; }
+
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; align-content: center; }
+.vs-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 2px; padding: 20px 18px; display: flex; flex-direction: column; gap: 8px; }
+.vs-card .vs-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+.vs-card .vs-val { font-family: var(--serif); font-size: 0.88rem; font-weight: 700; line-height: 1.45; color: rgba(255,255,255,0.9); }
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; flex: 1; align-content: center; }
+.stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 2px; padding: 22px 20px 18px; display: flex; flex-direction: column; justify-content: flex-end; }
+.stat-card .stat-num { font-family: var(--serif); font-size: 2.6rem; font-weight: 900; line-height: 1; color: #fff; letter-spacing: -0.03em; }
+.stat-card .stat-num sup { font-size: 1.1rem; font-weight: 700; vertical-align: top; margin-top: 4px; display: inline-block; }
+.stat-card .stat-delta { font-size: 0.62rem; font-weight: 600; margin-top: 6px; display: inline-block; color: var(--red); }
+.stat-card .stat-label { font-size: 0.63rem; color: rgba(255,255,255,0.45); margin-top: 6px; line-height: 1.4; letter-spacing: 0.04em; }
+.stat-card.accent { border-color: rgba(225,6,0,0.35); background: rgba(225,6,0,0.09); }
+.stat-card.accent .stat-num { color: var(--red); }
+.stat-card.wide { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 20px; padding: 18px 24px; }
+.stat-card.wide .stat-num { font-size: 1.9rem; }
+.stat-card.wide .stat-body { display: flex; flex-direction: column; }
+.stat-card.wide .stat-sub { font-size: 0.7rem; color: rgba(255,255,255,0.75); line-height: 1.5; max-width: 300px; }
+
+.q-block { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.q-intro { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); }
+.q-text { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; font-style: italic; line-height: 1.35; color: rgba(255,255,255,0.95); position: relative; padding-left: 20px; border-left: 3px solid var(--red); }
+.q-sub { font-size: 0.72rem; line-height: 1.6; color: rgba(255,255,255,0.5); max-width: 400px; }
+.q-footer { display: flex; align-items: center; gap: 10px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+.q-footer .pill { background: rgba(225,6,0,0.15); border: 1px solid rgba(225,6,0,0.3); border-radius: 100px; padding: 5px 14px; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); }
+.q-footer .url { font-size: 0.58rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.2); text-transform: lowercase; }
+
+.sl-article-tag { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-top: 14px; margin-bottom: 14px; }
+.sl-article-tag strong { color: rgba(255,255,255,0.5); }
+
+/* ════════════════════════════════════════════════════════════════
+   BACKGROUNDS
+════════════════════════════════════════════════════════════════ */
+
+/* 1 · Sanidad — verde teal profundo */
+.bg-sanidad-1 {
+  background:
+    radial-gradient(ellipse 110% 80% at 15% 85%, #002e28 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 88% 10%, #003830 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #001a18 0%, transparent 65%),
+    linear-gradient(162deg, #001412 0%, #000a08 100%);
+}
+.bg-sanidad-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #002420 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 15%, #002e28 0%, transparent 50%),
+    linear-gradient(160deg, #001010 0%, #000808 100%);
+}
+
+/* 2 · UE-Israel — azul europeo profundo */
+.bg-eu-1 {
+  background:
+    radial-gradient(ellipse 100% 80% at 10% 85%, #001e5a 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 90% 10%, #002052 0%, transparent 50%),
+    radial-gradient(ellipse 50%  50% at 50% 50%, #001030 0%, transparent 65%),
+    linear-gradient(165deg, #000a2e 0%, #000519 100%);
+}
+.bg-eu-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #001840 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 15%, #001c4a 0%, transparent 50%),
+    linear-gradient(160deg, #000820 0%, #000414 100%);
+}
+
+/* 3 · TSK bolsa — ámbar financiero */
+.bg-tsk-1 {
+  background:
+    radial-gradient(ellipse 110% 80% at 15% 85%, #3d2200 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 88% 10%, #2e1600 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #1a0e00 0%, transparent 65%),
+    linear-gradient(162deg, #160a00 0%, #0a0400 100%);
+}
+.bg-tsk-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #2e1800 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 12%, #1e1000 0%, transparent 50%),
+    linear-gradient(158deg, #100600 0%, #080200 100%);
+}
+
+/* 4 · Nigeria — naranja tierra / ocre */
+.bg-nigeria-1 {
+  background:
+    radial-gradient(ellipse 110% 80% at 15% 85%, #4a1800 0%, transparent 55%),
+    radial-gradient(ellipse 80%  70% at 88% 10%, #301000 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #1a0800 0%, transparent 65%),
+    linear-gradient(162deg, #140500 0%, #0a0200 100%);
+}
+.bg-nigeria-2 {
+  background:
+    radial-gradient(ellipse 90%  70% at 20% 80%, #3a1200 0%, transparent 55%),
+    radial-gradient(ellipse 70%  80% at 85% 12%, #240c00 0%, transparent 50%),
+    linear-gradient(158deg, #0e0400 0%, #080200 100%);
+}
+
+/* 5 · Alquiler — rojo burdeos */
+.bg-alquiler-1 {
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 90%, #5a0010 0%, transparent 50%),
+    radial-gradient(ellipse 80%  90% at 85% 10%, #3d0020 0%, transparent 50%),
+    radial-gradient(ellipse 60%  60% at 55% 50%, #2a0015 0%, transparent 60%),
+    linear-gradient(160deg, #1e0010 0%, #0c0008 100%);
+}
+.bg-alquiler-2 {
+  background:
+    radial-gradient(ellipse 100% 80% at 15% 80%, #400010 0%, transparent 55%),
+    radial-gradient(ellipse 70%  70% at 80% 20%, #28000e 0%, transparent 50%),
+    linear-gradient(155deg, #160008 0%, #080004 100%);
+}
+
+/* ── THEME OVERRIDES ─────────────────────────────────────────── */
+.theme-teal .sl-rule, .theme-teal .glass-box::before, .theme-teal .q-text { border-color: #00c9a7; }
+.theme-teal .sl-logo, .theme-teal .sl-section-title, .theme-teal .q-intro { color: #00c9a7; }
+.theme-teal .sl-logo span.bar, .theme-teal .sl-rule { background: #00c9a7; }
+.theme-teal .stat-card.accent { border-color: rgba(0,201,167,.35); background: rgba(0,201,167,.09); }
+.theme-teal .stat-card.accent .stat-num { color: #00c9a7; }
+.theme-teal .dot.on { background: #00c9a7; }
+.theme-teal .q-footer .pill { background: rgba(0,201,167,.15); border-color: rgba(0,201,167,.3); color: #00c9a7; }
+.theme-teal .vs-card .vs-label { color: #00c9a7; }
+.theme-teal .article-num { color: #00c9a7; }
+.theme-teal .q-text { border-color: #00c9a7; }
+
+.theme-blue .sl-rule, .theme-blue .glass-box::before, .theme-blue .q-text { border-color: #4a7dff; }
+.theme-blue .sl-logo, .theme-blue .sl-section-title, .theme-blue .q-intro { color: #4a7dff; }
+.theme-blue .sl-logo span.bar, .theme-blue .sl-rule { background: #4a7dff; }
+.theme-blue .stat-card.accent { border-color: rgba(74,125,255,.35); background: rgba(74,125,255,.09); }
+.theme-blue .stat-card.accent .stat-num { color: #4a7dff; }
+.theme-blue .dot.on { background: #4a7dff; }
+.theme-blue .q-footer .pill { background: rgba(74,125,255,.15); border-color: rgba(74,125,255,.3); color: #4a7dff; }
+.theme-blue .vs-card .vs-label { color: #4a7dff; }
+.theme-blue .article-num { color: #4a7dff; }
+
+.theme-amber .sl-rule, .theme-amber .glass-box::before, .theme-amber .q-text { border-color: #f0a500; }
+.theme-amber .sl-logo, .theme-amber .sl-section-title, .theme-amber .q-intro { color: #f0a500; }
+.theme-amber .sl-logo span.bar, .theme-amber .sl-rule { background: #f0a500; }
+.theme-amber .stat-card.accent { border-color: rgba(240,165,0,.35); background: rgba(240,165,0,.09); }
+.theme-amber .stat-card.accent .stat-num { color: #f0a500; }
+.theme-amber .dot.on { background: #f0a500; }
+.theme-amber .q-footer .pill { background: rgba(240,165,0,.15); border-color: rgba(240,165,0,.3); color: #f0a500; }
+.theme-amber .vs-card .vs-label { color: #f0a500; }
+.theme-amber .article-num { color: #f0a500; }
+
+.theme-orange .sl-rule, .theme-orange .glass-box::before, .theme-orange .q-text { border-color: #ff6b2b; }
+.theme-orange .sl-logo, .theme-orange .sl-section-title, .theme-orange .q-intro { color: #ff6b2b; }
+.theme-orange .sl-logo span.bar, .theme-orange .sl-rule { background: #ff6b2b; }
+.theme-orange .stat-card.accent { border-color: rgba(255,107,43,.35); background: rgba(255,107,43,.09); }
+.theme-orange .stat-card.accent .stat-num { color: #ff6b2b; }
+.theme-orange .dot.on { background: #ff6b2b; }
+.theme-orange .q-footer .pill { background: rgba(255,107,43,.15); border-color: rgba(255,107,43,.3); color: #ff6b2b; }
+.theme-orange .vs-card .vs-label { color: #ff6b2b; }
+.theme-orange .article-num { color: #ff6b2b; }
+
+.article-cat { color: rgba(255,255,255,0.3) !important; }
+
+@media (min-width: 1200px) {
+  .page-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+}
+
+.drag-hint { font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.18); margin-top: 8px; padding-left: 2px; }
+
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="brand"><span>Hora de Despertar</span></div>
+  <h1>Carruseles del día</h1>
+  <p class="date-label">Miércoles 13 de mayo de 2026 · 5 historias</p>
+</div>
+
+<div class="page-grid">
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 01 · SANIDAD — GESTIÓN PRIVADA DEL SNS
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-teal">
+  <div class="article-meta">
+    <span class="article-num">01</span>
+    <span class="article-cat">Política · Sanidad</span>
+  </div>
+  <div class="carousel-track" id="c1">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-sanidad-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Política · Sanidad</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">El Gobierno quiere recuperar la sanidad que lleva <em>30 años</em> en manos privadas</h1>
+          <p class="sl-lead">Una ley del 97 permitió que hospitales públicos se gestionasen como empresas. El nuevo proyecto del Gobierno quiere prohibir ese modelo. Afecta a millones de pacientes del SNS en Madrid, Cataluña y Valencia.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">13 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · CONCEPTOS -->
+    <div class="slide">
+      <div class="bg bg-sanidad-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Sanidad · <strong>Las tres piezas clave</strong></div>
+        <p class="sl-section-title">Qué está en juego</p>
+        <div class="glass-box">
+          <h4>El SNS</h4>
+          <p>El Sistema Nacional de Salud es universal y gratuito. Lo pagan los impuestos. Pero <strong>quién lo gestiona</strong> puede ser público o privado. Son cosas distintas.</p>
+        </div>
+        <div class="glass-box">
+          <h4>La Ley 15/1997</h4>
+          <p>Aprobada hace 30 años. Permitió que el Estado financiase la sanidad pero que <strong>empresas privadas la gestionaran</strong>. Nacieron así los hospitales de concesión.</p>
+        </div>
+        <div class="glass-box">
+          <h4>El nuevo proyecto</h4>
+          <p>Prohíbe nuevas concesiones. Cuando expiren los contratos actuales, <strong>la gestión vuelve a ser pública directa</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · DATOS -->
+    <div class="slide">
+      <div class="bg bg-sanidad-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Sanidad · <strong>El modelo en cifras</strong></div>
+        <p class="sl-section-title">La magnitud del cambio</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">+40<sup>%</sup></div>
+            <div class="stat-label">de las camas hospitalarias en Madrid gestionadas por empresas privadas con fondos públicos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">10<sup>M</sup></div>
+            <div class="stat-label">personas en España con seguro sanitario privado además del público</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">30</div>
+            <div class="stat-label">años vigente la ley que permitió la gestión privada del SNS</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">3</div>
+            <div class="stat-label">CC.AA. principales afectadas: Madrid, Cataluña y Valencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-sanidad-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Sanidad · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">Si la sanidad es universal y gratuita en teoría, ¿cómo llegamos a que empresas con accionistas gestionen hospitales del SNS durante 30 años?</div>
+          <p class="q-sub">Una ley aprobada en 1997 abrió la puerta. Nadie la ha cerrado desde entonces. El nuevo proyecto intenta hacerlo. Pero las CC.AA. no están obligadas a seguirlo.</p>
+          <div class="q-footer">
+            <span class="pill">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 02 · UE SANCIONES COLONOS ISRAELÍES
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-blue">
+  <div class="article-meta">
+    <span class="article-num">02</span>
+    <span class="article-cat">Internacional · Europa</span>
+  </div>
+  <div class="carousel-track" id="c2">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-eu-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Internacional · Europa</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">Europa sanciona por primera vez a colonos israelíes. <em>Hungría</em> lo bloqueó durante meses</h1>
+          <p class="sl-lead">La UE congeló activos y prohibió la entrada en Europa a 40 colonos de Cisjordania acusados de ataques violentos a palestinos. Orbán vetaba. Un político de su propio partido, Peter Magyar, le obligó a ceder.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">13 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · QUÉ SON COLONOS / SANCIONES -->
+    <div class="slide">
+      <div class="bg bg-eu-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">UE-Israel · <strong>Dos conceptos clave</strong></div>
+        <p class="sl-section-title">Quiénes y qué cambia</p>
+        <div class="glass-box">
+          <h4>Los colonos</h4>
+          <p>Son ciudadanos israelíes que viven en asentamientos en Cisjordania, territorio palestino ocupado desde 1967. Hay unos <strong>700.000</strong>. Los sancionados son los acusados de ataques armados a comunidades palestinas, documentados por ONG internacionales.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Qué significa sancionarlos</h4>
+          <p>Congelación de cualquier activo que tengan en la UE. Prohibición de entrar a los 27 países del bloque. Es el mismo mecanismo que se usó contra oligarcas rusos tras 2022. <strong>Por primera vez</strong> se aplica a nacionales israelíes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · HUNGRÍA / MAGYAR -->
+    <div class="slide">
+      <div class="bg bg-eu-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">UE-Israel · <strong>El veto que se rompió</strong></div>
+        <p class="sl-section-title">Por qué tardó tanto</p>
+        <div class="vs-grid">
+          <div class="vs-card">
+            <span class="vs-label">Orbán vetaba</span>
+            <p class="vs-val">Las sanciones de la UE requieren unanimidad. Hungría bloqueó la medida durante meses alegando que dañaba relaciones con Israel</p>
+          </div>
+          <div class="vs-card">
+            <span class="vs-label">Magyar presionó</span>
+            <p class="vs-val">El líder opositor húngaro, exmiembro de Fidesz, amenazó con campaña pública si Orbán seguía vetando. La presión interna funcionó</p>
+          </div>
+        </div>
+        <div class="glass-box" style="margin-top:10px;">
+          <h4>El mecanismo final</h4>
+          <p>Con Hungría absteniéndose —no vetando— se alcanzó la mayoría necesaria. La abstención no bloquea. <strong>Es la primera vez en años</strong> que Orbán retira un veto bajo presión interna.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-eu-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">UE-Israel · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">Si Europa puede sancionar a colonos con nombre y apellido, ¿por qué tardó años en hacerlo mientras los ataques estaban documentados?</div>
+          <p class="q-sub">La regla de unanimidad en política exterior de la UE permite que un solo gobierno bloquee decisiones que 26 apoyan. Hungría lo ha usado como palanca durante años.</p>
+          <div class="q-footer">
+            <span class="pill">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 03 · TSK DEBUT EN BOLSA
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-amber">
+  <div class="article-meta">
+    <span class="article-num">03</span>
+    <span class="article-cat">Economía · Bolsa</span>
+  </div>
+  <div class="carousel-track" id="c3">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-tsk-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Economía · Bolsa</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">TSK debuta en bolsa: <em>la primera OPV española</em> en casi un año</h1>
+          <p class="sl-lead">La empresa asturiana de ingeniería salió hoy al Mercado Continuo a 5,05€ por acción. Valoración: 615 millones. Captó 150 millones. Estaba sobresuscrita varias veces antes de abrir. Era la primera OPV española en meses.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">13 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · QUÉ ES UNA OPV -->
+    <div class="slide">
+      <div class="bg bg-tsk-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">TSK Bolsa · <strong>El mecanismo</strong></div>
+        <p class="sl-section-title">Qué es una OPV y cómo funciona</p>
+        <div class="glass-box">
+          <h4>OPV vs OPS</h4>
+          <p>Una <strong>OPV</strong> (Oferta Pública de Venta) es cuando los dueños de una empresa venden sus acciones al público. Una <strong>OPS</strong> es cuando la empresa emite acciones nuevas para captar dinero fresco. TSK hace las dos: parte vende el fundador, parte son acciones nuevas.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Cómo se fija el precio</h4>
+          <p>Antes de salir a bolsa, los bancos organizan un <em>roadshow</em>: presentan la empresa a fondos e inversores institucionales y recogen cuánto pagarían. Con esas ofertas se fija el precio. Si hay más demanda que acciones disponibles, se dice que está <strong>sobresuscrita</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · DATOS TSK -->
+    <div class="slide">
+      <div class="bg bg-tsk-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">TSK Bolsa · <strong>Los números del debut</strong></div>
+        <p class="sl-section-title">TSK en cifras</p>
+        <div class="stats-grid">
+          <div class="stat-card accent">
+            <div class="stat-num">5,05</div>
+            <div class="stat-label">euros por acción · precio de salida fijado en el book building</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">615<sup>M</sup></div>
+            <div class="stat-label">euros de valoración total de la empresa al precio de OPV</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">150<sup>M</sup></div>
+            <div class="stat-label">euros captados en la salida, destinados a expansión internacional</div>
+          </div>
+          <div class="stat-card accent">
+            <div class="stat-num">11</div>
+            <div class="stat-label">meses sin una OPV en el Mercado Continuo español antes de TSK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-tsk-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">TSK Bolsa · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">¿El debut de TSK rompe la sequía de OPVs en España, o es una excepción en un mercado que sigue sin atraer empresas medianas?</div>
+          <p class="q-sub">La bolsa española lleva años perdiendo empresas cotizadas. Una OPV sobresuscrita es buena señal, pero no garantiza que haya más detrás. El mercado lo irá diciéndo.</p>
+          <div class="q-footer">
+            <span class="pill">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 04 · NIGERIA ZAMFARA — 100 CIVILES
+════════════════════════════════════════════════════════════ -->
+<div class="article-block theme-orange">
+  <div class="article-meta">
+    <span class="article-num">04</span>
+    <span class="article-cat">Internacional · África</span>
+  </div>
+  <div class="carousel-track" id="c4">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-nigeria-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Internacional · África</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">El ejército de Nigeria <em>mató a más de 100 civiles</em> en un mercado. El ejército lo niega</h1>
+          <p class="sl-lead">Amnistía Internacional documenta que un bombardeo nigeriano destruyó el mercado de Tumfa el 10 de mayo. Más de 100 muertos. El ejército dice que mató a bandidos en otra operación. Es el segundo incidente de este tipo en un mes.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">13 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · CONTEXTO -->
+    <div class="slide">
+      <div class="bg bg-nigeria-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Nigeria · <strong>El conflicto que no sale en los periódicos</strong></div>
+        <p class="sl-section-title">Por qué pasa esto</p>
+        <div class="glass-box">
+          <h4>Los "bandidos" del noroeste</h4>
+          <p>No son yihadistas. Son grupos armados sin ideología política que secuestran, saquean y extorsionan. Operan desde hace una década en Zamfara, Katsina y Sokoto. El ejército los combate con bombardeos aéreos porque no tiene capacidad terrestre suficiente.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Por qué atacan mercados</h4>
+          <p>Los bandidos controlan zonas rurales y usan los mercados como puntos de extorsión. El ejército ataca objetivos identificados por inteligencia humana, que <strong>puede estar equivocada o ser deliberadamente falsa</strong> para provocar ataques sobre rivales.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · DATOS -->
+    <div class="slide">
+      <div class="bg bg-nigeria-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Nigeria · <strong>Dos incidentes en un mes</strong></div>
+        <p class="sl-section-title">Lo que sabemos</p>
+        <div class="vs-grid">
+          <div class="vs-card">
+            <span class="vs-label">10 mayo · Tumfa</span>
+            <p class="vs-val">Mercado de Zurmi, Zamfara. +100 civiles muertos según Amnistía Internacional. Ejército niega la cifra</p>
+          </div>
+          <div class="vs-card">
+            <span class="vs-label">Abril · Jilli</span>
+            <p class="vs-val">Otro mercado rural en Zamfara. ~200 muertos documentados por AI. También negado por el ejército</p>
+          </div>
+        </div>
+        <div class="glass-box" style="margin-top:10px;">
+          <h4>El patrón</h4>
+          <p>En ambos casos: bombardeo aéreo sobre mercado activo, víctimas civiles documentadas por AI, negación oficial, <strong>ninguna investigación independiente admitida</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-nigeria-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Nigeria · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">Si un ejército mata a más de 100 civiles en un mercado y niega los hechos, ¿quién tiene capacidad real de pedirle cuentas?</div>
+          <p class="q-sub">Nigeria es la mayor economía de África. Tiene veto en la comunidad regional. La prensa local tiene acceso muy limitado a zonas de conflicto. Amnistía Internacional es la única fuente independiente con capacidad de documentar.</p>
+          <div class="q-footer">
+            <span class="pill">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  ARTÍCULO 05 · DECRETO ALQUILER DEROGADO
+════════════════════════════════════════════════════════════ -->
+<div class="article-block">
+  <div class="article-meta">
+    <span class="article-num">05</span>
+    <span class="article-cat">Economía · Vivienda</span>
+  </div>
+  <div class="carousel-track" id="c5">
+
+    <!-- SLIDE 1/4 · COVER -->
+    <div class="slide">
+      <div class="bg bg-alquiler-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">1 — 4</span>
+        </div>
+        <div class="sl-body">
+          <div class="sl-eyebrow">Economía · Vivienda</div>
+          <div class="sl-rule"></div>
+          <h1 class="sl-h1">El decreto de prórrogas de alquiler fue derogado: <em>¿qué pasa con tu contrato?</em></h1>
+          <p class="sl-lead">El Congreso tumbó el RDL 8/2026 el 28 de abril. Los que pidieron la prórroga antes de esa fecha siguen protegidos. Los que no la pidieron, pierden la protección. El IRAV de mayo está en 2,47%.</p>
+          <div class="sl-cover-footer">
+            <span class="meta">13 · 05 · 26 &nbsp;·&nbsp; HdD</span>
+            <span class="swipe">Desliza para entender</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2/4 · QUÉ ERA Y QUÉ ES DEROGAR -->
+    <div class="slide">
+      <div class="bg bg-alquiler-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">2 — 4</span>
+        </div>
+        <div class="sl-article-tag">Decreto alquiler · <strong>Lo que cambia</strong></div>
+        <p class="sl-section-title">El decreto y su fin</p>
+        <div class="glass-box">
+          <h4>Qué decía el RDL 8/2026</h4>
+          <p>Aprobado el 20 de marzo, en vigor desde el 22. Daba <strong>hasta 2 años de prórroga extra</strong> a inquilinos con contratos que vencieran antes de diciembre de 2026, y limitaba las subidas de renta al <strong>2%</strong>.</p>
+        </div>
+        <div class="glass-box">
+          <h4>Qué significa que lo deroguen</h4>
+          <p>El Congreso votó el 28 de abril no convalidarlo: la norma dejó de existir. Pero <strong>los actos ya realizados bajo esa norma son válidos</strong>. Quien solicitó la prórroga antes del 28 de abril sigue protegido.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3/4 · QUIÉN ESTÁ PROTEGIDO -->
+    <div class="slide">
+      <div class="bg bg-alquiler-1"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">3 — 4</span>
+        </div>
+        <div class="sl-article-tag">Decreto alquiler · <strong>Tu situación concreta</strong></div>
+        <p class="sl-section-title">Dos realidades distintas</p>
+        <div class="vs-grid">
+          <div class="vs-card">
+            <span class="vs-label">Solicitaste la prórroga</span>
+            <p class="vs-val">Sigues protegido hasta que expire el período de prórroga. El tope del 2% te aplica durante ese tiempo</p>
+          </div>
+          <div class="vs-card">
+            <span class="vs-label">No la solicitaste</span>
+            <p class="vs-val">Pierdes la protección. Tu contrato se rige por la Ley de Vivienda de 2023. El IRAV de mayo (2,47%) es el techo aplicable</p>
+          </div>
+        </div>
+        <div class="glass-box" style="margin-top:10px;">
+          <h4>El IRAV mayo 2026: 2,47%</h4>
+          <p>Es el índice que limita las subidas de alquiler para contratos firmados desde 2024. Si tu contrato es anterior, revisa qué índice aplica.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4/4 · PREGUNTA -->
+    <div class="slide">
+      <div class="bg bg-alquiler-2"></div>
+      <div class="grain"></div><div class="vignette"></div>
+      <div class="sl-content">
+        <div class="sl-head">
+          <div class="sl-logo"><span class="bar"></span>HdD</div>
+          <span class="sl-counter">4 — 4</span>
+        </div>
+        <div class="sl-article-tag">Decreto alquiler · <strong>La pregunta que importa</strong></div>
+        <div class="q-block">
+          <div class="q-intro">La pregunta que importa</div>
+          <div class="q-text">Si el Parlamento puede tumbar en un mes una protección de emergencia para cientos de miles de familias, ¿qué garantías reales tiene un inquilino en España?</div>
+          <p class="q-sub">Un decreto-ley de vivienda dura lo que dure la aritmética parlamentaria. Las familias que dependían de esa protección descubrieron su fragilidad el 28 de abril.</p>
+          <div class="q-footer">
+            <span class="pill">Lee el análisis</span>
+            <span class="url">horadedespertar.org</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="carousel-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <p class="drag-hint">Arrastra para ver más →</p>
+</div>
+
+
+</div><!-- .page-grid -->
+
+<script>
+document.querySelectorAll('.carousel-track').forEach((track, i) => {
+  const dots = track.closest('.article-block').querySelectorAll('.dot');
+  const slides = track.querySelectorAll('.slide');
+
+  // dots from scroll
+  track.addEventListener('scroll', () => {
+    const idx = Math.round(track.scrollLeft / track.offsetWidth);
+    dots.forEach((d, j) => d.classList.toggle('on', j === idx));
+  }, { passive: true });
+
+  // drag to scroll
+  let startX, startLeft, dragging = false;
+  track.addEventListener('mousedown', e => {
+    dragging = true; startX = e.pageX; startLeft = track.scrollLeft;
+    track.style.userSelect = 'none';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    track.scrollLeft = startLeft - (e.pageX - startX);
+  });
+  window.addEventListener('mouseup', () => {
+    dragging = false; track.style.userSelect = '';
+  });
+});
+</script>
+</body>
+</html>
